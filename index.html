@@ -76,9 +76,9 @@
       <a href="/categories/">
         <li class="mobile-menu-item">Categories
           </li>
-      </a></div><div id="mobile-menu-projects">
+      </a></div><div id="mobile-menu-Projects">
       <a href="#">
-        <li class="mobile-menu-item">projects
+        <li class="mobile-menu-item">Projects
           </li>
       </a><ul class="sub-menu" style="display: none;"> 
           <li>
@@ -92,37 +92,37 @@
               </a>
             </li>
           </ul>
-      <script>$('#mobile-menu-projects').click(function(){
-          $("#mobile-menu-projects ul").toggle();
+      <script>$('#mobile-menu-Projects').click(function(){
+          $("#mobile-menu-Projects ul").toggle();
       })</script>
-      </div><div id="mobile-menu-map">
+      </div><div id="mobile-menu-Map">
       <a href="#">
-        <li class="mobile-menu-item">map
+        <li class="mobile-menu-item">Map
           </li>
       </a><ul class="sub-menu" style="display: none;"> 
           <li>
               <a href="https://api.yimian.xyz/" target="_blank" rel="noopener">
-                api 
+                APIs 
               </a>
             </li>
           <li>
               <a href="https://img.yimian.xyz/" target="_blank" rel="noopener">
-                img 
+                Imgs 
               </a>
             </li>
           <li>
               <a href="/">
-                imgbed 
+                Imgbed 
               </a>
             </li>
           <li>
-              <a href="https://filebed.yimian.xyz/" target="_blank" rel="noopener">
-                filebed 
+              <a href="https://share.yimian.xyz/" target="_blank" rel="noopener">
+                Fileshare 
               </a>
             </li>
           <li>
               <a href="https://monitor.yimian.xyz/" target="_blank" rel="noopener">
-                monitor 
+                Monitor 
               </a>
             </li>
           <li>
@@ -132,12 +132,12 @@
             </li>
           <li>
               <a href="https://onedrive.yimian.xyz/" target="_blank" rel="noopener">
-                oneindex 
+                Oneindex 
               </a>
             </li>
           </ul>
-      <script>$('#mobile-menu-map').click(function(){
-          $("#mobile-menu-map ul").toggle();
+      <script>$('#mobile-menu-Map').click(function(){
+          $("#mobile-menu-Map ul").toggle();
       })</script>
       </div><div id="mobile-menu-About">
       <a href="#">
@@ -178,12 +178,12 @@
 
       </li>
     <li class="menu-item">
-        <a id="menu-projects" class="menu-item-link" href="#">
-          projects
+        <a id="menu-Projects" class="menu-item-link" href="#">
+          Projects
           </a>
 
       <script>
-          $("#menu-projects").click(function(){
+          $("#menu-Projects").click(function(){
             iziToast.question({
 			    timeout: 20000,
 			    close: false,
@@ -191,7 +191,7 @@
 			    displayMode: 'once',
 			    //id: 'question',
 			    zindex: 999,
-			    title: 'projects',
+			    title: 'Projects',
 			    message: '',
 			    position: 'center',
 			    buttons: [
@@ -221,12 +221,12 @@
         </script>
       </li>
     <li class="menu-item">
-        <a id="menu-map" class="menu-item-link" href="#">
-          map
+        <a id="menu-Map" class="menu-item-link" href="#">
+          Map
           </a>
 
       <script>
-          $("#menu-map").click(function(){
+          $("#menu-Map").click(function(){
             iziToast.question({
 			    timeout: 20000,
 			    close: false,
@@ -234,11 +234,11 @@
 			    displayMode: 'once',
 			    //id: 'question',
 			    zindex: 999,
-			    title: 'map',
+			    title: 'Map',
 			    message: '',
 			    position: 'center',
 			    buttons: [
-			    ['<button><b>api</b></button>', function (instance, toast) {
+			    ['<button><b>APIs</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         if("/" == "true")
@@ -246,7 +246,7 @@
                         else
                             window.open("https://api.yimian.xyz/");
 			        }, true],
-			    ['<button><b>img</b></button>', function (instance, toast) {
+			    ['<button><b>Imgs</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         if("/" == "true")
@@ -254,7 +254,7 @@
                         else
                             window.open("https://img.yimian.xyz/");
 			        }, true],
-			    ['<button><b>imgbed</b></button>', function (instance, toast) {
+			    ['<button><b>Imgbed</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         if("/" == "true")
@@ -262,15 +262,15 @@
                         else
                             window.open("undefined");
 			        }, true],
-			    ['<button><b>filebed</b></button>', function (instance, toast) {
+			    ['<button><b>Fileshare</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         if("/" == "true")
-			 			  pjax.loadUrl("https://filebed.yimian.xyz/");
+			 			  pjax.loadUrl("https://share.yimian.xyz/");
                         else
-                            window.open("https://filebed.yimian.xyz/");
+                            window.open("https://share.yimian.xyz/");
 			        }, true],
-			    ['<button><b>monitor</b></button>', function (instance, toast) {
+			    ['<button><b>Monitor</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         if("/" == "true")
@@ -286,7 +286,7 @@
                         else
                             window.open("https://acg.watch/");
 			        }, true],
-			    ['<button><b>oneindex</b></button>', function (instance, toast) {
+			    ['<button><b>Oneindex</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         if("/" == "true")
@@ -332,7 +332,7 @@
 			    ['<button><b>Me</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
-                        if("/true" == "true")
+                        if("/" == "true")
 			 			  pjax.loadUrl("https://iotcat.me/");
                         else
                             window.open("https://iotcat.me/");
@@ -362,23 +362,183 @@
         </span></div>
     </header>
 
-    <div class="post-content"><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><p>$$<br>\frac{d_r}{j_k}<br>$$</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+    <div class="post-content"><p>Hello World</p>
 
         </div></article>
-      <nav class="pagination"></nav></section></div></div>
+      <article class="post">
+    <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/thoughts/2018-retrospect-and-prospect/">2018 – Retrospect and Prospect</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2020-06-16
+        </span><span class="post-category">
+            <a href="/categories/thoughts/">thoughts</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><p>白驹过隙，挥别2018，走向2019..</p>
+<p>作为完全独立生活的第一年，失去约束，放飞自我，狠狠地狂野了一把。然后，竟然还意外地做成了不少事情..</p>
+          <div class="read-more">
+            <a href="/thoughts/2018-retrospect-and-prospect/" class="read-more-link">Read more..</a>
+          </div>
+        </div></article>
+      <article class="post">
+    <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/tech/build-236-iot-platform-on-wifiduino/">wifiduino搭建236宿舍物联网平台</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2020-06-16
+        </span><span class="post-category">
+            <a href="/categories/tech/">tech</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><p>重新搭建236的IoT底层平台，并通过Blinker手机控制，实现操控监视。平台拥有很强的扩展性及可移植性，目前实现了夜间自动灯光，火灾烟雾报警，床帘内：上床小夜灯开，自动通风，LED自动感应阅读状态等设计。</p>
+          <div class="read-more">
+            <a href="/tech/build-236-iot-platform-on-wifiduino/" class="read-more-link">Read more..</a>
+          </div>
+        </div></article>
+      <article class="post">
+    <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/tech/build-nextcloud-server-on-centos7/">Build Nextcloud Server on Centos 7.5</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2020-06-16
+        </span><span class="post-category">
+            <a href="/categories/tech/">tech</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><p>Nextcloud is an open-source software project coded with PHP. It had provided a ideal private cloud-storage solution which was considered to be reliable and stable. This blog aims to present a Nextcloud Building instruction step by step for the purpose of helping freshman and future reviewing. Nextcloud is an open-source software project coded with PHP. It had provided a ideal private cloud-storage solution which was considered to be reliable and stable. This blog aims to present a Nextcloud Building instruction step by step for the purpose of helping freshman and future reviewing. Nextcloud is an open-source software project coded with PHP. It had provided a ideal private cloud-storage solution which was considered to be reliable and stable. This blog aims to present a Nextcloud Building instruction step by step for the purpose of helping freshman and future reviewing.</p>
+          <div class="read-more">
+            <a href="/tech/build-nextcloud-server-on-centos7/" class="read-more-link">Read more..</a>
+          </div>
+        </div></article>
+      <article class="post">
+    <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/thoughts/economy-environment-sustainability/">Economy, Environment &amp; Sustainability</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2020-06-16
+        </span><span class="post-category">
+            <a href="/categories/thoughts/">thoughts</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><p>经济学是一门研究选择的学问。人们活在世上总是在进行着各种选择。发展落后的国家希望尽快工业化发展经济，来改善自己的生存环境。而工业化后的国家则希望发展同时兼顾环境。于是落后国家需要50年来发展工业，搞基建，破坏环境。之后的50年则拼命治理环境，发展生态。由于地球生态是一个整体，发达国家非常不爽落后的国家搞工业化污染环境，于是各种矛盾。不过在21世纪，有望利用信息数字科技打破50-50年法则，为新一批的国家崛起提供蹊径( ๑´•ω•) “</p>
+          <div class="read-more">
+            <a href="/thoughts/economy-environment-sustainability/" class="read-more-link">Read more..</a>
+          </div>
+        </div></article>
+      <article class="post">
+    <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/thoughts/fog-architecture-and-internet-of-things/">Fog Architecture and Internet of Things</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2020-06-16
+        </span><span class="post-category">
+            <a href="/categories/thoughts/">thoughts</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><p>In the past few decades, Internet has been rapidly expanding and it plays an increasingly important role in people’s life. After the involvement of nearly all humans on the earth [1], developers, inevitably, expected to make more things available for the internet, which then generated the idea of the Internet of Things (IoT). Regrettably, in the case that a considerable number of things connect to the internet, its current architecture seems not to be a so efficient solution for IoT. Bonomi et al. [2] from Cisco firstly noticed this issue and they then put forward a revolutionary concept of Fog to satisfy the access of a surging number and variety of devices in the coming IoT era. This essay will argue that the Fog concept can have considerable impact on promoting IoT construction.</p>
+          <div class="read-more">
+            <a href="/thoughts/fog-architecture-and-internet-of-things/" class="read-more-link">Read more..</a>
+          </div>
+        </div></article>
+      <article class="post">
+    <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/thoughts/global-climate-change/">气候变化与全球环境</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2020-06-16
+        </span><span class="post-category">
+            <a href="/categories/thoughts/">thoughts</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><p>全球气候变化与人类行为有着显著的相关性，人类行为又会改变气候的自然变化。通过研究Ice core等Archive，发现地球历史中温度与$CO_{2}$浓度有着显著正相关性。如今，人类行为使大气$CO_{2}$含量远超其正常水平，其可能引起全球变暖，冰川融化等，但仅为可能..</p>
+          <div class="read-more">
+            <a href="/thoughts/global-climate-change/" class="read-more-link">Read more..</a>
+          </div>
+        </div></article>
+      <article class="post">
+    <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/tech/hello-hexo/">hello hexo</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2020-06-16
+        </span></div>
+    </header>
+
+    <div class="post-content"><h2 id="神奇的事情"><a href="#神奇的事情" class="headerlink" title="神奇的事情"></a>神奇的事情</h2><p>神奇的事情开始发售了</p>
+<p><img src="https://api.yimian.xyz/img" alt=""></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> home = cooo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> ee = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+        </div></article>
+      <article class="post">
+    <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/tech/rand-pic-api/">随机图片API</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2020-06-16
+        </span><span class="post-category">
+            <a href="/categories/tech/">tech</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><p>本API基于华为云对象存储，使用华为CDN云加速，全球平均下载速度达10MB/s。API中已收录1100+张二次元图片，20+张Bing壁纸(每日自动抓取)，150+张二次元头像，10+张图床上传图片。</p>
+          <div class="read-more">
+            <a href="/tech/rand-pic-api/" class="read-more-link">Read more..</a>
+          </div>
+        </div></article>
+      <article class="post">
+    <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/tech/my-code-style/">总结一下我的代码风格</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2020-06-16
+        </span><span class="post-category">
+            <a href="/categories/tech/">tech</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><p>我的代码风格大致有以下几种情况：组织中追随组织领导，公司里老板说的都对，学校里大佬教的都好╮(╯▽╰)╭ 仅其它一些自己的开源小项目则遵循以下风格→_→</p>
+          <div class="read-more">
+            <a href="/tech/my-code-style/" class="read-more-link">Read more..</a>
+          </div>
+        </div></article>
+      <nav class="pagination"><a class="next" href="/page/2/">
+        <span class="next-text">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></section></div></div>
       </main>
 
       <footer id="footer" class="footer">
@@ -411,7 +571,7 @@
         <i class="iconfont icon-up"></i>
       </div>
     </div>
-<script src="//cdn.jsdelivr.net/gh/HCLonely/Valine@1.4.14/dist/Valine.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/HCLonely/Valine@1.4.14/dist/Valine.min.js" data-pjax></script>
 <style>
 /* 背景图片 */
 #veditor {
@@ -467,6 +627,7 @@ pjax_valine = () => {
       friends:  ["b6ddef7c7e1c647e7767afeacdfb7b64","46dd4e6fef4f9591736c4723a965ca2e"],  //小伙伴邮箱Md5
       metaPlaceholder: {"nick":"昵称/QQ号","mail":"邮箱（完全保密）"},
       placeholder: "填写邮箱可以及时收到回复哦(●'◡'●)",
+      path: window.location.pathname,
       enableQQ: true,
       visitor: true,
       emojiCDN: '//i0.hdslb.com/bfs/emote/',
@@ -529,6 +690,7 @@ pjax_valine = () => {
   <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
   <script type="text/javascript" src="/lib/iziToast/iziToast.min.js"></script>
   <script type="text/javascript" src="/lib/iziModal/iziModal.min.js"></script>
+  <script type="text/javascript" src="/lib/mermaid/mermaid.min.js"></script>
   <script type="text/javascript" src="/js/src/kayo.js?v=1.0.0" data-pjax></script>
 <script type="text/javascript" src="/js/src/kayo-no-pjax.js?v=1.0.0"></script>
 
@@ -561,21 +723,16 @@ pjax_valine = () => {
 		});
 	});
 </script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.js"></script>
-<script>
-  window.pjax = new Pjax({
+<script>window.pjax = new Pjax({
     elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"])',
     selectors: ["head title, #main", "#footer"],
-  });
-
-
-  /* 第一次载入页面加载的函数 */
+  });/* 第一次载入页面加载的函数 */
   pjax_ini = () => {
     
      /* 关闭侧边栏 */
      window.slideout.close();
 
-     if(page_obj.comments == "true"){pjax_valine();
-        }};
+     if(page_obj.comments == "true"){pjax_valine();}mermaid.init(undefined, $(".mermaid"));};
 
   /* 第一次 执行 */
   pjax_ini();var loadingBar = document.querySelector(".loading-bar");
@@ -637,7 +794,6 @@ var loadingbarStop = function () {
   /* Pjax 出错，执行的函数 */
   document.addEventListener("pjax:error", function () {
     
-  });
-
-</script></body>
+  });</script>
+</body>
 </html>

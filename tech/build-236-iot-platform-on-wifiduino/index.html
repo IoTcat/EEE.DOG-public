@@ -13,7 +13,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-<meta name="description" content="Hello World"/><meta name="keywords" content="iotcat,yimian,blog" /><link rel="alternate" href="/atom.xml" title="EEE.DOG"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.0.0" /><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+<meta name="description" content="wifiduino搭建236宿舍物联网平台"/><meta name="keywords" content="iotcat,yimian,blog" /><link rel="alternate" href="/atom.xml" title="EEE.DOG"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.0.0" /><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/lib/iziModal/iziModal.min.css" />
 
 
@@ -23,7 +23,7 @@
     if(window.screen.width < 600) document.write('<link rel="stylesheet" href="https://cdn.yimian.xyz/ushio-js/ushio-js.mobile.min.css">');
     else document.write('<link rel="stylesheet" href="https://cdn.yimian.xyz/ushio-js/ushio-js.min.css">');
   </script><link rel="stylesheet" type="text/css" href="https://cdn.yimian.xyz/shaky/shaky.css">
-<link rel="canonical" href="https://www.eee.dog/tech/hello-world/"/>
+<link rel="canonical" href="https://www.eee.dog/tech/build-236-iot-platform-on-wifiduino/"/>
 
 <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" /><script type="text/x-mathjax-config">
     MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
@@ -49,7 +49,7 @@
   window.config = {"leancloud":"","toc":true,"fancybox":true,"pjax":{"enable":true,"loadingbar":true},"latex":true};
 </script>
 
-    <title>Hello World - EEE.DOG</title>
+    <title>wifiduino搭建236宿舍物联网平台 - EEE.DOG</title>
   <meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="EEE.DOG" type="application/atom+xml">
 </head>
 
@@ -353,16 +353,47 @@
         <div class="content-wrapper">
           <div id="content" class="content"><article class="post">
     <header class="post-header">
-      <h1 class="post-title">Hello World
+      <h1 class="post-title">wifiduino搭建236宿舍物联网平台
         </h1>
 
       <div class="post-meta">
         <span class="post-time">
-          2020-06-20
-        </span></div>
+          2020-06-16
+        </span><span class="post-category">
+            <a href="/categories/tech/">tech</a>
+            </span>
+        </div>
     </header>
 
-    <div class="post-content"><p>Hello World</p>
+    <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#搭建缘由"><span class="toc-text">搭建缘由</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#搭建经历"><span class="toc-text">搭建经历</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#主要功能"><span class="toc-text">主要功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最后"><span class="toc-text">最后</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-2-19更新："><span class="toc-text">2019.2.19更新：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-2-28更新"><span class="toc-text">2019.2.28更新</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-6-12更新"><span class="toc-text">2019.6.12更新</span></a></li></ol>
+    </div>
+  </div><div class="post-content"><p>重新搭建236的IoT底层平台，并通过Blinker手机控制，实现操控监视。平台拥有很强的扩展性及可移植性，目前实现了夜间自动灯光，火灾烟雾报警，床帘内：上床小夜灯开，自动通风，LED自动感应阅读状态等设计。</p>
+<a id="more"></a>
+
+
+<h2 id="搭建缘由"><a href="#搭建缘由" class="headerlink" title="搭建缘由"></a>搭建缘由</h2><p>早在大一上学期，意外接触Arduino，开始了解单片机。17年11到12月份，曾利用Arduino uno 3搭建了一台功能简易的自动控制平台，主要实现了由红外遥控器控制床帘Light以及小夜灯的功能。在运行一个半月后，由于一次上传代码时意外短路，导致单片机烧毁，自此系统报废，但线路依旧保留。</p>
+<p>考虑到第一次搭建完全新手，代码缺少必要注释，更有通向床帘的数十根线路完全缠绕在一起，无法分清具体那几根控制什么传感器或设备，故设重建计划暂时搁置。</p>
+<p>半年后的暑假，参加欧朗中国的IETE项目，课程中与公司研发组的软件和硬件工程师愉快得体验了一些单片机的应用研发，了解了单片机及物联网的基础组成及发展现状，在工作闲余，对原有线路进行了测试，分类，贴标签，使其得以正常使用。</p>
+<p>8月份，项目结束，回到家中。考虑到家中原有太阳能需加水后需手动关闭，时常发生晚上洗澡后加水忘关情况，造成大量水资源浪费。于是结合欧朗所学，以及自己的实践经验，搭建了一套基于wifiduino和电磁阀的太阳能自动加水系统。为了照顾年老的姥姥方便夜间上厕所，在走廊过道利用原有废弃有线网络线路，搭建了与手动开关密切集合的自动感应开灯系统。由此收获了许多关于家用线路的架设经验。</p>
+<p>回到苏州，考虑到一年来的相关经验，认为是时候尝试搭建一套可长期使用的商品级的强扩展性的IoT系统，于是…start搞事情</p>
+<h2 id="搭建经历"><a href="#搭建经历" class="headerlink" title="搭建经历"></a>搭建经历</h2><p>搭建初期，一切还算顺利。但是随着系统逐渐趋于完善，代码逐渐复杂，经典的Arduino式软硬件兼容问题又逐渐开始捣乱啦~</p>
+<p>首先遇到的问题是（大概是由于esp8266与wifiduino的一些神奇的勾当）当把代码通过usb传给wifiduino的时候，代码运行是正常的，但是在断电重启或者Reset后，它就死掉了。。。而且，这个问题只在上传占用了大约十个左右Digital通信口的程序之后才出现，如果只是上传简单的示例程序则运行正常，，最后从淘宝钓了一只路由器用的USB-DC9V升压线，用其持续供电，才确保了板子的正常运行。</p>
+<p>遇见的第二个问题也是很神奇。就是，wifiduino在连接tx与rx后竟然无法上传代码！！！当时我一直以为是板子坏掉了</p>
+<p>本来是只有一块板子的，但是当他装载了太多控制端之后，大概是死掉了，wifi无法正常连接Blinker..于是我只用它作为控制器，然后将另一块板子连接wifi，将接受信息通过串口传递给主板子执行。于是，运行终于正常了，，，莫名想到了欧朗当时考试的译码器</p>
+<h2 id="主要功能"><a href="#主要功能" class="headerlink" title="主要功能"></a>主要功能</h2><p>功能的话目前看来也不是很多，4只传感：2只超神波测距，1只光敏，1只烟雾，4个控制端：1只床外探照灯ledB, 1只小夜灯，1只床头灯，1个小风扇。实现的话，无非就是其相互配合，目前可以准确识别我的存在位置4个，室友的存在位置1个。然后配合行为习惯编程调整灯与风扇。</p>
+<p>未来的话，还打算逐步实现–传感层：对室内是否有人的识别 智能层：对室友在宿舍时间规律的学习（神经网络） 控制层：空调红外控制，基于esp8266的微型继电器对宿舍大灯的控制，以及，快乐的话考虑自动养一株辣椒什么的…</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>最后附上两个板子的代码，，还会更新的哦//祝生活愉快啦~<br>代码：<a href="https://uk.cloud.yimian.xyz/index.php/s/YbPwdkt2mANYoiS" target="_blank" rel="noopener">https://uk.cloud.yimian.xyz/index.php/s/YbPwdkt2mANYoiS</a></p>
+<hr>
+<h2 id="2019-2-19更新："><a href="#2019-2-19更新：" class="headerlink" title="2019.2.19更新："></a>2019.2.19更新：</h2><p>板子运行超过150天，一切运行正常。<br>出现过几次分钟级别的控制失效事件，怀疑宿舍电网供压不稳导致，事后均自动修复。</p>
+<hr>
+<h2 id="2019-2-28更新"><a href="#2019-2-28更新" class="headerlink" title="2019.2.28更新"></a>2019.2.28更新</h2><p>上文代码链接已弃用，如有兴趣，可查看由其代码开发的<a href="https://github.com/iotgod/wIoT" target="_blank" rel="noopener">wIoT项目</a>！</p>
+<hr>
+<h2 id="2019-6-12更新"><a href="#2019-6-12更新" class="headerlink" title="2019.6.12更新"></a>2019.6.12更新</h2><p>稳定运行611天18小时32分钟，正式退役！</p>
+<hr>
+<p>已完结</p>
 
       </div>
       <div class="post-copyright">
@@ -372,7 +403,7 @@
     </p>
     <p class="copyright-item">
       <span>Link: </span>
-      <a href="https://www.eee.dog/tech/hello-world/">https://www.eee.dog/tech/hello-world/</a>
+      <a href="https://www.eee.dog/tech/build-236-iot-platform-on-wifiduino/">https://www.eee.dog/tech/build-236-iot-platform-on-wifiduino/</a>
     </p>
     <p class="copyright-item">
       <span>License: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
@@ -380,8 +411,13 @@
   </div>
       <footer class="post-footer">
         
-        <nav class="post-nav"><a class="next" href="/thoughts/2018-retrospect-and-prospect/">
-        <span class="next-text nav-default">2018 – Retrospect and Prospect</span>
+        <nav class="post-nav"><a class="prev" href="/thoughts/2018-retrospect-and-prospect/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">2018 – Retrospect and Prospect</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    <a class="next" href="/tech/build-nextcloud-server-on-centos7/">
+        <span class="next-text nav-default">Build Nextcloud Server on Centos 7.5</span>
         <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
@@ -389,7 +425,7 @@
     </article><script>$(()=>{setTimeout(()=>{iziToast.show({
         title: 'tips',
         position: 'topRight',
-        message: "此文章预计阅读 1 分钟哦~"
+        message: "此文章预计阅读 8 分钟哦~"
   })}, 3000)})</script>
   </div><div class="comments" id="comments"><div id="vcomments"></div>
     </div></div>
@@ -404,10 +440,10 @@
       </script><div class="social-links"><a href="mailto:i@iotcat.me" class="iconfont icon-email" title="email"></a>
         <a href="https://github.com/iotcat" target="_blank" rel="noopener" class="iconfont icon-github" title="github"></a>
         <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
-    </div><div class="copyright"><span id="/tech/hello-world/" class="statistic leancloud_visitors">
+    </div><div class="copyright"><span id="/tech/build-236-iot-platform-on-wifiduino/" class="statistic leancloud_visitors">
     <em>Visitors </em> <i class="leancloud-visitors-count">??</i> 
     <span class="division"> |</span>
-    <em>Reading </em> 1 min
+    <em>Reading </em> 8 min
   </span>
   <br>
   <span class="power-by">

@@ -1391,6 +1391,27 @@ h6 {
   .mobile-navbar {
     display: block; } }
 
+.loading-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  opacity: 0;
+  transition: opacity .4s linear; }
+  .loading-bar .progress {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #77b6ff;
+    box-shadow: 0 0 10px rgba(119, 182, 255, 0.7); }
+  .loading-bar.loading {
+    opacity: 1;
+    transition: none; }
+    .loading-bar.loading .progress {
+      transition: width .4s ease; }
+
 .back-to-top {
   display: none;
   position: fixed;
