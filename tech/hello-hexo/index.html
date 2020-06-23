@@ -31,7 +31,17 @@
   <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=1.0.0" />
 
-<script id="baidu_push">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-169276192-1" data-pjax></script>
+<script>
+pjax_google_analytics = () => {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-169276192-1');
+}
+</script><script id="baidu_push">
 (function(){
     var bp = document.createElement('script');
     var curProtocol = window.location.protocol.split(':')[0];
@@ -598,7 +608,7 @@ pjax_valine = () => {
      /* 关闭侧边栏 */
      window.slideout.close();
 
-     if(page_obj.comments == "true"){pjax_valine();}mermaid.init(undefined, $(".mermaid"));};
+     if(page_obj.comments == "true"){pjax_valine();}pjax_google_analytics();mermaid.init(undefined, $(".mermaid"));};
 
   /* 第一次 执行 */
   pjax_ini();var loadingBar = document.querySelector(".loading-bar");
