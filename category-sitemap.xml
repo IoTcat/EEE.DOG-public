@@ -8,6 +8,13 @@
     </url>
 
     <url>
+        <loc>https://www.eee.dog/categories/life/</loc>
+        <lastmod>2020-06-24T15:28:50.532Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://www.eee.dog/categories/thoughts/</loc>
         <lastmod>2020-06-23T05:07:32.995Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -31,13 +38,6 @@
     <url>
         <loc>https://www.eee.dog/categories/tech/</loc>
         <lastmod>2020-06-23T05:06:32.976Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.eee.dog/categories/life/</loc>
-        <lastmod>2020-06-23T04:07:58.819Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
