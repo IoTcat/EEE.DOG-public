@@ -3,15 +3,15 @@
 
 
     <url>
-        <loc>https://www.eee.dog/tags/master/</loc>
-        <lastmod>2020-06-24T15:28:50.532Z</lastmod>
+        <loc>https://www.eee.dog/tags/investigation/</loc>
+        <lastmod>2020-06-27T08:23:21.442Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://www.eee.dog/tags/investigation/</loc>
-        <lastmod>2020-06-24T15:28:50.532Z</lastmod>
+        <loc>https://www.eee.dog/tags/master/</loc>
+        <lastmod>2020-06-27T08:23:21.442Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -297,13 +297,6 @@
     </url>
 
     <url>
-        <loc>https://www.eee.dog/tags/crown-place/</loc>
-        <lastmod>2020-06-23T03:41:11.544Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://www.eee.dog/tags/liverpool/</loc>
         <lastmod>2020-06-23T03:41:11.544Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -312,6 +305,13 @@
 
     <url>
         <loc>https://www.eee.dog/tags/uk/</loc>
+        <lastmod>2020-06-23T03:41:11.544Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/tags/crown-place/</loc>
         <lastmod>2020-06-23T03:41:11.544Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
