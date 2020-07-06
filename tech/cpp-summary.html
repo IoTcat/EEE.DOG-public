@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="">
+  <head><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="C++建库中遇到的坑"/><meta name="keywords" content="iotcat,yimian,blog" /><link rel="alternate" href="/atom.xml" title="EEE.DOG"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.0.0" /><script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/jquery/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.yimian.xyz/kayo/lib/iziModal/iziModal.min.css" />
+
+
+<link rel="stylesheet" type="text/css" href="https://cdn.yimian.xyz/kayo/lib/iziToast/iziToast.min.css" />
+
+<script>
+    if(window.screen.width < 600) document.write('<link rel="stylesheet" href="https://cdn.yimian.xyz/ushio-js/ushio-js.mobile.min.css">');
+    else document.write('<link rel="stylesheet" href="https://cdn.yimian.xyz/ushio-js/ushio-js.min.css">');
+  </script><link rel="stylesheet" type="text/css" href="https://cdn.yimian.xyz/shaky/shaky.css">
+<link rel="canonical" href="https://www.eee.dog/tech/cpp-summary.html"/>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.yimian.xyz/kayo/lib/fancybox/jquery.fancybox.css" /><script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+  </script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.yimian.xyz/kayo/css/style.css?v=1.0.0" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-169276192-1" data-pjax></script>
+<script>
+pjax_google_analytics = () => {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-169276192-1');
+}
+</script><script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+  window.config = {"leancloud":"","toc":true,"fancybox":true,"pjax":{"enable":true,"loadingbar":true},"latex":true};
+</script>
+
+    <title>C++建库中遇到的坑 - EEE.DOG</title>
+  <meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="EEE.DOG" type="application/atom+xml">
+</head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">EEE.DOG</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="loading-bar">
+    <div class="progress"></div>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><div id="mobile-menu-Archives">
+      <a href="/archives/">
+        <li class="mobile-menu-item">Archives
+          </li>
+      </a></div><div id="mobile-menu-Categories">
+      <a href="/categories/">
+        <li class="mobile-menu-item">Categories
+          </li>
+      </a></div><div id="mobile-menu-Projects">
+      <a href="#">
+        <li class="mobile-menu-item">Projects
+          </li>
+      </a><ul class="sub-menu" style="display: none;"> 
+          <li>
+              <a href="https://fp.yimian.xyz/" target="_blank" rel="noopener">
+                fp 
+              </a>
+            </li>
+          <li>
+              <a href="https://wiot.yimian.xyz/" target="_blank" rel="noopener">
+                wiot 
+              </a>
+            </li>
+          </ul>
+      <script>$('#mobile-menu-Projects').click(function(){
+          $("#mobile-menu-Projects ul").toggle();
+      })</script>
+      </div><div id="mobile-menu-Map">
+      <a href="#">
+        <li class="mobile-menu-item">Map
+          </li>
+      </a><ul class="sub-menu" style="display: none;"> 
+          <li>
+              <a href="https://api.yimian.xyz/" target="_blank" rel="noopener">
+                APIs 
+              </a>
+            </li>
+          <li>
+              <a href="https://img.yimian.xyz/" target="_blank" rel="noopener">
+                Imgs 
+              </a>
+            </li>
+          <li>
+              <a href="/">
+                Imgbed 
+              </a>
+            </li>
+          <li>
+              <a href="https://share.yimian.xyz/" target="_blank" rel="noopener">
+                Fileshare 
+              </a>
+            </li>
+          <li>
+              <a href="https://monitor.yimian.xyz/" target="_blank" rel="noopener">
+                Monitor 
+              </a>
+            </li>
+          <li>
+              <a href="https://acg.watch/" target="_blank" rel="noopener">
+                ACG.WATCH 
+              </a>
+            </li>
+          <li>
+              <a href="https://onedrive.yimian.xyz/" target="_blank" rel="noopener">
+                Oneindex 
+              </a>
+            </li>
+          </ul>
+      <script>$('#mobile-menu-Map').click(function(){
+          $("#mobile-menu-Map ul").toggle();
+      })</script>
+      </div><div id="mobile-menu-About">
+      <a href="#">
+        <li class="mobile-menu-item">About
+          </li>
+      </a><ul class="sub-menu" style="display: none;"> 
+          <li>
+              <a href="/links/">
+                links 
+              </a>
+            </li>
+          <li>
+              <a href="https://iotcat.me/" target="_blank" rel="noopener">
+                Me 
+              </a>
+            </li>
+          </ul>
+      <script>$('#mobile-menu-About').click(function(){
+          $("#mobile-menu-About ul").toggle();
+      })</script>
+      </div></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">EEE.DOG</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+        <a id="menu-Archives" class="menu-item-link" href="/archives/">
+          Archives
+          </a>
+
+      </li>
+    <li class="menu-item">
+        <a id="menu-Categories" class="menu-item-link" href="/categories/">
+          Categories
+          </a>
+
+      </li>
+    <li class="menu-item">
+        <a id="menu-Projects" class="menu-item-link" href="#">
+          Projects
+          </a>
+
+      <script>
+          $("#menu-Projects").click(function(){
+            iziToast.question({
+			    timeout: 20000,
+			    close: false,
+			    overlay: true,
+			    displayMode: 'once',
+			    //id: 'question',
+			    zindex: 999,
+			    title: 'Projects',
+			    message: '',
+			    position: 'center',
+			    buttons: [
+			    ['<button><b>fp</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://fp.yimian.xyz/");
+                        else
+                            window.open("https://fp.yimian.xyz/");
+			        }, true],
+			    ['<button><b>wiot</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://wiot.yimian.xyz/");
+                        else
+                            window.open("https://wiot.yimian.xyz/");
+			        }, true],
+			    ['<button><b>close</b></button>', function (instance, toast) {
+			
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+			        }, true],
+			    ]
+			});
+          });
+        </script>
+      </li>
+    <li class="menu-item">
+        <a id="menu-Map" class="menu-item-link" href="#">
+          Map
+          </a>
+
+      <script>
+          $("#menu-Map").click(function(){
+            iziToast.question({
+			    timeout: 20000,
+			    close: false,
+			    overlay: true,
+			    displayMode: 'once',
+			    //id: 'question',
+			    zindex: 999,
+			    title: 'Map',
+			    message: '',
+			    position: 'center',
+			    buttons: [
+			    ['<button><b>APIs</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://api.yimian.xyz/");
+                        else
+                            window.open("https://api.yimian.xyz/");
+			        }, true],
+			    ['<button><b>Imgs</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://img.yimian.xyz/");
+                        else
+                            window.open("https://img.yimian.xyz/");
+			        }, true],
+			    ['<button><b>Imgbed</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("/");
+                        else
+                            window.open("undefined");
+			        }, true],
+			    ['<button><b>Fileshare</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://share.yimian.xyz/");
+                        else
+                            window.open("https://share.yimian.xyz/");
+			        }, true],
+			    ['<button><b>Monitor</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://monitor.yimian.xyz/");
+                        else
+                            window.open("https://monitor.yimian.xyz/");
+			        }, true],
+			    ['<button><b>ACG.WATCH</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://acg.watch/");
+                        else
+                            window.open("https://acg.watch/");
+			        }, true],
+			    ['<button><b>Oneindex</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://onedrive.yimian.xyz/");
+                        else
+                            window.open("https://onedrive.yimian.xyz/");
+			        }, true],
+			    ['<button><b>close</b></button>', function (instance, toast) {
+			
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+			        }, true],
+			    ]
+			});
+          });
+        </script>
+      </li>
+    <li class="menu-item">
+        <a id="menu-About" class="menu-item-link" href="#">
+          About
+          </a>
+
+      <script>
+          $("#menu-About").click(function(){
+            iziToast.question({
+			    timeout: 20000,
+			    close: false,
+			    overlay: true,
+			    displayMode: 'once',
+			    //id: 'question',
+			    zindex: 999,
+			    title: 'About',
+			    message: '',
+			    position: 'center',
+			    buttons: [
+			    ['<button><b>links</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("true" == "true")
+			 			  pjax.loadUrl("/links/");
+                        else
+                            window.open("/links/");
+			        }, true],
+			    ['<button><b>Me</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://iotcat.me/");
+                        else
+                            window.open("https://iotcat.me/");
+			        }, true],
+			    ['<button><b>close</b></button>', function (instance, toast) {
+			
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+			        }, true],
+			    ]
+			});
+          });
+        </script>
+      </li>
+    </ul></nav>
+</header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">C++建库中遇到的坑
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-02-24
+        </span><span class="post-category">
+            <a href="/categories/tech/">tech</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于-h文件"><span class="toc-text">关于.h文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结一下类相关知识"><span class="toc-text">总结一下类相关知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#类访问修饰符"><span class="toc-text">类访问修饰符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特殊函数类型"><span class="toc-text">特殊函数类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#友元函数-类"><span class="toc-text">友元函数&#x2F;类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内联函数"><span class="toc-text">内联函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#this指针"><span class="toc-text">this指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text"></span></a></li></ol></li></ol>
+    </div>
+  </div><div class="post-content"><p>由于学校课程安排，作为一只电气狗第一次正经的开始搞Cpp ::aru:shy::<br>特记录一些建库过程遇到的坑，，→_→</p>
+<a id="more"></a>
+
+<h2 id="关于-h文件"><a href="#关于-h文件" class="headerlink" title="关于.h文件"></a>关于.h文件</h2><p>作为头文件，.h中一般放有相应类及函数的声明。<br>一个典型的.h文件如下：(FileName: yimian.h)</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> YIMIAN_H <span class="comment">//防止本文件被多次编译</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> YIMIAN_H <span class="comment">//'YIMIAN_H'的值需自定义</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//.h中可能用到的lib</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>; <span class="comment">//使用std命名空间，这样下面就可以不用写如std::cout了</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//声明yimian类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">yimian</span>&#123;</span></span><br><span class="line">  <span class="keyword">public</span>:  <span class="comment">//公共域（可外界直接调用）</span></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">hi</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="built_in">string</span> version;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span>:  <span class="comment">//私有（不对外公开）</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">//与文件开头防多次编译相对应</span></span></span><br></pre></td></tr></table></figure>
+
+<p>为了安全起见，函数以及变量的初始化一般不放在.h文件中进行。而是习惯于建一个新的同名.cpp文件。<br>下面是一个与上午相对应的.cpp文件示例：(FileName: yimian.cpp)</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">"yimian.h"</span> <span class="comment">//需要指向yimian.h</span></span></span><br><span class="line"></span><br><span class="line"><span class="built_in">string</span> yimian::version = <span class="string">"Version 0.0.1"</span>; <span class="comment">//为字符串变量赋值</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">yimian::hi</span><span class="params">()</span></span>&#123; <span class="comment">//定义yimian类中hi()函数内容</span></span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; <span class="string">"Hellow Yimian~"</span> &lt;&lt; <span class="built_in">endl</span>; <span class="comment">//输出"Hellow Yimian~\n"到屏幕</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>有了以上文件，一个简单的C++库就建成了φ(￣∇￣o)<br>于是我们新建一个test.cpp文件用来放置main()</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt; //要用到的lib声明</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">"yimian.h"</span> <span class="comment">//引入自定义lib</span></span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>; <span class="comment">//使用std命名空间</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    yimian $; <span class="comment">//定义一个名字为$的新yimian类</span></span><br><span class="line"></span><br><span class="line">    $.hi(); <span class="comment">//调用yimian类中hi()函数</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; $.version&lt;&lt; <span class="built_in">endl</span>; <span class="comment">//将yimian类version变量输出到屏幕</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//主函数结束</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后便可以愉快的使用g++编译啦，指令如下：（win如何搭建GNU环境）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ g++ test.cpp yimian.cpp -o [目标文件的名称]</span><br></pre></td></tr></table></figure>
+
+<p>之后命令行启动编译好的程序 （什么是命令行⌇●﹏●⌇）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ .&#x2F;目标文件名称.exe</span><br></pre></td></tr></table></figure>
+
+<p>如你所料，以上程序的运行结果为：</p>
+<blockquote>
+<p>Hellow Yimian~<br>Version 0.0.1</p>
+</blockquote>
+<hr>
+<p><strong>坑</strong> ::aru:meditation:: </p>
+<ul>
+<li>头文件中声明定义好的类貌似一定要在main()中实例化(调用)才行，不然会报错</li>
+</ul>
+<hr>
+<h2 id="总结一下类相关知识"><a href="#总结一下类相关知识" class="headerlink" title="总结一下类相关知识"></a>总结一下类相关知识</h2><h3 id="类访问修饰符"><a href="#类访问修饰符" class="headerlink" title="类访问修饰符"></a>类访问修饰符</h3><ul>
+<li>*<em>public: *</em>类内外皆可访问的内容</li>
+<li>*<em>private: *</em>类外不可访问，仅可自己和友元访问，子类不可访问</li>
+<li>*<em>protected: *</em>外部不可访问，自己、友元和子类可访问</li>
+</ul>
+<h3 id="特殊函数类型"><a href="#特殊函数类型" class="headerlink" title="特殊函数类型"></a>特殊函数类型</h3><ul>
+<li><p><strong>构造函数：</strong>每次创建对象时会执行，即初始化</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Line</span>&#123;</span></span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setLength</span><span class="params">( <span class="keyword">double</span> len )</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">getLength</span><span class="params">( <span class="keyword">void</span> )</span></span>;</span><br><span class="line">    Line();  <span class="comment">// 这是构造函数</span></span><br><span class="line"> </span><br><span class="line">  <span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">double</span> length;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>析构函数：</strong>删除对象时执行的函数，即善后</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Line</span>&#123;</span></span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setLength</span><span class="params">( <span class="keyword">double</span> len )</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">getLength</span><span class="params">( <span class="keyword">void</span> )</span></span>;</span><br><span class="line">    Line();   <span class="comment">// 这是构造函数声明</span></span><br><span class="line">    ~Line();  <span class="comment">// 这是析构函数声明</span></span><br><span class="line"> </span><br><span class="line">  <span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">double</span> length;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>*<em>拷贝构造函数: *</em>实现复制对象时同一类对象间传参</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Line</span>&#123;</span></span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">getLength</span><span class="params">( <span class="keyword">void</span> )</span></span>;</span><br><span class="line">    Line( <span class="keyword">int</span> len );             <span class="comment">// 简单的构造函数</span></span><br><span class="line">    Line( <span class="keyword">const</span> Line &amp;obj);      <span class="comment">// 拷贝构造函数</span></span><br><span class="line">    ~Line();                     <span class="comment">// 析构函数</span></span><br><span class="line"> </span><br><span class="line">  <span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> *ptr;</span><br><span class="line">&#125;;</span><br><span class="line">·········</span><br><span class="line">Line::Line(<span class="keyword">const</span> Line &amp;obj)&#123;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; <span class="string">"调用拷贝构造函数并为指针 ptr 分配内存"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  ptr = <span class="keyword">new</span> <span class="keyword">int</span>;</span><br><span class="line">  *ptr = *obj.ptr; <span class="comment">// 拷贝值</span></span><br><span class="line">&#125;</span><br><span class="line">·········</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">( )</span></span>&#123;</span><br><span class="line">  <span class="function">Line <span class="title">line1</span><span class="params">(<span class="number">10</span>)</span></span>;</span><br><span class="line"> </span><br><span class="line">  Line line2 = line1; <span class="comment">// 这里也调用了拷贝构造函数</span></span><br><span class="line"> </span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>构造与拷贝构造区别：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">A <span class="title">x</span><span class="params">(<span class="number">2</span>)</span></span>;　　<span class="comment">//直接初始化，调用构造函数</span></span><br><span class="line">A y = x;　　<span class="comment">//拷贝初始化，调用拷贝构造函数</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="友元函数-类"><a href="#友元函数-类" class="headerlink" title="友元函数/类"></a>友元函数/类</h3><ul>
+<li><strong>友元：</strong>友元就像老邻居啦，家里东西随便拿<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">INTEGER</span>&#123;</span></span><br><span class="line">  <span class="function"><span class="keyword">friend</span> <span class="keyword">void</span> <span class="title">Print</span><span class="params">(<span class="keyword">const</span> INTEGER&amp; obj)</span></span>;<span class="comment">//声明友元函数</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Print</span><span class="params">(<span class="keyword">const</span> INTEGER&amp; obj）&#123;</span></span></span><br><span class="line"><span class="function"><span class="params">  <span class="comment">//函数体</span></span></span></span><br><span class="line"><span class="function"><span class="params">&#125;</span></span></span><br><span class="line"><span class="function"><span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params"><span class="keyword">void</span> main()&#123;</span></span></span><br><span class="line"><span class="function"><span class="params">  INTEGER obj;</span></span></span><br><span class="line"><span class="function"><span class="params">  Print(obj);<span class="comment">//直接调用</span></span></span></span><br><span class="line"><span class="function"><span class="params">&#125;</span></span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="内联函数"><a href="#内联函数" class="headerlink" title="内联函数"></a>内联函数</h3><ul>
+<li>总之行数很少，功能很简单，没有循环和开关语句，想提高函数效率，就用内联（╯‵□′）╯︵┴─┴<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">Max</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (x &gt; y)? x : y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 程序的主函数</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; <span class="string">"Max (20,10): "</span> &lt;&lt; Max(<span class="number">20</span>,<span class="number">10</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; <span class="string">"Max (0,200): "</span> &lt;&lt; Max(<span class="number">0</span>,<span class="number">200</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; <span class="string">"Max (100,1010): "</span> &lt;&lt; Max(<span class="number">100</span>,<span class="number">1010</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="this指针"><a href="#this指针" class="headerlink" title="this指针"></a>this指针</h3><ul>
+<li>类似js中this，指向参数对象本身</li>
+</ul>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><hr>
+<p>To Be Continued..</p>
+
+      </div>
+      <div class="post-copyright">
+    <p class="copyright-item">
+      <span>Author: </span>
+      <a href="https://iotcat.me/" target="_blank" rel="noopener">IoTcat</a>
+    </p>
+    <p class="copyright-item">
+      <span>Link: </span>
+      <a href="https://www.eee.dog/tech/cpp-summary.html">https://www.eee.dog/tech/cpp-summary.html</a>
+    </p>
+    <p class="copyright-item">
+      <span>License: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/cpp/">cpp</a>
+            </div>
+        
+        <nav class="post-nav"><a class="prev" href="/tech/centos7-auto-install-typecho.html">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Centos7脚本一键安装Typecho</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    <a class="next" href="/life/2018-retrospect-and-prospect.html">
+        <span class="next-text nav-default">2018 – Retrospect and Prospect</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article><script>$(()=>{setTimeout(()=>{iziToast.show({
+        title: 'tips',
+        position: 'topRight',
+        message: "此文章预计阅读 7 分钟哦~"
+  })}, 3000)})</script>
+  </div><div class="comments" id="comments"><div id="vcomments"></div>
+    </div></div>
+      </main>
+
+      <footer id="footer" class="footer">
+      <script>
+        page_obj = {
+          layout: "post",
+          comments: "true"
+        };
+      </script><div class="social-links"><a href="mailto:i@iotcat.me" class="iconfont icon-email" title="email"></a>
+        <a href="https://github.com/iotcat" target="_blank" rel="noopener" class="iconfont icon-github" title="github"></a>
+        <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    </div><div class="copyright"><span id="/tech/cpp-summary.html" class="statistic leancloud_visitors">
+    <em>Visitors </em> <i class="leancloud-visitors-count">??</i> 
+    <span class="division"> |</span>
+    <em>Reading </em> 7 min
+  </span>
+  <br>
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/iotcat/kayo" target="_blank" rel="noopener">Kayo</a>
+  </span>
+
+  <span class="copyright-year">&copy;2018 - 2020<span class="heart shaky">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">IoTcat</span>
+  </span>
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+<script src="https://cdn.yimian.xyz/kayo/lib/valine/valine.min.js" data-pjax></script>
+<style>
+/* 背景图片 */
+#veditor {
+  background-image: url(https://cdn.jsdelivr.net/gh/drew233/cdn/20200409110727.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-color: rgba(255, 255, 255, 0);
+  resize: vertical
+}
+
+/* 头像旋转 */
+img.vimg {
+  transition: all 1s   /* 旋转时间为 1s */
+}
+img.vimg:hover {
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+}
+
+
+/* 盒子模式 */
+#vcomments .vcards .vcard {
+  padding: 15px 20px 0 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
+  transition: all .3s
+}
+
+#vcomments .vcards .vcard:hover {
+  box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
+}
+
+#vcomments .vcards .vcard .vh .vcard {
+  border: none;
+  box-shadow: none;
+}
+
+
+</style>
+<script>
+pjax_valine = () => {
+    new Valine({
+      el: '#vcomments',
+      appId: 'eVzpK7EyT6OafJvXWIRminWT-gzGzoHsz',
+      appKey: '2qjuEBgVE0BscTQnTmoS9roU',
+      master: '9b616ff4cd6c305e5970bee7b1bd9b1f',   //博主邮箱md5
+      tagMeta: ["博主","小伙伴","访客"],     //标识字段名
+      friends:  ["b6ddef7c7e1c647e7767afeacdfb7b64","46dd4e6fef4f9591736c4723a965ca2e","6132d77f9f0ae060bc733090991acecb","3e00e104b79d7c6e866c6b23c6ba6dfc"],  //小伙伴邮箱Md5
+      metaPlaceholder: {"nick":"昵称/QQ号","mail":"邮箱（完全保密）"},
+      placeholder: "填写邮箱可以及时收到回复哦(●'◡'●)",
+      path: window.location.pathname,
+      enableQQ: true,
+      visitor: true,
+      emojiCDN: '//i0.hdslb.com/bfs/emote/',
+      emojiMaps: {
+        "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+        "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+        "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png",
+        "tv_再见": "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+        "tv_冷漠": "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+        "tv_发怒": "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+        "tv_发财": "34db290afd2963723c6eb3c4560667db7253a21a.png",
+        "tv_可爱": "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+        "tv_吐血": "09dd16a7aa59b77baa1155d47484409624470c77.png",
+        "tv_呆": "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+        "tv_呕吐": "9f996894a39e282ccf5e66856af49483f81870f3.png",
+        "tv_困": "241ee304e44c0af029adceb294399391e4737ef2.png",
+        "tv_坏笑": "1f0b87f731a671079842116e0991c91c2c88645a.png",
+        "tv_大佬": "093c1e2c490161aca397afc45573c877cdead616.png",
+        "tv_大哭": "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+        "tv_委屈": "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+        "tv_害羞": "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+        "tv_尴尬": "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+        "tv_微笑": "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+        "tv_思考": "90cf159733e558137ed20aa04d09964436f618a1.png",
+        "tv_惊吓": "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+        "tv_打脸": "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+        "tv_抓狂": "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+        "tv_抠鼻": "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+        "tv_斜眼笑": "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+        "tv_无奈": "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+        "tv_晕": "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+        "tv_流汗": "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+        "tv_流泪": "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+        "tv_流鼻血": "c32d39db2737f89b904ca32700d140a9241b0767.png",
+        "tv_点赞": "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+        "tv_生气": "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+        "tv_生病": "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+        "tv_疑问": "0793d949b18d7be716078349c202c15ff166f314.png",
+        "tv_白眼": "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+        "tv_皱眉": "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+        "tv_目瞪口呆": "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+        "tv_睡着": "8b196675b53af58264f383c50ad0945048290b33.png",
+        "tv_笑哭": "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+        "tv_腼腆": "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+        "tv_色": "61822c7e9aae5da76475e7892534545336b23a6f.png",
+        "tv_调侃": "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+        "tv_调皮": "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+        "tv_鄙视": "6e72339f346a692a495b123174b49e4e8e781303.png",
+        "tv_闭嘴": "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+        "tv_难过": "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+        "tv_馋": "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+        "tv_鬼脸": "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+        "tv_黑人问号": "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+        "tv_鼓掌": "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"
+          // ... 更多表情
+      } 
+    });
+};
+</script><script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/iziToast/iziToast.min.js"></script>
+  <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/iziModal/iziModal.min.js"></script>
+  <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/mermaid/mermaid.min.js"></script>
+  <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/js/src/kayo.js?v=1.0.0" data-pjax></script>
+<script type="text/javascript" src="https://cdn.yimian.xyz/kayo/js/src/kayo-no-pjax.js?v=1.0.0"></script>
+
+<script src="https://cdn.yimian.xyz/kayo/lib/aplayer/aplayer.min.js"></script>
+
+<script>
+	$.post("https://api.yimian.xyz/msc/?type=playlist&id=808097971&limit=14&random=true", function(res){
+		$('body').append('<div class="aplayer-footer"><div class="ap-f" id="ap-f"></div></div>');
+	    var a = new APlayer({
+	        element:document.getElementById("ap-f"),
+	        autoplay: false,
+	        fixed:true,
+	        loop:"all",
+	        order:"list",
+	        listFolded:true,
+	        showlrc:3,
+	        theme:"",
+	        listmaxheight:"200px",
+	        music:res
+	    });
+	    window.aplayers || (window.aplayers = []),
+	    window.aplayers.push(a);
+	    window.aplayers[0].lrc.hide();
+	    
+	    window.aplayers[0].on('play', function () {
+			window.aplayers[0].lrc.show();
+		});
+	    window.aplayers[0].on('pause', function () {
+			window.aplayers[0].lrc.hide();
+		});
+	});
+</script><script src="https://cdn.yimian.xyz/kayo/lib/pjax/pjax.min.js"></script>
+<script>window.pjax = new Pjax({
+    elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"])',
+    selectors: ["head title, #main", "#footer"],
+  });/* 第一次载入页面加载的函数 */
+  pjax_ini = () => {
+    
+     /* 关闭侧边栏 */
+     window.slideout.close();
+
+     if(page_obj.comments == "true"){pjax_valine();}pjax_google_analytics();mermaid.init(undefined, $(".mermaid"));};
+
+  /* 第一次 执行 */
+  pjax_ini();var loadingBar = document.querySelector(".loading-bar");
+var progress = document.querySelector(".loading-bar .progress");
+var timer = null;
+
+
+// Pjax 开始时执行的函数
+var loadingbarStart = function () {
+  // 进度条默认已经加载 20%
+  var loadingBarWidth = 20;
+  // 进度条的最大增加宽度
+  var MAX_LOADING_WIDTH = 95;
+
+  // 显示进度条
+  loadingBar.classList.add("loading");
+  // 初始化进度条的宽度
+  progress.style.width = loadingBarWidth + "%";
+
+  clearInterval(timer);
+  timer = setInterval(function () {
+    // 进度条的增加速度（可以改为一个随机值，显得更加真实）
+    loadingBarWidth += 3;
+
+    // 当进度条到达 95% 后停止增加
+    if (loadingBarWidth > MAX_LOADING_WIDTH) {
+      loadingBarWidth = MAX_LOADING_WIDTH;
+    }
+
+    progress.style.width = loadingBarWidth + "%";
+  }, 500);
+};
+
+
+// Pjax 完成之后执行的函数
+var loadingbarStop = function () {
+  clearInterval(timer);
+  progress.style.width = "100%";
+  loadingBar.classList.remove("loading");
+
+  setTimeout(function () {
+    progress.style.width = 0;
+  }, 400);
+};/* Pjax 开始时，重新加载的函数 */
+  document.addEventListener("pjax:send", function () {loadingbarStart(); 
+    });
+
+
+  /* Pjax 完成后，重新加载的函数 */
+  document.addEventListener("pjax:complete", function () {
+    /* 重载带data-pjax的script，或者.pjax-reload属性内容的script */
+    $("script[data-pjax], .pjax-reload script").each(function () {
+        $(this).parent().append($(this).remove());
+    });
+    pjax_ini();loadingbarStop();
+    });
+
+
+  /* Pjax 出错，执行的函数 */
+  document.addEventListener("pjax:error", function () {
+    
+  });</script>
+</body>
+</html>
