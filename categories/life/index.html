@@ -146,6 +146,11 @@ pjax_google_analytics = () => {
                 Oneindex 
               </a>
             </li>
+          <li>
+              <a href="https://proxy.yimian.xyz/" target="_blank" rel="noopener">
+                Proxy 
+              </a>
+            </li>
           </ul>
       <script>$('#mobile-menu-Map').click(function(){
           $("#mobile-menu-Map ul").toggle();
@@ -305,6 +310,14 @@ pjax_google_analytics = () => {
                         else
                             window.open("https://onedrive.yimian.xyz/");
 			        }, true],
+			    ['<button><b>Proxy</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://proxy.yimian.xyz/");
+                        else
+                            window.open("https://proxy.yimian.xyz/");
+			        }, true],
 			    ['<button><b>close</b></button>', function (instance, toast) {
 			
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
@@ -366,16 +379,6 @@ pjax_google_analytics = () => {
           <h2 class="archive-name">life</h2>
         </div>
       <div class="archive-post">
-        <span class="archive-post-time">
-          2020-06-29
-          </span>
-        <span class="archive-post-title">
-          <a href="/life/life-guide.html" class="archive-post-link">
-            life-guide
-          </a>
-        </span>
-      </div>
-    <div class="archive-post">
         <span class="archive-post-time">
           2020-06-24
           </span>

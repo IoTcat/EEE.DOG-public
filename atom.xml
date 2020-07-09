@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.eee.dog/"/>
-  <updated>2020-06-29T08:11:50.246Z</updated>
+  <updated>2020-06-27T08:23:21.442Z</updated>
   <id>https://www.eee.dog/</id>
   
   <author>
@@ -15,27 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>life-guide</title>
-    <link href="https://www.eee.dog/life/life-guide.html"/>
-    <id>https://www.eee.dog/life/life-guide.html</id>
-    <published>2020-06-29T03:30:25.000Z</published>
-    <updated>2020-06-29T08:11:50.246Z</updated>
-    
-    <content type="html"><![CDATA[<p>从各种来源搜集的适合做life guide的语录。持续更新中~</p><a id="more"></a><ol><li></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;从各种来源搜集的适合做life guide的语录。持续更新中~&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="life" scheme="https://www.eee.dog/categories/life/"/>
-    
-    
-  </entry>
   
   <entry>
     <title>CS, ECE硕士项目调研</title>
@@ -538,6 +517,29 @@
       <category term="api" scheme="https://www.eee.dog/tags/api/"/>
     
       <category term="mail" scheme="https://www.eee.dog/tags/mail/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS中那些惊艳的操作</title>
+    <link href="https://www.eee.dog/tech/js-notes.html"/>
+    <id>https://www.eee.dog/tech/js-notes.html</id>
+    <published>2019-03-18T16:00:00.000Z</published>
+    <updated>2020-06-23T03:51:43.951Z</updated>
+    
+    <content type="html"><![CDATA[<p>教你如何一步步迷上JS.. ╮(╯▽╰)╭ </p><a id="more"></a><p>好嘀~只是一些总结 </p><h2 id="JS中的那些萌点"><a href="#JS中的那些萌点" class="headerlink" title="JS中的那些萌点"></a>JS中的那些萌点</h2><ul><li><script>标签中，合理使用``defer="defer"``(延迟执行)，``async="async"``(异步执行)</li><li>外部JS可以使用其它扩展名(如.php)，但必须返回正确MINE类型</li><li>使用<code>var obj = preferredObj || backupObj;</code> 提供后备值 ::aru:surprised:: </li><li>函数中使用<code>arguements[]</code>获取参数</li><li>无函数签名，再见吧重载 ::aru:meditation:: </li><li>函数无引用传参，只要不作死用全局变量，封装就很完美</li><li>神奇的垃圾收集功能，开发时无需考虑手动释放内存</li><li>函数传参使用<code>function hh({})</code>直接传包含参数的对象，更加灵活</li><li>数组每一个位置可以存不同类型的数据 ::aru:blood2:: </li><li>数组支持模拟栈操作，如<code>push()</code>和<code>pop()</code></li><li>数组支持模拟队列操作，如<code>push()</code>和<code>shift()</code></li><li>数组支持从相反方向模拟队列，如<code>unshift()</code>和<code>pop()</code></li><li><code>sort()</code>可自定义比较函数为参数</li><li>数组<code>splice()</code>可太好用了吧</li><li>函数是对象，函数名是指针</li><li>可以像传递参数一样把一个函数传给另一个函数，也可以将一个函数作为另一个函数的结果返回</li><li>函数中可通过<code>arguments.callee</code>获取当前函数名指针</li><li>使用<code>arguments.callee.caller</code>获取调用当前函数的引用</li><li>使用<code>function.apply(this/*作用域*/, arguments)</code>或<code>function.call(this, arg1, arg2...)</code>指定作用域运行函数</li><li>使用函数固有属性<code>function.length</code>获取其期待的参数个数</li><li>通过函数继承属性<code>toLocaleString()````toString()````valueOf()</code>返回代码，方便调试</li><li>使用<code>indexOf()````lastIndexOf()</code>查找元素出现位置</li><li><code>trim()</code>删除字符串开头结尾空格</li><li>支持正则<code>RegExp</code></li><li>神奇但可怕的<code>eval(&quot;&quot;)</code>可将字符串转译成代码并就地执行</li><li><code>encodeURI()/decodeURI()</code>与<code>encodeURIComponent()/decodeURICompoent()</code>处理uri</li><li>立即调用函数<code>function(){}();</code></li><li>内置Math对象</li><li>Math中<code>ceil()````floor()````round()</code>向上，向下，标准舍入</li><li><code>Math.random()</code>大于零小于一随机数</li><li>对象中使用<code>functionName: function(){}</code>直接定义函数</li><li>ES6中<code>(x)=&gt;x+1</code>等价于<code>function(x){return x+1;}</code></li><li>使用<code>;(function(name, context, definition){moudle.exports = definition();})(&#39;funationName&#39;, this, function(){});</code>封装模块</li></ul><h2 id="小心得"><a href="#小心得" class="headerlink" title="小心得"></a>小心得</h2><ul><li>不建议使用<code>with</code>语句</li><li><code>label</code>标签少用</li><li><code>0.1 + 0.2 != 0.3</code> 浮点型天坑，与C类似</li><li><code>~26 == -27</code> 利用按位非提高效率</li><li>标识符查询由内部环境向外部环境进行</li><li>没有块级作用域，与C++不同</li><li><code>var obj2 = obj1;</code>实际是引用</li><li>函数传参时传对象，实际传的是指针</li><li>全局变量用完及时置为null以提性能</li><li>使用变量属性访问对象只能使用<code>obj[var]</code></li><li><code>var sum = function sum(){};</code>在Safari中会报错</li><li>不能为基本类型值添加属性和方法</li><li><code>new Number(&quot;25&quot;)</code>返回对象，而<code>Number(&quot;25&quot;)</code>返回25</li><li>布尔表达式中对象均为true</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;教你如何一步步迷上JS.. ╮(╯▽╰)╭ &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="tech" scheme="https://www.eee.dog/categories/tech/"/>
+    
+    
+      <category term="nodeJS" scheme="https://www.eee.dog/tags/nodeJS/"/>
     
   </entry>
   

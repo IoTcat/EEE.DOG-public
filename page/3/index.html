@@ -145,6 +145,11 @@ pjax_google_analytics = () => {
                 Oneindex 
               </a>
             </li>
+          <li>
+              <a href="https://proxy.yimian.xyz/" target="_blank" rel="noopener">
+                Proxy 
+              </a>
+            </li>
           </ul>
       <script>$('#mobile-menu-Map').click(function(){
           $("#mobile-menu-Map ul").toggle();
@@ -304,6 +309,14 @@ pjax_google_analytics = () => {
                         else
                             window.open("https://onedrive.yimian.xyz/");
 			        }, true],
+			    ['<button><b>Proxy</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://proxy.yimian.xyz/");
+                        else
+                            window.open("https://proxy.yimian.xyz/");
+			        }, true],
 			    ['<button><b>close</b></button>', function (instance, toast) {
 			
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
@@ -362,25 +375,6 @@ pjax_google_analytics = () => {
       <main id="main" class="main">
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/tech/js-notes.html">JS中那些惊艳的操作</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2019-03-19
-        </span><span class="post-category">
-            <a href="/categories/tech/">tech</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><p>教你如何一步步迷上JS.. ╮(╯▽╰)╭ </p>
-          <div class="read-more">
-            <a href="/tech/js-notes.html" class="read-more-link">Read more..</a>
-          </div>
-        </div></article>
-      <article class="post">
     <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/tech/ssl-auto-apply.html">Centos7下 Nginx 配置ssl证书自动续期</a>
         </h1>
@@ -550,6 +544,25 @@ pjax_google_analytics = () => {
 <p>作为完全独立生活的第一年，失去约束，放飞自我，狠狠地狂野了一把。然后，竟然还意外地做成了不少事情..</p>
           <div class="read-more">
             <a href="/life/2018-retrospect-and-prospect.html" class="read-more-link">Read more..</a>
+          </div>
+        </div></article>
+      <article class="post">
+    <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/thoughts/two-fundamental-demands-of-human-beings.html">Two Fundamental Demands of Human Beings</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-12-23
+        </span><span class="post-category">
+            <a href="/categories/thoughts/">thoughts</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><p>人类的需求可以总结为两类，创造需求的需求，与解决需求的需求。</p>
+          <div class="read-more">
+            <a href="/thoughts/two-fundamental-demands-of-human-beings.html" class="read-more-link">Read more..</a>
           </div>
         </div></article>
       <nav class="pagination"><a class="prev" href="/page/2/">

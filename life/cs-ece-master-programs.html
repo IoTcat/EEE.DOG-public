@@ -145,6 +145,11 @@ pjax_google_analytics = () => {
                 Oneindex 
               </a>
             </li>
+          <li>
+              <a href="https://proxy.yimian.xyz/" target="_blank" rel="noopener">
+                Proxy 
+              </a>
+            </li>
           </ul>
       <script>$('#mobile-menu-Map').click(function(){
           $("#mobile-menu-Map ul").toggle();
@@ -303,6 +308,14 @@ pjax_google_analytics = () => {
 			 			  pjax.loadUrl("https://onedrive.yimian.xyz/");
                         else
                             window.open("https://onedrive.yimian.xyz/");
+			        }, true],
+			    ['<button><b>Proxy</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://proxy.yimian.xyz/");
+                        else
+                            window.open("https://proxy.yimian.xyz/");
 			        }, true],
 			    ['<button><b>close</b></button>', function (instance, toast) {
 			
@@ -645,12 +658,7 @@ pjax_google_analytics = () => {
             <a href="/tags/investigation/">investigation</a>
             </div>
         
-        <nav class="post-nav"><a class="prev" href="/life/life-guide.html">
-        <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">life-guide</span>
-        <span class="prev-text nav-mobile">Prev</span>
-      </a>
-    <a class="next" href="/tech/hello-hexo.html">
+        <nav class="post-nav"><a class="next" href="/tech/hello-hexo.html">
         <span class="next-text nav-default">Hello Hexo</span>
         <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>

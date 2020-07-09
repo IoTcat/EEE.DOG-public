@@ -146,6 +146,11 @@ pjax_google_analytics = () => {
                 Oneindex 
               </a>
             </li>
+          <li>
+              <a href="https://proxy.yimian.xyz/" target="_blank" rel="noopener">
+                Proxy 
+              </a>
+            </li>
           </ul>
       <script>$('#mobile-menu-Map').click(function(){
           $("#mobile-menu-Map ul").toggle();
@@ -304,6 +309,14 @@ pjax_google_analytics = () => {
 			 			  pjax.loadUrl("https://onedrive.yimian.xyz/");
                         else
                             window.open("https://onedrive.yimian.xyz/");
+			        }, true],
+			    ['<button><b>Proxy</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://proxy.yimian.xyz/");
+                        else
+                            window.open("https://proxy.yimian.xyz/");
 			        }, true],
 			    ['<button><b>close</b></button>', function (instance, toast) {
 			
