@@ -151,6 +151,11 @@ pjax_google_analytics = () => {
                 Proxy 
               </a>
             </li>
+          <li>
+              <a href="https://shorturl.yimian.xyz/" target="_blank" rel="noopener">
+                ShortenURL 
+              </a>
+            </li>
           </ul>
       <script>$('#mobile-menu-Map').click(function(){
           $("#mobile-menu-Map ul").toggle();
@@ -317,6 +322,14 @@ pjax_google_analytics = () => {
 			 			  pjax.loadUrl("https://proxy.yimian.xyz/");
                         else
                             window.open("https://proxy.yimian.xyz/");
+			        }, true],
+			    ['<button><b>ShortenURL</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://shorturl.yimian.xyz/");
+                        else
+                            window.open("https://shorturl.yimian.xyz/");
 			        }, true],
 			    ['<button><b>close</b></button>', function (instance, toast) {
 			
