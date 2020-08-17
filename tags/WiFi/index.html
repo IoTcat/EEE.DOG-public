@@ -13,16 +13,14 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-<meta name="description" content="跻身世外，随欲而安！- We see what we thought."/><meta name="keywords" content="iotcat,yimian,blog" /><link rel="alternate" href="/atom.xml" title="EEE.DOG"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.0.0" /><script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/jquery/jquery.min.js"></script>
+<meta name="description" content="跻身世外，随欲而安！- We see what we thought."/><meta name="keywords" content="iotcat,yimian,blog" /><link rel="alternate" href="/atom.xml" title="EEE.DOG"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.0.0" /><script type="text/javascript" src="https://cdn.yimian.xyz/ushio-js/ushio-head.min.js"></script>
+
 <link rel="stylesheet" type="text/css" href="https://cdn.yimian.xyz/kayo/lib/iziModal/iziModal.min.css" />
 
 
 <link rel="stylesheet" type="text/css" href="https://cdn.yimian.xyz/kayo/lib/iziToast/iziToast.min.css" />
 
-<script>
-    if(window.screen.width < 600) document.write('<link rel="stylesheet" href="https://cdn.yimian.xyz/ushio-js/ushio-js.mobile.min.css">');
-    else document.write('<link rel="stylesheet" href="https://cdn.yimian.xyz/ushio-js/ushio-js.min.css">');
-  </script><link rel="stylesheet" type="text/css" href="https://cdn.yimian.xyz/shaky/shaky.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.yimian.xyz/shaky/shaky.css">
 <link rel="canonical" href="https://www.eee.dog/tags/WiFi/"/>
 
 <link rel="stylesheet" type="text/css" href="https://cdn.yimian.xyz/kayo/lib/fancybox/jquery.fancybox.css" /><script type="text/x-mathjax-config">
@@ -559,43 +557,15 @@ pjax_valine = () => {
       } 
     });
 };
-</script><script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/slideout/slideout.js"></script>
+</script><script type="text/javascript" src="https://cdn.yimian.xyz/ushio-js/ushio-footer.min.js"></script>
+<script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/slideout/slideout.js"></script>
   <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/fancybox/jquery.fancybox.pack.js"></script>
   <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/iziToast/iziToast.min.js"></script>
   <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/iziModal/iziModal.min.js"></script>
   <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/mermaid/mermaid.min.js"></script>
   <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/js/src/kayo.js?v=1.0.0" data-pjax></script>
 <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/js/src/kayo-no-pjax.js?v=1.0.0"></script>
-
-<script src="https://cdn.yimian.xyz/kayo/lib/aplayer/aplayer.min.js"></script>
-
-<script>
-	$.post("https://api.yimian.xyz/msc/?type=playlist&id=808097971&limit=14&random=true", function(res){
-		$('body').append('<div class="aplayer-footer"><div class="ap-f" id="ap-f"></div></div>');
-	    var a = new APlayer({
-	        element:document.getElementById("ap-f"),
-	        autoplay: false,
-	        fixed:true,
-	        loop:"all",
-	        order:"list",
-	        listFolded:true,
-	        showlrc:3,
-	        theme:"",
-	        listmaxheight:"200px",
-	        music:res
-	    });
-	    window.aplayers || (window.aplayers = []),
-	    window.aplayers.push(a);
-	    window.aplayers[0].lrc.hide();
-	    
-	    window.aplayers[0].on('play', function () {
-			window.aplayers[0].lrc.show();
-		});
-	    window.aplayers[0].on('pause', function () {
-			window.aplayers[0].lrc.hide();
-		});
-	});
-</script><script src="https://cdn.yimian.xyz/kayo/lib/pjax/pjax.min.js"></script>
+<script src="https://cdn.yimian.xyz/kayo/lib/pjax/pjax.min.js"></script>
 <script>window.pjax = new Pjax({
     elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"])',
     selectors: ["head title, #main", "#footer"],
