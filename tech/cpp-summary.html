@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="">
-  <head><meta charset="UTF-8"/>
+  <head>
+    <title>C++建库中遇到的坑 - EEE.DOG</title><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -13,7 +14,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-<meta name="description" content="C++建库中遇到的坑"/><meta name="keywords" content="iotcat,yimian,blog" /><link rel="alternate" href="/atom.xml" title="EEE.DOG"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.0.0" /><script type="text/javascript" src="https://cdn.yimian.xyz/ushio-js/ushio-head.min.js"></script>
+<meta name="description" content="C++建库中遇到的坑"/><meta name="keywords" content="iotcat,yimian,blog" /><link rel="alternate" href="/atom.xml" title="EEE.DOG"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.0.0" /><script>lang = ['zh', 'en'];</script>
+<script type="text/javascript" src="https://cdn.yimian.xyz/ushio-js/ushio-head.min.js"></script>
 
 <link rel="stylesheet" type="text/css" href="https://cdn.yimian.xyz/kayo/lib/iziModal/iziModal.min.css" />
 
@@ -57,7 +59,6 @@ pjax_google_analytics = () => {
   window.config = {"leancloud":"","toc":true,"fancybox":true,"pjax":{"enable":true,"loadingbar":true},"latex":true};
 </script>
 
-    <title>C++建库中遇到的坑 - EEE.DOG</title>
   <meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="EEE.DOG" type="application/atom+xml">
 </head>
 
@@ -78,25 +79,25 @@ pjax_google_analytics = () => {
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
   <ul class="mobile-menu-list"><div id="mobile-menu-Archives">
       <a href="/archives/">
-        <li class="mobile-menu-item">Archives
+        <li class="mobile-menu-item"><span class=".en">Archives</span><span class=".zh">归档</span>
           </li>
       </a></div><div id="mobile-menu-Categories">
       <a href="/categories/">
-        <li class="mobile-menu-item">Categories
+        <li class="mobile-menu-item"><span class=".en">Categories</span><span class=".zh">分类</span>
           </li>
       </a></div><div id="mobile-menu-Projects">
       <a href="#">
-        <li class="mobile-menu-item">Projects
+        <li class="mobile-menu-item"><span class=".en">Projects</span><span class=".zh">项目</span>
           </li>
       </a><ul class="sub-menu" style="display: none;"> 
           <li>
               <a href="https://fp.yimian.xyz/" target="_blank" rel="noopener">
-                fp 
+                <span class=".en">fp</span><span class=".zh">fp</span>
               </a>
             </li>
           <li>
               <a href="https://wiot.yimian.xyz/" target="_blank" rel="noopener">
-                wiot 
+                <span class=".en">wiot</span><span class=".zh">wiot</span>
               </a>
             </li>
           </ul>
@@ -105,52 +106,52 @@ pjax_google_analytics = () => {
       })</script>
       </div><div id="mobile-menu-Map">
       <a href="#">
-        <li class="mobile-menu-item">Map
+        <li class="mobile-menu-item"><span class=".en">Map</span><span class=".zh">导航</span>
           </li>
       </a><ul class="sub-menu" style="display: none;"> 
           <li>
               <a href="https://api.yimian.xyz/" target="_blank" rel="noopener">
-                APIs 
+                <span class=".en">APIs</span><span class=".zh">接口</span>
               </a>
             </li>
           <li>
               <a href="https://img.yimian.xyz/" target="_blank" rel="noopener">
-                Imgs 
+                <span class=".en">Imgs</span><span class=".zh">图库</span>
               </a>
             </li>
           <li>
               <a href="/">
-                Imgbed 
+                <span class=".en">Imgbed</span><span class=".zh">图床</span>
               </a>
             </li>
           <li>
               <a href="https://share.yimian.xyz/" target="_blank" rel="noopener">
-                Fileshare 
+                <span class=".en">Fileshare</span><span class=".zh">文件分享</span>
               </a>
             </li>
           <li>
               <a href="https://monitor.yimian.xyz/" target="_blank" rel="noopener">
-                Monitor 
+                <span class=".en">Monitor</span><span class=".zh">监控</span>
               </a>
             </li>
           <li>
               <a href="https://acg.watch/" target="_blank" rel="noopener">
-                ACG.WATCH 
+                <span class=".en">ACG.WATCH</span><span class=".zh">视频</span>
               </a>
             </li>
           <li>
               <a href="https://onedrive.yimian.xyz/" target="_blank" rel="noopener">
-                Oneindex 
+                <span class=".en">Oneindex</span><span class=".zh">网盘</span>
               </a>
             </li>
           <li>
               <a href="https://proxy.yimian.xyz/" target="_blank" rel="noopener">
-                Proxy 
+                <span class=".en">Proxy</span><span class=".zh">下载代理</span>
               </a>
             </li>
           <li>
               <a href="https://shorturl.yimian.xyz/" target="_blank" rel="noopener">
-                ShortenURL 
+                <span class=".en">ShortenURL</span><span class=".zh">短链</span>
               </a>
             </li>
           </ul>
@@ -159,17 +160,17 @@ pjax_google_analytics = () => {
       })</script>
       </div><div id="mobile-menu-About">
       <a href="#">
-        <li class="mobile-menu-item">About
+        <li class="mobile-menu-item"><span class=".en">About</span><span class=".zh">关于</span>
           </li>
       </a><ul class="sub-menu" style="display: none;"> 
           <li>
               <a href="/links/">
-                links 
+                <span class=".en">links</span><span class=".zh"></span>
               </a>
             </li>
           <li>
               <a href="https://iotcat.me/" target="_blank" rel="noopener">
-                Me 
+                <span class=".en">Me</span><span class=".zh"></span>
               </a>
             </li>
           </ul>
@@ -185,24 +186,24 @@ pjax_google_analytics = () => {
 
 <nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
         <a id="menu-Archives" class="menu-item-link" href="/archives/">
-          Archives
+          <span class=".en">Archives</span><span class=".zh">归档</span>
           </a>
 
       </li>
     <li class="menu-item">
         <a id="menu-Categories" class="menu-item-link" href="/categories/">
-          Categories
+          <span class=".en">Categories</span><span class=".zh">分类</span>
           </a>
 
       </li>
     <li class="menu-item">
         <a id="menu-Projects" class="menu-item-link" href="#">
-          Projects
+          <span class=".en">Projects</span><span class=".zh">项目</span>
           </a>
 
       <script>
           $("#menu-Projects").click(function(){
-            iziToast.question({
+            tips.question({
 			    timeout: 20000,
 			    close: false,
 			    overlay: true,
@@ -213,7 +214,7 @@ pjax_google_analytics = () => {
 			    message: '',
 			    position: 'center',
 			    buttons: [
-			    ['<button><b>fp</b></button>', function (instance, toast) {
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'fp':'fp')+'</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         if("undefined" == "true")
@@ -221,7 +222,7 @@ pjax_google_analytics = () => {
                         else
                             window.location.href="https://fp.yimian.xyz/";
 			        }, true],
-			    ['<button><b>wiot</b></button>', function (instance, toast) {
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'wiot':'wiot')+'</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         if("undefined" == "true")
@@ -240,12 +241,12 @@ pjax_google_analytics = () => {
       </li>
     <li class="menu-item">
         <a id="menu-Map" class="menu-item-link" href="#">
-          Map
+          <span class=".en">Map</span><span class=".zh">导航</span>
           </a>
 
       <script>
           $("#menu-Map").click(function(){
-            iziToast.question({
+            tips.question({
 			    timeout: 20000,
 			    close: false,
 			    overlay: true,
@@ -256,7 +257,7 @@ pjax_google_analytics = () => {
 			    message: '',
 			    position: 'center',
 			    buttons: [
-			    ['<button><b>APIs</b></button>', function (instance, toast) {
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'APIs':'接口')+'</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         if("undefined" == "true")
@@ -264,7 +265,7 @@ pjax_google_analytics = () => {
                         else
                             window.location.href="https://api.yimian.xyz/";
 			        }, true],
-			    ['<button><b>Imgs</b></button>', function (instance, toast) {
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Imgs':'图库')+'</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         if("undefined" == "true")
@@ -272,7 +273,7 @@ pjax_google_analytics = () => {
                         else
                             window.location.href="https://img.yimian.xyz/";
 			        }, true],
-			    ['<button><b>Imgbed</b></button>', function (instance, toast) {
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Imgbed':'图床')+'</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         if("undefined" == "true")
@@ -280,7 +281,7 @@ pjax_google_analytics = () => {
                         else
                             window.location.href="undefined";
 			        }, true],
-			    ['<button><b>Fileshare</b></button>', function (instance, toast) {
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Fileshare':'文件分享')+'</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         if("undefined" == "true")
@@ -288,7 +289,7 @@ pjax_google_analytics = () => {
                         else
                             window.location.href="https://share.yimian.xyz/";
 			        }, true],
-			    ['<button><b>Monitor</b></button>', function (instance, toast) {
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Monitor':'监控')+'</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         if("undefined" == "true")
@@ -296,7 +297,7 @@ pjax_google_analytics = () => {
                         else
                             window.location.href="https://monitor.yimian.xyz/";
 			        }, true],
-			    ['<button><b>ACG.WATCH</b></button>', function (instance, toast) {
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'ACG.WATCH':'视频')+'</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         if("undefined" == "true")
@@ -304,7 +305,7 @@ pjax_google_analytics = () => {
                         else
                             window.location.href="https://acg.watch/";
 			        }, true],
-			    ['<button><b>Oneindex</b></button>', function (instance, toast) {
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Oneindex':'网盘')+'</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         if("undefined" == "true")
@@ -312,7 +313,7 @@ pjax_google_analytics = () => {
                         else
                             window.location.href="https://onedrive.yimian.xyz/";
 			        }, true],
-			    ['<button><b>Proxy</b></button>', function (instance, toast) {
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Proxy':'下载代理')+'</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         if("undefined" == "true")
@@ -320,7 +321,7 @@ pjax_google_analytics = () => {
                         else
                             window.location.href="https://proxy.yimian.xyz/";
 			        }, true],
-			    ['<button><b>ShortenURL</b></button>', function (instance, toast) {
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'ShortenURL':'短链')+'</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         if("undefined" == "true")
@@ -339,12 +340,12 @@ pjax_google_analytics = () => {
       </li>
     <li class="menu-item">
         <a id="menu-About" class="menu-item-link" href="#">
-          About
+          <span class=".en">About</span><span class=".zh">关于</span>
           </a>
 
       <script>
           $("#menu-About").click(function(){
-            iziToast.question({
+            tips.question({
 			    timeout: 20000,
 			    close: false,
 			    overlay: true,
@@ -355,7 +356,7 @@ pjax_google_analytics = () => {
 			    message: '',
 			    position: 'center',
 			    buttons: [
-			    ['<button><b>links</b></button>', function (instance, toast) {
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'links':'')+'</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         if("true" == "true")
@@ -363,7 +364,7 @@ pjax_google_analytics = () => {
                         else
                             window.location.href="/links/";
 			        }, true],
-			    ['<button><b>Me</b></button>', function (instance, toast) {
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Me':'')+'</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         if("undefined" == "true")
@@ -387,7 +388,7 @@ pjax_google_analytics = () => {
         <div class="content-wrapper">
           <div id="content" class="content"><article class="post">
     <header class="post-header">
-      <h1 class="post-title">C++建库中遇到的坑
+      <h1 class="post-title"><span class=".zh">C++建库中遇到的坑</span><span class=".en" hidden>The pits encountered in C++ library building</span>
         </h1>
 
       <div class="post-meta">
@@ -399,13 +400,40 @@ pjax_google_analytics = () => {
         </div>
     </header>
 
-    <div class="post-toc" id="post-toc">
+    <style>.toc-level-2 > .toc-child {display: none !important; }</style>
+  <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于-h文件"><span class="toc-text">关于.h文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结一下类相关知识"><span class="toc-text">总结一下类相关知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#类访问修饰符"><span class="toc-text">类访问修饰符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特殊函数类型"><span class="toc-text">特殊函数类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#友元函数-类"><span class="toc-text">友元函数&#x2F;类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内联函数"><span class="toc-text">内联函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#this指针"><span class="toc-text">this指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text"></span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于-h文件"><span class="toc-text">关于.h文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结一下类相关知识"><span class="toc-text">总结一下类相关知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#类访问修饰符"><span class="toc-text">类访问修饰符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特殊函数类型"><span class="toc-text">特殊函数类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#友元函数-类"><span class="toc-text">友元函数&#x2F;类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内联函数"><span class="toc-text">内联函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#this指针"><span class="toc-text">this指针</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#About-h-files"><span class="toc-text">About .h files</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Summarize-the-related-knowledge-of-the-class"><span class="toc-text">Summarize the related knowledge of the class</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Class-access-modifier"><span class="toc-text">Class access modifier</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Special-function-types"><span class="toc-text">Special function types</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Friend-function-class"><span class="toc-text">Friend function&#x2F;class</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Inline-functions"><span class="toc-text">Inline functions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#this-pointer"><span class="toc-text">this pointer</span></a></li></ol></li></ol>
     </div>
-  </div><div class="post-content"><p>由于学校课程安排，作为一只电气狗第一次正经的开始搞Cpp ::aru:shy::<br>特记录一些建库过程遇到的坑，，→_→</p>
+  </div>
+  <script>var arr = [];var ts = '';if($('.post-toc-content').children().length>1){var el = '.post-toc-content';ts = ($(el).children('ol')[0].outerHTML);}else{var el = '.toc';};for(var i = 0; i < $(el).children('li').length; i++){arr.push($(el).children('li')[i].outerHTML);}; arr.splice(arr.length / 2, 0, '</span><span class=".en">');arr.unshift(ts);arr.unshift('<span class=".zh">');arr.push('</span>');$(el).html(arr.join(''));</script><div class="post-content"><span class=".zh">
+
+<p>由于学校课程安排，作为一只电气狗第一次正经的开始搞Cpp ::aru:shy::<br>特记录一些建库过程遇到的坑，，→_→</p>
+</span>
+
+
+<span class=".en">
+<p>Due to the school curriculum, as an electric dog, it is the first time to start doing Cpp .<br>Specially record some pits encountered in the process of building a database, →_→</p>
+</span>
+
 <a id="more"></a>
+
+
+<script>
+  session.onload(function(){
+    if(page.tran.getLang() == 'en'){
+      tips.warning({
+        title: 'Caution',
+        position: 'topRight',
+        message: 'This page was translated by Machine!!'
+      });
+    }
+  });
+</script>
+
+
+<span class=".zh">
 
 <h2 id="关于-h文件"><a href="#关于-h文件" class="headerlink" title="关于.h文件"></a>关于.h文件</h2><p>作为头文件，.h中一般放有相应类及函数的声明。<br>一个典型的.h文件如下：(FileName: yimian.h)</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> YIMIAN_H <span class="comment">//防止本文件被多次编译</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> YIMIAN_H <span class="comment">//'YIMIAN_H'的值需自定义</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//.h中可能用到的lib</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>; <span class="comment">//使用std命名空间，这样下面就可以不用写如std::cout了</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//声明yimian类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">yimian</span>&#123;</span></span><br><span class="line">  <span class="keyword">public</span>:  <span class="comment">//公共域（可外界直接调用）</span></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">hi</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="built_in">string</span> version;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span>:  <span class="comment">//私有（不对外公开）</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">//与文件开头防多次编译相对应</span></span></span><br></pre></td></tr></table></figure>
@@ -433,18 +461,18 @@ pjax_google_analytics = () => {
 </ul>
 <hr>
 <h2 id="总结一下类相关知识"><a href="#总结一下类相关知识" class="headerlink" title="总结一下类相关知识"></a>总结一下类相关知识</h2><h3 id="类访问修饰符"><a href="#类访问修饰符" class="headerlink" title="类访问修饰符"></a>类访问修饰符</h3><ul>
-<li>*<em>public: *</em>类内外皆可访问的内容</li>
-<li>*<em>private: *</em>类外不可访问，仅可自己和友元访问，子类不可访问</li>
-<li>*<em>protected: *</em>外部不可访问，自己、友元和子类可访问</li>
+<li><strong>public:</strong> 类内外皆可访问的内容</li>
+<li><strong>private:</strong> 类外不可访问，仅可自己和友元访问，子类不可访问</li>
+<li><strong>protected:</strong> 外部不可访问，自己、友元和子类可访问</li>
 </ul>
 <h3 id="特殊函数类型"><a href="#特殊函数类型" class="headerlink" title="特殊函数类型"></a>特殊函数类型</h3><ul>
-<li><p><strong>构造函数：</strong>每次创建对象时会执行，即初始化</p>
+<li><p><strong>构造函数：</strong> 每次创建对象时会执行，即初始化</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Line</span>&#123;</span></span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setLength</span><span class="params">( <span class="keyword">double</span> len )</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">getLength</span><span class="params">( <span class="keyword">void</span> )</span></span>;</span><br><span class="line">    Line();  <span class="comment">// 这是构造函数</span></span><br><span class="line"> </span><br><span class="line">  <span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">double</span> length;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><strong>析构函数：</strong>删除对象时执行的函数，即善后</p>
+<li><p><strong>析构函数:</strong> 删除对象时执行的函数，即善后</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Line</span>&#123;</span></span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setLength</span><span class="params">( <span class="keyword">double</span> len )</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">getLength</span><span class="params">( <span class="keyword">void</span> )</span></span>;</span><br><span class="line">    Line();   <span class="comment">// 这是构造函数声明</span></span><br><span class="line">    ~Line();  <span class="comment">// 这是析构函数声明</span></span><br><span class="line"> </span><br><span class="line">  <span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">double</span> length;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>*<em>拷贝构造函数: *</em>实现复制对象时同一类对象间传参</p>
+<li><p><strong>拷贝构造函数:</strong> 实现复制对象时同一类对象间传参</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Line</span>&#123;</span></span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">getLength</span><span class="params">( <span class="keyword">void</span> )</span></span>;</span><br><span class="line">    Line( <span class="keyword">int</span> len );             <span class="comment">// 简单的构造函数</span></span><br><span class="line">    Line( <span class="keyword">const</span> Line &amp;obj);      <span class="comment">// 拷贝构造函数</span></span><br><span class="line">    ~Line();                     <span class="comment">// 析构函数</span></span><br><span class="line"> </span><br><span class="line">  <span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> *ptr;</span><br><span class="line">&#125;;</span><br><span class="line">·········</span><br><span class="line">Line::Line(<span class="keyword">const</span> Line &amp;obj)&#123;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; <span class="string">"调用拷贝构造函数并为指针 ptr 分配内存"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  ptr = <span class="keyword">new</span> <span class="keyword">int</span>;</span><br><span class="line">  *ptr = *obj.ptr; <span class="comment">// 拷贝值</span></span><br><span class="line">&#125;</span><br><span class="line">·········</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">( )</span></span>&#123;</span><br><span class="line">  <span class="function">Line <span class="title">line1</span><span class="params">(<span class="number">10</span>)</span></span>;</span><br><span class="line"> </span><br><span class="line">  Line line2 = line1; <span class="comment">// 这里也调用了拷贝构造函数</span></span><br><span class="line"> </span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>构造与拷贝构造区别：</p>
@@ -465,9 +493,73 @@ pjax_google_analytics = () => {
 <h3 id="this指针"><a href="#this指针" class="headerlink" title="this指针"></a>this指针</h3><ul>
 <li>类似js中this，指向参数对象本身</li>
 </ul>
-<h3 id=""><a href="#" class="headerlink" title=""></a></h3><hr>
+<hr>
 <p>To Be Continued..</p>
+</span>
 
+<span class=".en">
+
+<h2 id="About-h-files"><a href="#About-h-files" class="headerlink" title="About .h files"></a>About .h files</h2><p>As a header file, there are generally declarations of corresponding classes and functions in .h.<br>A typical .h file is as follows: (FileName: yimian.h)</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> YIMIAN_H <span class="comment">//Prevent this file from being compiled multiple times</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> YIMIAN_H <span class="comment">//The value of'YIMIAN_H' needs to be customized</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Lib may be used in.h</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>; <span class="comment">//Use the std namespace, so you don’t need to write std::cout below</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Declare the yimian class</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">yimian</span>&#123;</span></span><br><span class="line">  <span class="keyword">public</span>: <span class="comment">//Public domain (can be directly called by the outside world)</span></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">hi</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="built_in">string</span> version;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span>: <span class="comment">//Private (not public)</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">//Correspond to the anti-multiple compilation at the beginning of the file</span></span></span><br></pre></td></tr></table></figure>
+
+<p>For safety, the initialization of functions and variables is generally not carried out in the .h file. Instead, I am used to creating a new .cpp file with the same name.<br>The following is an example of a .cpp file corresponding to the morning: (FileName: yimian.cpp)</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">"yimian.h"</span> <span class="comment">//Need to point to yimian.h</span></span></span><br><span class="line"></span><br><span class="line"><span class="built_in">string</span> yimian::version = <span class="string">"Version 0.0.1"</span>; <span class="comment">//Assign a value to a string variable</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">yimian::hi</span><span class="params">()</span></span>&#123; <span class="comment">//Define the content of the hi() function in the yimian class</span></span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; <span class="string">"Hellow Yimian~"</span> &lt;&lt; <span class="built_in">endl</span>; <span class="comment">//Output "Hellow Yimian~\n" to the screen</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>With the above files, a simple C++ library is built φ(￣∇￣o)<br>So we create a new test.cpp file to place main()</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt; //lib declaration to be used</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">"yimian.h"</span> <span class="comment">//Introduce custom lib</span></span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>; <span class="comment">//Use std namespace</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    yimian $; <span class="comment">//Define a new yimian class named $</span></span><br><span class="line"></span><br><span class="line">    $.hi(); <span class="comment">//Call the hi() function in the yimian class</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; $.version&lt;&lt; <span class="built_in">endl</span>; <span class="comment">//Output the yimian class version variable to the screen</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//End of main function</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Then you can use g++ to compile happily, the instructions are as follows: (How to build a GNU environment in win)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ g++ test.cpp yimian.cpp -o [name of target file]</span><br></pre></td></tr></table></figure>
+
+<p>Then start the compiled program from the command line (what is the command line ⌇●﹏●⌇)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ .&#x2F;Target file name.exe</span><br></pre></td></tr></table></figure>
+
+<p>As you might expect, the result of the above program is:</p>
+<blockquote>
+<p>Hellow Yimian~<br>Version 0.0.1</p>
+</blockquote>
+<hr>
+<p><strong>Pit</strong> ::aru:meditation::</p>
+<ul>
+<li>The defined class declared in the header file must be instantiated (called) in main(), otherwise an error will be reported</li>
+</ul>
+<hr>
+<h2 id="Summarize-the-related-knowledge-of-the-class"><a href="#Summarize-the-related-knowledge-of-the-class" class="headerlink" title="Summarize the related knowledge of the class"></a>Summarize the related knowledge of the class</h2><h3 id="Class-access-modifier"><a href="#Class-access-modifier" class="headerlink" title="Class access modifier"></a>Class access modifier</h3><ul>
+<li><strong>public:</strong> Content accessible inside and outside the class</li>
+<li><strong>private:</strong> not accessible outside the class, only accessible by yourself and friends, not accessible by subclasses</li>
+<li><strong>protected:</strong> Inaccessible from outside, accessible by yourself, friends and subclasses</li>
+</ul>
+<h3 id="Special-function-types"><a href="#Special-function-types" class="headerlink" title="Special function types"></a>Special function types</h3><ul>
+<li><p><strong>Constructor:</strong> It will be executed every time an object is created, that is, initialization</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Line</span>&#123;</span></span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setLength</span><span class="params">( <span class="keyword">double</span> len )</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">getLength</span><span class="params">( <span class="keyword">void</span> )</span></span>;</span><br><span class="line">    Line(); <span class="comment">// This is the constructor</span></span><br><span class="line"> </span><br><span class="line">  <span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">double</span> length;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Destructor:</strong> The function executed when the object is deleted, that is, the aftermath</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Line</span>&#123;</span></span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setLength</span><span class="params">( <span class="keyword">double</span> len )</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">getLength</span><span class="params">( <span class="keyword">void</span> )</span></span>;</span><br><span class="line">    Line(); <span class="comment">// This is the constructor declaration</span></span><br><span class="line">    ~Line(); <span class="comment">// This is the destructor declaration</span></span><br><span class="line"> </span><br><span class="line">  <span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">double</span> length;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Copy constructor:</strong> Transfer parameters between objects of the same type when copying objects</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Line</span>&#123;</span></span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">getLength</span><span class="params">( <span class="keyword">void</span> )</span></span>;</span><br><span class="line">    Line( <span class="keyword">int</span> len ​​); <span class="comment">// simple constructor</span></span><br><span class="line">    Line( <span class="keyword">const</span> Line &amp;obj); <span class="comment">// copy constructor</span></span><br><span class="line">    ~Line(); <span class="comment">// Destructor</span></span><br><span class="line"> </span><br><span class="line">  <span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> *ptr;</span><br><span class="line">&#125;;</span><br><span class="line">·········</span><br><span class="line">Line::Line(<span class="keyword">const</span> Line &amp;obj)&#123;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; <span class="string">"Call the copy constructor and allocate memory for the pointer ptr"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  ptr = <span class="keyword">new</span> <span class="keyword">int</span>;</span><br><span class="line">  *ptr = *obj.ptr; <span class="comment">// copy value</span></span><br><span class="line">&#125;</span><br><span class="line">·········</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">( )</span></span>&#123;</span><br><span class="line">  <span class="function">Line <span class="title">line1</span><span class="params">(<span class="number">10</span>)</span></span>;</span><br><span class="line"> </span><br><span class="line">  Line line2 = line1; <span class="comment">// The copy constructor is also called here</span></span><br><span class="line"> </span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>The difference between construction and copy construction:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">A <span class="title">x</span><span class="params">(<span class="number">2</span>)</span></span>;　　<span class="comment">//Direct initialization, call the constructor</span></span><br><span class="line">A y = x;　　<span class="comment">//Copy initialization, call the copy constructor</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="Friend-function-class"><a href="#Friend-function-class" class="headerlink" title="Friend function/class"></a>Friend function/class</h3><ul>
+<li><strong>Youyuan:</strong> Youyuan is like an old neighbor, you can take whatever you want at home<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">INTEGER</span>&#123;</span></span><br><span class="line">  <span class="function"><span class="keyword">friend</span> <span class="keyword">void</span> <span class="title">Print</span><span class="params">(<span class="keyword">const</span> INTEGER&amp; obj)</span></span>;<span class="comment">//Declare friend function</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Print</span><span class="params">(<span class="keyword">const</span> INTEGER&amp; obj)</span> </span>&#123;</span><br><span class="line">  <span class="comment">//Function body</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  INTEGER obj;</span><br><span class="line">  Print(obj);<span class="comment">//Call directly</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="Inline-functions"><a href="#Inline-functions" class="headerlink" title="Inline functions"></a>Inline functions</h3><ul>
+<li>In short, the number of lines is small and the function is very simple. There are no loops and switch statements. If you want to improve the efficiency of the function, use inline (╯‵□′)╯︵┴─┴<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">Max</span><span class="params">(<span class="keyword">int</span> ​​x, <span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (x&gt; y)? x: y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// The main function of the program</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; <span class="string">"Max (20,10): "</span>&lt;&lt; Max(<span class="number">20</span>,<span class="number">10</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; <span class="string">"Max (0,200): "</span>&lt;&lt; Max(<span class="number">0</span>,<span class="number">200</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; <span class="string">"Max (100,1010): "</span>&lt;&lt; Max(<span class="number">100</span>,<span class="number">1010</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="this-pointer"><a href="#this-pointer" class="headerlink" title="this pointer"></a>this pointer</h3><ul>
+<li>Similar to this in js, pointing to the parameter object itself</li>
+</ul>
+<hr>
+<p>To Be Continued..</p>
+</span>
       </div>
       <div class="post-copyright">
     <p class="copyright-item">
@@ -489,20 +581,20 @@ pjax_google_analytics = () => {
         
         <nav class="post-nav"><a class="prev" href="/tech/centos7-auto-install-typecho.html">
         <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">Centos7脚本一键安装Typecho</span>
+        <span class="prev-text nav-default"><span class=".zh">Centos7脚本一键安装Typecho</span><span class=".en">Centos7 script one-click installation of Typecho</span></span>
         <span class="prev-text nav-mobile">Prev</span>
       </a>
     <a class="next" href="/life/2018-retrospect-and-prospect.html">
-        <span class="next-text nav-default">2018 – Retrospect and Prospect</span>
+        <span class="next-text nav-default"><span class=".zh">2018 – 年度总结</span><span class=".en">2018 – Retrospect and Prospect</span></span>
         <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
     </nav></footer>
-    </article><script>$(()=>{setTimeout(()=>{iziToast.show({
+    </article><script>$(()=>{var p = window.location.pathname;setTimeout(()=>{if(window.location.pathname == p)tips.show({
         title: 'tips',
         position: 'topRight',
-        message: "此文章预计阅读 7 分钟哦~"
-  })}, 3000)})</script>
+        message: ((page.tran.getLang() == 'zh')?"此文章预计阅读 7 分钟哦~": "Read this page will spend around  13  minutes~")
+  })}, 6000)})</script>
   </div><div class="comments" id="comments"><div id="vcomments"></div>
     </div></div>
       </main>
@@ -519,11 +611,11 @@ pjax_google_analytics = () => {
     </div><div class="copyright"><span id="/tech/cpp-summary.html" class="statistic leancloud_visitors">
     <em>Visitors </em> <i class="leancloud-visitors-count">??</i> 
     <span class="division"> |</span>
-    <em>Reading </em> 7 min
+    <em>Reading </em> 13 min
   </span>
   <br>
   <span class="power-by">
-    Powered by <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>
+    Powered by <a class="hexo-link" href="" onClick="page.showUshio(`iotcat/eee.dog-blog`);">Ushio</a>
   </span>
   <span class="division">|</span>
   <span class="theme-info">
@@ -591,15 +683,28 @@ img.vimg:hover {
 <script>
 pjax_valine = () => {
     $.get('https://auth.yimian.xyz/getEmailHash.php', function(res){
+        if(page.tran.getLang() == 'zh'){
+            var lan = 'zh-CN';
+            var metaPlaceholder = {"nick":"昵称/QQ号","mail":"邮箱（完全保密）"};
+            var tagMeta =  ["博主","小伙伴","访客"];
+            var placeholder = "填写邮箱可以及时收到回复哦(●'◡'●)";
+        }else{
+            var lan = 'en';
+            var metaPlaceholder = {"nick":"Nickname/QQ","mail":"EMail"};
+            var tagMeta =  ["Master","Friend","Visitor"];
+            var placeholder = "Leave some comments here (●'◡'●)";
+        }
         new Valine({
             el: '#vcomments',
             appId: 'eVzpK7EyT6OafJvXWIRminWT-gzGzoHsz',
             appKey: '2qjuEBgVE0BscTQnTmoS9roU',
             master: '9b616ff4cd6c305e5970bee7b1bd9b1f',   //博主邮箱md5
-            tagMeta: ["博主","小伙伴","访客"],     //标识字段名
+            tagMeta: tagMeta,     //标识字段名
             friends: res, //["b6ddef7c7e1c647e7767afeacdfb7b64","46dd4e6fef4f9591736c4723a965ca2e","6132d77f9f0ae060bc733090991acecb","3e00e104b79d7c6e866c6b23c6ba6dfc"],  //小伙伴邮箱Md5
-            metaPlaceholder: {"nick":"昵称/QQ号","mail":"邮箱（完全保密）"},
-            placeholder: "填写邮箱可以及时收到回复哦(●'◡'●)",
+
+            metaPlaceholder: metaPlaceholder,
+            placeholder: placeholder,
+            lang: lan,
             path: window.location.pathname,
             enableQQ: true,
             visitor: true,
@@ -762,7 +867,8 @@ var loadingbarStop = function () {
         $(this).parent().append($(this).remove());
     });
     pjax_ini();loadingbarStop();
-    });
+    page.tran.setLang();
+  });
 
 
   /* Pjax 出错，执行的函数 */

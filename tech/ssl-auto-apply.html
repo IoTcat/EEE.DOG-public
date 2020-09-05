@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="">
-  <head><meta charset="UTF-8"/>
+  <head>
+    <title>Centos7下 Nginx 配置ssl证书自动续期 - EEE.DOG</title><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -13,7 +14,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-<meta name="description" content="Centos7下 Nginx 配置ssl证书自动续期"/><meta name="keywords" content="iotcat,yimian,blog" /><link rel="alternate" href="/atom.xml" title="EEE.DOG"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.0.0" /><script type="text/javascript" src="https://cdn.yimian.xyz/ushio-js/ushio-head.min.js"></script>
+<meta name="description" content="Centos7下 Nginx 配置ssl证书自动续期"/><meta name="keywords" content="iotcat,yimian,blog" /><link rel="alternate" href="/atom.xml" title="EEE.DOG"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.0.0" /><script>lang = ['zh', 'en'];</script>
+<script type="text/javascript" src="https://cdn.yimian.xyz/ushio-js/ushio-head.min.js"></script>
 
 <link rel="stylesheet" type="text/css" href="https://cdn.yimian.xyz/kayo/lib/iziModal/iziModal.min.css" />
 
@@ -57,7 +59,6 @@ pjax_google_analytics = () => {
   window.config = {"leancloud":"","toc":true,"fancybox":true,"pjax":{"enable":true,"loadingbar":true},"latex":true};
 </script>
 
-    <title>Centos7下 Nginx 配置ssl证书自动续期 - EEE.DOG</title>
   <meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="EEE.DOG" type="application/atom+xml">
 </head>
 
@@ -78,25 +79,25 @@ pjax_google_analytics = () => {
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
   <ul class="mobile-menu-list"><div id="mobile-menu-Archives">
       <a href="/archives/">
-        <li class="mobile-menu-item">Archives
+        <li class="mobile-menu-item"><span class=".en">Archives</span><span class=".zh">归档</span>
           </li>
       </a></div><div id="mobile-menu-Categories">
       <a href="/categories/">
-        <li class="mobile-menu-item">Categories
+        <li class="mobile-menu-item"><span class=".en">Categories</span><span class=".zh">分类</span>
           </li>
       </a></div><div id="mobile-menu-Projects">
       <a href="#">
-        <li class="mobile-menu-item">Projects
+        <li class="mobile-menu-item"><span class=".en">Projects</span><span class=".zh">项目</span>
           </li>
       </a><ul class="sub-menu" style="display: none;"> 
           <li>
               <a href="https://fp.yimian.xyz/" target="_blank" rel="noopener">
-                fp 
+                <span class=".en">fp</span><span class=".zh">fp</span>
               </a>
             </li>
           <li>
               <a href="https://wiot.yimian.xyz/" target="_blank" rel="noopener">
-                wiot 
+                <span class=".en">wiot</span><span class=".zh">wiot</span>
               </a>
             </li>
           </ul>
@@ -105,52 +106,52 @@ pjax_google_analytics = () => {
       })</script>
       </div><div id="mobile-menu-Map">
       <a href="#">
-        <li class="mobile-menu-item">Map
+        <li class="mobile-menu-item"><span class=".en">Map</span><span class=".zh">导航</span>
           </li>
       </a><ul class="sub-menu" style="display: none;"> 
           <li>
               <a href="https://api.yimian.xyz/" target="_blank" rel="noopener">
-                APIs 
+                <span class=".en">APIs</span><span class=".zh">接口</span>
               </a>
             </li>
           <li>
               <a href="https://img.yimian.xyz/" target="_blank" rel="noopener">
-                Imgs 
+                <span class=".en">Imgs</span><span class=".zh">图库</span>
               </a>
             </li>
           <li>
               <a href="/">
-                Imgbed 
+                <span class=".en">Imgbed</span><span class=".zh">图床</span>
               </a>
             </li>
           <li>
               <a href="https://share.yimian.xyz/" target="_blank" rel="noopener">
-                Fileshare 
+                <span class=".en">Fileshare</span><span class=".zh">文件分享</span>
               </a>
             </li>
           <li>
               <a href="https://monitor.yimian.xyz/" target="_blank" rel="noopener">
-                Monitor 
+                <span class=".en">Monitor</span><span class=".zh">监控</span>
               </a>
             </li>
           <li>
               <a href="https://acg.watch/" target="_blank" rel="noopener">
-                ACG.WATCH 
+                <span class=".en">ACG.WATCH</span><span class=".zh">视频</span>
               </a>
             </li>
           <li>
               <a href="https://onedrive.yimian.xyz/" target="_blank" rel="noopener">
-                Oneindex 
+                <span class=".en">Oneindex</span><span class=".zh">网盘</span>
               </a>
             </li>
           <li>
               <a href="https://proxy.yimian.xyz/" target="_blank" rel="noopener">
-                Proxy 
+                <span class=".en">Proxy</span><span class=".zh">下载代理</span>
               </a>
             </li>
           <li>
               <a href="https://shorturl.yimian.xyz/" target="_blank" rel="noopener">
-                ShortenURL 
+                <span class=".en">ShortenURL</span><span class=".zh">短链</span>
               </a>
             </li>
           </ul>
@@ -159,17 +160,17 @@ pjax_google_analytics = () => {
       })</script>
       </div><div id="mobile-menu-About">
       <a href="#">
-        <li class="mobile-menu-item">About
+        <li class="mobile-menu-item"><span class=".en">About</span><span class=".zh">关于</span>
           </li>
       </a><ul class="sub-menu" style="display: none;"> 
           <li>
               <a href="/links/">
-                links 
+                <span class=".en">links</span><span class=".zh"></span>
               </a>
             </li>
           <li>
               <a href="https://iotcat.me/" target="_blank" rel="noopener">
-                Me 
+                <span class=".en">Me</span><span class=".zh"></span>
               </a>
             </li>
           </ul>
@@ -185,24 +186,24 @@ pjax_google_analytics = () => {
 
 <nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
         <a id="menu-Archives" class="menu-item-link" href="/archives/">
-          Archives
+          <span class=".en">Archives</span><span class=".zh">归档</span>
           </a>
 
       </li>
     <li class="menu-item">
         <a id="menu-Categories" class="menu-item-link" href="/categories/">
-          Categories
+          <span class=".en">Categories</span><span class=".zh">分类</span>
           </a>
 
       </li>
     <li class="menu-item">
         <a id="menu-Projects" class="menu-item-link" href="#">
-          Projects
+          <span class=".en">Projects</span><span class=".zh">项目</span>
           </a>
 
       <script>
           $("#menu-Projects").click(function(){
-            iziToast.question({
+            tips.question({
 			    timeout: 20000,
 			    close: false,
 			    overlay: true,
@@ -213,7 +214,7 @@ pjax_google_analytics = () => {
 			    message: '',
 			    position: 'center',
 			    buttons: [
-			    ['<button><b>fp</b></button>', function (instance, toast) {
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'fp':'fp')+'</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         if("undefined" == "true")
@@ -221,7 +222,7 @@ pjax_google_analytics = () => {
                         else
                             window.location.href="https://fp.yimian.xyz/";
 			        }, true],
-			    ['<button><b>wiot</b></button>', function (instance, toast) {
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'wiot':'wiot')+'</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         if("undefined" == "true")
@@ -240,12 +241,12 @@ pjax_google_analytics = () => {
       </li>
     <li class="menu-item">
         <a id="menu-Map" class="menu-item-link" href="#">
-          Map
+          <span class=".en">Map</span><span class=".zh">导航</span>
           </a>
 
       <script>
           $("#menu-Map").click(function(){
-            iziToast.question({
+            tips.question({
 			    timeout: 20000,
 			    close: false,
 			    overlay: true,
@@ -256,7 +257,7 @@ pjax_google_analytics = () => {
 			    message: '',
 			    position: 'center',
 			    buttons: [
-			    ['<button><b>APIs</b></button>', function (instance, toast) {
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'APIs':'接口')+'</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         if("undefined" == "true")
@@ -264,7 +265,7 @@ pjax_google_analytics = () => {
                         else
                             window.location.href="https://api.yimian.xyz/";
 			        }, true],
-			    ['<button><b>Imgs</b></button>', function (instance, toast) {
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Imgs':'图库')+'</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         if("undefined" == "true")
@@ -272,7 +273,7 @@ pjax_google_analytics = () => {
                         else
                             window.location.href="https://img.yimian.xyz/";
 			        }, true],
-			    ['<button><b>Imgbed</b></button>', function (instance, toast) {
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Imgbed':'图床')+'</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         if("undefined" == "true")
@@ -280,7 +281,7 @@ pjax_google_analytics = () => {
                         else
                             window.location.href="undefined";
 			        }, true],
-			    ['<button><b>Fileshare</b></button>', function (instance, toast) {
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Fileshare':'文件分享')+'</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         if("undefined" == "true")
@@ -288,7 +289,7 @@ pjax_google_analytics = () => {
                         else
                             window.location.href="https://share.yimian.xyz/";
 			        }, true],
-			    ['<button><b>Monitor</b></button>', function (instance, toast) {
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Monitor':'监控')+'</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         if("undefined" == "true")
@@ -296,7 +297,7 @@ pjax_google_analytics = () => {
                         else
                             window.location.href="https://monitor.yimian.xyz/";
 			        }, true],
-			    ['<button><b>ACG.WATCH</b></button>', function (instance, toast) {
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'ACG.WATCH':'视频')+'</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         if("undefined" == "true")
@@ -304,7 +305,7 @@ pjax_google_analytics = () => {
                         else
                             window.location.href="https://acg.watch/";
 			        }, true],
-			    ['<button><b>Oneindex</b></button>', function (instance, toast) {
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Oneindex':'网盘')+'</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         if("undefined" == "true")
@@ -312,7 +313,7 @@ pjax_google_analytics = () => {
                         else
                             window.location.href="https://onedrive.yimian.xyz/";
 			        }, true],
-			    ['<button><b>Proxy</b></button>', function (instance, toast) {
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Proxy':'下载代理')+'</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         if("undefined" == "true")
@@ -320,7 +321,7 @@ pjax_google_analytics = () => {
                         else
                             window.location.href="https://proxy.yimian.xyz/";
 			        }, true],
-			    ['<button><b>ShortenURL</b></button>', function (instance, toast) {
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'ShortenURL':'短链')+'</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         if("undefined" == "true")
@@ -339,12 +340,12 @@ pjax_google_analytics = () => {
       </li>
     <li class="menu-item">
         <a id="menu-About" class="menu-item-link" href="#">
-          About
+          <span class=".en">About</span><span class=".zh">关于</span>
           </a>
 
       <script>
           $("#menu-About").click(function(){
-            iziToast.question({
+            tips.question({
 			    timeout: 20000,
 			    close: false,
 			    overlay: true,
@@ -355,7 +356,7 @@ pjax_google_analytics = () => {
 			    message: '',
 			    position: 'center',
 			    buttons: [
-			    ['<button><b>links</b></button>', function (instance, toast) {
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'links':'')+'</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         if("true" == "true")
@@ -363,7 +364,7 @@ pjax_google_analytics = () => {
                         else
                             window.location.href="/links/";
 			        }, true],
-			    ['<button><b>Me</b></button>', function (instance, toast) {
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Me':'')+'</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         if("undefined" == "true")
@@ -387,7 +388,7 @@ pjax_google_analytics = () => {
         <div class="content-wrapper">
           <div id="content" class="content"><article class="post">
     <header class="post-header">
-      <h1 class="post-title">Centos7下 Nginx 配置ssl证书自动续期
+      <h1 class="post-title"><span class=".zh">Centos7下 Nginx 配置ssl证书自动续期</span><span class=".en" hidden>Nginx configure ssl certificate automatic renewal under Centos7</span>
         </h1>
 
       <div class="post-meta">
@@ -399,13 +400,45 @@ pjax_google_analytics = () => {
         </div>
     </header>
 
-    <div class="post-toc" id="post-toc">
+    <style>.toc-level-2 > .toc-child {display: none !important; }</style>
+  <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前提条件"><span class="toc-text">前提条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装certbot"><span class="toc-text">安装certbot</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#初次申领证书"><span class="toc-text">初次申领证书</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#初次申领某域名证书"><span class="toc-text">初次申领某域名证书</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#证书位置"><span class="toc-text">证书位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置nginx"><span class="toc-text">配置nginx</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置自动续期"><span class="toc-text">配置自动续期</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前提条件"><span class="toc-text">前提条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装certbot"><span class="toc-text">安装certbot</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#初次申领证书"><span class="toc-text">初次申领证书</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#初次申领某域名证书"><span class="toc-text">初次申领某域名证书</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#证书位置"><span class="toc-text">证书位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置nginx"><span class="toc-text">配置nginx</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置自动续期"><span class="toc-text">配置自动续期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Prerequisites"><span class="toc-text">Prerequisites</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Install-certbot"><span class="toc-text">Install certbot</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Initial-application-certificate"><span class="toc-text">Initial application certificate</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Apply-for-a-domain-name-certificate-for-the-first-time"><span class="toc-text">Apply for a domain name certificate for the first time</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Certificate-location"><span class="toc-text">Certificate location</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Configure-nginx"><span class="toc-text">Configure nginx</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configure-automatic-renewal"><span class="toc-text">Configure automatic renewal</span></a></li></ol>
     </div>
-  </div><div class="post-content"><p>断断续续玩web已经一年了，一些之前从腾讯云申的TrustAsia证书已经陆陆续续开始过期，很方..于是开始尝试申请Let’s Encrypt的免费证书，并实现自动续期|´・ω・)ノ</p>
+  </div>
+  <script>var arr = [];var ts = '';if($('.post-toc-content').children().length>1){var el = '.post-toc-content';ts = ($(el).children('ol')[0].outerHTML);}else{var el = '.toc';};for(var i = 0; i < $(el).children('li').length; i++){arr.push($(el).children('li')[i].outerHTML);}; arr.splice(arr.length / 2, 0, '</span><span class=".en">');arr.unshift(ts);arr.unshift('<span class=".zh">');arr.push('</span>');$(el).html(arr.join(''));</script><div class="post-content"><span class=".zh">
+<p>断断续续玩web已经一年了，一些之前从腾讯云申的TrustAsia证书已经陆陆续续开始过期，很方..于是开始尝试申请Let’s Encrypt的免费证书，并实现自动续期|´・ω・)ノ</p>
+</span>
+
+
+<span class=".en">
+<p>I’ve been playing on the web intermittently for a year, and some of the TrustAsia certificates from Tencent’s Yunshang have started to expire one after another. It’s very fragrant.. So I started to try to apply for Let’s Encrypt’s free certificate, and realized automatic renewal|´・ω・)ノ</p>
+</span>
+
+
 <a id="more"></a>
+
+
+<script>
+    session.onload(function(){
+        if(page.tran.getLang() == 'en'){
+            tips.warning({
+                title: 'Caution',
+                position: 'topRight',
+                message: 'This page was translated by Machine!!',
+                buttons: [['<button>Show Original Page</button>', function (instance, toast) {
+                    page.tran.setLang('zh');
+                    instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                }, true]]
+            });
+        }
+    });
+</script>
+
+
+<span class=".zh">
+
 
 <h2 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h2><ul>
 <li>必须是Centos7系统，其它未测试，不保证有效</li>
@@ -440,6 +473,45 @@ pjax_google_analytics = () => {
 
 <hr>
 <p>参考链接：<br><a href="https://blog.csdn.net/sheng119/article/details/72956717" target="_blank" rel="noopener">https://blog.csdn.net/sheng119/article/details/72956717</a></p>
+</span>
+
+<span class=".en">
+
+
+<h2 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><ul>
+<li>Must be Centos7 system, others have not been tested and are not guaranteed to be valid</li>
+<li>Have your own domain name</li>
+<li>Confirm that dns has pointed the domain name to the server</li>
+<li>The firewall allows port 80 and 443</li>
+<li>The nginx proxy has been configured, and <code>domain name can be accessed via http</code> (be sure to be able to access)</li>
+</ul>
+<h2 id="Install-certbot"><a href="#Install-certbot" class="headerlink" title="Install certbot"></a>Install certbot</h2><p>Install certbot via yum</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ yum update #Update yum source</span><br><span class="line">$ yum install -y epel-release #Install epel source</span><br><span class="line">$ yum install -y certbot #Install certbot</span><br></pre></td></tr></table></figure>
+
+<h2 id="Initial-application-certificate"><a href="#Initial-application-certificate" class="headerlink" title="Initial application certificate"></a>Initial application certificate</h2><h3 id="Apply-for-a-domain-name-certificate-for-the-first-time"><a href="#Apply-for-a-domain-name-certificate-for-the-first-time" class="headerlink" title="Apply for a domain name certificate for the first time"></a>Apply for a domain name certificate for the first time</h3><p>The format is</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ certbot certonly --webroot -w [Web site directory] -d [domain name] -m [contact email address] --agree-tos</span><br></pre></td></tr></table></figure>
+<p>E.g</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ certbot certonly --webroot -w &#x2F;opt&#x2F;www&#x2F;demo.yourdomain.com -d demo.yourdomain.com -m yourname@gmail.com --agree-tos</span><br></pre></td></tr></table></figure>
+<h3 id="Certificate-location"><a href="#Certificate-location" class="headerlink" title="Certificate location"></a>Certificate location</h3><p>The certificate is stored in the <code>/etc/letsencrypt/live/demo.yourdomain.com/</code> folder.<br>There are 4 files in total, you may need to use <code>fullchain.pem</code> and <code>privkey.pem</code>.</p>
+<h3 id="Configure-nginx"><a href="#Configure-nginx" class="headerlink" title="Configure nginx"></a>Configure nginx</h3><p>Add the following content to the corresponding <code>server{}</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">listen 443 ssl;</span><br><span class="line"></span><br><span class="line">ssl_certificate &#x2F;etc&#x2F;letsencrypt&#x2F;live&#x2F;demo.yourdomain.com&#x2F;fullchain.pem; #2</span><br><span class="line">ssl_certificate_key &#x2F;etc&#x2F;letsencrypt&#x2F;live&#x2F;demo.yourdomain.com&#x2F;privkey.pem; #3</span><br><span class="line"></span><br><span class="line">ssl_session_cache shared:SSL:1m;</span><br><span class="line">ssl_session_timeout 5m;</span><br><span class="line">ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;</span><br><span class="line">ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">ssl_prefer_server_ciphers on;</span><br><span class="line">error_page 404 &#x3D; &#x2F;404.php;</span><br></pre></td></tr></table></figure>
+
+<p>E.g</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 443 ssl;</span><br><span class="line">    listen 80;</span><br><span class="line"></span><br><span class="line">    server_name demo.yourdomain.com; #1</span><br><span class="line">    root &#x2F;opt&#x2F;www&#x2F;demo.yourdomain.com;</span><br><span class="line">    index index.html;</span><br><span class="line">    client_max_body_size 1000M;</span><br><span class="line"></span><br><span class="line">    ssl_certificate &#x2F;etc&#x2F;letsencrypt&#x2F;live&#x2F;demo.yourdomain.com&#x2F;fullchain.pem; #2</span><br><span class="line">    ssl_certificate_key &#x2F;etc&#x2F;letsencrypt&#x2F;live&#x2F;demo.yourdomain.com&#x2F;privkey.pem; #3</span><br><span class="line"></span><br><span class="line">    ssl_session_cache shared:SSL:1m;</span><br><span class="line">    ssl_session_timeout 5m;</span><br><span class="line">    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;</span><br><span class="line">    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">    ssl_prefer_server_ciphers on;</span><br><span class="line">    error_page 404 &#x3D; &#x2F;404.html;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>After the configuration is successful, execute the following instructions:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ nginx -t #Check nginx conf syntax</span><br><span class="line">$ systemctl restart nginx #Restart nginx</span><br></pre></td></tr></table></figure>
+
+<h2 id="Configure-automatic-renewal"><a href="#Configure-automatic-renewal" class="headerlink" title="Configure automatic renewal"></a>Configure automatic renewal</h2><p>Edit crontab rules: (<a href="https://www.cnblogs.com/p0st/p/9482167.html" target="_blank" rel="noopener">First configuration crontab</a>)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ crontab -e</span><br></pre></td></tr></table></figure>
+<p>Type the following (refresh the certificate and restart nginx on the 1st and 5th of each month) to save and exit</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">00 05 01 * * &#x2F;usr&#x2F;bin&#x2F;certbot renew --quiet &amp;&amp; &#x2F;bin&#x2F;systemctl restart nginx</span><br></pre></td></tr></table></figure>
+<p>Restart crontab</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl restart crond.service</span><br></pre></td></tr></table></figure>
+
+
+<hr>
+<p>Reference link:<br><a href="https://blog.csdn.net/sheng119/article/details/72956717" target="_blank" rel="noopener">https://blog.csdn.net/sheng119/article/details/72956717</a></p>
+</span>
 
       </div>
       <div class="post-copyright">
@@ -463,20 +535,20 @@ pjax_google_analytics = () => {
         
         <nav class="post-nav"><a class="prev" href="/tech/js-notes.html">
         <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">JS中那些惊艳的操作</span>
+        <span class="prev-text nav-default"><span class=".zh">JS中那些惊艳的操作</span><span class=".en">Those amazing operations in JS</span></span>
         <span class="prev-text nav-mobile">Prev</span>
       </a>
     <a class="next" href="/notes/digital-circuit.html">
-        <span class="next-text nav-default">数电期中总结</span>
+        <span class="next-text nav-default"><span class=".zh">数电期中总结</span><span class=".en">Mid-term Summary of Digital Circuits</span></span>
         <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
     </nav></footer>
-    </article><script>$(()=>{setTimeout(()=>{iziToast.show({
+    </article><script>$(()=>{var p = window.location.pathname;setTimeout(()=>{if(window.location.pathname == p)tips.show({
         title: 'tips',
         position: 'topRight',
-        message: "此文章预计阅读 4 分钟哦~"
-  })}, 3000)})</script>
+        message: ((page.tran.getLang() == 'zh')?"此文章预计阅读 3 分钟哦~": "Read this page will spend around  7  minutes~")
+  })}, 6000)})</script>
   </div><div class="comments" id="comments"><div id="vcomments"></div>
     </div></div>
       </main>
@@ -493,11 +565,11 @@ pjax_google_analytics = () => {
     </div><div class="copyright"><span id="/tech/ssl-auto-apply.html" class="statistic leancloud_visitors">
     <em>Visitors </em> <i class="leancloud-visitors-count">??</i> 
     <span class="division"> |</span>
-    <em>Reading </em> 4 min
+    <em>Reading </em> 7 min
   </span>
   <br>
   <span class="power-by">
-    Powered by <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>
+    Powered by <a class="hexo-link" href="" onClick="page.showUshio(`iotcat/eee.dog-blog`);">Ushio</a>
   </span>
   <span class="division">|</span>
   <span class="theme-info">
@@ -565,15 +637,28 @@ img.vimg:hover {
 <script>
 pjax_valine = () => {
     $.get('https://auth.yimian.xyz/getEmailHash.php', function(res){
+        if(page.tran.getLang() == 'zh'){
+            var lan = 'zh-CN';
+            var metaPlaceholder = {"nick":"昵称/QQ号","mail":"邮箱（完全保密）"};
+            var tagMeta =  ["博主","小伙伴","访客"];
+            var placeholder = "填写邮箱可以及时收到回复哦(●'◡'●)";
+        }else{
+            var lan = 'en';
+            var metaPlaceholder = {"nick":"Nickname/QQ","mail":"EMail"};
+            var tagMeta =  ["Master","Friend","Visitor"];
+            var placeholder = "Leave some comments here (●'◡'●)";
+        }
         new Valine({
             el: '#vcomments',
             appId: 'eVzpK7EyT6OafJvXWIRminWT-gzGzoHsz',
             appKey: '2qjuEBgVE0BscTQnTmoS9roU',
             master: '9b616ff4cd6c305e5970bee7b1bd9b1f',   //博主邮箱md5
-            tagMeta: ["博主","小伙伴","访客"],     //标识字段名
+            tagMeta: tagMeta,     //标识字段名
             friends: res, //["b6ddef7c7e1c647e7767afeacdfb7b64","46dd4e6fef4f9591736c4723a965ca2e","6132d77f9f0ae060bc733090991acecb","3e00e104b79d7c6e866c6b23c6ba6dfc"],  //小伙伴邮箱Md5
-            metaPlaceholder: {"nick":"昵称/QQ号","mail":"邮箱（完全保密）"},
-            placeholder: "填写邮箱可以及时收到回复哦(●'◡'●)",
+
+            metaPlaceholder: metaPlaceholder,
+            placeholder: placeholder,
+            lang: lan,
             path: window.location.pathname,
             enableQQ: true,
             visitor: true,
@@ -736,7 +821,8 @@ var loadingbarStop = function () {
         $(this).parent().append($(this).remove());
     });
     pjax_ini();loadingbarStop();
-    });
+    page.tran.setLang();
+  });
 
 
   /* Pjax 出错，执行的函数 */

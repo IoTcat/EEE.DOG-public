@@ -8,208 +8,8 @@
     </url>
 
     <url>
-        <loc>https://www.eee.dog/tech/build-236-iot-platform-on-wifiduino.html</loc>
-        <lastmod>2020-07-05T06:32:40.175Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.eee.dog/tech/smart-home.html</loc>
-        <lastmod>2020-07-05T06:23:02.355Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://www.eee.dog/tech/wiot.html</loc>
-        <lastmod>2020-07-05T04:02:12.921Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.eee.dog/life/cs-ece-master-programs.html</loc>
-        <lastmod>2020-06-27T08:23:21.442Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.eee.dog/thoughts/cognitive-derived-theory.html</loc>
-        <lastmod>2020-06-23T05:07:32.995Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.eee.dog/travel/traveler-cheque.html</loc>
-        <lastmod>2020-06-23T05:06:58.467Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.eee.dog/cook/zuozongtang-chiken.html</loc>
-        <lastmod>2020-06-23T05:06:43.722Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.eee.dog/tech/kms.html</loc>
-        <lastmod>2020-06-23T05:06:32.976Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.eee.dog/tech/hello-world.html</loc>
-        <lastmod>2020-06-23T04:18:20.441Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.eee.dog/tech/build-nextcloud-server-on-centos7.html</loc>
-        <lastmod>2020-06-23T04:14:05.886Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.eee.dog/thoughts/fog-architecture-and-internet-of-things.html</loc>
-        <lastmod>2020-06-23T04:13:23.871Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.eee.dog/thoughts/two-fundamental-demands-of-human-beings.html</loc>
-        <lastmod>2020-06-23T04:12:33.205Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.eee.dog/tech/hello-typecho.html</loc>
-        <lastmod>2020-06-23T04:12:10.858Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.eee.dog/tech/hello-hexo.html</loc>
-        <lastmod>2020-06-23T04:12:03.880Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.eee.dog/life/2018-retrospect-and-prospect.html</loc>
-        <lastmod>2020-06-23T04:07:58.819Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.eee.dog/tech/cpp-summary.html</loc>
-        <lastmod>2020-06-23T04:06:37.348Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.eee.dog/tech/centos7-auto-install-typecho.html</loc>
-        <lastmod>2020-06-23T04:05:58.060Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.eee.dog/notes/digital-circuit.html</loc>
-        <lastmod>2020-06-23T04:02:24.078Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.eee.dog/notes/electromagnetism.html</loc>
-        <lastmod>2020-06-23T03:59:48.255Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.eee.dog/tech/my-code-style.html</loc>
-        <lastmod>2020-06-23T03:57:47.323Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.eee.dog/thoughts/global-climate-change.html</loc>
-        <lastmod>2020-06-23T03:56:44.859Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.eee.dog/thoughts/economy-environment-sustainability.html</loc>
-        <lastmod>2020-06-23T03:54:47.294Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.eee.dog/tech/ssl-auto-apply.html</loc>
-        <lastmod>2020-06-23T03:53:00.777Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.eee.dog/tech/js-notes.html</loc>
-        <lastmod>2020-06-23T03:51:43.951Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.eee.dog/tech/mail-api.html</loc>
-        <lastmod>2020-06-23T03:49:30.832Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.eee.dog/thoughts/trade-war.html</loc>
-        <lastmod>2020-06-23T03:48:55.108Z</lastmod>
+        <lastmod>2020-09-05T13:52:40.756Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -217,23 +17,15 @@
 
     <url>
         <loc>https://www.eee.dog/tech/rand-pic-api.html</loc>
-        <lastmod>2020-06-23T03:46:43.276Z</lastmod>
+        <lastmod>2020-09-05T13:09:23.003Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://www.eee.dog/tech/arduino-operator-string-issue.html</loc>
-        <lastmod>2020-06-23T03:45:43.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.eee.dog/tech/smartfarming-surf.html</loc>
-        <lastmod>2020-06-23T03:44:44.136Z</lastmod>
+        <loc>https://www.eee.dog/tech/smart-home.html</loc>
+        <lastmod>2020-09-05T13:05:36.029Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -241,31 +33,23 @@
 
     <url>
         <loc>https://www.eee.dog/tech/crown-place-erp.html</loc>
-        <lastmod>2020-06-23T03:41:11.544Z</lastmod>
+        <lastmod>2020-09-05T13:04:51.789Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://www.eee.dog/life/liverpool-accom-inves.html</loc>
-        <lastmod>2020-06-23T03:39:29.141Z</lastmod>
+        <loc>https://www.eee.dog/thoughts/global-climate-change.html</loc>
+        <lastmod>2020-09-05T13:03:13.481Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://www.eee.dog/life/happy.html</loc>
-        <lastmod>2020-06-23T03:31:47.440Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.eee.dog/tech/coro.html</loc>
-        <lastmod>2020-06-23T03:29:32.802Z</lastmod>
+        <loc>https://www.eee.dog/thoughts/two-fundamental-demands-of-human-beings.html</loc>
+        <lastmod>2020-09-05T13:02:20.077Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -273,7 +57,119 @@
 
     <url>
         <loc>https://www.eee.dog/travel/ivisa-checklist.html</loc>
-        <lastmod>2020-06-23T03:29:24.650Z</lastmod>
+        <lastmod>2020-09-05T13:00:54.980Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/thoughts/fog-architecture-and-internet-of-things.html</loc>
+        <lastmod>2020-09-05T13:00:06.549Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/tech/kms.html</loc>
+        <lastmod>2020-09-05T12:59:47.713Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/tech/smartfarming-surf.html</loc>
+        <lastmod>2020-09-05T12:59:27.631Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/tech/mail-api.html</loc>
+        <lastmod>2020-09-05T12:58:43.957Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/life/cs-ece-master-programs.html</loc>
+        <lastmod>2020-09-05T12:27:00.458Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/tech/coro.html</loc>
+        <lastmod>2020-09-05T12:21:41.176Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/thoughts/economy-environment-sustainability.html</loc>
+        <lastmod>2020-09-05T12:18:51.601Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/tech/my-code-style.html</loc>
+        <lastmod>2020-09-05T12:11:53.701Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/tech/cpp-summary.html</loc>
+        <lastmod>2020-09-05T12:10:02.224Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/cook/zuozongtang-chiken.html</loc>
+        <lastmod>2020-09-05T12:04:36.759Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/travel/traveler-cheque.html</loc>
+        <lastmod>2020-09-05T11:58:11.077Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/thoughts/trade-war.html</loc>
+        <lastmod>2020-09-05T11:56:01.129Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/tech/ssl-auto-apply.html</loc>
+        <lastmod>2020-09-05T11:54:26.953Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/life/liverpool-accom-inves.html</loc>
+        <lastmod>2020-09-05T10:35:20.216Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -281,7 +177,111 @@
 
     <url>
         <loc>https://www.eee.dog/cook/awesome-beef-noodle.html</loc>
-        <lastmod>2020-06-23T03:26:57.445Z</lastmod>
+        <lastmod>2020-09-05T10:35:07.294Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/tech/js-notes.html</loc>
+        <lastmod>2020-09-05T10:30:35.736Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/tech/hello-world.html</loc>
+        <lastmod>2020-09-05T10:23:12.808Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/tech/hello-typecho.html</loc>
+        <lastmod>2020-09-05T10:21:49.296Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/tech/hello-hexo.html</loc>
+        <lastmod>2020-09-05T10:20:53.837Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/life/happy.html</loc>
+        <lastmod>2020-09-05T10:19:26.721Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/notes/electromagnetism.html</loc>
+        <lastmod>2020-09-05T10:12:19.218Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/tech/build-nextcloud-server-on-centos7.html</loc>
+        <lastmod>2020-09-05T10:09:33.958Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/life/2018-retrospect-and-prospect.html</loc>
+        <lastmod>2020-09-05T09:49:44.704Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/tech/arduino-operator-string-issue.html</loc>
+        <lastmod>2020-09-05T09:49:43.136Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/tech/build-236-iot-platform-on-wifiduino.html</loc>
+        <lastmod>2020-09-05T09:49:41.912Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/tech/centos7-auto-install-typecho.html</loc>
+        <lastmod>2020-09-05T09:49:40.884Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/thoughts/cognitive-derived-theory.html</loc>
+        <lastmod>2020-09-05T09:49:39.948Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/notes/digital-circuit.html</loc>
+        <lastmod>2020-09-05T09:49:35.172Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
