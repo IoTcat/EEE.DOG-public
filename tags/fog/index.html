@@ -170,12 +170,12 @@ pjax_google_analytics = () => {
       </a><ul class="sub-menu" style="display: none;"> 
           <li>
               <a href="/links/">
-                <span class=".en">links</span><span class=".zh"></span>
+                <span class=".en">links</span><span class=".zh">友链</span>
               </a>
             </li>
           <li>
               <a href="https://iotcat.me/" target="_blank" rel="noopener">
-                <span class=".en">Me</span><span class=".zh"></span>
+                <span class=".en">Me</span><span class=".zh">关于我</span>
               </a>
             </li>
           </ul>
@@ -367,7 +367,7 @@ pjax_google_analytics = () => {
 			    message: '',
 			    position: 'center',
 			    buttons: [
-			    ['<button><b>'+((page.tran.getLang() != 'zh')?'links':'')+'</b></button>', function (instance, toast) {
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'links':'友链')+'</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         if("true" == "true")
@@ -375,7 +375,7 @@ pjax_google_analytics = () => {
                         else
                             window.location.href="/links/";
 			        }, true],
-			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Me':'')+'</b></button>', function (instance, toast) {
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Me':'关于我')+'</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         if("undefined" == "true")
