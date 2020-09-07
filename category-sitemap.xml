@@ -8,6 +8,20 @@
     </url>
 
     <url>
+        <loc>https://www.eee.dog/categories/life/</loc>
+        <lastmod>2020-09-07T08:33:46.083Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/categories/notes/</loc>
+        <lastmod>2020-09-07T08:29:34.028Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://www.eee.dog/categories/thoughts/</loc>
         <lastmod>2020-09-06T16:19:09.491Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -29,22 +43,8 @@
     </url>
 
     <url>
-        <loc>https://www.eee.dog/categories/life/</loc>
-        <lastmod>2020-09-05T12:27:00.458Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://www.eee.dog/categories/cook/</loc>
         <lastmod>2020-09-05T12:04:36.759Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.eee.dog/categories/notes/</loc>
-        <lastmod>2020-09-05T10:12:19.218Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

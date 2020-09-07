@@ -3,6 +3,20 @@
 
 
     <url>
+        <loc>https://www.eee.dog/tags/gre/</loc>
+        <lastmod>2020-09-07T08:33:46.083Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/tags/maxwell/</loc>
+        <lastmod>2020-09-07T08:29:34.028Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://www.eee.dog/tags/fog/</loc>
         <lastmod>2020-09-06T16:19:09.491Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -327,13 +341,6 @@
     <url>
         <loc>https://www.eee.dog/tags/love/</loc>
         <lastmod>2020-09-05T10:19:26.721Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.eee.dog/tags/maxwell/</loc>
-        <lastmod>2020-09-05T10:12:19.218Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
