@@ -303,11 +303,11 @@
       
         <tags>
             
+            <tag> investigation </tag>
+            
             <tag> uk </tag>
             
             <tag> liverpool </tag>
-            
-            <tag> investigation </tag>
             
             <tag> accomodation </tag>
             
@@ -351,6 +351,60 @@
     
     
     <entry>
+      <title>呓喵酱的一言API</title>
+      <link href="/tech/words-api.html"/>
+      <url>/tech/words-api.html</url>
+      
+        <content type="html"><![CDATA[<span class=".zh"><p>这里是呓喵酱的语录API哦~</p></span><span class=".en"><p>Hi~ This is the API of IoTcat’s Motto..</p></span><a id="more"></a><script>session.onload(function(){if(page.tran.getLang() == 'en'){tips.warning({title: 'Caution',position: 'topRight',message: 'This page was translated by Machine!!',buttons: [['<button>Show Original Page</button>', function (instance, toast) {page.tran.setLang('zh');             instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');        }, true]]});}});</script><span class=".zh"><h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><ul><li><code>lang</code>: (可选)语言 e.g. <code>lang</code>=<code>en</code>(英语)/<code>zh</code>(中文)</li></ul><h2 id="请求地址"><a href="#请求地址" class="headerlink" title="请求地址"></a>请求地址</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET https:&#x2F;&#x2F;api.yimian.xyz&#x2F;words&#x2F;</span><br></pre></td></tr></table></figure><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;随机获取一句中文语录</span><br><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;words&#x2F;</span><br><span class="line">&#x2F;&#x2F;随机获取一句英文语录</span><br><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;words&#x2F;?lang&#x3D;en</span><br></pre></td></tr></table></figure><h2 id="返回值-plaintext"><a href="#返回值-plaintext" class="headerlink" title="返回值(plaintext)"></a>返回值(plaintext)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">随机一句话</span><br></pre></td></tr></table></figure></span><span class=".en"><h2 id="Parameters"><a href="#Parameters" class="headerlink" title="Parameters"></a>Parameters</h2><ul><li><code>lang</code>: (optional) Language setting. e.g. <code>lang</code>=<code>en</code>(English)/<code>zh</code>(Chinese)</li></ul><h2 id="Request-address"><a href="#Request-address" class="headerlink" title="Request address"></a>Request address</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET https:&#x2F;&#x2F;api.yimian.xyz&#x2F;words&#x2F;</span><br></pre></td></tr></table></figure><h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;Get a random Chinese quotation</span><br><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;words&#x2F;</span><br><span class="line">&#x2F;&#x2F;Get a random English quotation</span><br><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;words&#x2F;?lang&#x3D;en</span><br></pre></td></tr></table></figure><h2 id="Return-value-plaintext"><a href="#Return-value-plaintext" class="headerlink" title="Return value (plaintext)"></a>Return value (plaintext)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Random sentence..</span><br></pre></td></tr></table></figure></span>]]></content>
+      
+      
+      <categories>
+          
+          <category> tech </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> api </tag>
+            
+            <tag> motto </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>网易云音乐获取API</title>
+      <link href="/tech/music-api.html"/>
+      <url>/tech/music-api.html</url>
+      
+        <content type="html"><![CDATA[<span class=".zh"><p>封装好的网易云音乐API，欢迎大家调用━(<em>｀∀´</em>)ノ亻!</p></span><span class=".en"><p>The packaged NetEase Cloud Music API, welcome everyone to use ━(<em>｀∀´</em>)ノ亻!</p></span><a id="more"></a><script>session.onload(function(){if(page.tran.getLang() == 'en'){tips.warning({title: 'Caution',position: 'topRight',message: 'This page was translated by Machine!!',buttons: [['<button>Show Original Page</button>', function (instance, toast) {page.tran.setLang('zh');             instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');        }, true]]});}});</script><span class=".zh"><h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><ul><li><code>type</code>: (必填)模式类型 <code>type</code>=<code>single</code>单曲信息/<code>playlist</code>歌单歌曲信息/<code>url</code>获取歌曲/<code>cover</code>获取封面/<code>lrc</code>获取歌词</li><li><code>id</code>: (必填，搭配type使用)歌单或歌曲id e.g. <code>id</code>=<code>198401123</code></li><li><code>random</code>: 仅对playlist有效，返回的歌曲是否打乱顺序，默认<code>false</code>. e.g. <code>random</code>=<code>true</code> </li><li><code>limit</code>: 返回歌单最大长度 e.g. <code>limit</code>=<code>10</code> </li></ul><blockquote><p>歌单和歌曲的id可以从<a href="https://music.163.com/#/my/" target="_blank" rel="noopener">云音乐网页版</a>获取。点开歌单或歌曲，查看浏览器地址栏，如下图：<br><img src="https://api.yimian.xyz/img/?path=imgbed/img_dfeddac_552x34_8_null_normal.jpeg" alt="Playlist Id"><br><img src="https://api.yimian.xyz/img/?path=imgbed/img_527a5ea_491x37_8_null_normal.jpeg" alt="Single Song Id"></p></blockquote><h2 id="请求地址"><a href="#请求地址" class="headerlink" title="请求地址"></a>请求地址</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET https:&#x2F;&#x2F;api.yimian.xyz&#x2F;msc&#x2F;</span><br></pre></td></tr></table></figure><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;获取id为36308263的歌曲信息</span><br><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;msc&#x2F;?type&#x3D;single&amp;id&#x3D;36308263</span><br><span class="line">&#x2F;&#x2F;获取id为808097971的歌单所有歌曲信息</span><br><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;msc&#x2F;?type&#x3D;playlist&amp;id&#x3D;808097971</span><br><span class="line">&#x2F;&#x2F;获取808097971歌单前14首歌曲信息</span><br><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;msc&#x2F;?type&#x3D;playlist&amp;id&#x3D;808097971&amp;limit&#x3D;14</span><br><span class="line">&#x2F;&#x2F;随机从808097971歌单获取14首歌曲信息</span><br><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;msc&#x2F;?type&#x3D;playlist&amp;id&#x3D;808097971&amp;limit&#x3D;14&amp;random&#x3D;true</span><br><span class="line">&#x2F;&#x2F;获取36308263的mp3音乐文件</span><br><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;msc&#x2F;?type&#x3D;url&amp;id&#x3D;36308263</span><br><span class="line">&#x2F;&#x2F;获取id为3384296792803059的封面图片</span><br><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;msc&#x2F;?type&#x3D;cover&amp;id&#x3D;3384296792803059</span><br><span class="line">&#x2F;&#x2F;获取36308263歌曲的lrc歌词文件</span><br><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;msc&#x2F;?type&#x3D;lrc&amp;id&#x3D;36308263</span><br></pre></td></tr></table></figure><h2 id="返回值-json格式"><a href="#返回值-json格式" class="headerlink" title="返回值(json格式)"></a>返回值(json格式)</h2><ul><li><p>single单曲模式: </p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">id: <span class="string">"歌曲id"</span>, </span><br><span class="line">name: <span class="string">"歌曲名称"</span>, </span><br><span class="line">artist: <span class="string">"第一作者"</span>, </span><br><span class="line">album: <span class="string">"专辑名称"</span>, </span><br><span class="line">url: <span class="string">"单曲地址"</span>, </span><br><span class="line">cover: <span class="string">"封面地址"</span>, </span><br><span class="line">lrc: <span class="string">"歌词地址"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>playlist歌单模式: </p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">&#123;</span><br><span class="line">id: <span class="string">"歌曲id"</span>,</span><br><span class="line">name: <span class="string">"歌曲名称"</span>, </span><br><span class="line">artist: <span class="string">"第一作者"</span>, </span><br><span class="line">album: <span class="string">"专辑名称"</span>, </span><br><span class="line">url: <span class="string">"单曲地址"</span>, </span><br><span class="line">cover: <span class="string">"封面地址"</span>, </span><br><span class="line">lrc: <span class="string">"歌词地址"</span></span><br><span class="line">&#125;, </span><br><span class="line">&#123;歌曲<span class="number">2.</span>.&#125;, </span><br><span class="line">&#123;歌曲<span class="number">3.</span>.&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></li><li><p>错误: </p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">code</span>: <span class="number">500</span>, <span class="attr">err</span>: <span class="string">"错误信息"</span>&#125;</span><br></pre></td></tr></table></figure></li></ul></span><span class=".en"><h2 id="Parameters"><a href="#Parameters" class="headerlink" title="Parameters"></a>Parameters</h2><ul><li><code>type</code>: (Required) Mode type <code>type</code>=<code>single</code> single information/<code>playlist</code> song information/<code>url</code> get song/<code>cover</code> get cover/<code>lrc</code> get lyrics</li><li><code>id</code>: (Required, used with type) Playlist or song id e.g. <code>id</code>=<code>198401123</code></li><li><code>random</code>: Only valid for playlist, whether the returned songs are out of order, the default is <code>false</code>. e.g. <code>random</code>=<code>true</code></li><li><code>limit</code>: return the maximum length of the playlist e.g. <code>limit</code>=<code>10</code></li></ul><blockquote><p>Playlist and song id can be obtained from <a href="https://music.163.com/#/my/" target="_blank" rel="noopener">Cloud Music Web Version</a>. Click to open a playlist or song, and check the browser address bar, as shown below:<br><img src="https://api.yimian.xyz/img/?path=imgbed/img_dfeddac_552x34_8_null_normal.jpeg" alt="Playlist Id"><br><img src="https://api.yimian.xyz/img/?path=imgbed/img_527a5ea_491x37_8_null_normal.jpeg" alt="Single Song Id"></p></blockquote><h2 id="Request-address"><a href="#Request-address" class="headerlink" title="Request address"></a>Request address</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET https:&#x2F;&#x2F;api.yimian.xyz&#x2F;msc&#x2F;</span><br></pre></td></tr></table></figure><h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;Get song information with id 36308263</span><br><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;msc&#x2F;?type&#x3D;single&amp;id&#x3D;36308263</span><br><span class="line">&#x2F;&#x2F;Get all song information of the playlist with id 808097971</span><br><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;msc&#x2F;?type&#x3D;playlist&amp;id&#x3D;808097971</span><br><span class="line">&#x2F;&#x2F;Get information about the first 14 songs of the 808097971 playlist</span><br><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;msc&#x2F;?type&#x3D;playlist&amp;id&#x3D;808097971&amp;limit&#x3D;14</span><br><span class="line">&#x2F;&#x2F;Get 14 song information randomly from 808097971 playlist</span><br><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;msc&#x2F;?type&#x3D;playlist&amp;id&#x3D;808097971&amp;limit&#x3D;14&amp;random&#x3D;true</span><br><span class="line">&#x2F;&#x2F;Get 36308263 mp3 music file</span><br><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;msc&#x2F;?type&#x3D;url&amp;id&#x3D;36308263</span><br><span class="line">&#x2F;&#x2F;Get the cover image with id 3384296792803059</span><br><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;msc&#x2F;?type&#x3D;cover&amp;id&#x3D;3384296792803059</span><br><span class="line">&#x2F;&#x2F;Get the lrc lyrics file of 36308263 song</span><br><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;msc&#x2F;?type&#x3D;lrc&amp;id&#x3D;36308263</span><br></pre></td></tr></table></figure><h2 id="Return-value-json-format"><a href="#Return-value-json-format" class="headerlink" title="Return value (json format)"></a>Return value (json format)</h2><ul><li><p>single mode:</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">id: <span class="string">"Song id"</span>,</span><br><span class="line">name: <span class="string">"Song name"</span>,</span><br><span class="line">artist: <span class="string">"First Author"</span>,</span><br><span class="line">album: <span class="string">"Album Name"</span>,</span><br><span class="line">url: <span class="string">"Single address"</span>,</span><br><span class="line">cover: <span class="string">"Cover Address"</span>,</span><br><span class="line">lrc: <span class="string">"Lyrics address"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>Playlist playlist mode:</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line"> &#123;</span><br><span class="line"> id: <span class="string">"Song id"</span>,</span><br><span class="line"> name: <span class="string">"Song name"</span>,</span><br><span class="line"> artist: <span class="string">"First Author"</span>,</span><br><span class="line"> album: <span class="string">"Album Name"</span>,</span><br><span class="line"> url: <span class="string">"Single address"</span>,</span><br><span class="line"> cover: <span class="string">"Cover Address"</span>,</span><br><span class="line"> lrc: <span class="string">"Lyrics address"</span></span><br><span class="line"> &#125;,</span><br><span class="line"> &#123;Song <span class="number">2.</span>.&#125;,</span><br><span class="line"> &#123;Song <span class="number">3.</span>.&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></li><li><p>Error:</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">code</span>: <span class="number">500</span>, <span class="attr">err</span>: <span class="string">"error message"</span>&#125;</span><br></pre></td></tr></table></figure></li></ul></span>]]></content>
+      
+      
+      <categories>
+          
+          <category> tech </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> api </tag>
+            
+            <tag> music </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>在家中部署智慧家庭系统</title>
       <link href="/tech/smart-home.html"/>
       <url>/tech/smart-home.html</url>
@@ -367,9 +421,9 @@
       
         <tags>
             
-            <tag> Arduino </tag>
-            
             <tag> iot </tag>
+            
+            <tag> Arduino </tag>
             
             <tag> smart-home </tag>
             
@@ -404,9 +458,9 @@
       
         <tags>
             
-            <tag> Arduino </tag>
-            
             <tag> iot </tag>
+            
+            <tag> Arduino </tag>
             
             <tag> LoRa </tag>
             
@@ -525,6 +579,33 @@
         <tags>
             
             <tag> war </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>咕咕机API</title>
+      <link href="/tech/memobird-printer-api.html"/>
+      <url>/tech/memobird-printer-api.html</url>
+      
+        <content type="html"><![CDATA[<span class=".zh"><p>这是一个简易的咕咕机API哦~</p></span><span class=".en"><p>This is a simple Memobird Printer API~</p></span><a id="more"></a><script>session.onload(function(){if(page.tran.getLang() == 'en'){tips.warning({title: 'Caution',position: 'topRight',message: 'This page was translated by Machine!!',buttons: [['<button>Show Original Page</button>', function (instance, toast) {page.tran.setLang('zh');             instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');        }, true]]});}});</script><span class=".zh"><blockquote><p>本API仅为官方接口的二次封装，意在降低其使用门槛。本站承诺不会保存任何使用者信息。如果您对本站存有疑惑，请慎重使用本接口！！本接口<a href="https://github.yimian.xyz/iotcat/gugu-api" target="_blank" rel="noopener">源码</a></p></blockquote><h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><ul><li><code>ak</code>: 咕咕机AccessKey(前往<a href="https://open.memobird.cn/" target="_blank" rel="noopener">咕咕机开放平台</a>申请)</li><li><code>userID</code>: 用户的咕咕号(手机软件&gt;&gt;我的&gt;&gt;头像旁边的咕咕号)</li><li><code>memobirdID</code>: 咕咕机ID(手机软件&gt;&gt;我的&gt;&gt;我的咕咕机&gt;&gt;咕咕机&gt;&gt;设备编号)</li><li><code>body</code>: 内容</li></ul><h2 id="请求地址"><a href="#请求地址" class="headerlink" title="请求地址"></a>请求地址</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET https:&#x2F;&#x2F;api.yimian.xyz&#x2F;gugu&#x2F;</span><br></pre></td></tr></table></figure><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;gugu&#x2F;?ak&#x3D;9e55121803474371bfa25d20e554b31d&amp;userID&#x3D;832598&amp;memobirdID&#x3D;c3ee06a8bd9b49e1&amp;body&#x3D;你好呀世界</span><br></pre></td></tr></table></figure><h2 id="返回值-plaintext"><a href="#返回值-plaintext" class="headerlink" title="返回值(plaintext)"></a>返回值(plaintext)</h2><ul><li>成功: </li></ul><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="string">"showapi_res_code"</span>: <span class="number">1</span>, <span class="comment">//1为发送成功，0为失败</span></span><br><span class="line"><span class="string">"showapi_res_error"</span>: <span class="string">"ok"</span>, <span class="comment">//"ok"为发送成功，否则显示错误信息</span></span><br><span class="line"><span class="string">"result"</span>: <span class="number">1</span>, <span class="comment">//1为打印成功</span></span><br><span class="line"><span class="string">"smartGuid"</span>: <span class="string">"149e2257412e532e"</span>, <span class="comment">//会话标识符</span></span><br><span class="line"><span class="string">"printcontentid"</span>: <span class="number">234784</span> <span class="comment">//打印内容识别编码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ul><li>失败：</li></ul><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="string">"showapi_res_code"</span>: <span class="number">1</span>, <span class="comment">//1为发送成功，0为失败</span></span><br><span class="line"><span class="string">"showapi_res_error"</span>: <span class="string">"错误信息"</span> <span class="comment">//否则显示错误信息</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>更多用法见<a href="http://open.memobird.cn/upload/webapi.pdf" target="_blank" rel="noopener">官方文件</a></p></blockquote></span><span class=".en"><blockquote><p>This API is only a simplified package of the official interface, intending to lower the threshold for its use. This site promises not to save any user information. If you have any doubts about this site, please use this interface carefully! ! This interface <a href="https://github.yimian.xyz/iotcat/gugu-api" target="_blank" rel="noopener">source code</a>.</p></blockquote><h2 id="Parameters"><a href="#Parameters" class="headerlink" title="Parameters"></a>Parameters</h2><p> -<code>ak</code>: Memobird Printer AccessKey (Go to <a href="https://open.memobird.cn/" target="_blank" rel="noopener">Memobird Printer Open Platform</a> to apply)<br> -<code>userID</code>: the user’s id (the User id is next to the avatar in mobile Memobird software)<br> -<code>memobirdID</code>: Memobird Printer ID (Find it in the mobile Memobird software)<br> -<code>body</code>: content to print</p><h2 id="Request-address"><a href="#Request-address" class="headerlink" title="Request address"></a>Request address</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET https:&#x2F;&#x2F;api.yimian.xyz&#x2F;gugu&#x2F;</span><br></pre></td></tr></table></figure><h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;gugu&#x2F;?ak&#x3D;9e55121803474371bfa25d20e554b31d&amp;userID&#x3D;832598&amp;memobirdID&#x3D;c3ee06a8bd9b49e1&amp;body&#x3D;Hello world</span><br></pre></td></tr></table></figure><h2 id="Return-value-plaintext"><a href="#Return-value-plaintext" class="headerlink" title="Return value (plaintext)"></a>Return value (plaintext)</h2><ul><li>Success:</li></ul><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="string">"showapi_res_code"</span>: <span class="number">1</span>, <span class="comment">//1 means transmission is successful, 0 means failure</span></span><br><span class="line"><span class="string">"showapi_res_error"</span>: <span class="string">"ok"</span>, <span class="comment">//"ok" means the transmission is successful, otherwise an error message will be displayed</span></span><br><span class="line"><span class="string">"result"</span>: <span class="number">1</span>, <span class="comment">//1 means successful printing</span></span><br><span class="line"><span class="string">"smartGuid"</span>: <span class="string">"149e2257412e532e"</span>, <span class="comment">//session identifier</span></span><br><span class="line"><span class="string">"printcontentid"</span>: <span class="number">234784</span> <span class="comment">//Print content identification code</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ul><li>Failure:</li></ul><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="string">"showapi_res_code"</span>: <span class="number">1</span>, <span class="comment">//1 means sending successfully, 0 means failure</span></span><br><span class="line"><span class="string">"showapi_res_error"</span>: <span class="string">"Error message"</span> <span class="comment">//Otherwise display error message</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>For more usage, please refer to <a href="http://open.memobird.cn/upload/webapi.pdf" target="_blank" rel="noopener">Official Document</a></p></blockquote></span>]]></content>
+      
+      
+      <categories>
+          
+          <category> tech </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> api </tag>
+            
+            <tag> motto </tag>
             
         </tags>
       
@@ -944,9 +1025,9 @@
       
         <tags>
             
-            <tag> Arduino </tag>
-            
             <tag> iot </tag>
+            
+            <tag> Arduino </tag>
             
         </tags>
       

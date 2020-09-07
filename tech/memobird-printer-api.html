@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="">
   <head>
-    <title>Archives - EEE.DOG
-  </title><meta charset="UTF-8"/>
+    <title>咕咕机API - EEE.DOG</title><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -15,7 +14,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-<meta name="description" content="跻身世外，随欲而安！- We see what we thought."/><meta name="keywords" content="iotcat,yimian,blog" /><link rel="alternate" href="/atom.xml" title="EEE.DOG"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.0.0" /><script>lang = ['zh', 'en'];</script>
+<meta name="description" content="咕咕机API"/><meta name="keywords" content="iotcat,yimian,blog" /><link rel="alternate" href="/atom.xml" title="EEE.DOG"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.0.0" /><script>lang = ['zh', 'en'];</script>
 <script type="text/javascript" src="https://cdn.yimian.xyz/ushio-js/ushio-head.min.js"></script>
 <script>page.proj = 'iotcat/eee.dog-public';</script>
 
@@ -25,7 +24,7 @@
 <!--<link rel="stylesheet" type="text/css" href="https://cdn.yimian.xyz/kayo/lib/iziToast/iziToast.min.css" />-->
 
 <link rel="stylesheet" media="none" onload="this.media='all'" type="text/css" href="https://cdn.yimian.xyz/shaky/shaky.css">
-<link rel="canonical" href="https://www.eee.dog/archives/2019/02/"/>
+<link rel="canonical" href="https://www.eee.dog/tech/memobird-printer-api.html"/>
 
 <link rel="stylesheet" media="none" onload="this.media='all'" type="text/css" href="https://cdn.yimian.xyz/kayo/lib/fancybox/jquery.fancybox.css" /><script type="text/x-mathjax-config">
     MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
@@ -398,97 +397,166 @@ pjax_google_analytics = () => {
 
       <main id="main" class="main">
         <div class="content-wrapper">
-          <div id="content" class="content"><section id="archive" class="archive"><div class="archive-title">
-          <span class="archive-post-counter">
-            39 Posts In Total
-          </span>
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title"><span class=".zh">咕咕机API</span><span class=".en" hidden>Memobird Printer API</span>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-04-23
+        </span><span class="post-category">
+            <a href="/categories/tech/">tech</a>
+            </span>
         </div>
-      <div class="collection-title">
-            <h2 class="archive-year">2019</h2>
-          </div>
-        <div class="archive-post">
-        <span class="archive-post-time">
-          02-28
-          </span>
-        <span class="archive-post-title">
-          <a href="/notes/digital-circuit.html" class="archive-post-link">
-            <span class=".zh">数电期中总结</span><span class=".en">Mid-term Summary of Digital Circuits</span>
-          </a>
-        </span>
+    </header>
+
+    <style>.toc-level-2 > .toc-child {display: none !important; }</style>
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#参数"><span class="toc-text">参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#请求地址"><span class="toc-text">请求地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#示例"><span class="toc-text">示例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#返回值-plaintext"><span class="toc-text">返回值(plaintext)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Parameters"><span class="toc-text">Parameters</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Request-address"><span class="toc-text">Request address</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Example"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Return-value-plaintext"><span class="toc-text">Return value (plaintext)</span></a></li></ol>
+    </div>
+  </div>
+  <script>var arr = [];var ts = '';if($('.post-toc-content').children().length>1){var el = '.post-toc-content';ts = ($(el).children('ol')[0].outerHTML);}else{var el = '.toc';};for(var i = 0; i < $(el).children('li').length; i++){arr.push($(el).children('li')[i].outerHTML);}; arr.splice(arr.length / 2, 0, '</span><span class=".en">');arr.unshift(ts);arr.unshift('<span class=".zh">');arr.push('</span>');$(el).html(arr.join(''));</script><div class="post-content"><span class=".zh">
+<p>这是一个简易的咕咕机API哦~</p>
+</span>
+
+
+<span class=".en">
+<p>This is a simple Memobird Printer API~</p>
+</span>
+
+
+<a id="more"></a>
+
+
+<script>
+	session.onload(function(){
+		if(page.tran.getLang() == 'en'){
+			tips.warning({
+				title: 'Caution',
+				position: 'topRight',
+				message: 'This page was translated by Machine!!',
+				buttons: [['<button>Show Original Page</button>', function (instance, toast) {
+					page.tran.setLang('zh');
+             		instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+        		}, true]]
+			});
+		}
+	});
+</script>
+
+
+<span class=".zh">
+
+<blockquote>
+<p>本API仅为官方接口的二次封装，意在降低其使用门槛。本站承诺不会保存任何使用者信息。如果您对本站存有疑惑，请慎重使用本接口！！本接口<a href="https://github.yimian.xyz/iotcat/gugu-api" target="_blank" rel="noopener">源码</a></p>
+</blockquote>
+<h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><ul>
+<li><code>ak</code>: 咕咕机AccessKey(前往<a href="https://open.memobird.cn/" target="_blank" rel="noopener">咕咕机开放平台</a>申请)</li>
+<li><code>userID</code>: 用户的咕咕号(手机软件&gt;&gt;我的&gt;&gt;头像旁边的咕咕号)</li>
+<li><code>memobirdID</code>: 咕咕机ID(手机软件&gt;&gt;我的&gt;&gt;我的咕咕机&gt;&gt;咕咕机&gt;&gt;设备编号)</li>
+<li><code>body</code>: 内容</li>
+</ul>
+<h2 id="请求地址"><a href="#请求地址" class="headerlink" title="请求地址"></a>请求地址</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET https:&#x2F;&#x2F;api.yimian.xyz&#x2F;gugu&#x2F;</span><br></pre></td></tr></table></figure>
+
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;gugu&#x2F;?ak&#x3D;9e55121803474371bfa25d20e554b31d&amp;userID&#x3D;832598&amp;memobirdID&#x3D;c3ee06a8bd9b49e1&amp;body&#x3D;你好呀世界</span><br></pre></td></tr></table></figure>
+
+<h2 id="返回值-plaintext"><a href="#返回值-plaintext" class="headerlink" title="返回值(plaintext)"></a>返回值(plaintext)</h2><ul>
+<li>成功: </li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="string">"showapi_res_code"</span>: <span class="number">1</span>, <span class="comment">//1为发送成功，0为失败</span></span><br><span class="line">	<span class="string">"showapi_res_error"</span>: <span class="string">"ok"</span>, <span class="comment">//"ok"为发送成功，否则显示错误信息</span></span><br><span class="line">	<span class="string">"result"</span>: <span class="number">1</span>, <span class="comment">//1为打印成功</span></span><br><span class="line">	<span class="string">"smartGuid"</span>: <span class="string">"149e2257412e532e"</span>, <span class="comment">//会话标识符</span></span><br><span class="line">	<span class="string">"printcontentid"</span>: <span class="number">234784</span> <span class="comment">//打印内容识别编码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>失败：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="string">"showapi_res_code"</span>: <span class="number">1</span>, <span class="comment">//1为发送成功，0为失败</span></span><br><span class="line">	<span class="string">"showapi_res_error"</span>: <span class="string">"错误信息"</span> <span class="comment">//否则显示错误信息</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>更多用法见<a href="http://open.memobird.cn/upload/webapi.pdf" target="_blank" rel="noopener">官方文件</a></p>
+</blockquote>
+</span>
+
+<span class=".en">
+<blockquote>
+<p>This API is only a simplified package of the official interface, intending to lower the threshold for its use. This site promises not to save any user information. If you have any doubts about this site, please use this interface carefully! ! This interface <a href="https://github.yimian.xyz/iotcat/gugu-api" target="_blank" rel="noopener">source code</a>.</p>
+</blockquote>
+<h2 id="Parameters"><a href="#Parameters" class="headerlink" title="Parameters"></a>Parameters</h2><p> -<code>ak</code>: Memobird Printer AccessKey (Go to <a href="https://open.memobird.cn/" target="_blank" rel="noopener">Memobird Printer Open Platform</a> to apply)<br> -<code>userID</code>: the user’s id (the User id is next to the avatar in mobile Memobird software)<br> -<code>memobirdID</code>: Memobird Printer ID (Find it in the mobile Memobird software)<br> -<code>body</code>: content to print</p>
+<h2 id="Request-address"><a href="#Request-address" class="headerlink" title="Request address"></a>Request address</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET https:&#x2F;&#x2F;api.yimian.xyz&#x2F;gugu&#x2F;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;gugu&#x2F;?ak&#x3D;9e55121803474371bfa25d20e554b31d&amp;userID&#x3D;832598&amp;memobirdID&#x3D;c3ee06a8bd9b49e1&amp;body&#x3D;Hello world</span><br></pre></td></tr></table></figure>
+
+<h2 id="Return-value-plaintext"><a href="#Return-value-plaintext" class="headerlink" title="Return value (plaintext)"></a>Return value (plaintext)</h2><ul>
+<li>Success:</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="string">"showapi_res_code"</span>: <span class="number">1</span>, <span class="comment">//1 means transmission is successful, 0 means failure</span></span><br><span class="line"><span class="string">"showapi_res_error"</span>: <span class="string">"ok"</span>, <span class="comment">//"ok" means the transmission is successful, otherwise an error message will be displayed</span></span><br><span class="line"><span class="string">"result"</span>: <span class="number">1</span>, <span class="comment">//1 means successful printing</span></span><br><span class="line"><span class="string">"smartGuid"</span>: <span class="string">"149e2257412e532e"</span>, <span class="comment">//session identifier</span></span><br><span class="line"><span class="string">"printcontentid"</span>: <span class="number">234784</span> <span class="comment">//Print content identification code</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Failure:</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="string">"showapi_res_code"</span>: <span class="number">1</span>, <span class="comment">//1 means sending successfully, 0 means failure</span></span><br><span class="line"><span class="string">"showapi_res_error"</span>: <span class="string">"Error message"</span> <span class="comment">//Otherwise display error message</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>For more usage, please refer to <a href="http://open.memobird.cn/upload/webapi.pdf" target="_blank" rel="noopener">Official Document</a></p>
+</blockquote>
+</span>
       </div>
-    <div class="archive-post">
-        <span class="archive-post-time">
-          02-28
-          </span>
-        <span class="archive-post-title">
-          <a href="/thoughts/economy-environment-sustainability.html" class="archive-post-link">
-            <span class=".zh">经济，环境可持续性</span><span class=".en">Economy, Environment and Sustainability</span>
-          </a>
-        </span>
-      </div>
-    <div class="archive-post">
-        <span class="archive-post-time">
-          02-27
-          </span>
-        <span class="archive-post-title">
-          <a href="/thoughts/global-climate-change.html" class="archive-post-link">
-            <span class=".zh">气候变化与全球环境</span><span class=".en">Climate change and the global environment</span>
-          </a>
-        </span>
-      </div>
-    <div class="archive-post">
-        <span class="archive-post-time">
-          02-26
-          </span>
-        <span class="archive-post-title">
-          <a href="/notes/electromagnetism.html" class="archive-post-link">
-            <span class=".zh">工程电磁学</span><span class=".en">Engineering Electromagnetics</span>
-          </a>
-        </span>
-      </div>
-    <div class="archive-post">
-        <span class="archive-post-time">
-          02-26
-          </span>
-        <span class="archive-post-title">
-          <a href="/tech/my-code-style.html" class="archive-post-link">
-            <span class=".zh">总结一下我的代码风格</span><span class=".en">Summarize my code style</span>
-          </a>
-        </span>
-      </div>
-    <div class="archive-post">
-        <span class="archive-post-time">
-          02-25
-          </span>
-        <span class="archive-post-title">
-          <a href="/tech/centos7-auto-install-typecho.html" class="archive-post-link">
-            <span class=".zh">Centos7脚本一键安装Typecho</span><span class=".en">Centos7 script one-click installation of Typecho</span>
-          </a>
-        </span>
-      </div>
-    <div class="archive-post">
-        <span class="archive-post-time">
-          02-24
-          </span>
-        <span class="archive-post-title">
-          <a href="/tech/cpp-summary.html" class="archive-post-link">
-            <span class=".zh">C++建库中遇到的坑</span><span class=".en">The pits encountered in C++ library building</span>
-          </a>
-        </span>
-      </div>
-    </section><nav class="pagination"></nav></div></div>
+      <div class="post-copyright">
+    <p class="copyright-item">
+      <span>Author: </span>
+      <a href="https://iotcat.me/" target="_blank" rel="noopener">IoTcat</a>
+    </p>
+    <p class="copyright-item">
+      <span>Link: </span>
+      <a href="https://www.eee.dog/tech/memobird-printer-api.html">https://www.eee.dog/tech/memobird-printer-api.html</a>
+    </p>
+    <p class="copyright-item">
+      <span>License: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/api/">api</a>
+            <a href="/tags/motto/">motto</a>
+            </div>
+        
+        <nav class="post-nav"><a class="prev" href="/thoughts/trade-war.html">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default"><span class=".zh">中美贸易战-解</span><span class=".en">Sino-US trade war-solution</span></span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    <a class="next" href="/tech/mail-api.html">
+        <span class="next-text nav-default"><span class=".zh">自动发邮件API</span><span class=".en">Auto email API</span></span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article><script>$(()=>{var p = window.location.pathname;setTimeout(()=>{if(window.location.pathname == p)tips.show({
+        title: 'tips',
+        position: 'topRight',
+        message: ((page.tran.getLang() == 'zh')?"此文章预计阅读 2 分钟哦~": "Read this page will spend around  3  minutes~")
+  })}, 6000)})</script>
+  </div><div class="comments" id="comments"><div id="vcomments"></div>
+    </div></div>
       </main>
 
       <footer id="footer" class="footer">
       <script>
         page_obj = {
-          layout: "",
-          comments: ""
+          layout: "post",
+          comments: "true"
         };
       </script><div class="social-links"><a href="mailto:i@iotcat.me" class="iconfont icon-email" title="email"></a>
         <a href="https://github.com/iotcat" target="_blank" rel="noopener" class="iconfont icon-github" title="github"></a>
         <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
-    </div><div class="copyright"><span class="power-by">
+    </div><div class="copyright"><span id="/tech/memobird-printer-api.html" class="statistic leancloud_visitors">
+    <em>Visitors </em> <i class="leancloud-visitors-count">??</i> 
+    <span class="division"> |</span>
+    <em>Reading </em> 3 min
+  </span>
+  <br>
+  <span class="power-by">
     Powered by <a class="hexo-link" href="https://ushio.cool/" target="_blank" rel="noopener">Ushio</a>
   </span>
   <span class="division">|</span>

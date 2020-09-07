@@ -8,6 +8,30 @@
     </url>
 
     <url>
+        <loc>https://www.eee.dog/tech/memobird-printer-api.html</loc>
+        <lastmod>2020-09-07T15:55:16.091Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/tech/words-api.html</loc>
+        <lastmod>2020-09-07T15:16:37.656Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/tech/music-api.html</loc>
+        <lastmod>2020-09-07T15:16:36.478Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://www.eee.dog/notes/electromagnetism.html</loc>
         <lastmod>2020-09-07T08:42:30.667Z</lastmod>
         <changefreq>weekly</changefreq>

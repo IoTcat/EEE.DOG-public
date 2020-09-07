@@ -389,11 +389,11 @@
       <category term="life" scheme="https://www.eee.dog/categories/life/"/>
     
     
+      <category term="investigation" scheme="https://www.eee.dog/tags/investigation/"/>
+    
       <category term="uk" scheme="https://www.eee.dog/tags/uk/"/>
     
       <category term="liverpool" scheme="https://www.eee.dog/tags/liverpool/"/>
-    
-      <category term="investigation" scheme="https://www.eee.dog/tags/investigation/"/>
     
       <category term="accomodation" scheme="https://www.eee.dog/tags/accomodation/"/>
     
@@ -438,6 +438,70 @@
   </entry>
   
   <entry>
+    <title>呓喵酱的一言API</title>
+    <link href="https://www.eee.dog/tech/words-api.html"/>
+    <id>https://www.eee.dog/tech/words-api.html</id>
+    <published>2019-07-29T16:00:00.000Z</published>
+    <updated>2020-09-07T15:16:37.656Z</updated>
+    
+    <content type="html"><![CDATA[<span class=".zh"><p>这里是呓喵酱的语录API哦~</p></span><span class=".en"><p>Hi~ This is the API of IoTcat’s Motto..</p></span><a id="more"></a><script>session.onload(function(){if(page.tran.getLang() == 'en'){tips.warning({title: 'Caution',position: 'topRight',message: 'This page was translated by Machine!!',buttons: [['<button>Show Original Page</button>', function (instance, toast) {page.tran.setLang('zh');             instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');        }, true]]});}});</script><span class=".zh"><h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><ul><li><code>lang</code>: (可选)语言 e.g. <code>lang</code>=<code>en</code>(英语)/<code>zh</code>(中文)</li></ul><h2 id="请求地址"><a href="#请求地址" class="headerlink" title="请求地址"></a>请求地址</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET https:&#x2F;&#x2F;api.yimian.xyz&#x2F;words&#x2F;</span><br></pre></td></tr></table></figure><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;随机获取一句中文语录</span><br><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;words&#x2F;</span><br><span class="line">&#x2F;&#x2F;随机获取一句英文语录</span><br><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;words&#x2F;?lang&#x3D;en</span><br></pre></td></tr></table></figure><h2 id="返回值-plaintext"><a href="#返回值-plaintext" class="headerlink" title="返回值(plaintext)"></a>返回值(plaintext)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">随机一句话</span><br></pre></td></tr></table></figure></span><span class=".en"><h2 id="Parameters"><a href="#Parameters" class="headerlink" title="Parameters"></a>Parameters</h2><ul><li><code>lang</code>: (optional) Language setting. e.g. <code>lang</code>=<code>en</code>(English)/<code>zh</code>(Chinese)</li></ul><h2 id="Request-address"><a href="#Request-address" class="headerlink" title="Request address"></a>Request address</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET https:&#x2F;&#x2F;api.yimian.xyz&#x2F;words&#x2F;</span><br></pre></td></tr></table></figure><h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;Get a random Chinese quotation</span><br><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;words&#x2F;</span><br><span class="line">&#x2F;&#x2F;Get a random English quotation</span><br><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;words&#x2F;?lang&#x3D;en</span><br></pre></td></tr></table></figure><h2 id="Return-value-plaintext"><a href="#Return-value-plaintext" class="headerlink" title="Return value (plaintext)"></a>Return value (plaintext)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Random sentence..</span><br></pre></td></tr></table></figure></span>]]></content>
+    
+    <summary type="html">
+    
+      &lt;span class=&quot;.zh&quot;&gt;
+&lt;p&gt;这里是呓喵酱的语录API哦~&lt;/p&gt;
+&lt;/span&gt;
+
+
+&lt;span class=&quot;.en&quot;&gt;
+&lt;p&gt;Hi~ This is the API of IoTcat’s Motto..&lt;/p&gt;
+&lt;/span&gt;
+    
+    </summary>
+    
+    
+      <category term="tech" scheme="https://www.eee.dog/categories/tech/"/>
+    
+    
+      <category term="api" scheme="https://www.eee.dog/tags/api/"/>
+    
+      <category term="motto" scheme="https://www.eee.dog/tags/motto/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网易云音乐获取API</title>
+    <link href="https://www.eee.dog/tech/music-api.html"/>
+    <id>https://www.eee.dog/tech/music-api.html</id>
+    <published>2019-07-28T16:00:00.000Z</published>
+    <updated>2020-09-07T15:16:36.478Z</updated>
+    
+    <content type="html"><![CDATA[<span class=".zh"><p>封装好的网易云音乐API，欢迎大家调用━(<em>｀∀´</em>)ノ亻!</p></span><span class=".en"><p>The packaged NetEase Cloud Music API, welcome everyone to use ━(<em>｀∀´</em>)ノ亻!</p></span><a id="more"></a><script>session.onload(function(){if(page.tran.getLang() == 'en'){tips.warning({title: 'Caution',position: 'topRight',message: 'This page was translated by Machine!!',buttons: [['<button>Show Original Page</button>', function (instance, toast) {page.tran.setLang('zh');             instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');        }, true]]});}});</script><span class=".zh"><h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><ul><li><code>type</code>: (必填)模式类型 <code>type</code>=<code>single</code>单曲信息/<code>playlist</code>歌单歌曲信息/<code>url</code>获取歌曲/<code>cover</code>获取封面/<code>lrc</code>获取歌词</li><li><code>id</code>: (必填，搭配type使用)歌单或歌曲id e.g. <code>id</code>=<code>198401123</code></li><li><code>random</code>: 仅对playlist有效，返回的歌曲是否打乱顺序，默认<code>false</code>. e.g. <code>random</code>=<code>true</code> </li><li><code>limit</code>: 返回歌单最大长度 e.g. <code>limit</code>=<code>10</code> </li></ul><blockquote><p>歌单和歌曲的id可以从<a href="https://music.163.com/#/my/" target="_blank" rel="noopener">云音乐网页版</a>获取。点开歌单或歌曲，查看浏览器地址栏，如下图：<br><img src="https://api.yimian.xyz/img/?path=imgbed/img_dfeddac_552x34_8_null_normal.jpeg" alt="Playlist Id"><br><img src="https://api.yimian.xyz/img/?path=imgbed/img_527a5ea_491x37_8_null_normal.jpeg" alt="Single Song Id"></p></blockquote><h2 id="请求地址"><a href="#请求地址" class="headerlink" title="请求地址"></a>请求地址</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET https:&#x2F;&#x2F;api.yimian.xyz&#x2F;msc&#x2F;</span><br></pre></td></tr></table></figure><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;获取id为36308263的歌曲信息</span><br><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;msc&#x2F;?type&#x3D;single&amp;id&#x3D;36308263</span><br><span class="line">&#x2F;&#x2F;获取id为808097971的歌单所有歌曲信息</span><br><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;msc&#x2F;?type&#x3D;playlist&amp;id&#x3D;808097971</span><br><span class="line">&#x2F;&#x2F;获取808097971歌单前14首歌曲信息</span><br><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;msc&#x2F;?type&#x3D;playlist&amp;id&#x3D;808097971&amp;limit&#x3D;14</span><br><span class="line">&#x2F;&#x2F;随机从808097971歌单获取14首歌曲信息</span><br><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;msc&#x2F;?type&#x3D;playlist&amp;id&#x3D;808097971&amp;limit&#x3D;14&amp;random&#x3D;true</span><br><span class="line">&#x2F;&#x2F;获取36308263的mp3音乐文件</span><br><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;msc&#x2F;?type&#x3D;url&amp;id&#x3D;36308263</span><br><span class="line">&#x2F;&#x2F;获取id为3384296792803059的封面图片</span><br><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;msc&#x2F;?type&#x3D;cover&amp;id&#x3D;3384296792803059</span><br><span class="line">&#x2F;&#x2F;获取36308263歌曲的lrc歌词文件</span><br><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;msc&#x2F;?type&#x3D;lrc&amp;id&#x3D;36308263</span><br></pre></td></tr></table></figure><h2 id="返回值-json格式"><a href="#返回值-json格式" class="headerlink" title="返回值(json格式)"></a>返回值(json格式)</h2><ul><li><p>single单曲模式: </p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">id: <span class="string">"歌曲id"</span>, </span><br><span class="line">name: <span class="string">"歌曲名称"</span>, </span><br><span class="line">artist: <span class="string">"第一作者"</span>, </span><br><span class="line">album: <span class="string">"专辑名称"</span>, </span><br><span class="line">url: <span class="string">"单曲地址"</span>, </span><br><span class="line">cover: <span class="string">"封面地址"</span>, </span><br><span class="line">lrc: <span class="string">"歌词地址"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>playlist歌单模式: </p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">&#123;</span><br><span class="line">id: <span class="string">"歌曲id"</span>,</span><br><span class="line">name: <span class="string">"歌曲名称"</span>, </span><br><span class="line">artist: <span class="string">"第一作者"</span>, </span><br><span class="line">album: <span class="string">"专辑名称"</span>, </span><br><span class="line">url: <span class="string">"单曲地址"</span>, </span><br><span class="line">cover: <span class="string">"封面地址"</span>, </span><br><span class="line">lrc: <span class="string">"歌词地址"</span></span><br><span class="line">&#125;, </span><br><span class="line">&#123;歌曲<span class="number">2.</span>.&#125;, </span><br><span class="line">&#123;歌曲<span class="number">3.</span>.&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></li><li><p>错误: </p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">code</span>: <span class="number">500</span>, <span class="attr">err</span>: <span class="string">"错误信息"</span>&#125;</span><br></pre></td></tr></table></figure></li></ul></span><span class=".en"><h2 id="Parameters"><a href="#Parameters" class="headerlink" title="Parameters"></a>Parameters</h2><ul><li><code>type</code>: (Required) Mode type <code>type</code>=<code>single</code> single information/<code>playlist</code> song information/<code>url</code> get song/<code>cover</code> get cover/<code>lrc</code> get lyrics</li><li><code>id</code>: (Required, used with type) Playlist or song id e.g. <code>id</code>=<code>198401123</code></li><li><code>random</code>: Only valid for playlist, whether the returned songs are out of order, the default is <code>false</code>. e.g. <code>random</code>=<code>true</code></li><li><code>limit</code>: return the maximum length of the playlist e.g. <code>limit</code>=<code>10</code></li></ul><blockquote><p>Playlist and song id can be obtained from <a href="https://music.163.com/#/my/" target="_blank" rel="noopener">Cloud Music Web Version</a>. Click to open a playlist or song, and check the browser address bar, as shown below:<br><img src="https://api.yimian.xyz/img/?path=imgbed/img_dfeddac_552x34_8_null_normal.jpeg" alt="Playlist Id"><br><img src="https://api.yimian.xyz/img/?path=imgbed/img_527a5ea_491x37_8_null_normal.jpeg" alt="Single Song Id"></p></blockquote><h2 id="Request-address"><a href="#Request-address" class="headerlink" title="Request address"></a>Request address</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET https:&#x2F;&#x2F;api.yimian.xyz&#x2F;msc&#x2F;</span><br></pre></td></tr></table></figure><h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;Get song information with id 36308263</span><br><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;msc&#x2F;?type&#x3D;single&amp;id&#x3D;36308263</span><br><span class="line">&#x2F;&#x2F;Get all song information of the playlist with id 808097971</span><br><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;msc&#x2F;?type&#x3D;playlist&amp;id&#x3D;808097971</span><br><span class="line">&#x2F;&#x2F;Get information about the first 14 songs of the 808097971 playlist</span><br><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;msc&#x2F;?type&#x3D;playlist&amp;id&#x3D;808097971&amp;limit&#x3D;14</span><br><span class="line">&#x2F;&#x2F;Get 14 song information randomly from 808097971 playlist</span><br><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;msc&#x2F;?type&#x3D;playlist&amp;id&#x3D;808097971&amp;limit&#x3D;14&amp;random&#x3D;true</span><br><span class="line">&#x2F;&#x2F;Get 36308263 mp3 music file</span><br><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;msc&#x2F;?type&#x3D;url&amp;id&#x3D;36308263</span><br><span class="line">&#x2F;&#x2F;Get the cover image with id 3384296792803059</span><br><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;msc&#x2F;?type&#x3D;cover&amp;id&#x3D;3384296792803059</span><br><span class="line">&#x2F;&#x2F;Get the lrc lyrics file of 36308263 song</span><br><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;msc&#x2F;?type&#x3D;lrc&amp;id&#x3D;36308263</span><br></pre></td></tr></table></figure><h2 id="Return-value-json-format"><a href="#Return-value-json-format" class="headerlink" title="Return value (json format)"></a>Return value (json format)</h2><ul><li><p>single mode:</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">id: <span class="string">"Song id"</span>,</span><br><span class="line">name: <span class="string">"Song name"</span>,</span><br><span class="line">artist: <span class="string">"First Author"</span>,</span><br><span class="line">album: <span class="string">"Album Name"</span>,</span><br><span class="line">url: <span class="string">"Single address"</span>,</span><br><span class="line">cover: <span class="string">"Cover Address"</span>,</span><br><span class="line">lrc: <span class="string">"Lyrics address"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>Playlist playlist mode:</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line"> &#123;</span><br><span class="line"> id: <span class="string">"Song id"</span>,</span><br><span class="line"> name: <span class="string">"Song name"</span>,</span><br><span class="line"> artist: <span class="string">"First Author"</span>,</span><br><span class="line"> album: <span class="string">"Album Name"</span>,</span><br><span class="line"> url: <span class="string">"Single address"</span>,</span><br><span class="line"> cover: <span class="string">"Cover Address"</span>,</span><br><span class="line"> lrc: <span class="string">"Lyrics address"</span></span><br><span class="line"> &#125;,</span><br><span class="line"> &#123;Song <span class="number">2.</span>.&#125;,</span><br><span class="line"> &#123;Song <span class="number">3.</span>.&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></li><li><p>Error:</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">code</span>: <span class="number">500</span>, <span class="attr">err</span>: <span class="string">"error message"</span>&#125;</span><br></pre></td></tr></table></figure></li></ul></span>]]></content>
+    
+    <summary type="html">
+    
+      &lt;span class=&quot;.zh&quot;&gt;
+&lt;p&gt;封装好的网易云音乐API，欢迎大家调用━(&lt;em&gt;｀∀´&lt;/em&gt;)ノ亻!&lt;/p&gt;
+&lt;/span&gt;
+
+
+&lt;span class=&quot;.en&quot;&gt;
+&lt;p&gt;The packaged NetEase Cloud Music API, welcome everyone to use ━(&lt;em&gt;｀∀´&lt;/em&gt;)ノ亻!&lt;/p&gt;
+&lt;/span&gt;
+    
+    </summary>
+    
+    
+      <category term="tech" scheme="https://www.eee.dog/categories/tech/"/>
+    
+    
+      <category term="api" scheme="https://www.eee.dog/tags/api/"/>
+    
+      <category term="music" scheme="https://www.eee.dog/tags/music/"/>
+    
+  </entry>
+  
+  <entry>
     <title>在家中部署智慧家庭系统</title>
     <link href="https://www.eee.dog/tech/smart-home.html"/>
     <id>https://www.eee.dog/tech/smart-home.html</id>
@@ -463,9 +527,9 @@
       <category term="tech" scheme="https://www.eee.dog/categories/tech/"/>
     
     
-      <category term="Arduino" scheme="https://www.eee.dog/tags/Arduino/"/>
-    
       <category term="iot" scheme="https://www.eee.dog/tags/iot/"/>
+    
+      <category term="Arduino" scheme="https://www.eee.dog/tags/Arduino/"/>
     
       <category term="smart-home" scheme="https://www.eee.dog/tags/smart-home/"/>
     
@@ -505,9 +569,9 @@
       <category term="tech" scheme="https://www.eee.dog/categories/tech/"/>
     
     
-      <category term="Arduino" scheme="https://www.eee.dog/tags/Arduino/"/>
-    
       <category term="iot" scheme="https://www.eee.dog/tags/iot/"/>
+    
+      <category term="Arduino" scheme="https://www.eee.dog/tags/Arduino/"/>
     
       <category term="LoRa" scheme="https://www.eee.dog/tags/LoRa/"/>
     
@@ -616,68 +680,6 @@
       <category term="nodeJS" scheme="https://www.eee.dog/tags/nodeJS/"/>
     
       <category term="WiFi" scheme="https://www.eee.dog/tags/WiFi/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>中美贸易战-解</title>
-    <link href="https://www.eee.dog/thoughts/trade-war.html"/>
-    <id>https://www.eee.dog/thoughts/trade-war.html</id>
-    <published>2019-05-11T16:00:00.000Z</published>
-    <updated>2020-09-05T11:56:01.129Z</updated>
-    
-    <content type="html"><![CDATA[<span class=".zh"><p>中美贸易战的解不在美国，而是在我们自己身上。</p></span><span class=".en"><p>The solution to the Sino-US trade war is not in the United States, but in ourselves.</p></span><a id="more"></a><script>session.onload(function(){if(page.tran.getLang() == 'en'){tips.warning({title: 'Caution',position: 'topRight',message: 'This page was translated by Machine!!',buttons: [['<button>Show Original Page</button>', function (instance, toast) {page.tran.setLang('zh');             instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');        }, true]]});}});</script><span class=".zh"><p>关于谈判，党内争议比较大，但最终很有可能会拒绝做出让步。<br>当美关税抬升，国内相关产业链将大批转移至台湾及东南亚国家，累计将造成1亿人口的就业问题。与前几次的危机不同，这一次我们不但要提防房市泡沫的激化，也没有那麽多的基建可提供就业。从另一方面看，近几年来，中国的产能过剩问题主要通过出口得以解决，拿着贸易顺差来发展国内经济，以实现不可思议的经济增长。如今特朗普政府征加关税，将使得这一策略不再行得通。</p><p>如果在谈判中妥协，中方将丧失好不容易占来的第四次工业革命先机，并经济将会想日本，韩国一样任人摆布。</p><p>我认为，在不妥协的前提下，中共有三个破局之法。</p><ol><li>武统台湾<br>这个需要看明年台湾大选，是否能找到正当的武统理由。但的确有助于缓解国内社会焦点问题。</li><li>房市改革<br>可能性极大，把泡沫危机转变成创造就业机会的资本。</li><li>游戏<br>将社会上的过剩劳动力转移进游戏产业空转，以缓解社会矛盾的形成。</li></ol><p>为了缓解失业冲击的强度，央行将通过印人民币使人民币贬值来增进出口，吸引他国来补充美资撤离的空缺。</p><p>以上。。</p></span><span class=".en"><p>Regarding negotiations, there are relatively large disputes within the party, but in the end it is very likely that they will refuse to make concessions.<br>When U.S. tariffs rise, related domestic industrial chains will be transferred to Taiwan and Southeast Asian countries in large numbers, which will cause employment problems for 100 million people. Unlike previous crises, this time we not only have to guard against the intensification of the housing market bubble, but also there is not so much infrastructure that can provide employment. On the other hand, in recent years, China’s overcapacity problem has been solved mainly through exports, and the trade surplus is used to develop the domestic economy in order to achieve incredible economic growth. Now that the Trump administration imposes tariffs, this strategy will no longer work.</p><p>If it compromises in the negotiation, China will lose the opportunity of the Fourth Industrial Revolution that it finally took over, and its economy will be at the mercy of Japan and South Korea.</p><p>I think that under the premise of no compromise, there are three ways to break the game.</p><ol><li>Wu Tong Taiwan<br>This depends on whether Taiwan’s general election next year can find a legitimate reason for military reunification. But it does help alleviate domestic social focus issues.</li><li>Housing market reform<br>It is very possible to turn the bubble crisis into capital for job creation.</li><li>Games<br>Transfer the surplus labor force in the society into the game industry to ease the formation of social conflicts.</li></ol><p>In order to alleviate the intensity of the unemployment shock, the central bank will increase imports and exports by printing the renminbi to depreciate the renminbi, attracting other countries to supplement the vacancy of the withdrawal of US capital.</p><p>the above. .</p></span>]]></content>
-    
-    <summary type="html">
-    
-      &lt;span class=&quot;.zh&quot;&gt;
-&lt;p&gt;中美贸易战的解不在美国，而是在我们自己身上。&lt;/p&gt;
-&lt;/span&gt;
-
-
-&lt;span class=&quot;.en&quot;&gt;
-&lt;p&gt;The solution to the Sino-US trade war is not in the United States, but in ourselves.&lt;/p&gt;
-&lt;/span&gt;
-    
-    </summary>
-    
-    
-      <category term="thoughts" scheme="https://www.eee.dog/categories/thoughts/"/>
-    
-    
-      <category term="war" scheme="https://www.eee.dog/tags/war/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>自动发邮件API</title>
-    <link href="https://www.eee.dog/tech/mail-api.html"/>
-    <id>https://www.eee.dog/tech/mail-api.html</id>
-    <published>2019-03-21T16:00:00.000Z</published>
-    <updated>2020-09-05T12:58:43.957Z</updated>
-    
-    <content type="html"><![CDATA[<span class=".zh"><p>重整自己先前的mail模块，顺便封装了一个API出来，欢迎大家调用~</p></span><span class=".en"><p>Reorganized my previous mail module and encapsulated an API by the way. Welcome everyone to call~</p></span><a id="more"></a><script>session.onload(function(){if(page.tran.getLang() == 'en'){tips.warning({title: 'Caution',position: 'topRight',message: 'This page was translated by Machine!!',buttons: [['<button>Show Original Page</button>', function (instance, toast) {page.tran.setLang('zh');             instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');        }, true]]});}});</script><span class=".zh"><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="参数-接受GET和POST"><a href="#参数-接受GET和POST" class="headerlink" title="参数(接受GET和POST)"></a>参数(接受GET和POST)</h3><ul><li><code>to</code>收信人邮箱地址</li><li><code>subject</code>邮件主题</li><li><code>body</code>邮件内容(建议使用html格式)</li><li><code>from</code>发件人名称</li></ul><h3 id="请求地址"><a href="#请求地址" class="headerlink" title="请求地址"></a>请求地址</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;mail</span><br></pre></td></tr></table></figure><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;mail&#x2F;?to&#x3D;收信邮箱&amp;subject&#x3D;邮件主题&amp;body&#x3D;邮件内容&amp;from&#x3D;发件人名称</span><br></pre></td></tr></table></figure><p>[scode type=”yellow”]如遇到GET传递邮件内容错误，请尝试使用POST[/scode]</p><h3 id="返回值-json格式"><a href="#返回值-json格式" class="headerlink" title="返回值(json格式)"></a>返回值(json格式)</h3><ul><li>参数<code>state</code>::<code>true</code>(成功)或<code>false</code>(失败)</li></ul><p>[scode type=”dangerous”]每个IP每天请求上限50个[/scode]</p></span><span class=".en"><h2 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h2><h3 id="Parameters-accept-GET-and-POST"><a href="#Parameters-accept-GET-and-POST" class="headerlink" title="Parameters (accept GET and POST)"></a>Parameters (accept GET and POST)</h3><ul><li><code>to</code> recipient email address</li><li><code>subject</code> mail subject</li><li><code>body</code> email content (html format is recommended)</li><li><code>from</code> sender name</li></ul><h3 id="Request-address"><a href="#Request-address" class="headerlink" title="Request address"></a>Request address</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;mail</span><br></pre></td></tr></table></figure><h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;api.yimian.xyz&#x2F;mail&#x2F;?to&#x3D;receiving mailbox&amp;subject&#x3D;mail subject&amp;body&#x3D;mail content&amp;from&#x3D;sender name</span><br></pre></td></tr></table></figure><p>[scode type=”yellow”] If you encounter an error in GET delivery of the mail content, please try using POST[/scode]</p><h3 id="Return-value-json-format"><a href="#Return-value-json-format" class="headerlink" title="Return value (json format)"></a>Return value (json format)</h3><ul><li>Parameter <code>state</code>::<code>true</code> (success) or <code>false</code> (failure)</li></ul><p>[scode type=”dangerous”] There are 50 requests per day per IP[/scode]</p></span>]]></content>
-    
-    <summary type="html">
-    
-      &lt;span class=&quot;.zh&quot;&gt;
-&lt;p&gt;重整自己先前的mail模块，顺便封装了一个API出来，欢迎大家调用~&lt;/p&gt;
-&lt;/span&gt;
-
-
-&lt;span class=&quot;.en&quot;&gt;
-&lt;p&gt;Reorganized my previous mail module and encapsulated an API by the way. Welcome everyone to call~&lt;/p&gt;
-&lt;/span&gt;
-    
-    </summary>
-    
-    
-      <category term="tech" scheme="https://www.eee.dog/categories/tech/"/>
-    
-    
-      <category term="api" scheme="https://www.eee.dog/tags/api/"/>
-    
-      <category term="mail" scheme="https://www.eee.dog/tags/mail/"/>
     
   </entry>
   
