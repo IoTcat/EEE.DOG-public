@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <title>wIoT发展展望 - EEE.DOG</title><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="wIoT发展展望"/><meta name="keywords" content="iotcat,yimian,blog" /><link rel="alternate" href="/atom.xml" title="EEE.DOG"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.0.0" /><script>lang = ['zh', 'en'];</script>
+<script type="text/javascript" src="https://cdn.yimian.xyz/ushio-js/ushio-head.min.js"></script>
+<script>page.proj = 'iotcat/eee.dog-public';</script>
+
+<!--<link rel="stylesheet" type="text/css" href="https://cdn.yimian.xyz/kayo/lib/iziModal/iziModal.min.css" />-->
+
+
+<!--<link rel="stylesheet" type="text/css" href="https://cdn.yimian.xyz/kayo/lib/iziToast/iziToast.min.css" />-->
+
+<link rel="stylesheet" media="none" onload="this.media='all'" type="text/css" href="https://cdn.yimian.xyz/shaky/shaky.css">
+<link rel="canonical" href="https://www.eee.dog/tech/wiot2.html"/>
+
+<link rel="stylesheet" media="none" onload="this.media='all'" type="text/css" href="https://cdn.yimian.xyz/kayo/lib/fancybox/jquery.fancybox.css" /><script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+  </script>
+  <script type="text/javascript" async src="https://cdn.yimian.xyz/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.yimian.xyz/kayo/css/style.css?v=1.0.0" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-169276192-1" data-pjax></script>
+<script>
+pjax_google_analytics = () => {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-169276192-1');
+}
+</script><script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+  window.config = {"leancloud":"","toc":true,"fancybox":true,"pjax":{"enable":true,"loadingbar":true},"latex":true};
+</script>
+
+  <meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="EEE.DOG" type="application/atom+xml">
+</head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">EEE.DOG</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="loading-bar">
+    <div class="progress"></div>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><div id="mobile-menu-Home">
+      <a href="/">
+        <li class="mobile-menu-item"><span class=".en">Home</span><span class=".zh">主页</span>
+          </li>
+      </a></div><div id="mobile-menu-Archives">
+      <a href="/archives/">
+        <li class="mobile-menu-item"><span class=".en">Archives</span><span class=".zh">归档</span>
+          </li>
+      </a></div><div id="mobile-menu-Categories">
+      <a href="/categories/">
+        <li class="mobile-menu-item"><span class=".en">Categories</span><span class=".zh">分类</span>
+          </li>
+      </a></div><div id="mobile-menu-Projects">
+      <a href="#">
+        <li class="mobile-menu-item"><span class=".en">Projects</span><span class=".zh">项目</span>
+          </li>
+      </a><ul class="sub-menu" style="display: none;"> 
+          <li>
+              <a href="https://fp.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">fp</span><span class=".zh">fp</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://wiot.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">wiot</span><span class=".zh">wiot</span>
+              </a>
+            </li>
+          </ul>
+      <script>$('#mobile-menu-Projects').click(function(){
+          $("#mobile-menu-Projects ul").toggle();
+      })</script>
+      </div><div id="mobile-menu-Map">
+      <a href="#">
+        <li class="mobile-menu-item"><span class=".en">Map</span><span class=".zh">导航</span>
+          </li>
+      </a><ul class="sub-menu" style="display: none;"> 
+          <li>
+              <a href="https://api.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">APIs</span><span class=".zh">接口</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://img.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Imgs</span><span class=".zh">图库</span>
+              </a>
+            </li>
+          <li>
+              <a href="/">
+                <span class=".en">Imgbed</span><span class=".zh">图床</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://share.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Fileshare</span><span class=".zh">文件分享</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://monitor.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Monitor</span><span class=".zh">监控</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://acg.watch/" target="_blank" rel="noopener">
+                <span class=".en">ACG.WATCH</span><span class=".zh">视频</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://onedrive.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Oneindex</span><span class=".zh">网盘</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://proxy.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Proxy</span><span class=".zh">下载代理</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://shorturl.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">ShortenURL</span><span class=".zh">短链</span>
+              </a>
+            </li>
+          </ul>
+      <script>$('#mobile-menu-Map').click(function(){
+          $("#mobile-menu-Map ul").toggle();
+      })</script>
+      </div><div id="mobile-menu-About">
+      <a href="#">
+        <li class="mobile-menu-item"><span class=".en">About</span><span class=".zh">关于</span>
+          </li>
+      </a><ul class="sub-menu" style="display: none;"> 
+          <li>
+              <a href="/links/">
+                <span class=".en">links</span><span class=".zh">友链</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://iotcat.me/" target="_blank" rel="noopener">
+                <span class=".en">Me</span><span class=".zh">关于我</span>
+              </a>
+            </li>
+          </ul>
+      <script>$('#mobile-menu-About').click(function(){
+          $("#mobile-menu-About ul").toggle();
+      })</script>
+      </div></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">EEE.DOG</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+        <a id="menu-Home" class="menu-item-link" href="/">
+          <span class=".en">Home</span><span class=".zh">主页</span>
+          </a>
+
+      </li>
+    <li class="menu-item">
+        <a id="menu-Archives" class="menu-item-link" href="/archives/">
+          <span class=".en">Archives</span><span class=".zh">归档</span>
+          </a>
+
+      </li>
+    <li class="menu-item">
+        <a id="menu-Categories" class="menu-item-link" href="/categories/">
+          <span class=".en">Categories</span><span class=".zh">分类</span>
+          </a>
+
+      </li>
+    <li class="menu-item">
+        <a id="menu-Projects" class="menu-item-link" href="#">
+          <span class=".en">Projects</span><span class=".zh">项目</span>
+          </a>
+
+      <script>
+          $("#menu-Projects").click(function(){
+            tips.question({
+			    timeout: 20000,
+			    close: false,
+			    overlay: true,
+			    displayMode: 'once',
+			    //id: 'question',
+			    zindex: 999,
+			    title: 'Projects',
+			    message: '',
+			    position: 'center',
+			    buttons: [
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'fp':'fp')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://fp.yimian.xyz/");
+                        else
+                            window.location.href="https://fp.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'wiot':'wiot')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://wiot.yimian.xyz/");
+                        else
+                            window.location.href="https://wiot.yimian.xyz/";
+			        }, true],
+			    ['<button><b>close</b></button>', function (instance, toast) {
+			
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+			        }, true],
+			    ]
+			});
+          });
+        </script>
+      </li>
+    <li class="menu-item">
+        <a id="menu-Map" class="menu-item-link" href="#">
+          <span class=".en">Map</span><span class=".zh">导航</span>
+          </a>
+
+      <script>
+          $("#menu-Map").click(function(){
+            tips.question({
+			    timeout: 20000,
+			    close: false,
+			    overlay: true,
+			    displayMode: 'once',
+			    //id: 'question',
+			    zindex: 999,
+			    title: 'Map',
+			    message: '',
+			    position: 'center',
+			    buttons: [
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'APIs':'接口')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://api.yimian.xyz/");
+                        else
+                            window.location.href="https://api.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Imgs':'图库')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://img.yimian.xyz/");
+                        else
+                            window.location.href="https://img.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Imgbed':'图床')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("/");
+                        else
+                            window.location.href="undefined";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Fileshare':'文件分享')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://share.yimian.xyz/");
+                        else
+                            window.location.href="https://share.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Monitor':'监控')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://monitor.yimian.xyz/");
+                        else
+                            window.location.href="https://monitor.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'ACG.WATCH':'视频')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://acg.watch/");
+                        else
+                            window.location.href="https://acg.watch/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Oneindex':'网盘')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://onedrive.yimian.xyz/");
+                        else
+                            window.location.href="https://onedrive.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Proxy':'下载代理')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://proxy.yimian.xyz/");
+                        else
+                            window.location.href="https://proxy.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'ShortenURL':'短链')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://shorturl.yimian.xyz/");
+                        else
+                            window.location.href="https://shorturl.yimian.xyz/";
+			        }, true],
+			    ['<button><b>close</b></button>', function (instance, toast) {
+			
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+			        }, true],
+			    ]
+			});
+          });
+        </script>
+      </li>
+    <li class="menu-item">
+        <a id="menu-About" class="menu-item-link" href="#">
+          <span class=".en">About</span><span class=".zh">关于</span>
+          </a>
+
+      <script>
+          $("#menu-About").click(function(){
+            tips.question({
+			    timeout: 20000,
+			    close: false,
+			    overlay: true,
+			    displayMode: 'once',
+			    //id: 'question',
+			    zindex: 999,
+			    title: 'About',
+			    message: '',
+			    position: 'center',
+			    buttons: [
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'links':'友链')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("true" == "true")
+			 			  pjax.loadUrl("/links/");
+                        else
+                            window.location.href="/links/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Me':'关于我')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://iotcat.me/");
+                        else
+                            window.location.href="https://iotcat.me/";
+			        }, true],
+			    ['<button><b>close</b></button>', function (instance, toast) {
+			
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+			        }, true],
+			    ]
+			});
+          });
+        </script>
+      </li>
+    </ul></nav>
+</header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title"><span class=".zh">wIoT发展展望</span><span class=".en" hidden>wIoT - What is the future</span>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2020-09-15
+        </span><span class="post-category">
+            <a href="/categories/tech/">tech</a>
+            </span>
+        </div>
+    </header>
+
+    <style>.toc-level-2 > .toc-child {display: none !important; }</style>
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#wIoT"><span class="toc-text">wIoT</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#项目简介"><span class="toc-text">项目简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#立项初衷"><span class="toc-text">立项初衷</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第一轮开发"><span class="toc-text">第一轮开发</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第二轮开发"><span class="toc-text">第二轮开发</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#支持的开发版"><span class="toc-text">支持的开发版</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实现方法"><span class="toc-text">实现方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Node节点"><span class="toc-text">Node节点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#模式"><span class="toc-text">模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#低功耗"><span class="toc-text">低功耗</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#组网"><span class="toc-text">组网</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#认证"><span class="toc-text">认证</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#云模块"><span class="toc-text">云模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令行程序"><span class="toc-text">命令行程序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用户操作步骤"><span class="toc-text">用户操作步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其它操作"><span class="toc-text">其它操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#部署自己的wiot云模块"><span class="toc-text">部署自己的wiot云模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wiot-cli命令"><span class="toc-text">wiot-cli命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用API"><span class="toc-text">常用API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wIoT-1"><span class="toc-text">wIoT</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Project-Description"><span class="toc-text">Project Description</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#The-original-intention-of-the-project"><span class="toc-text">The original intention of the project</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#First-round-of-development"><span class="toc-text">First round of development</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Second-round-of-development"><span class="toc-text">Second round of development</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Supported-development-version"><span class="toc-text">Supported development version</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Implementation"><span class="toc-text">Implementation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Node-node"><span class="toc-text">Node node</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Mode"><span class="toc-text">Mode</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Low-power-consumption"><span class="toc-text">Low power consumption</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Networking"><span class="toc-text">Networking</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Certification"><span class="toc-text">Certification</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cloud-Module"><span class="toc-text">Cloud Module</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Command-Line-Program"><span class="toc-text">Command Line Program</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#User-operation-steps"><span class="toc-text">User operation steps</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Other-operations"><span class="toc-text">Other operations</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-your-own-wiot-cloud-module"><span class="toc-text">Deploy your own wiot cloud module</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wiot-cli-command"><span class="toc-text">wiot-cli command</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Common-API"><span class="toc-text">Common API</span></a></li></ol>
+    </div>
+  </div>
+  <script>var arr = [];var ts = '';if($('.post-toc-content').children().length>1){var el = '.post-toc-content';ts = ($(el).children('ol')[0].outerHTML);}else{var el = '.toc';};for(var i = 0; i < $(el).children('li').length; i++){arr.push($(el).children('li')[i].outerHTML);}; arr.splice(arr.length / 2, 0, '</span><span class=".en">');arr.unshift(ts);arr.unshift('<span class=".zh">');arr.push('</span>');$(el).html(arr.join(''));</script><div class="post-content"><span class=".zh">
+<p>本文将讨论wiot项目下一步的发展目标与实施方法。</p>
+</span>
+
+
+<span class=".en">
+<p>This article will discuss the next development goals and implementation methods of the Wiot project.</p>
+</span>
+
+
+<a id="more"></a>
+
+
+<script>
+    session.onload(function(){
+        if(page.tran.getLang() == 'en'){
+            tips.warning({
+                title: 'Caution',
+                position: 'topRight',
+                message: 'This page was translated by Machine!!',
+                buttons: [['<button>Show Chinese Page</button>', function (instance, toast) {
+                    page.tran.setLang('zh');
+                    instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                }, true]]
+            });
+        }
+    });
+</script>
+
+
+<span class=".zh">
+
+
+<h3 id="wIoT"><a href="#wIoT" class="headerlink" title="wIoT"></a>wIoT</h3><p>wiot，一个基于NodeJS的分布式物联网操作系统。</p>
+<h1 id="项目简介"><a href="#项目简介" class="headerlink" title="项目简介"></a>项目简介</h1><h2 id="立项初衷"><a href="#立项初衷" class="headerlink" title="立项初衷"></a>立项初衷</h2><p>本项目旨在帮助不熟悉固件编程的网络开发者实现出自己的物联网应用。</p>
+<p>在开发传统的物联网程序时，我们需要一次又一次的编写，烧录，调试每一个开发板，以某种方式将其相连结，以提供某种服务。这样的方式非常繁琐，开发成本和门槛都比较高。此外，古老的C和C++语言缺少成熟的依赖管理工具，以至于我们在编写开发板时难以像开发python或nodeJS程序一样轻松便捷。</p>
+<p>本项目试图提供一种方法，将烧录，调试开发板的流程自动化，并将逻辑编写的步骤移动到远程计算机的NodeJS界面上。通过此方式，我们进而得以将分布式物联网节点的功能进行集中化管理。此外，借助NodeJS成熟的依赖管理器npm，使得物联网应用的开发更加便捷高效。</p>
+<p>至此，下到每一个物联网节点，上到各种类型的数据库、用户终端，都可以在同一个nodeJS界面上配置、操作。开发者将能够专注于物联网逻辑的开发，实现出更加丰富多彩的物联网应用。</p>
+<h1 id="第一轮开发"><a href="#第一轮开发" class="headerlink" title="第一轮开发"></a>第一轮开发</h1><blockquote>
+<p>第一轮开发完成于2019.5，详见<a href="https://www.eee.dog/tech/wiot.html">这篇博客</a></p>
+</blockquote>
+<p> 实现了对D1 MINI开发板对nodeJS的pin口映射，并支持诸如ota等一系列功能。</p>
+<h1 id="第二轮开发"><a href="#第二轮开发" class="headerlink" title="第二轮开发"></a>第二轮开发</h1><blockquote>
+<p>待进行，计划当做FYP项目</p>
+</blockquote>
+<h2 id="支持的开发版"><a href="#支持的开发版" class="headerlink" title="支持的开发版"></a>支持的开发版</h2><ul>
+<li><a href="https://www.nodemcu.com/index_en.html" target="_blank" rel="noopener">NodeMCU</a></li>
+</ul>
+<h2 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h2><p>通过提供标准化的单片机固件以及自动化的烧录工具，wiot将各开发板的pin口功能进行抽象，整理，并映射为可调用的NodeJS接口。</p>
+<p><img src="https://api.yimian.xyz/img/?path=imgbed/img_b0a1fe7_1395x662_8_null_normal.jpeg" alt="wiot Architecture"></p>
+<p>如上图所示，wiot架构主要包含三部分：Node节点，wiot Cloud Module云模块，wiot cli命令行程序。其中，Node节点为烧录好wiot固件的NodeMCU单片机，他们通过IEEE 802.11 WiFi进行分布式通信，并于某个节点接入路由器以连接wiot云模块。用户在自己的PC上使用NodeJS调用wiot依赖编写物联网程序。完成后，用户使用wiot cli对开发好的程序进行检查、测试和部署。被部署的物联网程序将运行在wiot云模块上，并可使用nodeJS的接口与其它云服务或数据库进行交互。</p>
+<h3 id="Node节点"><a href="#Node节点" class="headerlink" title="Node节点"></a>Node节点</h3><p>Node节点使用的是NodeMCU开发板（基于ESP8266的扩展板）。在使用wiot-cli烧录wiot固件后，NodeMCU将成为wiot节点。</p>
+<h4 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h4><p>wiot节点有四种模式：master模式、slave模式、bridge模式和debug模式。此模式只能在烧录固件时配置。master模式和bridge模式下，nodeMCU将同时开启STA和AP模式。slave模式下则只开启STA模式。master需要有稳定且无限制的电源供电，其功率较大，不适合低功耗场景。bridge与slave则可以灵活调整功率，可用于低功耗场景。</p>
+<p>debug模式下节点工作在STA和AP模式，用户可以使用手机等设备连接到此节点，并打开根目录网页。网页上将实时显示此节点当前所处位置的各种信息，比如收到各其它节点的信号强度等，适用于部署场景。</p>
+<h4 id="低功耗"><a href="#低功耗" class="headerlink" title="低功耗"></a>低功耗</h4><p>wiot节点支持低功耗（Low Power）状态。但此状态仅能在slave模式和bridge下开启。此状态可通过wiot api或者wiot-cli进行开启或关闭。低功耗状态由esp8266睡眠功能实现。此状态下可由干电池供电工作数年<a href="https://makecademy.com/esp8266-battery" target="_blank" rel="noopener">[1]</a>。</p>
+<h4 id="组网"><a href="#组网" class="headerlink" title="组网"></a>组网</h4><p>wiot节点使用分布式组网。在路由器信号较强的地方，master节点将接入路由器WiFi网络，并桥接。在路由器信号不强的地方，每一个节点都会找到信号最强的另一个上游的master或bridge节点，并桥接（slave除外）。</p>
+<p><img src="https://api.yimian.xyz/img/?path=imgbed/img_a42f5a4_1224x561_8_null_normal.jpeg" alt="wiot节点分布式组网"></p>
+<p>如上图，两个距离路由器近的master节点自动接入到路由器wifi。下游的其它节点分别连接至信号最强的上游节点。</p>
+<h4 id="认证"><a href="#认证" class="headerlink" title="认证"></a>认证</h4><p><img src="https://api.yimian.xyz/img/?path=imgbed/img_d184ff2_1442x502_8_null_normal.jpeg" alt="射频指纹识别[2]"><br>wiot节点支持使用<strong>射频指纹识别</strong><a href="https://ieeexplore.ieee.org/document/8715341" target="_blank" rel="noopener">2</a>来实现下游通信认证。此方法使用esp8266的RSSI函数以及scan返回参数。在下游设备试图接入网络时，上游设备将搜集指纹信息并向服务器汇报。服务器将指纹与数据库存储的先前版本进行比对，并作出是否允许入网的决策。</p>
+<h3 id="云模块"><a href="#云模块" class="headerlink" title="云模块"></a>云模块</h3><p>云模块充当wiot的云部分，提供云的功能。云模块能够守护运行run-time状态下的wiot程序。此外，云模块还能够提供测试，部署等功能。云模块使用Docker进行虚拟化。</p>
+<h3 id="命令行程序"><a href="#命令行程序" class="headerlink" title="命令行程序"></a>命令行程序</h3><p>即wiot-cli。是wiot在开发者终端上提供的操作工具集。通过wiot-cli，开发者可以实现对wiot程序的测试，部署，恢复等功能。此外，wiot-cli也支持一系列debug等常用功能。详见下方<code>wiot-cli命令</code>。</p>
+<h2 id="用户操作步骤"><a href="#用户操作步骤" class="headerlink" title="用户操作步骤"></a>用户操作步骤</h2><ol>
+<li>用户下载安装并配置好NodeJS环境。</li>
+<li>用户通过命令行运行<code>npm i -g wiot-cli</code>指令安装wiot命令行工具</li>
+<li>用户运行命令<code>wiot init my-wiot-proj</code>在当前目录新建并配置一个wiot项目文件夹，项目名称为my-wiot-proj。此时，会提示用户填写此项目的一些信息，比如项目描述，作者信息，WiFi账户密码，wiot云模块地址，项目主脚本等。</li>
+<li>用户进入到项目目录，将nodeMCU通过数据线连接到电脑，运行<code>wiot node init my-first-node [--type=&lt;master|slave|bridge|debug&gt;]</code>。这将自动配置并将wiot固件烧录到nodeMCU开发板，并将其命名为my-first-node。type为可选参数，可设置为<code>master</code>或<code>slave</code>或<code>bridge</code>或<code>debug</code>，默认为<code>master</code>。</li>
+<li>依次按照此方法烧录好所有的开发板，将其部署在生产环境。</li>
+<li>在项目文件夹运行指令<code>wiot status</code>查看是否所有节点均已在线。如果没有，使用指令<code>wiot log</code>配合<code>grep</code>工具查找日志定位问题。</li>
+<li>从项目主脚本（默认是<code>index.js</code>）开始编写你的wiot程序。</li>
+<li>使用指令<code>wiot check</code>检查你wiot程序的逻辑问题。</li>
+<li>使用指令<code>wiot test</code>将挂起云模块中正在运行的程序，并运行当前项目文件夹中的程序。此时，所有控制台输出将显示在你的命令行窗口。使用<code>Ctrl+C</code>终止当前测试并恢复云模块先前的程序。</li>
+<li>使用指令<code>wiot push</code>将本地的wiot程序部署到云端。</li>
+</ol>
+<h2 id="其它操作"><a href="#其它操作" class="headerlink" title="其它操作"></a>其它操作</h2><h3 id="部署自己的wiot云模块"><a href="#部署自己的wiot云模块" class="headerlink" title="部署自己的wiot云模块"></a>部署自己的wiot云模块</h3><p>安装docker并运行指令<code>docker run -d --name=wiot-cloud -p 3594:3594 -v /var/wiot/data/:/var/wiot/data/ iotcat/wiot</code>。</p>
+<h3 id="wiot-cli命令"><a href="#wiot-cli命令" class="headerlink" title="wiot-cli命令"></a>wiot-cli命令</h3><ul>
+<li><code>wiot help [command]</code>查看帮助</li>
+<li><code>wiot clone &lt;host:user/project&gt;</code>将项目从云模块克隆到本地</li>
+<li><code>wiot pull</code>使用远程代码覆盖本地代码</li>
+<li><code>wiot push</code>将当前文件夹wiot程序部署到云模块</li>
+<li><code>wiot ls</code>显示当前所有节点</li>
+<li><code>wiot map [nodeID]</code>显示某节点的连接路径</li>
+<li><code>wiot log [nodeID] [--head=&lt;number&gt;|--tail=&lt;number&gt;]</code>查看某节点的日志</li>
+<li><code>wiot stop</code>停止wiot服务</li>
+<li><code>wiot start</code>开启wiot服务</li>
+<li><code>wiot restart</code>重启wiot服务</li>
+<li><code>wiot reload</code>在不重置flash变量情况下重启wiot服务</li>
+<li><code>wiot init &lt;name&gt;</code>新建并初始化wiot项目文件夹</li>
+<li><code>wiot node init &lt;node-name&gt; [--type=&lt;master|slave|bridge|debug&gt;]</code>配置并烧录nodeMCU开发板</li>
+<li><code>wiot check</code>检查当前文件夹项目逻辑问题。</li>
+<li><code>wiot test</code>将挂起云模块中正在运行的程序，并运行当前项目文件夹中的程序。此时，所有控制台输出将显示在你的命令行窗口。使用<code>Ctrl+C</code>终止当前测试并恢复云模块先前的程序。</li>
+<li><code>wiot status [nodeID]</code>显示当前项目或节点状态信息</li>
+<li><code>wiot debug start</code>终止当前云端程序并进入debug模式</li>
+<li><code>wiot debug set &lt;nodeID&gt; &lt;pinID&gt; &lt;0-255&gt;</code>debug模式下设置某个节点pin的PWM输出值</li>
+<li><code>wiot debug reset &lt;nodeID&gt;</code>debug模式下重置某个节点的数据存储，并重连</li>
+<li><code>wiot debug get &lt;nodeID&gt; &lt;pinID&gt;</code>debug模式下获取某个节点pin的PWM值</li>
+<li><code>wiot debug sleep &lt;nodeID&gt; &lt;pinID&gt; &lt;HIGH|LOW&gt;</code>debug模式下设置某节点轻度休眠，直到被某pin的高或低电平唤醒</li>
+<li><code>wiot debug dsleep &lt;nodeID&gt; &lt;millisecond&gt;</code>debug模式下设置某节点深度休眠多少毫秒</li>
+<li><code>wiot debug reconnect [nodeID]</code>debug模式下重新组网或断开重连某个节点</li>
+</ul>
+<h3 id="常用API"><a href="#常用API" class="headerlink" title="常用API"></a>常用API</h3><blockquote>
+<p>待设计，请参考<a href="https://wiot.yimian.xyz/#/home" target="_blank" rel="noopener">一轮开发wiot文档</a></p>
+</blockquote>
+</span>
+
+<span class=".en">
+
+<h3 id="wIoT-1"><a href="#wIoT-1" class="headerlink" title="wIoT"></a>wIoT</h3><p>Wiot, a distributed IoT operating system based on NodeJS.</p>
+<h1 id="Project-Description"><a href="#Project-Description" class="headerlink" title="Project Description"></a>Project Description</h1><h2 id="The-original-intention-of-the-project"><a href="#The-original-intention-of-the-project" class="headerlink" title="The original intention of the project"></a>The original intention of the project</h2><p>This project aims to help web developers who are not familiar with firmware programming to implement their own IoT applications.</p>
+<p>When developing traditional Internet of Things programs, we need to write, burn, and debug each development board again and again, and connect them in a certain way to provide a certain service. This method is very cumbersome, and the development cost and threshold are relatively high. In addition, the ancient C and C++ languages ​​lack mature dependency management tools, so that it is difficult for us to write development boards as easy and convenient as developing python or nodeJS programs.</p>
+<p>This project is trying to provide a method to automate the process of burning and debugging the development board, and move the steps of logic writing to the NodeJS interface of the remote computer. In this way, we are able to centrally manage the functions of distributed IoT nodes. In addition, with NodeJS’s mature dependency manager npm, the development of IoT applications is more convenient and efficient.</p>
+<p>So far, down to every IoT node, up to various types of databases and user terminals, all can be configured and operated on the same nodeJS interface. Developers will be able to focus on the development of IoT logic and realize more colorful IoT applications.</p>
+<h1 id="First-round-of-development"><a href="#First-round-of-development" class="headerlink" title="First round of development"></a>First round of development</h1><blockquote>
+<p>The first round of development was completed in May 2019, please refer to <a href="https://www.eee.dog/tech/wiot.html">this blog</a></p>
+</blockquote>
+<p> Realize the pin port mapping of D1 MINI development board to nodeJS, and support a series of functions such as ota.</p>
+<h1 id="Second-round-of-development"><a href="#Second-round-of-development" class="headerlink" title="Second round of development"></a>Second round of development</h1><blockquote>
+<p>To be carried out, plan as FYP project</p>
+</blockquote>
+<h2 id="Supported-development-version"><a href="#Supported-development-version" class="headerlink" title="Supported development version"></a>Supported development version</h2><ul>
+<li><a href="https://www.nodemcu.com/index_en.html" target="_blank" rel="noopener">NodeMCU</a></li>
+</ul>
+<h2 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h2><p>By providing standardized microcontroller firmware and automated burning tools, wiot abstracts, organizes, and maps the pin port functions of each development board into a callable NodeJS interface.</p>
+<p><img src="https://api.yimian.xyz/img/?path=imgbed/img_b0a1fe7_1395x662_8_null_normal.jpeg" alt="wiot Architecture"></p>
+<p>As shown in the figure above, the wiot architecture mainly consists of three parts: Node node, wiot Cloud Module, and wiot cli command line program. Among them, the Node node is the NodeMCU microcontroller with the wiot firmware burned. They use IEEE 802.11 WiFi for distributed communication, and connect to a router at a node to connect to the wiot cloud module. Users use NodeJS to call Wiot on their own PCs and rely on writing IoT programs. After completion, the user uses wiot cli to check, test and deploy the developed program. The deployed IoT program will run on the wiot cloud module, and can use the nodeJS interface to interact with other cloud services or databases.</p>
+<h3 id="Node-node"><a href="#Node-node" class="headerlink" title="Node node"></a>Node node</h3><p>Node node uses NodeMCU development board (expansion board based on ESP8266). After using wiot-cli to burn the wiot firmware, NodeMCU will become a wiot node.</p>
+<h4 id="Mode"><a href="#Mode" class="headerlink" title="Mode"></a>Mode</h4><p>Wiot nodes have four modes: master mode, slave mode, bridge mode and debug mode. This mode can only be configured when burning firmware. In master mode and bridge mode, nodeMCU will enable STA and AP mode at the same time. In slave mode, only STA mode is enabled. The master needs to have a stable and unlimited power supply, which has a large power and is not suitable for low power consumption scenarios. Bridge and slave can flexibly adjust power, which can be used in low power consumption scenarios.</p>
+<p>In debug mode, the node works in STA and AP mode. Users can use mobile phones and other devices to connect to this node and open the root directory webpage. The web page will display various information about the current location of this node in real time, such as the signal strength received from other nodes, which is suitable for deployment scenarios.</p>
+<h4 id="Low-power-consumption"><a href="#Low-power-consumption" class="headerlink" title="Low power consumption"></a>Low power consumption</h4><p>Wiot nodes support Low Power state. But this state can only be opened in slave mode and bridge. This state can be turned on or off through wiot api or wiot-cli. The low power consumption state is realized by the sleep function of esp8266. In this state, it can be powered by dry batteries for several years <a href="https://makecademy.com/esp8266-battery" target="_blank" rel="noopener">[1]</a>.</p>
+<h4 id="Networking"><a href="#Networking" class="headerlink" title="Networking"></a>Networking</h4><p>Wiot nodes use distributed networking. Where the router signal is strong, the master node will access the router WiFi network and bridge it. Where the router signal is not strong, each node will find another upstream master or bridge node with the strongest signal and bridge it (except slave).</p>
+<p><img src="https://api.yimian.xyz/img/?path=imgbed/img_a42f5a4_1224x561_8_null_normal.jpeg" alt="wiot node distributed networking"></p>
+<p>As shown in the figure above, the two master nodes close to the router are automatically connected to the router wifi. The other downstream nodes are respectively connected to the upstream node with the strongest signal.</p>
+<h4 id="Certification"><a href="#Certification" class="headerlink" title="Certification"></a>Certification</h4><p><img src="https://api.yimian.xyz/img/?path=imgbed/img_d184ff2_1442x502_8_null_normal.jpeg" alt="Radio frequency fingerprint identification[2]"></p>
+<p>Wiot nodes support the use of <strong>RF Fingerprint Recognition</strong><a href="https://ieeexplore.ieee.org/document/8715341" target="_blank" rel="noopener">2</a> to achieve downstream communication authentication. This method uses the RSSI function of esp8266 and scan return parameters. When the downstream device attempts to access the network, the upstream device will collect fingerprint information and report to the server. The server compares the fingerprint with the previous version stored in the database and makes a decision whether to allow access to the network.</p>
+<h3 id="Cloud-Module"><a href="#Cloud-Module" class="headerlink" title="Cloud Module"></a>Cloud Module</h3><p>The cloud module acts as the cloud part of Wiot and provides cloud functions. The cloud module can guard the wiot program running in the run-time state. In addition, the cloud module can also provide functions such as testing and deployment. The cloud module uses Docker for virtualization.</p>
+<h3 id="Command-Line-Program"><a href="#Command-Line-Program" class="headerlink" title="Command Line Program"></a>Command Line Program</h3><p>That is wiot-cli. It is a set of operation tools provided by Wiot on the developer terminal. Through wiot-cli, developers can implement functions such as testing, deploying, and restoring wiot programs. In addition, wiot-cli also supports a series of common functions such as debug. See the <code>wiot-cli command</code> below for details.</p>
+<h2 id="User-operation-steps"><a href="#User-operation-steps" class="headerlink" title="User operation steps"></a>User operation steps</h2><ol>
+<li>The user downloads, installs and configures the NodeJS environment.</li>
+<li>The user runs the command <code>npm i -g wiot-cli</code> through the command line to install the wiot command line tool</li>
+<li>The user runs the command <code>wiot init my-wiot-proj</code> to create and configure a wiot project folder in the current directory, the project name is my-wiot-proj. At this point, the user will be prompted to fill in some information about this project, such as project description, author information, WiFi account password, wiot cloud module address, project main script, etc.</li>
+<li>The user enters the project directory, connects the nodeMCU to the computer through the data cable, and runs <code>wiot node init my-first-node [--type=&lt;master|slave|bridge|debug&gt;]</code>. This will automatically configure and burn the Wiot firmware to the nodeMCU development board and name it my-first-node. type is an optional parameter, which can be set to <code>master</code> or <code>slave</code> or <code>bridge</code> or <code>debug</code>, and the default is <code>master</code>.</li>
+<li>Follow this method to burn all the development boards and deploy them in the production environment.</li>
+<li>Run the command <code>wiot status</code> in the project folder to see if all nodes are online. If not, use the command <code>wiot log</code> with the <code>grep</code> tool to find the log location problem.</li>
+<li>Start writing your wiot program from the main project script (default is <code>index.js</code>).</li>
+<li>Use the command <code>wiot check</code> to check the logic of your wiot program.</li>
+<li>Use the command <code>wiot test</code> to suspend the running program in the cloud module and run the program in the current project folder. At this point, all console output will be displayed in your command line window. Use <code>Ctrl+C</code> to terminate the current test and restore the previous program of the cloud module.</li>
+<li>Use the command <code>wiot push</code> to deploy the local wiot program to the cloud.</li>
+</ol>
+<h2 id="Other-operations"><a href="#Other-operations" class="headerlink" title="Other operations"></a>Other operations</h2><h3 id="Deploy-your-own-wiot-cloud-module"><a href="#Deploy-your-own-wiot-cloud-module" class="headerlink" title="Deploy your own wiot cloud module"></a>Deploy your own wiot cloud module</h3><p>Install docker and run the command <code>docker run -d --name=wiot-cloud -p 3594:3594 -v /var/wiot/data/:/var/wiot/data/ iotcat/wiot</code>.</p>
+<h3 id="wiot-cli-command"><a href="#wiot-cli-command" class="headerlink" title="wiot-cli command"></a>wiot-cli command</h3><ul>
+<li><code>wiot help [command]</code> view help</li>
+<li><code>wiot clone &lt;host:user/project&gt;</code> to clone the project from the cloud module to the local</li>
+<li><code>wiot pull</code> uses remote code to overwrite local code</li>
+<li><code>wiot push</code> deploys the current folder wiot program to the cloud module</li>
+<li><code>wiot ls</code> shows all current nodes</li>
+<li><code>wiot map [nodeID]</code> shows the connection path of a node</li>
+<li><code>wiot log [nodeID] [--head=&lt;number&gt;|--tail=&lt;number&gt;]</code> view the log of a node</li>
+<li><code>wiot stop</code> stop wiot service</li>
+<li><code>wiot start</code> to start wiot service</li>
+<li><code>wiot restart</code> restart wiot service</li>
+<li><code>wiot reload</code> restarts the wiot service without resetting the flash variable</li>
+<li><code>wiot init &lt;name&gt;</code> creates and initializes the wiot project folder</li>
+<li><code>wiot node init &lt;node-name&gt; [--type=&lt;master|slave|bridge|debug&gt;]</code> configure and burn nodeMCU development board</li>
+<li><code>wiot check</code> checks the current folder project logic problem.</li>
+<li><code>wiot test</code> will suspend the running program in the cloud module and run the program in the current project folder. At this point, all console output will be displayed in your command line window. Use <code>Ctrl+C</code> to terminate the current test and restore the previous program of the cloud module.</li>
+<li><code>wiot status [nodeID]</code> displays current project or node status information</li>
+<li><code>wiot debug start</code> terminates the current cloud program and enters debug mode</li>
+<li><code>wiot debug set &lt;nodeID&gt; &lt;pinID&gt; &lt;0-255&gt;</code>Set the PWM output value of a node pin in debug mode</li>
+<li>In <code>wiot debug reset &lt;nodeID&gt;</code>debug mode, reset the data storage of a node and reconnect</li>
+<li><code>wiot debug get &lt;nodeID&gt; &lt;pinID&gt;</code> get the PWM value of a node pin in debug mode</li>
+<li><code>wiot debug sleep &lt;nodeID&gt; &lt;pinID&gt; &lt;HIGH|LOW&gt;</code>debug mode to set a node to lightly sleep until it is awakened by a pin’s high or low level</li>
+<li><code>wiot debug dsleep &lt;nodeID&gt; &lt;millisecond&gt;</code> set how many milliseconds a node deeply sleeps in debug mode</li>
+<li>In <code>wiot debug reconnect [nodeID]</code>debug mode, reconnect to the network or disconnect and reconnect to a node</li>
+</ul>
+<h3 id="Common-API"><a href="#Common-API" class="headerlink" title="Common API"></a>Common API</h3><blockquote>
+<p>To be designed, please refer to <a href="https://wiot.yimian.xyz/#/home" target="_blank" rel="noopener">One-round development wiot document</a></p>
+</blockquote>
+</span>
+
+      </div>
+      <div class="post-copyright">
+    <p class="copyright-item">
+      <span>Author: </span>
+      <a href="https://iotcat.me/" target="_blank" rel="noopener">IoTcat</a>
+    </p>
+    <p class="copyright-item">
+      <span>Link: </span>
+      <a href="https://www.eee.dog/tech/wiot2.html">https://www.eee.dog/tech/wiot2.html</a>
+    </p>
+    <p class="copyright-item">
+      <span>License: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/iot/">iot</a>
+            <a href="/tags/nodeJS/">nodeJS</a>
+            <a href="/tags/WiFi/">WiFi</a>
+            </div>
+        
+        <nav class="post-nav"><a class="next" href="/life/gre.html">
+        <span class="next-text nav-default"><span class=".zh">GRE备考核心矛盾分析</span><span class=".en">Analysis of Methodology in GRE preparation</span></span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article><script>$(()=>{var p = window.location.pathname;setTimeout(()=>{if(window.location.pathname == p)tips.show({
+        title: 'tips',
+        position: 'topRight',
+        message: ((page.tran.getLang() == 'zh')?"此文章预计阅读 13 分钟哦~": "Read this page will spend around  27  minutes~")
+  })}, 6000)})</script>
+  </div><div class="comments" id="comments"><div id="vcomments"></div>
+    </div></div>
+      </main>
+
+      <footer id="footer" class="footer">
+      <script>
+        page_obj = {
+          layout: "post",
+          comments: "true"
+        };
+      </script><div class="social-links"><a href="mailto:i@iotcat.me" class="iconfont icon-email" title="email"></a>
+        <a href="https://github.com/iotcat" target="_blank" rel="noopener" class="iconfont icon-github" title="github"></a>
+        <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    </div><div class="copyright"><span id="/tech/wiot2.html" class="statistic leancloud_visitors">
+    <em>Visitors </em> <i class="leancloud-visitors-count">??</i> 
+    <span class="division"> |</span>
+    <em>Reading </em> 27 min
+  </span>
+  <br>
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://ushio.cool/" target="_blank" rel="noopener">Ushio</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/iotcat/kayo" target="_blank" rel="noopener">Kayo</a>
+  </span>
+
+  <span class="copyright-year">&copy;2018 - 2020<span class="heart shaky">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"><a href="https://iotcat.me/" target="_blank" rel="noopener">IoTcat</a></span>
+  </span>
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+<script src="https://cdn.yimian.xyz/kayo/lib/valine/valine.min.js" data-pjax></script>
+<style>
+/* 背景图片 */
+#veditor {
+  background-image: url(https://cdn.yimian.xyz/img/blog/comments_bg.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-color: rgba(255, 255, 255, 0);
+  resize: vertical
+}
+
+/* 头像旋转 */
+img.vimg {
+  transition: all 1s   /* 旋转时间为 1s */
+}
+img.vimg:hover {
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+}
+
+
+/* 盒子模式 */
+#vcomments .vcards .vcard {
+  padding: 15px 20px 0 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
+  transition: all .3s
+}
+
+#vcomments .vcards .vcard:hover {
+  box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
+}
+
+#vcomments .vcards .vcard .vh .vcard {
+  border: none;
+  box-shadow: none;
+}
+
+
+</style>
+<script>
+pjax_valine = () => {
+    $.get('https://auth.yimian.xyz/getEmailHash.php', function(res){
+        if(page.tran.getLang() == 'zh'){
+            var lan = 'zh-CN';
+            var metaPlaceholder = {"nick":"昵称/QQ号","mail":"邮箱（完全保密）"};
+            var tagMeta =  ["博主","小伙伴","访客"];
+            var placeholder = "填写邮箱可以及时收到回复哦(●'◡'●)";
+        }else{
+            var lan = 'en';
+            var metaPlaceholder = {"nick":"Nickname/QQ","mail":"EMail"};
+            var tagMeta =  ["Master","Friend","Visitor"];
+            var placeholder = "Leave some comments here (●'◡'●)";
+        }
+        new Valine({
+            el: '#vcomments',
+            appId: 'eVzpK7EyT6OafJvXWIRminWT-gzGzoHsz',
+            appKey: '2qjuEBgVE0BscTQnTmoS9roU',
+            master: '9b616ff4cd6c305e5970bee7b1bd9b1f',   //博主邮箱md5
+            tagMeta: tagMeta,     //标识字段名
+            friends: res, //["b6ddef7c7e1c647e7767afeacdfb7b64","46dd4e6fef4f9591736c4723a965ca2e","6132d77f9f0ae060bc733090991acecb","3e00e104b79d7c6e866c6b23c6ba6dfc"],  //小伙伴邮箱Md5
+
+            metaPlaceholder: metaPlaceholder,
+            placeholder: placeholder,
+            lang: lan,
+            path: window.location.pathname,
+            enableQQ: true,
+            visitor: true,
+            emojiCDN: '//i0.hdslb.com/bfs/emote/',
+            emojiMaps: {
+                "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+                "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+                "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png",
+                "tv_再见": "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+                "tv_冷漠": "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+                "tv_发怒": "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+                "tv_发财": "34db290afd2963723c6eb3c4560667db7253a21a.png",
+                "tv_可爱": "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+                "tv_吐血": "09dd16a7aa59b77baa1155d47484409624470c77.png",
+                "tv_呆": "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+                "tv_呕吐": "9f996894a39e282ccf5e66856af49483f81870f3.png",
+                "tv_困": "241ee304e44c0af029adceb294399391e4737ef2.png",
+                "tv_坏笑": "1f0b87f731a671079842116e0991c91c2c88645a.png",
+                "tv_大佬": "093c1e2c490161aca397afc45573c877cdead616.png",
+                "tv_大哭": "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+                "tv_委屈": "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+                "tv_害羞": "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+                "tv_尴尬": "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+                "tv_微笑": "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+                "tv_思考": "90cf159733e558137ed20aa04d09964436f618a1.png",
+                "tv_惊吓": "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+                "tv_打脸": "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+                "tv_抓狂": "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+                "tv_抠鼻": "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+                "tv_斜眼笑": "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+                "tv_无奈": "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+                "tv_晕": "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+                "tv_流汗": "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+                "tv_流泪": "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+                "tv_流鼻血": "c32d39db2737f89b904ca32700d140a9241b0767.png",
+                "tv_点赞": "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+                "tv_生气": "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+                "tv_生病": "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+                "tv_疑问": "0793d949b18d7be716078349c202c15ff166f314.png",
+                "tv_白眼": "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+                "tv_皱眉": "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+                "tv_目瞪口呆": "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+                "tv_睡着": "8b196675b53af58264f383c50ad0945048290b33.png",
+                "tv_笑哭": "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+                "tv_腼腆": "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+                "tv_色": "61822c7e9aae5da76475e7892534545336b23a6f.png",
+                "tv_调侃": "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+                "tv_调皮": "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+                "tv_鄙视": "6e72339f346a692a495b123174b49e4e8e781303.png",
+                "tv_闭嘴": "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+                "tv_难过": "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+                "tv_馋": "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+                "tv_鬼脸": "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+                "tv_黑人问号": "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+                "tv_鼓掌": "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"
+                // ... 更多表情
+            } 
+        });
+    });
+};
+</script><script type="text/javascript" src="https://cdn.yimian.xyz/ushio-js/ushio-footer.min.js"></script>
+<script>
+session.onload(function(){
+    if(session.get('group') != 'anonymous'){
+        function insertNick(){
+            if($('.vnick').length){
+                $('.vnick').val(session.get('nickname'));
+            }else{
+                setTimeout(insertNick, 500);
+            }
+        }
+        function insertMail(){
+            if($('.vmail').length){
+                $('.vmail').val(session.get('email'));
+            }else{
+                setTimeout(insertMail, 500);
+            }
+        }
+
+        if(session.get('nickname')){
+            insertNick();
+        }
+
+        if(session.get('email')){
+            insertMail();
+        }
+    }
+});
+</script>
+<script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/iziToast/iziToast.min.js"></script>
+  <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/iziModal/iziModal.min.js"></script>
+  <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/mermaid/mermaid.min.js"></script>
+  <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/js/src/kayo.js?v=1.0.0" data-pjax></script>
+<script type="text/javascript" src="https://cdn.yimian.xyz/kayo/js/src/kayo-no-pjax.js?v=1.0.0"></script>
+<script src="https://cdn.yimian.xyz/kayo/lib/pjax/pjax.min.js"></script>
+<script>window.pjax = new Pjax({
+    elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"])',
+    selectors: ["head title, #main", "#footer"],
+  });/* lazyload */
+    window.imageLazyLoadSetting = {
+        isSPA: false,
+        processImages: null,
+    };
+    
+     window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});
+
+  /* 第一次载入页面加载的函数 */
+  pjax_ini = () => {
+    
+     /* 关闭侧边栏 */
+     window.slideout.close();
+
+     if(page_obj.comments == "true"){pjax_valine();}pjax_google_analytics();mermaid.init(undefined, $(".mermaid"));/* lazy load */
+     !function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);
+     !function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})}();
+  };
+
+  /* 第一次 执行 */
+  pjax_ini();var loadingBar = document.querySelector(".loading-bar");
+var progress = document.querySelector(".loading-bar .progress");
+var timer = null;
+
+
+// Pjax 开始时执行的函数
+var loadingbarStart = function () {
+  // 进度条默认已经加载 20%
+  var loadingBarWidth = 20;
+  // 进度条的最大增加宽度
+  var MAX_LOADING_WIDTH = 95;
+
+  // 显示进度条
+  loadingBar.classList.add("loading");
+  // 初始化进度条的宽度
+  progress.style.width = loadingBarWidth + "%";
+
+  clearInterval(timer);
+  timer = setInterval(function () {
+    // 进度条的增加速度（可以改为一个随机值，显得更加真实）
+    loadingBarWidth += 3;
+
+    // 当进度条到达 95% 后停止增加
+    if (loadingBarWidth > MAX_LOADING_WIDTH) {
+      loadingBarWidth = MAX_LOADING_WIDTH;
+    }
+
+    progress.style.width = loadingBarWidth + "%";
+  }, 500);
+};
+
+
+// Pjax 完成之后执行的函数
+var loadingbarStop = function () {
+  clearInterval(timer);
+  progress.style.width = "100%";
+  loadingBar.classList.remove("loading");
+
+  setTimeout(function () {
+    progress.style.width = 0;
+  }, 400);
+};/* Pjax 开始时，重新加载的函数 */
+  document.addEventListener("pjax:send", function () {loadingbarStart(); 
+    });
+
+
+  /* Pjax 完成后，重新加载的函数 */
+  document.addEventListener("pjax:complete", function () {
+    /* 重载带data-pjax的script，或者.pjax-reload属性内容的script */
+    $("script[data-pjax], .pjax-reload script").each(function () {
+        $(this).parent().append($(this).remove());
+    });
+    pjax_ini();loadingbarStop();
+    page.tran.setLang();
+  });
+
+
+  /* Pjax 出错，执行的函数 */
+  document.addEventListener("pjax:error", function () {
+    
+  });</script>
+</body>
+</html>

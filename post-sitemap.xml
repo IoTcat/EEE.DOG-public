@@ -8,6 +8,38 @@
     </url>
 
     <url>
+        <loc>https://www.eee.dog/tech/wiot2.html</loc>
+        <lastmod>2020-09-15T14:49:43.370Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/tech/wiot.html</loc>
+        <lastmod>2020-09-15T09:11:16.774Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/tech/smart-home.html</loc>
+        <lastmod>2020-09-08T12:58:29.284Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/tech/crown-place-erp.html</loc>
+        <lastmod>2020-09-08T10:37:15.710Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://www.eee.dog/tech/memobird-printer-api.html</loc>
         <lastmod>2020-09-07T15:55:16.091Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -64,14 +96,6 @@
     </url>
 
     <url>
-        <loc>https://www.eee.dog/tech/wiot.html</loc>
-        <lastmod>2020-09-06T16:14:13.377Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://www.eee.dog/tech/rand-pic-api.html</loc>
         <lastmod>2020-09-06T16:12:46.077Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -82,22 +106,6 @@
     <url>
         <loc>https://www.eee.dog/tech/smartfarming-surf.html</loc>
         <lastmod>2020-09-06T16:09:30.505Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.eee.dog/tech/smart-home.html</loc>
-        <lastmod>2020-09-05T13:05:36.029Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.eee.dog/tech/crown-place-erp.html</loc>
-        <lastmod>2020-09-05T13:04:51.789Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
