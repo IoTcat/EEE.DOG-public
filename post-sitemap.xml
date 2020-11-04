@@ -8,8 +8,24 @@
     </url>
 
     <url>
+        <loc>https://www.eee.dog/tech/v2ray-instruction.html</loc>
+        <lastmod>2020-11-04T05:08:42.544Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/tech/rand-pic-api.html</loc>
+        <lastmod>2020-11-02T07:53:02.203Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://www.eee.dog/tech/wiot2.html</loc>
-        <lastmod>2020-09-16T01:48:14.523Z</lastmod>
+        <lastmod>2020-09-30T03:53:23.942Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -90,14 +106,6 @@
     <url>
         <loc>https://www.eee.dog/thoughts/global-climate-change.html</loc>
         <lastmod>2020-09-06T16:17:24.242Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.eee.dog/tech/rand-pic-api.html</loc>
-        <lastmod>2020-09-06T16:12:46.077Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

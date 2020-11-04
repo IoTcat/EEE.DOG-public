@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="">
   <head>
-    <title>Archives - EEE.DOG
-  </title><meta charset="UTF-8"/>
+    <title>Ushio-V2ray使用方法 - EEE.DOG</title><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -15,7 +14,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-<meta name="description" content="跻身世外，随欲而安！- We see what we thought."/><meta name="keywords" content="iotcat,yimian,blog" /><link rel="alternate" href="/atom.xml" title="EEE.DOG"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.0.0" /><script>lang = ['zh', 'en'];</script>
+<meta name="description" content="Ushio-V2ray使用方法"/><meta name="keywords" content="iotcat,yimian,blog" /><link rel="alternate" href="/atom.xml" title="EEE.DOG"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.0.0" /><script>lang = ['zh', 'en'];</script>
 <script type="text/javascript" src="https://cdn.yimian.xyz/ushio-js/ushio-head.min.js"></script>
 <script>page.proj = 'iotcat/eee.dog-public';</script>
 
@@ -25,7 +24,7 @@
 <!--<link rel="stylesheet" type="text/css" href="https://cdn.yimian.xyz/kayo/lib/iziToast/iziToast.min.css" />-->
 
 <link rel="stylesheet" media="none" onload="this.media='all'" type="text/css" href="https://cdn.yimian.xyz/shaky/shaky.css">
-<link rel="canonical" href="https://www.eee.dog/archives/2020/"/>
+<link rel="canonical" href="https://www.eee.dog/tech/v2ray-instruction.html"/>
 
 <link rel="stylesheet" media="none" onload="this.media='all'" type="text/css" href="https://cdn.yimian.xyz/kayo/lib/fancybox/jquery.fancybox.css" /><script type="text/x-mathjax-config">
     MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
@@ -398,137 +397,304 @@ pjax_google_analytics = () => {
 
       <main id="main" class="main">
         <div class="content-wrapper">
-          <div id="content" class="content"><section id="archive" class="archive"><div class="archive-title">
-          <span class="archive-post-counter">
-            41 Posts In Total
-          </span>
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title"><span class=".zh">Ushio-V2ray使用方法</span><span class=".en" hidden>Ushio V2ray Instruction</span>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2020-11-04
+        </span><span class="post-category">
+            <a href="/categories/tech/">tech</a>
+            </span>
         </div>
-      <div class="collection-title">
-            <h2 class="archive-year">2020</h2>
-          </div>
-        <div class="archive-post">
-        <span class="archive-post-time">
-          11-04
-          </span>
-        <span class="archive-post-title">
-          <a href="/tech/v2ray-instruction.html" class="archive-post-link">
-            <span class=".zh">Ushio-V2ray使用方法</span><span class=".en">Ushio V2ray Instruction</span>
-          </a>
-        </span>
+    </header>
+
+    <style>.toc-level-2 > .toc-child {display: none !important; }</style>
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#流程总览"><span class="toc-text">流程总览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用户注册"><span class="toc-text">用户注册</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#v2ray软件安装"><span class="toc-text">v2ray软件安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Win10"><span class="toc-text">Win10</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Android"><span class="toc-text">Android</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ios"><span class="toc-text">Ios</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Process-overview"><span class="toc-text">Process overview</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#User-registration"><span class="toc-text">User registration</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#v2ray-software-installation"><span class="toc-text">v2ray software installation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Win10-1"><span class="toc-text">Win10</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Android-1"><span class="toc-text">Android</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ios-1"><span class="toc-text">Ios</span></a></li></ol></li></ol>
+    </div>
+  </div>
+  <script>var arr = [];var ts = '';if($('.post-toc-content').children().length>1){var el = '.post-toc-content';ts = ($(el).children('ol')[0].outerHTML);}else{var el = '.toc';};for(var i = 0; i < $(el).children('li').length; i++){arr.push($(el).children('li')[i].outerHTML);}; arr.splice(arr.length / 2, 0, '</span><span class=".en">');arr.unshift(ts);arr.unshift('<span class=".zh">');arr.push('</span>');$(el).html(arr.join(''));</script><div class="post-content"><span class=".zh">
+<p>Ushio V2ray 使用方法。</p>
+</span>
+
+
+<span class=".en">
+<p>Ushio V2ray Instruction..</p>
+</span>
+
+<a id="more"></a>
+
+
+
+<script>
+	session.onload(function(){
+		if(page.tran.getLang() == 'en'){
+			tips.warning({
+				title: 'Caution',
+				position: 'topRight',
+				message: 'This page was translated by Machine!!',
+				buttons: [['<button>Show Original Page</button>', function (instance, toast) {
+					page.tran.setLang('zh');
+             		instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+        		}, true]]
+			});
+		}
+	});
+</script>
+
+
+<span class=".zh">
+
+<h2 id="流程总览"><a href="#流程总览" class="headerlink" title="流程总览"></a>流程总览</h2><ul>
+<li>用户注册</li>
+<li>v2ray软件安装</li>
+</ul>
+<h2 id="用户注册"><a href="#用户注册" class="headerlink" title="用户注册"></a>用户注册</h2><p>在开始安装软件前，请先前往<a href="https://v2ray.yimian.xyz/" target="_blank" rel="noopener">https://v2ray.yimian.xyz/</a>使用手机号进行账户注册。</p>
+<h2 id="v2ray软件安装"><a href="#v2ray软件安装" class="headerlink" title="v2ray软件安装"></a>v2ray软件安装</h2><p>本文包含<a href="#Win10">Win10</a>，<a href="#Android">安卓</a>，<a href="#Ios">IOS/Ipad OS</a>的软件安装方法，请根据相应流程进行安装。</p>
+<blockquote>
+<p>如果您有任何疑惑，请在下方评论中提出！</p>
+</blockquote>
+<h3 id="Win10"><a href="#Win10" class="headerlink" title="Win10"></a>Win10</h3><p><strong>下载</strong></p>
+<ul>
+<li>使用浏览器访问<a href="https://onedrive.yimian.xyz/packages/programs/all/v2ray/Windows_v2rayN-Core.zip" target="_blank" rel="noopener">http://eee.dog/8bcc14</a>下载名为<code>Windows_v2rayN-Core.zip</code>的压缩文件。</li>
+</ul>
+<p><strong>解压</strong></p>
+<ul>
+<li><p>将下载的压缩文件解压到C盘根目录，如下图</p>
+<blockquote>
+<p>如果提示需要<strong>管理员权限</strong>，请一律选<strong>是</strong></p>
+</blockquote>
+<p><img src="https://api.yimian.xyz/img/?path=imgbed/img_2eb9b63_1565x429_8_null_normal.jpeg" alt="解压文件图"></p>
+</li>
+</ul>
+<p><strong>配置</strong></p>
+<ul>
+<li><p>请打开C盘中刚才解压的文件夹，找到名为<code>V2ray</code>或<code>V2rayN.exe</code>的程序，双击打开。如下图。<br><img src="https://api.yimian.xyz/img/?path=imgbed/img_430e95a_1557x460_8_null_normal.jpeg" alt="V2rayN图"></p>
+</li>
+<li><p>找到右下角任务栏，找到下图中的图标，双击打开<br><img src="https://api.yimian.xyz/img/?path=imgbed/img_3a35a1f_928x246_8_null_normal.jpeg" alt="V2rayN图标"></p>
+</li>
+<li><p>选中窗口上方的<strong>订阅</strong>，点击<strong>订阅设置</strong>如下图<br><img src="https://api.yimian.xyz/img/?path=imgbed/img_4574629_1421x180_8_null_normal.jpeg" alt="订阅设置"></p>
+</li>
+<li><p>打开<a href="https://v2ray.yimian.xyz/" target="_blank" rel="noopener">https://v2ray.yimian.xyz</a>并登录，待出现二维码后点击<strong>Copy</strong>。如下图<br><img src="https://api.yimian.xyz/img/?path=imgbed/img_6d86c79_1254x711_8_null_normal.jpeg" alt="获取订阅地址"></p>
+</li>
+<li><p>回到订阅设置的窗口，将刚才复制的内容粘贴到<strong>地址URL框</strong>中，勾选<strong>启用</strong>，点击<strong>确定</strong>。如下图<br><img src="https://api.yimian.xyz/img/?path=imgbed/img_50dc56e_867x752_8_null_normal.jpeg" alt="设置订阅地址"></p>
+</li>
+<li><p>点击主窗口上方的<strong>参数设置</strong>如下图</p>
+</li>
+</ul>
+<p><img src="https://api.yimian.xyz/img/?path=imgbed/img_6a56090_1313x195_8_null_normal.jpeg" alt="参数设置"></p>
+<ul>
+<li>选择<strong>V2rayN设置</strong>，勾选<strong>开机自动启动</strong>，点击下方<strong>确定</strong>。如下图</li>
+</ul>
+<p><img src="https://api.yimian.xyz/img/?path=imgbed/img_0b74331_993x1020_8_null_normal.jpeg" alt="开机启动"></p>
+<ul>
+<li>回到主窗口，点击<strong>更新订阅</strong>如下图</li>
+</ul>
+<p><img src="https://api.yimian.xyz/img/?path=imgbed/img_396bcc7_1037x174_8_null_normal.jpeg" alt="更新订阅"></p>
+<ul>
+<li><p>此时，主窗口中会多出一个或几个服务器，如下图</p>
+<p><img src="https://api.yimian.xyz/img/?path=imgbed/img_4419a90_1196x216_8_null_normal.jpeg" alt="服务器列表"></p>
+</li>
+<li><p>关闭主窗口，右键右下角状态栏中的V2ray，选择<strong>服务器</strong>-&gt;<strong>Vmess-Los_Angeles(….</strong>。如下图<br><img src="https://api.yimian.xyz/img/?path=imgbed/img_0266a2f_1067x288_8_null_normal.jpeg" alt="选择服务器"></p>
+</li>
+<li><p>右键右下角状态栏中的V2ray，选择<strong>Http代理</strong>-&gt;<strong>…（PAC模式）</strong>。如下图<br><img src="https://api.yimian.xyz/img/?path=imgbed/img_8c3a651_1088x306_8_null_normal.jpeg" alt="PAC模式"></p>
+</li>
+</ul>
+<p><strong>验证</strong></p>
+<ul>
+<li>浏览器打开<a href="https://www.google.com" target="_blank" rel="noopener">https://google.com</a>试一下能否访问。</li>
+</ul>
+<h3 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h3><p><strong>下载安装软件</strong></p>
+<ul>
+<li>浏览器打开<a href="https://onedrive.yimian.xyz/packages/programs/all/v2ray/Android_v2rayNG_1.3.1.apk" target="_blank" rel="noopener">http://eee.dog/6db2e3</a>下载V2ray安卓安装包</li>
+<li>点开安装包进行安装</li>
+</ul>
+<p><strong>配置</strong></p>
+<ul>
+<li>使用手机浏览器，打开<a href="https://v2ray.yimian.xyz/" target="_blank" rel="noopener">https://v2ray.yimian.xyz/</a>，进行登录</li>
+<li>待页面显示出二维码，点击<strong>Copy</strong></li>
+<li>打开安装的V2rayNG软件,点击左上角三条杠，展开左侧栏，点击<strong>订阅设置</strong></li>
+<li>进入订阅设置页面后，点击右上角<strong>加号</strong></li>
+<li>备注中填<strong>ushio</strong>, 地址url中填<strong>刚才复制的东西</strong>，点击右上角对勾。</li>
+<li>回到主页面，点击左上角三条杠，展开左侧栏，点击<strong>设置</strong></li>
+<li>进入设置页面后，点击<strong>分应用代理</strong></li>
+<li>勾选<strong>分应用代理</strong>模式，然后在列表中勾选需要访问外网的app，如twitter, youtube等</li>
+<li>回到主页面，点击右上角三个点，点击<strong>更新订阅</strong></li>
+<li>点一下主页面列表中的<strong>Los_Angeles</strong>，使其左侧变绿</li>
+<li>点击主页面右下角的V图标，使其变绿</li>
+</ul>
+<p><strong>验证</strong></p>
+<ul>
+<li>点击主页面下方<strong>已连接，点击测试连接</strong>语句，检测连接是否成功</li>
+</ul>
+<h3 id="Ios"><a href="#Ios" class="headerlink" title="Ios"></a>Ios</h3><ul>
+<li>在系统设置中更改苹果账户的地区到中国大陆以外的地方，比如英国、美国等。</li>
+<li>在app store购买并安装Shadowrocket软件</li>
+<li>使用浏览器打开<a href="https://v2ray.yimian.xyz/" target="_blank" rel="noopener">https://v2ray.yimian.xyz</a>，进行登录</li>
+<li>待页面显示出二维码，点击<strong>Copy</strong></li>
+<li>打开Shadowrocket软件</li>
+<li>点击右上角加号</li>
+<li>类型选择<strong>Subscribe</strong></li>
+<li>URL中粘贴刚才复制的东西</li>
+<li>点击右上角完成</li>
+<li>点击首页中的api.yimian.xyz，点击<strong>Los_Angeles</strong></li>
+<li>在首页第一行，勾选<strong>Los_Angeles</strong></li>
+<li>使用浏览器访问<a href="https://www.google.com" target="_blank" rel="noopener">https://google.com</a>试一下</li>
+</ul>
+</span>
+
+<span class=".en">
+
+<h2 id="Process-overview"><a href="#Process-overview" class="headerlink" title="Process overview"></a>Process overview</h2><ul>
+<li>User registration</li>
+<li>v2ray software installation</li>
+</ul>
+<h2 id="User-registration"><a href="#User-registration" class="headerlink" title="User registration"></a>User registration</h2><p>Before installing the software, please go to <a href="https://v2ray.yimian.xyz/" target="_blank" rel="noopener">https://v2ray.yimian.xyz/</a> to register with your mobile phone number.</p>
+<h2 id="v2ray-software-installation"><a href="#v2ray-software-installation" class="headerlink" title="v2ray software installation"></a>v2ray software installation</h2><p>This article contains software installation methods for <a href="#Win10">Win10</a>, <a href="#Android">Android</a>, <a href="#Ios">IOS/Ipad OS</a>, please install according to the corresponding process.</p>
+<h3 id="Win10-1"><a href="#Win10-1" class="headerlink" title="Win10"></a>Win10</h3><p><strong>download</strong></p>
+<ul>
+<li>Use a browser to visit <a href="https://onedrive.yimian.xyz/packages/programs/all/v2ray/Windows_v2rayN-Core.zip" target="_blank" rel="noopener">http://eee.dog/8bcc14</a> and download the name <code>Windows_v2rayN-Core.zip</code>The compressed file.</li>
+</ul>
+<p><strong>Unzip</strong></p>
+<ul>
+<li><p>Decompress the downloaded compressed file to the root directory of drive C, as shown below</p>
+<blockquote>
+<p>If you are prompted to require <strong>administrative permissions</strong>, please select all <strong>yes</strong></p>
+</blockquote>
+<p><img src="https://api.yimian.xyz/img/?path=imgbed/img_2eb9b63_1565x429_8_null_normal.jpeg" alt="Extracted file image"></p>
+</li>
+</ul>
+<p><strong>Configuration</strong></p>
+<ul>
+<li><p>Please open the folder just unzipped in the C drive, find the program named <code>V2ray</code> or <code>V2rayN.exe</code>, and double-click to open it. As shown below.<br><img src="https://api.yimian.xyz/img/?path=imgbed/img_430e95a_1557x460_8_null_normal.jpeg" alt="V2rayN picture"></p>
+</li>
+<li><p>Find the taskbar in the lower right corner, find the icon in the figure below, double-click to open<br><img src="https://api.yimian.xyz/img/?path=imgbed/img_3a35a1f_928x246_8_null_normal.jpeg" alt="V2rayN icon"></p>
+</li>
+<li><p>Select <strong>Subscription</strong> at the top of the window, and click <strong>Subscription Settings</strong> as shown below<br><img src="https://api.yimian.xyz/img/?path=imgbed/img_4574629_1421x180_8_null_normal.jpeg" alt="Subscription Settings"></p>
+</li>
+<li><p>Open <a href="https://v2ray.yimian.xyz/" target="_blank" rel="noopener">https://v2ray.yimian.xyz</a> and log in. After the QR code appears, click <strong>Copy</strong>. As shown below<br><img src="https://api.yimian.xyz/img/?path=imgbed/img_6d86c79_1254x711_8_null_normal.jpeg" alt="Get subscription address"></p>
+</li>
+<li><p>Go back to the subscription settings window, paste the content you just copied into the <strong>Address URL box</strong>, check <strong>Enable</strong>, and click <strong>OK</strong>. As shown below<br><img src="https://api.yimian.xyz/img/?path=imgbed/img_50dc56e_867x752_8_null_normal.jpeg" alt="Set subscription address"></p>
+</li>
+<li><p>Click <strong>Parameter Settings</strong> at the top of the main window as shown below</p>
+</li>
+</ul>
+<p><img src="https://api.yimian.xyz/img/?path=imgbed/img_6a56090_1313x195_8_null_normal.jpeg" alt="Parameter settings"></p>
+<ul>
+<li>Select <strong>V2rayN Settings</strong>, tick <strong>Autostart at boot</strong>, and click <strong>OK</strong> below. As shown below</li>
+</ul>
+<p><img src="https://api.yimian.xyz/img/?path=imgbed/img_0b74331_993x1020_8_null_normal.jpeg" alt="Start on boot"></p>
+<ul>
+<li>Back to the main window, click <strong>Update Subscription</strong> as shown below</li>
+</ul>
+<p><img src="https://api.yimian.xyz/img/?path=imgbed/img_396bcc7_1037x174_8_null_normal.jpeg" alt="Update Subscription"></p>
+<ul>
+<li><p>At this time, there will be one or more servers in the main window, as shown below</p>
+<p><img src="https://api.yimian.xyz/img/?path=imgbed/img_4419a90_1196x216_8_null_normal.jpeg" alt="Server list"></p>
+</li>
+<li><p>Close the main window, right-click V2ray in the status bar at the bottom right corner, and select <strong>Server</strong>-&gt;<strong>Vmess-Los_Angeles(….</strong>. As shown below<br><img src="https://api.yimian.xyz/img/?path=imgbed/img_0266a2f_1067x288_8_null_normal.jpeg" alt="Select Server"></p>
+</li>
+<li><p>Right-click V2ray in the status bar at the bottom right corner, and select <strong>Http Proxy</strong>-&gt;<strong>…(PAC Mode)</strong>. As shown below<br><img src="https://api.yimian.xyz/img/?path=imgbed/img_8c3a651_1088x306_8_null_normal.jpeg" alt="PAC Mode"></p>
+</li>
+</ul>
+<p><strong>verification</strong></p>
+<ul>
+<li>Open <a href="https://www.google.com" target="_blank" rel="noopener">https://google.com</a> in your browser to check if you can access it.</li>
+</ul>
+<h3 id="Android-1"><a href="#Android-1" class="headerlink" title="Android"></a>Android</h3><p><strong>Download and install software</strong></p>
+<ul>
+<li>Open the browser <a href="https://onedrive.yimian.xyz/packages/programs/all/v2ray/Android_v2rayNG_1.3.1.apk" target="_blank" rel="noopener">http://eee.dog/6db2e3</a> to download the V2ray Android installation package</li>
+<li>Click to open the installation package to install</li>
+</ul>
+<p><strong>Configuration</strong></p>
+<ul>
+<li>Use your mobile browser to open <a href="https://v2ray.yimian.xyz/" target="_blank" rel="noopener">https://v2ray.yimian.xyz/</a> and log in</li>
+<li>When the QR code is displayed on the page, click <strong>Copy</strong></li>
+<li>Open the installed V2rayNG software, click the three bars in the upper left corner, expand the left column, and click <strong>Subscription Settings</strong></li>
+<li>After entering the subscription settings page, click the <strong>plus sign</strong> in the upper right corner</li>
+<li>Fill in <strong>ushio</strong> in the remarks, fill in the things you just copied in the address url, and click the tick in the upper right corner.</li>
+<li>Back to the main page, click the three bars in the upper left corner, expand the left column, and click <strong>Settings</strong></li>
+<li>After entering the settings page, click <strong>Sub App Proxy</strong></li>
+<li>Check the <strong>Sub App Proxy</strong> mode, and then check the apps that need to access the Internet, such as twitter, youtube, etc.</li>
+<li>Back to the main page, click the three dots in the upper right corner, and click <strong>Update Subscription</strong></li>
+<li>Tap <strong>Los_Angeles</strong> in the main page list to make the left side green</li>
+<li>Click the V icon in the lower right corner of the main page to make it green</li>
+</ul>
+<p><strong>verification</strong></p>
+<ul>
+<li>Click <strong>Connected at the bottom of the main page, click the test connection</strong> statement to check whether the connection is successful</li>
+</ul>
+<h3 id="Ios-1"><a href="#Ios-1" class="headerlink" title="Ios"></a>Ios</h3><ul>
+<li>Change the Apple account area in the system settings to a place outside of mainland China, such as the United Kingdom, the United States, etc.</li>
+<li>Purchase and install Shadowrocket software in the app store</li>
+<li>Use a browser to open <a href="https://v2ray.yimian.xyz/" target="_blank" rel="noopener">https://v2ray.yimian.xyz</a> and log in</li>
+<li>When the QR code is displayed on the page, click <strong>Copy</strong></li>
+<li>Open the Shadowrocket software</li>
+<li>Click the plus sign in the upper right corner</li>
+<li>Type selection <strong>Subscribe</strong></li>
+<li>Paste what you just copied in the URL</li>
+<li>Click on the upper right corner to finish</li>
+<li>Click api.yimian.xyz on the homepage, click <strong>Los_Angeles</strong></li>
+<li>On the first line of the homepage, check <strong>Los_Angeles</strong></li>
+<li>Use a browser to visit <a href="https://www.google.com" target="_blank" rel="noopener">https://google.com</a> to try</li>
+</ul>
+</span>
       </div>
-    <div class="archive-post">
-        <span class="archive-post-time">
-          09-15
-          </span>
-        <span class="archive-post-title">
-          <a href="/tech/wiot2.html" class="archive-post-link">
-            <span class=".zh">wIoT发展展望</span><span class=".en">wIoT - What is the future</span>
-          </a>
-        </span>
-      </div>
-    <div class="archive-post">
-        <span class="archive-post-time">
-          08-21
-          </span>
-        <span class="archive-post-title">
-          <a href="/life/gre.html" class="archive-post-link">
-            <span class=".zh">GRE备考核心矛盾分析</span><span class=".en">Analysis of Methodology in GRE preparation</span>
-          </a>
-        </span>
-      </div>
-    <div class="archive-post">
-        <span class="archive-post-time">
-          06-24
-          </span>
-        <span class="archive-post-title">
-          <a href="/life/cs-ece-master-programs.html" class="archive-post-link">
-            <span class=".zh">CS, ECE硕士项目调研</span><span class=".en">CS, ECE Master Program Investigation</span>
-          </a>
-        </span>
-      </div>
-    <div class="archive-post">
-        <span class="archive-post-time">
-          06-16
-          </span>
-        <span class="archive-post-title">
-          <a href="/tech/hello-hexo.html" class="archive-post-link">
-            <span class=".zh">Hello Hexo</span><span class=".en">Hello Hexo</span>
-          </a>
-        </span>
-      </div>
-    <div class="archive-post">
-        <span class="archive-post-time">
-          02-17
-          </span>
-        <span class="archive-post-title">
-          <a href="/thoughts/cognitive-derived-theory.html" class="archive-post-link">
-            <span class=".zh">认知派生论</span><span class=".en">Cognitive Derivation Theory</span>
-          </a>
-        </span>
-      </div>
-    <div class="archive-post">
-        <span class="archive-post-time">
-          02-17
-          </span>
-        <span class="archive-post-title">
-          <a href="/cook/zuozongtang-chiken.html" class="archive-post-link">
-            <span class=".zh">左宗棠鸡块</span><span class=".en">Tso Tso's Chicken Nuggets</span>
-          </a>
-        </span>
-      </div>
-    <div class="archive-post">
-        <span class="archive-post-time">
-          02-09
-          </span>
-        <span class="archive-post-title">
-          <a href="/travel/traveler-cheque.html" class="archive-post-link">
-            <span class=".zh">欧洲旅行支票兑换攻略</span><span class=".en">How to redeem traveler's checks</span>
-          </a>
-        </span>
-      </div>
-    <div class="archive-post">
-        <span class="archive-post-time">
-          02-07
-          </span>
-        <span class="archive-post-title">
-          <a href="/tech/kms.html" class="archive-post-link">
-            <span class=".zh">一键激活win10</span><span class=".en">Activate win10 with one click</span>
-          </a>
-        </span>
-      </div>
-    <div class="archive-post">
-        <span class="archive-post-time">
-          02-04
-          </span>
-        <span class="archive-post-title">
-          <a href="/tech/coro.html" class="archive-post-link">
-            <span class=".zh">部署新型冠状病毒API</span><span class=".en">Deploy new coronavirus API</span>
-          </a>
-        </span>
-      </div>
-    <div class="archive-post">
-        <span class="archive-post-time">
-          01-19
-          </span>
-        <span class="archive-post-title">
-          <a href="/cook/awesome-beef-noodle.html" class="archive-post-link">
-            <span class=".zh">香辣牛肉面</span><span class=".en">Spicy Beef Noodle</span>
-          </a>
-        </span>
-      </div>
-    </section><nav class="pagination"></nav></div></div>
+      <div class="post-copyright">
+    <p class="copyright-item">
+      <span>Author: </span>
+      <a href="https://iotcat.me/" target="_blank" rel="noopener">IoTcat</a>
+    </p>
+    <p class="copyright-item">
+      <span>Link: </span>
+      <a href="https://www.eee.dog/tech/v2ray-instruction.html">https://www.eee.dog/tech/v2ray-instruction.html</a>
+    </p>
+    <p class="copyright-item">
+      <span>License: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/v2ray/">v2ray</a>
+            <a href="/tags/instruction/">instruction</a>
+            </div>
+        
+        <nav class="post-nav"><a class="next" href="/tech/wiot2.html">
+        <span class="next-text nav-default"><span class=".zh">wIoT发展展望</span><span class=".en">wIoT - What is the future</span></span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article><script>$(()=>{var p = window.location.pathname;setTimeout(()=>{if(window.location.pathname == p)tips.show({
+        title: 'tips',
+        position: 'topRight',
+        message: ((page.tran.getLang() == 'zh')?"此文章预计阅读 6 分钟哦~": "Read this page will spend around  12  minutes~")
+  })}, 6000)})</script>
+  </div><div class="comments" id="comments"><div id="vcomments"></div>
+    </div></div>
       </main>
 
       <footer id="footer" class="footer">
       <script>
         page_obj = {
-          layout: "",
-          comments: ""
+          layout: "post",
+          comments: "true"
         };
       </script><div class="social-links"><a href="mailto:i@iotcat.me" class="iconfont icon-email" title="email"></a>
         <a href="https://github.com/iotcat" target="_blank" rel="noopener" class="iconfont icon-github" title="github"></a>
         <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
-    </div><div class="copyright"><span class="power-by">
+    </div><div class="copyright"><span id="/tech/v2ray-instruction.html" class="statistic leancloud_visitors">
+    <em>Visitors </em> <i class="leancloud-visitors-count">??</i> 
+    <span class="division"> |</span>
+    <em>Reading </em> 12 min
+  </span>
+  <br>
+  <span class="power-by">
     Powered by <a class="hexo-link" href="https://ushio.cool/" target="_blank" rel="noopener">Ushio</a>
   </span>
   <span class="division">|</span>
