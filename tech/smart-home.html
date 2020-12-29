@@ -102,7 +102,17 @@ pjax_google_analytics = () => {
             </li>
           <li>
               <a href="https://wiot.yimian.xyz/" target="_blank" rel="noopener">
-                <span class=".en">wiot</span><span class=".zh">wiot</span>
+                <span class=".en">wIoT</span><span class=".zh">wIoT</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://github.com/iotcat/kms" target="_blank" rel="noopener">
+                <span class=".en">kms</span><span class=".zh">kms</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://ushio.cool/" target="_blank" rel="noopener">
+                <span class=".en">ushio</span><span class=".zh">Ushio</span>
               </a>
             </li>
           </ul>
@@ -178,6 +188,11 @@ pjax_google_analytics = () => {
                 <span class=".en">Me</span><span class=".zh">关于我</span>
               </a>
             </li>
+          <li>
+              <a href="https://cv.yimian.xyz/contact.html" target="_blank" rel="noopener">
+                <span class=".en">Contact</span><span class=".zh">留言板</span>
+              </a>
+            </li>
           </ul>
       <script>$('#mobile-menu-About').click(function(){
           $("#mobile-menu-About ul").toggle();
@@ -233,13 +248,29 @@ pjax_google_analytics = () => {
                         else
                             window.location.href="https://fp.yimian.xyz/";
 			        }, true],
-			    ['<button><b>'+((page.tran.getLang() != 'zh')?'wiot':'wiot')+'</b></button>', function (instance, toast) {
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'wIoT':'wIoT')+'</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         if("undefined" == "true")
 			 			  pjax.loadUrl("https://wiot.yimian.xyz/");
                         else
                             window.location.href="https://wiot.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'kms':'kms')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://github.com/iotcat/kms");
+                        else
+                            window.location.href="https://github.com/iotcat/kms";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'ushio':'Ushio')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://ushio.cool/");
+                        else
+                            window.location.href="https://ushio.cool/";
 			        }, true],
 			    ['<button><b>close</b></button>', function (instance, toast) {
 			
@@ -382,6 +413,14 @@ pjax_google_analytics = () => {
 			 			  pjax.loadUrl("https://iotcat.me/");
                         else
                             window.location.href="https://iotcat.me/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Contact':'留言板')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://cv.yimian.xyz/contact.html");
+                        else
+                            window.location.href="https://cv.yimian.xyz/contact.html";
 			        }, true],
 			    ['<button><b>close</b></button>', function (instance, toast) {
 			
