@@ -164,6 +164,11 @@ pjax_google_analytics = () => {
               </a>
             </li>
           <li>
+              <a href="https://chat.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Chat</span><span class=".zh">聊天室</span>
+              </a>
+            </li>
+          <li>
               <a href="https://proxy.yimian.xyz/" target="_blank" rel="noopener">
                 <span class=".en">Proxy</span><span class=".zh">下载代理</span>
               </a>
@@ -366,6 +371,14 @@ pjax_google_analytics = () => {
 			 			  pjax.loadUrl("https://onedrive.yimian.xyz/");
                         else
                             window.location.href="https://onedrive.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Chat':'聊天室')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://chat.yimian.xyz/");
+                        else
+                            window.location.href="https://chat.yimian.xyz/";
 			        }, true],
 			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Proxy':'下载代理')+'</b></button>', function (instance, toast) {
 			 
