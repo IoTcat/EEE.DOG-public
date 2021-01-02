@@ -147,7 +147,12 @@ pjax_google_analytics = () => {
             </li>
           <li>
               <a href="https://monitor.yimian.xyz/" target="_blank" rel="noopener">
-                <span class=".en">Monitor</span><span class=".zh">监控</span>
+                <span class=".en">Server Monitor</span><span class=".zh">服务器监控</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://status.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Service Status</span><span class=".zh">服务状态</span>
               </a>
             </li>
           <li>
@@ -332,13 +337,21 @@ pjax_google_analytics = () => {
                         else
                             window.location.href="https://share.yimian.xyz/";
 			        }, true],
-			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Monitor':'监控')+'</b></button>', function (instance, toast) {
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Server Monitor':'服务器监控')+'</b></button>', function (instance, toast) {
 			 
 			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
                         if("undefined" == "true")
 			 			  pjax.loadUrl("https://monitor.yimian.xyz/");
                         else
                             window.location.href="https://monitor.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Service Status':'服务状态')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://status.yimian.xyz/");
+                        else
+                            window.location.href="https://status.yimian.xyz/";
 			        }, true],
 			    ['<button><b>'+((page.tran.getLang() != 'zh')?'ACG.WATCH':'视频')+'</b></button>', function (instance, toast) {
 			 
