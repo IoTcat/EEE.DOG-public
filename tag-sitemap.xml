@@ -3,6 +3,34 @@
 
 
     <url>
+        <loc>https://www.eee.dog/tags/moe/</loc>
+        <lastmod>2021-01-23T07:50:50.433Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/tags/random/</loc>
+        <lastmod>2021-01-23T07:50:50.433Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/tags/img/</loc>
+        <lastmod>2021-01-23T07:50:50.433Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.eee.dog/tags/api/</loc>
+        <lastmod>2021-01-23T07:50:50.433Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://www.eee.dog/tags/instruction/</loc>
         <lastmod>2020-11-04T05:08:42.544Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -12,34 +40,6 @@
     <url>
         <loc>https://www.eee.dog/tags/v2ray/</loc>
         <lastmod>2020-11-04T05:08:42.544Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.eee.dog/tags/moe/</loc>
-        <lastmod>2020-11-02T07:53:02.203Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.eee.dog/tags/random/</loc>
-        <lastmod>2020-11-02T07:53:02.203Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.eee.dog/tags/img/</loc>
-        <lastmod>2020-11-02T07:53:02.203Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.eee.dog/tags/api/</loc>
-        <lastmod>2020-11-02T07:53:02.203Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

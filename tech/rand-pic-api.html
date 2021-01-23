@@ -772,6 +772,9 @@ pjax_google_analytics = () => {
 <li>示例：<a href="https://api.yimian.xyz/img?type=imgbed&id=529745e0" target="_blank" rel="noopener">https://api.yimian.xyz/img?type=imgbed&amp;id=529745e0</a></li>
 </ul>
 <h3 id="4-6-path"><a href="#4-6-path" class="headerlink" title="4.6 path"></a>4.6 path</h3><p>使用绝对路径直接提取图片，优先级高于type，<strong>效率最高</strong>。</p>
+<blockquote>
+<p>请前往<a href="https://img.yimian.xyz/" target="_blank" rel="noopener">呓喵酱の图库</a>获取图片的path!</p>
+</blockquote>
 <ul>
 <li><code>GET/POST /img?path=xx/xx.xx</code></li>
 <li>路径格式：<code>种类/图片文件名</code></li>
@@ -782,7 +785,7 @@ pjax_google_analytics = () => {
 <h3 id="4-7-R18"><a href="#4-7-R18" class="headerlink" title="4.7 R18"></a>4.7 R18</h3><p>是否显示18禁图片，默认为false。</p>
 <ul>
 <li><code>GET/POST /img?type=xx&amp;R18=true</code><ul>
-<li>描述：随机提取xx类别中包含R18内容在内的图片</li>
+<li>描述：是否解除对R18的限制，随机提取xx类别中包含R18图片在内的所有图片</li>
 <li>示例：<a href="https://api.yimian.xyz/img/?type=koino&R18=true" target="_blank" rel="noopener">https://api.yimian.xyz/img/?type=koino&amp;R18=true</a></li>
 </ul>
 </li>
@@ -791,9 +794,15 @@ pjax_google_analytics = () => {
 <h3 id="5-2-找不到符合条件的图片"><a href="#5-2-找不到符合条件的图片" class="headerlink" title="5.2 找不到符合条件的图片"></a>5.2 找不到符合条件的图片</h3><p>返回JSON</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"err"</span>: <span class="string">"错误信息"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+
 <blockquote>
 <p>每台设备每天<strong>全局</strong>调用上限500次!！</p>
 </blockquote>
+<hr>
+<p><strong>CHANGELOG:</strong></p>
+<ul>
+<li><code>2021-1-23</code>: 修改R18参数说明，在path方法中添加图库链接 </li>
+</ul>
 </span>
 
 <span class=".en">
@@ -1055,6 +1064,9 @@ pjax_google_analytics = () => {
 <li>Example: <a href="https://api.yimian.xyz/img?type=imgbed&id=529745e0" target="_blank" rel="noopener">https://api.yimian.xyz/img?type=imgbed&amp;id=529745e0</a></li>
 </ul>
 <h3 id="4-6-path-1"><a href="#4-6-path-1" class="headerlink" title="4.6 path"></a>4.6 path</h3><p>Use absolute path to directly extract pictures, priority is higher than type, <strong>highest efficiency</strong>.</p>
+<blockquote>
+<p>Please go to <a href="https://img.yimian.xyz/" target="_blank" rel="noopener">呓喵酱の Gallery</a> to get the path of the picture!</p>
+</blockquote>
 <ul>
 <li><code>GET/POST /img?path=xx/xx.xx</code></li>
 <li>Path format: <code>Type/Picture File Name</code></li>
@@ -1065,7 +1077,7 @@ pjax_google_analytics = () => {
 <h3 id="4-7-R18-1"><a href="#4-7-R18-1" class="headerlink" title="4.7 R18"></a>4.7 R18</h3><p>Whether to display 18 prohibited pictures, the default is false.</p>
 <ul>
 <li><code>GET/POST /img?type=xx&amp;R18=true</code><ul>
-<li>Description: Randomly extract pictures containing R18 content in xx category</li>
+<li>Description: Whether to lift the restriction on R18, randomly extract all pictures including R18 pictures in xx category</li>
 <li>Example: <a href="https://api.yimian.xyz/img/?type=koino&R18=true" target="_blank" rel="noopener">https://api.yimian.xyz/img/?type=koino&amp;R18=true</a></li>
 </ul>
 </li>
