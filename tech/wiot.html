@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <title>wIoT - 轻松物联 - EEE.DOG</title><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="wIoT - 轻松物联"/><meta name="keywords" content="iotcat,yimian,blog" /><link rel="alternate" href="/atom.xml" title="EEE.DOG"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.0.0" /><script>lang = ['zh', 'en'];</script>
+<script type="text/javascript" src="https://cdn.yimian.xyz/ushio-js/ushio-head.min.js"></script>
+<script>page.proj = 'iotcat/eee.dog-public';</script>
+
+<!--<link rel="stylesheet" type="text/css" href="https://cdn.yimian.xyz/kayo/lib/iziModal/iziModal.min.css" />-->
+
+
+<!--<link rel="stylesheet" type="text/css" href="https://cdn.yimian.xyz/kayo/lib/iziToast/iziToast.min.css" />-->
+
+<link rel="stylesheet" media="none" onload="this.media='all'" type="text/css" href="https://cdn.yimian.xyz/shaky/shaky.css">
+<link rel="canonical" href="https://www.eee.dog/tech/wiot.html"/>
+
+<link rel="stylesheet" media="none" onload="this.media='all'" type="text/css" href="https://cdn.yimian.xyz/kayo/lib/fancybox/jquery.fancybox.css" /><script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+  </script>
+  <script type="text/javascript" async src="https://cdn.yimian.xyz/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.yimian.xyz/kayo/css/style.css?v=1.0.0" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-169276192-1" data-pjax></script>
+<script>
+pjax_google_analytics = () => {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-169276192-1');
+}
+</script><script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+  window.config = {"leancloud":"","toc":true,"fancybox":true,"pjax":{"enable":true,"loadingbar":true},"latex":true};
+</script>
+
+  <meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="EEE.DOG" type="application/atom+xml">
+</head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">EEE.DOG</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="loading-bar">
+    <div class="progress"></div>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><div id="mobile-menu-Home">
+      <a href="/">
+        <li class="mobile-menu-item"><span class=".en">Home</span><span class=".zh">主页</span>
+          </li>
+      </a></div><div id="mobile-menu-Archives">
+      <a href="/archives/">
+        <li class="mobile-menu-item"><span class=".en">Archives</span><span class=".zh">归档</span>
+          </li>
+      </a></div><div id="mobile-menu-Categories">
+      <a href="/categories/">
+        <li class="mobile-menu-item"><span class=".en">Categories</span><span class=".zh">分类</span>
+          </li>
+      </a></div><div id="mobile-menu-Projects">
+      <a href="#">
+        <li class="mobile-menu-item"><span class=".en">Projects</span><span class=".zh">项目</span>
+          </li>
+      </a><ul class="sub-menu" style="display: none;"> 
+          <li>
+              <a href="https://fp.js.org/" target="_blank" rel="noopener">
+                <span class=".en">fp</span><span class=".zh">fp</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://wiot.js.org/" target="_blank" rel="noopener">
+                <span class=".en">wIoT</span><span class=".zh">wIoT</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://github.com/iotcat/kms" target="_blank" rel="noopener">
+                <span class=".en">kms</span><span class=".zh">kms</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://ushio.cool/" target="_blank" rel="noopener">
+                <span class=".en">ushio</span><span class=".zh">Ushio</span>
+              </a>
+            </li>
+          </ul>
+      <script>$('#mobile-menu-Projects').click(function(){
+          $("#mobile-menu-Projects ul").toggle();
+      })</script>
+      </div><div id="mobile-menu-Map">
+      <a href="#">
+        <li class="mobile-menu-item"><span class=".en">Map</span><span class=".zh">导航</span>
+          </li>
+      </a><ul class="sub-menu" style="display: none;"> 
+          <li>
+              <a href="https://api.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">APIs</span><span class=".zh">接口</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://img.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Imgs</span><span class=".zh">图库</span>
+              </a>
+            </li>
+          <li>
+              <a href="/">
+                <span class=".en">Imgbed</span><span class=".zh">图床</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://share.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Fileshare</span><span class=".zh">文件分享</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://monitor.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Server Monitor</span><span class=".zh">服务器监控</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://status.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Service Status</span><span class=".zh">服务状态</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://acg.watch/" target="_blank" rel="noopener">
+                <span class=".en">ACG.WATCH</span><span class=".zh">视频</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://onedrive.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Oneindex</span><span class=".zh">网盘</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://chat.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Chat</span><span class=".zh">聊天室</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://proxy.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Proxy</span><span class=".zh">下载代理</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://shorturl.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">ShortenURL</span><span class=".zh">短链</span>
+              </a>
+            </li>
+          </ul>
+      <script>$('#mobile-menu-Map').click(function(){
+          $("#mobile-menu-Map ul").toggle();
+      })</script>
+      </div><div id="mobile-menu-About">
+      <a href="#">
+        <li class="mobile-menu-item"><span class=".en">About</span><span class=".zh">关于</span>
+          </li>
+      </a><ul class="sub-menu" style="display: none;"> 
+          <li>
+              <a href="/links/">
+                <span class=".en">links</span><span class=".zh">友链</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://iotcat.me/" target="_blank" rel="noopener">
+                <span class=".en">Me</span><span class=".zh">关于我</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://cv.yimian.xyz/contact.html" target="_blank" rel="noopener">
+                <span class=".en">Contact</span><span class=".zh">留言板</span>
+              </a>
+            </li>
+          </ul>
+      <script>$('#mobile-menu-About').click(function(){
+          $("#mobile-menu-About ul").toggle();
+      })</script>
+      </div></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">EEE.DOG</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+        <a id="menu-Home" class="menu-item-link" href="/">
+          <span class=".en">Home</span><span class=".zh">主页</span>
+          </a>
+
+      </li>
+    <li class="menu-item">
+        <a id="menu-Archives" class="menu-item-link" href="/archives/">
+          <span class=".en">Archives</span><span class=".zh">归档</span>
+          </a>
+
+      </li>
+    <li class="menu-item">
+        <a id="menu-Categories" class="menu-item-link" href="/categories/">
+          <span class=".en">Categories</span><span class=".zh">分类</span>
+          </a>
+
+      </li>
+    <li class="menu-item">
+        <a id="menu-Projects" class="menu-item-link" href="#">
+          <span class=".en">Projects</span><span class=".zh">项目</span>
+          </a>
+
+      <script>
+          $("#menu-Projects").click(function(){
+            tips.question({
+			    timeout: 20000,
+			    close: false,
+			    overlay: true,
+			    displayMode: 'once',
+			    //id: 'question',
+			    zindex: 999,
+			    title: 'Projects',
+			    message: '',
+			    position: 'center',
+			    buttons: [
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'fp':'fp')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://fp.js.org/");
+                        else
+                            window.location.href="https://fp.js.org/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'wIoT':'wIoT')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://wiot.js.org/");
+                        else
+                            window.location.href="https://wiot.js.org/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'kms':'kms')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://github.com/iotcat/kms");
+                        else
+                            window.location.href="https://github.com/iotcat/kms";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'ushio':'Ushio')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://ushio.cool/");
+                        else
+                            window.location.href="https://ushio.cool/";
+			        }, true],
+			    ['<button><b>close</b></button>', function (instance, toast) {
+			
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+			        }, true],
+			    ]
+			});
+          });
+        </script>
+      </li>
+    <li class="menu-item">
+        <a id="menu-Map" class="menu-item-link" href="#">
+          <span class=".en">Map</span><span class=".zh">导航</span>
+          </a>
+
+      <script>
+          $("#menu-Map").click(function(){
+            tips.question({
+			    timeout: 20000,
+			    close: false,
+			    overlay: true,
+			    displayMode: 'once',
+			    //id: 'question',
+			    zindex: 999,
+			    title: 'Map',
+			    message: '',
+			    position: 'center',
+			    buttons: [
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'APIs':'接口')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://api.yimian.xyz/");
+                        else
+                            window.location.href="https://api.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Imgs':'图库')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://img.yimian.xyz/");
+                        else
+                            window.location.href="https://img.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Imgbed':'图床')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("/");
+                        else
+                            window.location.href="undefined";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Fileshare':'文件分享')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://share.yimian.xyz/");
+                        else
+                            window.location.href="https://share.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Server Monitor':'服务器监控')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://monitor.yimian.xyz/");
+                        else
+                            window.location.href="https://monitor.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Service Status':'服务状态')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://status.yimian.xyz/");
+                        else
+                            window.location.href="https://status.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'ACG.WATCH':'视频')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://acg.watch/");
+                        else
+                            window.location.href="https://acg.watch/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Oneindex':'网盘')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://onedrive.yimian.xyz/");
+                        else
+                            window.location.href="https://onedrive.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Chat':'聊天室')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://chat.yimian.xyz/");
+                        else
+                            window.location.href="https://chat.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Proxy':'下载代理')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://proxy.yimian.xyz/");
+                        else
+                            window.location.href="https://proxy.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'ShortenURL':'短链')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://shorturl.yimian.xyz/");
+                        else
+                            window.location.href="https://shorturl.yimian.xyz/";
+			        }, true],
+			    ['<button><b>close</b></button>', function (instance, toast) {
+			
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+			        }, true],
+			    ]
+			});
+          });
+        </script>
+      </li>
+    <li class="menu-item">
+        <a id="menu-About" class="menu-item-link" href="#">
+          <span class=".en">About</span><span class=".zh">关于</span>
+          </a>
+
+      <script>
+          $("#menu-About").click(function(){
+            tips.question({
+			    timeout: 20000,
+			    close: false,
+			    overlay: true,
+			    displayMode: 'once',
+			    //id: 'question',
+			    zindex: 999,
+			    title: 'About',
+			    message: '',
+			    position: 'center',
+			    buttons: [
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'links':'友链')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("true" == "true")
+			 			  pjax.loadUrl("/links/");
+                        else
+                            window.location.href="/links/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Me':'关于我')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://iotcat.me/");
+                        else
+                            window.location.href="https://iotcat.me/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Contact':'留言板')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://cv.yimian.xyz/contact.html");
+                        else
+                            window.location.href="https://cv.yimian.xyz/contact.html";
+			        }, true],
+			    ['<button><b>close</b></button>', function (instance, toast) {
+			
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+			        }, true],
+			    ]
+			});
+          });
+        </script>
+      </li>
+    </ul></nav>
+</header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title"><span class=".zh">wIoT - 轻松物联</span><span class=".en" hidden>wIoT - Easy IoT</span>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-05-20
+        </span><span class="post-category">
+            <a href="/categories/tech/">tech</a>
+            </span>
+        </div>
+    </header>
+
+    <style>.toc-level-2 > .toc-child {display: none !important; }</style>
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#wIoT-for-NodeJS"><span class="toc-text">wIoT for NodeJS</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#项目简介"><span class="toc-text">项目简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#立项初衷"><span class="toc-text">立项初衷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#支持功能"><span class="toc-text">支持功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#todo-List"><span class="toc-text">todo List</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用方法"><span class="toc-text">使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#先觉条件"><span class="toc-text">先觉条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#快速开始"><span class="toc-text">快速开始</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#单片机接入"><span class="toc-text">单片机接入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#依赖安装"><span class="toc-text">依赖安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用方法-1"><span class="toc-text">使用方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开始执行"><span class="toc-text">开始执行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#预期结果"><span class="toc-text">预期结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#社区支持"><span class="toc-text">社区支持</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进阶设置"><span class="toc-text">进阶设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#wiot-client"><span class="toc-text">wiot.client</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#参数说明"><span class="toc-text">参数说明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法列表"><span class="toc-text">方法列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#事件绑定"><span class="toc-text">事件绑定</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#API"><span class="toc-text">API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注册表"><span class="toc-text">注册表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#传感器扩展模块"><span class="toc-text">传感器扩展模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LED"><span class="toc-text">LED</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PIR-红外人体传感器"><span class="toc-text">PIR 红外人体传感器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IR-红外循迹-障碍传感器"><span class="toc-text">IR 红外循迹&#x2F;障碍传感器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lightSensor-光敏传感器"><span class="toc-text">lightSensor 光敏传感器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网络扩展模块"><span class="toc-text">网络扩展模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#mail-邮件模块"><span class="toc-text">mail 邮件模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#guguji-咕咕机模块"><span class="toc-text">guguji 咕咕机模块</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Current-Support-devices"><span class="toc-text">Current Support devices</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Node-js-Install-Node-js"><span class="toc-text">Node.js Install Node.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Install-wIoT-package"><span class="toc-text">Install wIoT package</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Burn-firmware"><span class="toc-text">Burn firmware</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Connect-your-device-to-D1-MINI"><span class="toc-text">Connect your device to D1 MINI</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Reset-your-D1-MINI"><span class="toc-text">1. Reset your D1 MINI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Find-your-D1-MINI-on-your-device"><span class="toc-text">2.Find your D1 MINI on your device</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Connect-D1-MINI-to-your-Wi-Fi"><span class="toc-text">Connect D1 MINI to your Wi-Fi</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Visit-the-control-page-of-D1-MINI"><span class="toc-text">1. Visit the control page of D1 MINI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Submit-SSID-and-password-to-your-MINI"><span class="toc-text">2.Submit SSID and password to your MINI</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Execute-Example-Code"><span class="toc-text">Execute Example Code</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Advanced-development"><span class="toc-text">Advanced development</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Parameters"><span class="toc-text">Parameters</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Parameters-Declaration-Example"><span class="toc-text">Parameters Declaration Example</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#General-Example"><span class="toc-text">General Example</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Event-Binding"><span class="toc-text">Event Binding</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Client"><span class="toc-text">Client</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Event-List-of-client"><span class="toc-text">Event List of client</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pin"><span class="toc-text">Pin</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Event-List-of-pin"><span class="toc-text">Event List of pin</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#API-1"><span class="toc-text">API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Register"><span class="toc-text">Register</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sensor-extension-module"><span class="toc-text">Sensor extension module</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LED-1"><span class="toc-text">LED</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PIR-Passive-Infrared-Sensor"><span class="toc-text">PIR (Passive Infrared Sensor)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Event-Trigger"><span class="toc-text">Event Trigger</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IR-Infrared-Sensor"><span class="toc-text">IR Infrared Sensor</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Event-Trigger-1"><span class="toc-text">Event Trigger</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lightSensor"><span class="toc-text">lightSensor</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Event-Trigger-2"><span class="toc-text">Event Trigger</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Internet-Extension-Module"><span class="toc-text">Internet Extension Module</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Mail-module"><span class="toc-text">Mail module</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#guguji"><span class="toc-text">guguji</span></a></li></ol>
+    </div>
+  </div>
+  <script>var arr = [];var ts = '';if($('.post-toc-content').children().length>1){var el = '.post-toc-content';ts = ($(el).children('ol')[0].outerHTML);}else{var el = '.toc';};for(var i = 0; i < $(el).children('li').length; i++){arr.push($(el).children('li')[i].outerHTML);}; arr.splice(arr.length / 2, 0, '</span><span class=".en">');arr.unshift(ts);arr.unshift('<span class=".zh">');arr.push('</span>');$(el).html(arr.join(''));</script><div class="post-content"><span class=".zh">
+<p>基于NodeJS搭建的物联网系统，配合D1 MINI单片机，帮助你灰常快速实现物联~</p>
+</span>
+
+
+<span class=".en">
+<p>The Internet of Things system based on NodeJS, combined with D1 MINI microcontroller, helps you quickly realize the Internet of Things~</p>
+</span>
+
+
+<a id="more"></a>
+
+
+<script>
+    session.onload(function(){
+        if(page.tran.getLang() == 'en'){
+            tips.warning({
+                title: 'Caution',
+                position: 'topRight',
+                message: 'English version may be not up to date!!',
+                buttons: [['<button>Show Chinese Page</button>', function (instance, toast) {
+                    page.tran.setLang('zh');
+                    instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                }, true]]
+            });
+        }
+    });
+</script>
+
+
+<span class=".zh">
+
+
+<h3 id="wIoT-for-NodeJS"><a href="#wIoT-for-NodeJS" class="headerlink" title="wIoT for NodeJS"></a>wIoT for NodeJS</h3><p>适用于NodeJS的wIoT服务器控制组件，轻松物联</p>
+<h1 id="项目简介"><a href="#项目简介" class="headerlink" title="项目简介"></a>项目简介</h1><h2 id="立项初衷"><a href="#立项初衷" class="headerlink" title="立项初衷"></a>立项初衷</h2><p>本项目旨在帮助不熟悉固件编程的网络开发者实现出自己的物联网应用。您仅需要一台网络内部的服务器（比如树莓派），以及若干个支持可联网（通过串口，WiFi，LoRa，蓝牙，Zigbee等）的单片机，即可轻松创建并管理属于您自己的物联网集群。</p>
+<h2 id="支持功能"><a href="#支持功能" class="headerlink" title="支持功能"></a>支持功能</h2><ul>
+<li>ota (隔空自动更新固件)</li>
+<li>自动扫描网络内单片机</li>
+<li>通过wifi连接设置</li>
+<li>使用socket/HTTP通信</li>
+</ul>
+<h2 id="todo-List"><a href="#todo-List" class="headerlink" title="todo List"></a>todo List</h2><ul>
+<li>支持python界面</li>
+<li>开发web面板，图像化管理</li>
+<li>支持更多单片机，比如esp8266等</li>
+<li>开发nodeJS wiot-cli 命令行程序</li>
+<li>支持nodeJS自动烧写固件，并自动配置(很重要)</li>
+</ul>
+<h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><blockquote>
+<p>正式开发文档见<a href="https://wiot.yimian.xyz/#/home" target="_blank" rel="noopener"><strong>这里</strong></a></p>
+</blockquote>
+<h2 id="先觉条件"><a href="#先觉条件" class="headerlink" title="先觉条件"></a>先觉条件</h2><ul>
+<li>拥有烧录好<a href="https://wiot-ota.yimian.xyz/get.php" target="_blank" rel="noopener">wIoT固件</a>的<strong>D1 MINI</strong>单片机</li>
+<li>一台或多台无线WiFi路由器2.4G/5G</li>
+<li>局域网内拥有一台装有<strong>NodeJS</strong>的服务器或电脑 (NodeJS装法非常简单, 请自行Google或百度)</li>
+<li>配置好<strong>npm</strong></li>
+</ul>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="单片机接入"><a href="#单片机接入" class="headerlink" title="单片机接入"></a>单片机接入</h3><ol>
+<li>使用MicroUSB, 5V, 或3V pin脚给单片机供电</li>
+<li>用一根导线连接D0脚与3V3脚，持续一秒以上拔出，以重置单片机</li>
+<li>用手机或电脑搜索它的WiFi热点，名称格式<code>wiot-xx:xx:xx:xx:xx:xx</code></li>
+<li>连接上此热点，密码为<code>1234567890</code></li>
+<li>用浏览器打开网址<code>http://192.168.0.1</code>，记录网页中的MAC地址，这将用于识别此单片机</li>
+<li>配置你无线路由器的ssid(即wifi名称，注意不能有非ASCII字符，比如汉字)和密码</li>
+<li>配置完成后热点将自动断开，单片机将连接到你的无线路由器</li>
+</ol>
+<h3 id="依赖安装"><a href="#依赖安装" class="headerlink" title="依赖安装"></a>依赖安装</h3><p>在你的项目文件夹下打开命令行，输入以下指令安装wiot:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install wiot</span></span><br></pre></td></tr></table></figure>
+<h3 id="使用方法-1"><a href="#使用方法-1" class="headerlink" title="使用方法"></a>使用方法</h3><p>在你的项目文件夹中新建一个app.js文件，输入以下内容：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> wiot = <span class="built_in">require</span>(<span class="string">'wiot'</span>); <span class="comment">//引入wiot依赖包</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 新建一个单片机对象</span></span><br><span class="line"><span class="comment">// 这里使用了两个参数，MAC是单片机的MAC地址，pin中指定需要OUTPUT输出的端口</span></span><br><span class="line"><span class="comment">// 请自行修改MAC地址的值</span></span><br><span class="line"><span class="keyword">var</span> MyMCU = <span class="keyword">new</span> wiot.client(&#123;<span class="attr">MAC</span>: <span class="string">"xx:xx:xx:xx:xx:xx"</span>, <span class="attr">pin</span>: &#123;<span class="attr">D4</span>: wiot.OUTPUT&#125;&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 以下代码将实现，板载led亮1秒，灭1秒的循环</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 等待所有单品即准备就绪</span></span><br><span class="line">wiot.begin([MyMCU], ()=&gt;&#123; <span class="comment">// 第一个参数为要等待的单片机对象数组，第二个参数为要执行的函数</span></span><br><span class="line">    <span class="comment">// 设置计时器，每隔2000毫秒, MyMCU的3号pin口将拉高一次电平</span></span><br><span class="line">    setInterval(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">        MyMCU.write(wiot.D4, wiot.HIGH);</span><br><span class="line">    &#125;, <span class="number">2000</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置计时器，延时1000毫秒后开始执行大括号中指令</span></span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="comment">// 设置计时器，每隔2000毫秒，MyMCU的3号pin口将拉低一次电平</span></span><br><span class="line">        setInterval(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">            MyMCU.write(wiot.D4, wiot.LOW);</span><br><span class="line">        &#125;, <span class="number">2000</span>);</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="开始执行"><a href="#开始执行" class="headerlink" title="开始执行"></a>开始执行</h3><p>在项目文件夹中打开命令行，输入以下指令:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node app.js</span><br></pre></td></tr></table></figure>
+
+<h3 id="预期结果"><a href="#预期结果" class="headerlink" title="预期结果"></a>预期结果</h3><p>如果一切顺利，你现在应该会发现你的板载led在闪烁了</p>
+<h3 id="社区支持"><a href="#社区支持" class="headerlink" title="社区支持"></a>社区支持</h3><p>也许你会觉得上述代码难以理解，这是正常的，由于delay功能在JS中难以实现。但是不用担心，这些问题将会由社区中的其它开发者帮你解决。  </p>
+<p>wIoT在实现基本的单片机控制同时，也提供了丰富的<a href="#传感器扩展模块">扩展功能</a>。更神奇的是，任何人都可以在wIoT中编写自己的扩展并与全世界共享它们。在这里我们可以使用wIoT官方提供的led扩展轻松实现上例功能！</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> wiot = <span class="built_in">require</span>(<span class="string">'wiot'</span>); <span class="comment">//引入wiot依赖包</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 新建一个单片机对象</span></span><br><span class="line"><span class="keyword">var</span> MyMCU = <span class="keyword">new</span> wiot.client(&#123;<span class="attr">MAC</span>: <span class="string">"xx:xx:xx:xx:xx:xx"</span>, <span class="attr">pin</span>: &#123;<span class="attr">D4</span>: wiot.OUTPUT&#125;&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 新建一个led模块</span></span><br><span class="line"><span class="keyword">var</span> led = <span class="keyword">new</span> wiot.led(MyMCU, wiot.D4);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 以下代码将实现，板载led亮1秒，灭1秒的循环</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 等待所有单品即准备就绪</span></span><br><span class="line">wiot.begin([MyMCU], ()=&gt;&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 调用led模块构建亮1秒灭1秒的动作</span></span><br><span class="line">    led.set([wiot.HIGH, wiot.LOW], [<span class="number">1000</span>, <span class="number">1000</span>]);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="进阶设置"><a href="#进阶设置" class="headerlink" title="进阶设置"></a>进阶设置</h2><h3 id="wiot-client"><a href="#wiot-client" class="headerlink" title="wiot.client"></a>wiot.client</h3><h4 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h4>
+<div style="overflow:scroll;">
+
+
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MAC</td>
+<td>“”</td>
+<td>单片机的MAC地址</td>
+</tr>
+<tr>
+<td>pin</td>
+<td>{D1: 0, D2: 0, D3: 0, D4: 0, D5: 0, D6: 0, D7: 0, D8: 0}</td>
+<td>pin脚的模式, 0为INPUT, 1为OUTPUT, 2为INPUT_PULLUP</td>
+</tr>
+<tr>
+<td>hint</td>
+<td>true</td>
+<td>是否显示状态提示</td>
+</tr>
+<tr>
+<td>debug</td>
+<td>false</td>
+<td>是否开启debug模式</td>
+</tr>
+<tr>
+<td>ip</td>
+<td>“default”</td>
+<td>指定单片机IP, 请在长时间搜索不到IP时尝试此选项</td>
+</tr>
+<tr>
+<td>port</td>
+<td>8848</td>
+<td>Client的TCP Socket通信端口，默认8848</td>
+</tr>
+<tr>
+<td>ip_range</td>
+<td>“192.168.0”</td>
+<td>IP搜索字段，请在长时间搜索不到IP时尝试此选项</td>
+</tr>
+<tr>
+<td>localIP</td>
+<td>“127.0.0.1”</td>
+<td>本机IP</td>
+</tr>
+<tr>
+<td>OnlyHTTP</td>
+<td>false</td>
+<td>是否仅使用HTTP模式连接单片机</td>
+</tr>
+<tr>
+<td>errDelayTime</td>
+<td>2000</td>
+<td>遇到网络错误时重试间隔时间(毫秒)</td>
+</tr>
+<tr>
+<td>okDelayTime</td>
+<td>30</td>
+<td>收到网络请求后延时等待时间(毫秒)</td>
+</tr>
+<tr>
+<td>resetDelayTime</td>
+<td>4500</td>
+<td>向单片机发送重置指令后多久不再发送新消息(毫秒)</td>
+</tr>
+<tr>
+<td>noTryMaxTime</td>
+<td>15000</td>
+<td>经过此时间单片机仍未响应则重新发送消息(毫秒)</td>
+</tr>
+<tr>
+<td>IntervalTime</td>
+<td>2000</td>
+<td>监听行为心跳间隔</td>
+</tr>
+<tr>
+<td>MaxToReScanTime</td>
+<td>180000</td>
+<td>经过此事件单片机无响应则从新扫描IP地址(毫秒)</td>
+</tr>
+<tr>
+<td>MinResearchTime</td>
+<td>5000</td>
+<td>搜索IP经过一此轮询后间隔时间(毫秒)</td>
+</tr>
+<tr>
+<td>IpScanTimeout</td>
+<td>1</td>
+<td>IP扫描时的Ping检测超时时间(秒)</td>
+</tr>
+<tr>
+<td>pingTimeout</td>
+<td>2</td>
+<td>心跳Ping检测的超时时间(秒)</td>
+</tr>
+<tr>
+<td>MaxTraceBackTimes</td>
+<td>8</td>
+<td>判断连接状态所向前追溯的历史心跳个数</td>
+</tr>
+</tbody></table>
+
+</div>
+
+
+
+<p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> MyMCU = <span class="keyword">new</span> wiot.client(&#123;</span><br><span class="line">    MAC: <span class="string">"xx:xx:xx:xx:xx:xx"</span>,</span><br><span class="line">    pin: &#123;</span><br><span class="line">        D1: <span class="number">0</span>,</span><br><span class="line">        D2: <span class="number">0</span>,</span><br><span class="line">        D3: <span class="number">1</span>,</span><br><span class="line">        D4: <span class="number">1</span>,</span><br><span class="line">        D5: <span class="number">0</span>,</span><br><span class="line">        D6: <span class="number">1</span>,</span><br><span class="line">        D7: <span class="number">0</span>,</span><br><span class="line">        D8: <span class="number">0</span></span><br><span class="line">    &#125;,</span><br><span class="line">    hint: <span class="literal">true</span>,</span><br><span class="line">    debug: <span class="literal">false</span>,</span><br><span class="line">    ip: <span class="string">"192.168.0.55"</span>,</span><br><span class="line">    port: <span class="number">6666</span>,</span><br><span class="line">    ip_range: <span class="string">"192.168.0"</span>,</span><br><span class="line">    localIP: <span class="string">"127.0.0.1"</span>,</span><br><span class="line">    errDelayTime: <span class="number">2000</span>,</span><br><span class="line">    okDelayTime: <span class="number">30</span>,</span><br><span class="line">    resetDelayTime: <span class="number">4500</span>,</span><br><span class="line">    noTryMaxTime: <span class="number">15000</span>,</span><br><span class="line">    IntervalTime: <span class="number">2000</span>,</span><br><span class="line">    MaxToReScanTime: <span class="number">180000</span>,</span><br><span class="line">    MinResearchTime: <span class="number">5000</span>,</span><br><span class="line">    IpScanTimeOut: <span class="number">1</span>,</span><br><span class="line">    pingTimeout: <span class="number">2</span>,</span><br><span class="line">    MaxTraceBackTimes: <span class="number">8</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="方法列表"><a href="#方法列表" class="headerlink" title="方法列表"></a>方法列表</h4><ul>
+<li><code>.write(pin: wiot.pin/number, state: iot.state/number)</code>: 向指定pin口输出状态指令，状态可以是wiot.HIGH/wiot.LOW或PWM调制(0-255数字)</li>
+<li><code>wiot.read(pin: wiot.pin/number)</code>: 读取指定pin口状态，数字pin返回wiot.HIGH/wiot.LOW，模拟pin返回0-1024数值</li>
+</ul>
+<h4 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h4><p><code>.on(event, handler)</code></p>
+<p><strong>client事件列表</strong></p>
+<ul>
+<li><code>begin</code>  开始于单片机正常交互</li>
+<li><code>disConnected</code>  与单片机断开连接</li>
+<li><code>reConnected</code>   与单片机恢复连接</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> MCU = <span class="keyword">new</span> wiot.client(&#123;<span class="string">"MAC"</span>: <span class="string">"xx:xx:xx:xx:xx:xx"</span>&#125;);</span><br><span class="line"></span><br><span class="line">MCU.on(<span class="string">'disConnected'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 当与MCU失联时会执行此处指令</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Disconnected with MCU!!'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><code>.pinOn(pin, event, handler)</code></p>
+<p><strong>pin事件列表</strong></p>
+<ul>
+<li><code>on</code> pin口电位从低到高</li>
+<li><code>off</code> pin口电位从高到低</li>
+<li><code>change</code> pin口电位变化</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> MCU = <span class="keyword">new</span> wiot.client(&#123;<span class="string">"MAC"</span>: <span class="string">"xx:xx:xx:xx:xx:xx"</span>&#125;);</span><br><span class="line"></span><br><span class="line">MCU.pinOn(wiot.D2, <span class="string">'on'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 当MCU的D2电位由低到高时会执行</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'D2 from LOW to HIGH!!'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><ul>
+<li><code>wiot.begin()</code>: 单片机准备完成后开始执行</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">MCU0 = <span class="keyword">new</span> wiot.client(&#123;<span class="attr">MAC</span>: <span class="string">"xx:xx:xx:xx:xx:xx"</span>, <span class="attr">pin</span>: &#123;<span class="attr">D4</span>: wiot.OUTPUT&#125;&#125;);</span><br><span class="line">MCU1 = <span class="keyword">new</span> wiot.client(&#123;<span class="attr">MAC</span>: <span class="string">"xx:xx:xx:xx:xx:ww"</span>&#125;);</span><br><span class="line"></span><br><span class="line">wiot.begin([MCU0, MCU1], ()=&gt;&#123;</span><br><span class="line">    <span class="comment">//这里放你要执行的指令</span></span><br><span class="line">    <span class="comment">//这些指令将会在MCU0和MCU1准备就绪后开始执行</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>wiot.loop()</code>: 循环执行的指令，适合于条件控制语句</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">MCU0 = <span class="keyword">new</span> wiot.client(&#123;<span class="attr">MAC</span>: <span class="string">"xx:xx:xx:xx:xx:xx"</span>, <span class="attr">pin</span>: &#123;<span class="attr">D4</span>: wiot.OUTPUT&#125;&#125;);</span><br><span class="line">MCU1 = <span class="keyword">new</span> wiot.client(&#123;<span class="attr">MAC</span>: <span class="string">"xx:xx:xx:xx:xx:ww"</span>&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 以下代码将实现: 当MCU0的D5接收到HIGH，MCU1的D4将会输出HIGH</span></span><br><span class="line"><span class="comment">//                当MCU0的D5接收到LOW, MCU1的D4将会输出LOW</span></span><br><span class="line"><span class="comment">// 本函数接受两个参数: 第一个是MCU对象数组, 第二个是参数为MCU对象数组的函数</span></span><br><span class="line">wiot.loop([MCU0, MCU1], () =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span>(MCU1.read(wiot.D5) == wiot.HIGH)&#123;</span><br><span class="line">        MCU0.write(wiot.D4, wiot.HIGH);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        MCU0.write(wiot.D4, wiot.LOW);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="注册表"><a href="#注册表" class="headerlink" title="注册表"></a>注册表</h3><ul>
+<li><code>wiot.register.set(status1, status2, function)</code>: 向注册表中添加一条规则, status可以是值或函数，当status1==status2时会触发function。<br>注册表的设计是为了方便协调各扩展模块的使用，详见下文<a href="#传感器扩展模块">扩展模块</a>。</li>
+<li><code>wiot.register.set(status, function)</code>: 你也可以传入两个函数，其中status的返回值是bool型，变为true时触发function</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myLED = wiot.led(MyMCU, wiot.D4);</span><br><span class="line"><span class="keyword">var</span> pir = wiot.pir(MyMCU, wiot.D2);</span><br><span class="line"></span><br><span class="line"><span class="comment">//注册一条规则，当pir探测到人时，myLED亮</span></span><br><span class="line">wiot.register.set(pir.getStatus, wiot.HIGH, ()=&gt;&#123;</span><br><span class="line">    myLED.set(wiot.HIGH);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//注册一条规则，当人离开时，myLED灭</span></span><br><span class="line">wiot.register.set(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (wiot.LOW == pir.getStatus);</span><br><span class="line">&#125;, ()=&gt;&#123;</span><br><span class="line">    myLED.clear();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="传感器扩展模块"><a href="#传感器扩展模块" class="headerlink" title="传感器扩展模块"></a>传感器扩展模块</h2><h3 id="LED"><a href="#LED" class="headerlink" title="LED"></a>LED</h3><ul>
+<li><code>wiot.led(MCU, pin)</code>: 声明一个led模块</li>
+<li><code>wiot.led.getStatus()</code>: 获取led状态</li>
+<li><code>wiot.led.set(status, time = 0, isSmooth = false)</code>: 设置led状态，起始状态，中间状态，最终状态，周期</li>
+<li><code>wiot.led.breath(period)</code>: 设置一个呼吸灯</li>
+<li><code>wiot.led.clear()</code>: 重置led</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">MCU0 = <span class="keyword">new</span> wiot.client(&#123;<span class="attr">MAC</span>: <span class="string">"xx:xx:xx:xx:xx:xx"</span>, <span class="attr">pin</span>: &#123;<span class="attr">D4</span>: wiot.OUTPUT&#125;&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myLED = wiot.led(MCU0, wiot.D4); <span class="comment">//新建一个led对象，使用MCU0上的D4口</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 如果myLED不亮，则点亮它 */</span></span><br><span class="line"><span class="keyword">if</span>(!myLED.getStatus())&#123;</span><br><span class="line">    myLED.set(wiot.HIGH);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 设置一个周期为2秒的呼吸灯 */</span></span><br><span class="line">myLED.breath(<span class="number">2000</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 设置一个亮三秒，灭四秒的led */</span></span><br><span class="line">myLED.set([wiot.HIGH, wiot.LOW], [<span class="number">3000</span>, <span class="number">4000</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 设置一个呼1秒吸3秒的呼吸渐变灯 */</span></span><br><span class="line">myLED.set([wiot.LOW, wiot.HIGH], [<span class="number">1000</span>, <span class="number">3000</span>], <span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 自定义一个先半亮2秒再全亮3秒再熄灭2秒的led灯 */</span></span><br><span class="line">myLED.set([<span class="number">100</span>, wiot.HIGH, wiot.LOW], [<span class="number">2000</span>, <span class="number">3000</span>, <span class="number">2000</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 熄灭led */</span></span><br><span class="line">myLED.clear();</span><br></pre></td></tr></table></figure>
+
+<h3 id="PIR-红外人体传感器"><a href="#PIR-红外人体传感器" class="headerlink" title="PIR 红外人体传感器"></a>PIR 红外人体传感器</h3><ul>
+<li><code>wiot.pir(MCU, pin)</code>: 声明一个PIR模块</li>
+<li><code>wiot.pir.getStatus()</code>: 获取PIR状态，返回值wiot.HIGH(有人)，wiot.LOW(无人)</li>
+</ul>
+<p><strong>事件触发器</strong></p>
+<ul>
+<li><code>wiot.pir.on(event, handler)</code></li>
+</ul>
+<p><strong>事件列表</strong></p>
+<ul>
+<li><code>detected</code>  探测到人</li>
+<li><code>undetected</code>  人体移动出探测范围</li>
+<li><code>change</code>   状态改变，包括有人到无人和无人到有人</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">MCU0 = <span class="keyword">new</span> wiot.client(&#123;<span class="attr">MAC</span>: <span class="string">"xx:xx:xx:xx:xx:xx"</span>&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myPIR = wiot.pir(MCU0, wiot.D2); <span class="comment">//新建一个pir对象，使用MCU0上的D2口</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 输出pir状态到控制台 */</span></span><br><span class="line"><span class="built_in">console</span>.log(myPIR.getStatus());</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 当探测到人，打印 "Detected People!" 到控制台 */</span></span><br><span class="line">myPIR.on(<span class="string">"detected"</span>, ()=&gt;&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Detected People!"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 人移动出探测范围，打印 "No People!!" 到控制台 */</span></span><br><span class="line">myPIR.on(<span class="string">"undetected"</span>, ()=&gt;&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"No People!!"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 当状态改变，执行指令 */</span></span><br><span class="line">myPIR.on(<span class="string">"change"</span>, ()=&gt;&#123;</span><br><span class="line">    <span class="comment">/* 你的指令 */</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="IR-红外循迹-障碍传感器"><a href="#IR-红外循迹-障碍传感器" class="headerlink" title="IR 红外循迹/障碍传感器"></a>IR 红外循迹/障碍传感器</h3><ul>
+<li><code>wiot.ir(MCU, pin)</code>: 声明一个IR模块，pin可以是模拟或数字端口</li>
+<li><code>wiot.ir.getStatus()</code>: 获取IR状态，返回值wiot.HIGH(有障碍)，wiot.LOW(无障碍)，或者0-1024数值(限模拟端口)</li>
+</ul>
+<p><strong>事件触发器</strong></p>
+<ul>
+<li><code>wiot.ir.on(event, handler)</code></li>
+</ul>
+<p><strong>事件列表</strong></p>
+<ul>
+<li><code>detected</code>  探测到障碍</li>
+<li><code>undetected</code>  障碍消失</li>
+<li><code>change</code>   状态改变</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">MCU0 = <span class="keyword">new</span> wiot.client(&#123;<span class="attr">MAC</span>: <span class="string">"xx:xx:xx:xx:xx:xx"</span>&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myIR = wiot.ir(MCU0, wiot.D2); <span class="comment">//新建一个ir对象，使用MCU0上的D2口</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 输出ir状态到控制台 */</span></span><br><span class="line"><span class="built_in">console</span>.log(myIR.getStatus());</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 当探测到物体，打印 "Detected Object!" 到控制台 */</span></span><br><span class="line">myIR.on(<span class="string">"detected"</span>, ()=&gt;&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Detected Object!"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 物体移动出探测范围，打印 "No Object!!" 到控制台 */</span></span><br><span class="line">myIR.on(<span class="string">"undetected"</span>, ()=&gt;&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"No Object!!"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 当状态改变，执行指令 */</span></span><br><span class="line">myIR.on(<span class="string">"change"</span>, ()=&gt;&#123;</span><br><span class="line">    <span class="comment">/* 你的指令 */</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="lightSensor-光敏传感器"><a href="#lightSensor-光敏传感器" class="headerlink" title="lightSensor 光敏传感器"></a>lightSensor 光敏传感器</h3><ul>
+<li><code>wiot.lightSensor(MCU, pin)</code>: 声明一个lightSensor模块, pin可以是模拟或数字端口</li>
+<li><code>wiot.lightSensor.getStatus()</code>: 获取lightSensor状态，返回值wiot.HIGH(有光)，wiot.LOW(无光)，或者0-1024数值(限模拟端口)</li>
+</ul>
+<p><strong>事件触发器</strong></p>
+<ul>
+<li><code>wiot.light.on(event, handler)</code></li>
+</ul>
+<p><strong>事件列表</strong></p>
+<ul>
+<li><code>light</code>  由暗到明</li>
+<li><code>dark</code>  由明到暗</li>
+<li><code>change</code>   状态改变</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">MCU0 = <span class="keyword">new</span> wiot.client(&#123;<span class="attr">MAC</span>: <span class="string">"xx:xx:xx:xx:xx:xx"</span>&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myLightSensor = wiot.lightSensor(MCU0, wiot.D1); <span class="comment">//新建一个pir对象，使用MCU0上的D2口</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 输出LightSensor状态到控制台 */</span></span><br><span class="line"><span class="built_in">console</span>.log(mylightSensor.getStatus());</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 当由暗到明，打印 "Light!!!" 到控制台 */</span></span><br><span class="line">myLightSensor.on(<span class="string">"light"</span>, ()=&gt;&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Light!"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 由明到暗，打印 "Dark!!" 到控制台 */</span></span><br><span class="line">myLightSensor.on(<span class="string">"dark"</span>, ()=&gt;&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Dark!!"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 当状态改变，执行指令 */</span></span><br><span class="line">myLightSensor.on(<span class="string">"change"</span>, ()=&gt;&#123;</span><br><span class="line">    <span class="comment">/* 你的指令 */</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="网络扩展模块"><a href="#网络扩展模块" class="headerlink" title="网络扩展模块"></a>网络扩展模块</h2><h3 id="mail-邮件模块"><a href="#mail-邮件模块" class="headerlink" title="mail 邮件模块"></a>mail 邮件模块</h3><p>使用本模块向指定邮箱发送邮件。自豪地引用<a href="https://api.yimian.xyz/" target="_blank" rel="noopener">Yimian API</a>构建！</p>
+<ul>
+<li><code>wiot.mail(to, from = &quot;wIoT&quot;)</code>: 声明一个mail模块，参数收件地址，发件人名称</li>
+<li><code>wiot.mail.send(subject, body)</code>: 发送邮件，需传入主题，邮件内容</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mail = wiot.mail(<span class="string">"i@iotcat.me"</span>, <span class="string">"wIoT Test"</span>);</span><br><span class="line"></span><br><span class="line">mail.send(<span class="string">"Test"</span>, <span class="string">"Test from wiot!!"</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="guguji-咕咕机模块"><a href="#guguji-咕咕机模块" class="headerlink" title="guguji 咕咕机模块"></a>guguji 咕咕机模块</h3><p>使用本模块向指定咕咕机发送消息。咕咕机是一款便携式私人打印机，详见<a href="https://www.memobird.shop/" target="_blank" rel="noopener">官网</a>。使用本模块需要在官网提前申请好自己的开发者ak, 详见<a href="https://api.yimian.xyz/gugu/intro.php" target="_blank" rel="noopener">这里</a>。自豪地引用<a href="https://api.yimian.xyz/" target="_blank" rel="noopener">Yimian API</a>构建！</p>
+<ul>
+<li><code>wiot.guguji(ak, userID, memobirdID)</code>: 声明一个guguji模块，参数: 开发者ak, 用户id, 咕咕机id</li>
+<li><code>wiot.guguji.send(msg)</code>: 发送消息，需传入待发送的消息</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> gugu = wiot.guguji(<span class="string">"9e55121803474371bfa25d20e554b31f"</span>, <span class="string">"832598"</span>, <span class="string">"b3ee06a8bd9b49e1"</span>);</span><br><span class="line"></span><br><span class="line">gugu.print(<span class="string">"This is from wIoT!!"</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+
+</span>
+
+<span class=".en">
+
+<h1 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h1><p>This project aims to help web developers who are not familiar with firmware programming to implement their own IoT applications. You only need a server inside the network (such as Raspberry Pi) and several MCUs (single-chip computers) that support networking (via serial port, WiFi, LoRa, Bluetooth, Zigbee, etc.), you can easily create and manage your own Internet of Things Cluster.</p>
+<h2 id="Current-Support-devices"><a href="#Current-Support-devices" class="headerlink" title="Current Support devices"></a>Current Support devices</h2><ul>
+<li>D1 MINI</li>
+</ul>
+<h2 id="Node-js-Install-Node-js"><a href="#Node-js-Install-Node-js" class="headerlink" title="Node.js Install Node.js"></a>Node.js Install Node.js</h2><p>Node.js is a widely used programming language for web developers. To make use of wIoT, you should first install Node.js to your computer.  </p>
+<p>For <strong>windows</strong> user, you can follow the instruction in <a href="https://www.jianshu.com/p/03a76b2e7e00" target="_blank" rel="noopener">this website</a>    </p>
+<h2 id="Install-wIoT-package"><a href="#Install-wIoT-package" class="headerlink" title="Install wIoT package"></a>Install wIoT package</h2><p>After install Node.js and configure npm successfully, you should then use npm to download wIoT package by enter following command in your command window.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install wiot</span><br></pre></td></tr></table></figure>
+
+<p>Windows user can use cmd or powershell.It should be notice that this may report error for some users. The solution is to open your cmd window as administrator. You can right click on cmd and choose <em>run as an administrator</em>. You can also press windows+R and input <em>cmd</em> then press Ctrl+Shift+Enter to open it as administrator.  </p>
+<h2 id="Burn-firmware"><a href="#Burn-firmware" class="headerlink" title="Burn firmware"></a>Burn firmware</h2><h2 id="Connect-your-device-to-D1-MINI"><a href="#Connect-your-device-to-D1-MINI" class="headerlink" title="Connect your device to D1 MINI"></a>Connect your device to D1 MINI</h2><ul>
+<li>After burning the firmware, you should try to connect your device to D1 MINI<br>Follow the steps below, I’m sure it would not be a problem for such a smart person like you  </li>
+</ul>
+<h3 id="1-Reset-your-D1-MINI"><a href="#1-Reset-your-D1-MINI" class="headerlink" title="1. Reset your D1 MINI"></a>1. Reset your D1 MINI</h3><ul>
+<li>Find pin <strong>D0</strong> on your D1 MINI, it should be in the middle of A0 and D5.      </li>
+<li>Use a wire to connect <strong>3V3</strong> to <strong>D0</strong>. If your MINI works normally, you would see its BUILT-IN LED blink. </li>
+<li>You <strong>don’t</strong> have to wait until it stops blink, just stay for <strong>2s</strong>, then you can pull out the wire and your MINI would reset.  </li>
+</ul>
+<h3 id="2-Find-your-D1-MINI-on-your-device"><a href="#2-Find-your-D1-MINI-on-your-device" class="headerlink" title="2.Find your D1 MINI on your device"></a>2.Find your D1 MINI on your device</h3><ul>
+<li>After you finish step 1, your MINI would work in AP mode, which means you can search it with your smart phone or personal computer by scanning the Wi-Fi around     </li>
+<li>If your MINI was reset successfully, you would find a Wi-Fi with SSID in the form of <strong>wiot-xx:xx:xx:xx:xx:xx</strong>.<br>Example:<br><img src="https://api.yimian.xyz/img/?path=docs/wiot/ssid.png" alt="ssid"><br>“xx:xx:xx:xx:xx:xx” is the MAC address of this MINI, please try to remember the address for you may use it later </li>
+</ul>
+<p>The default password for D1 MINI is <strong>1234567890</strong>, enter the password and you should be able to connect to your MINI.</p>
+<h2 id="Connect-D1-MINI-to-your-Wi-Fi"><a href="#Connect-D1-MINI-to-your-Wi-Fi" class="headerlink" title="Connect D1 MINI to your Wi-Fi"></a>Connect D1 MINI to your Wi-Fi</h2><p>Congratulations, you have successfully connect your device to D1 MINI<br>However, this is not the end, you should now try to connect D1 MINI to your Wi-Fi<br>Use the device which had just been connected to D1 MINI and follow the steps below            </p>
+<h3 id="1-Visit-the-control-page-of-D1-MINI"><a href="#1-Visit-the-control-page-of-D1-MINI" class="headerlink" title="1. Visit the control page of D1 MINI"></a>1. Visit the control page of D1 MINI</h3><p>Visit <strong><a href="http://192.168.0.1" target="_blank" rel="noopener">http://192.168.0.1</a></strong> with the browser on your device<br>Normally, you would see a webpage like this:<br><img src="https://api.yimian.xyz/img/?path=docs/wiot/webpage.png" alt="webpage"><br>In this page, you can see the MAC Address and wIoT version of your MINI<br>Again, please <strong>remember</strong> the MAC Address  </p>
+<h3 id="2-Submit-SSID-and-password-to-your-MINI"><a href="#2-Submit-SSID-and-password-to-your-MINI" class="headerlink" title="2.Submit SSID and password to your MINI"></a>2.Submit SSID and password to your MINI</h3><p>From the page, you can see two blanks that ask the SSID and password of your Wi-Fi<br>Input information of the Wi-FI which you would like to connect your MINI, click <em>Submit</em><br>If you have input the right SSID and password, you will see a page showing the message: <strong>Set Successfully!! Rebooting!!</strong><br>Then, after a minute, you will see the SSID of D1 MINI has vanished               </p>
+<p>If you submitted the wrong message, do not try to directly reconnect to D1 MINI.  Restart the whole procedure from the reset part of the last section</p>
+<h2 id="Execute-Example-Code"><a href="#Execute-Example-Code" class="headerlink" title="Execute Example Code"></a>Execute Example Code</h2><p>If you have successfully connect D1 MINI to your Wi-Fi, you can execute the example code below to realize a simple function of wIoT<br>Before executing the code, you should first connect a LED to D1 MINI with positive pole connect to pin D4 and negative pole connect to GND</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> wiot = <span class="built_in">require</span>(<span class="string">'wiot'</span>); <span class="comment">//Import wiot package from npm</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Create an object of single chip</span></span><br><span class="line"><span class="comment">// Here are two parameters, MAC is the MAC adress of single chip, the output port should be defined in pin</span></span><br><span class="line"><span class="comment">// The MAC address should be editted by user</span></span><br><span class="line"><span class="keyword">var</span> MyMCU = <span class="keyword">new</span> wiot.client(&#123;<span class="attr">MAC</span>: <span class="string">"3C:71:BF:3A:F6:CF"</span>, <span class="attr">pin</span>: &#123;<span class="attr">D4</span> : <span class="number">1</span>&#125;, <span class="attr">hint</span> : <span class="literal">true</span>&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// The following code can let the BUILTIN_LED turn on for one second and off for one second periodically</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Wait for all the chips to get ready</span></span><br><span class="line">wiot.begin([MyMCU], ()=&gt;&#123; </span><br><span class="line">    <span class="comment">// First parameter is the name of chip, second parameter is the function that is going to be executed</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// Set timer, pin 3 of MyMCU will pull up every 2 seconds</span></span><br><span class="line">    setInterval(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">        MyMCU.write(wiot.D4, wiot.HIGH);</span><br><span class="line">    &#125;, <span class="number">2000</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Set timer, executer the command in &#123;&#125; after a one-second delay</span></span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Set timer, pin 3 of MyMCU will pull down every 2 seconds</span></span><br><span class="line">        setInterval(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">            MyMCU.write(wiot.D4, wiot.LOW);</span><br><span class="line">        &#125;, <span class="number">2000</span>);</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>The LED is expected to blink after you execute the code</p>
+<h1 id="Advanced-development"><a href="#Advanced-development" class="headerlink" title="Advanced development"></a>Advanced development</h1><h2 id="Parameters"><a href="#Parameters" class="headerlink" title="Parameters"></a>Parameters</h2>
+<div style="overflow:scroll;">
+
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Default Value</th>
+<th>Declaration</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MAC</td>
+<td>“”</td>
+<td>MAC Address of MCU</td>
+</tr>
+<tr>
+<td>pin</td>
+<td>{D1: 0, D2: 0, D3: 0, D4: 0, D5: 0, D6: 0, D7: 0, D8: 0}</td>
+<td>Mode of each pin, 0 is INPUT, 1 is OUTPUT, 2is INPUT_PULLUP</td>
+</tr>
+<tr>
+<td>hint</td>
+<td>true</td>
+<td>Whether print the status prompt</td>
+</tr>
+<tr>
+<td>debug</td>
+<td>false</td>
+<td>Whether open the debug mode</td>
+</tr>
+<tr>
+<td>ip</td>
+<td>“default”</td>
+<td>Specify MCU IP, please try this option when you cannot find IP for a long time</td>
+</tr>
+<tr>
+<td>port</td>
+<td>8848</td>
+<td>TCP Socket communication port for Client, default 8848</td>
+</tr>
+<tr>
+<td>ip_range</td>
+<td>“192.168.0”</td>
+<td>IP search field, try this option if you cannot find IP for a long time</td>
+</tr>
+<tr>
+<td>localIP</td>
+<td>“127.0.0.1”</td>
+<td>local IP</td>
+</tr>
+<tr>
+<td>errDelayTime</td>
+<td>2000</td>
+<td>Retry interval when network error is encountered (milliseconds)</td>
+</tr>
+<tr>
+<td>okDelayTime</td>
+<td>30</td>
+<td>Waiting time after receiving the network request (milliseconds)</td>
+</tr>
+<tr>
+<td>resetDelayTime</td>
+<td>4500</td>
+<td>Waiting time for stop sending new messages after sending reset instructions to MCU (milliseconds)</td>
+</tr>
+<tr>
+<td>noTryMaxTime</td>
+<td>15000</td>
+<td>If the MCU fails to respond after this time, the message will be sent again (milliseconds).</td>
+</tr>
+<tr>
+<td>IntervalTime</td>
+<td>2000</td>
+<td>Interval between monitoring (heartbeat)</td>
+</tr>
+<tr>
+<td>MaxToReScanTime</td>
+<td>180000</td>
+<td>After this time, if the MCU has no response, it will scan the IP address again (in milliseconds).</td>
+</tr>
+<tr>
+<td>MinResearchTime</td>
+<td>5000</td>
+<td>Interval between each polling</td>
+</tr>
+<tr>
+<td>IpScanTimeout</td>
+<td>1</td>
+<td>Ping detection timeout for IP scanning (seconds)</td>
+</tr>
+<tr>
+<td>pingTimeout</td>
+<td>2</td>
+<td>Timeout of Heartbeat Ping detection (seconds)</td>
+</tr>
+<tr>
+<td>MaxTraceBackTimes</td>
+<td>8</td>
+<td>Determine the number of historical heartbeats traced back to the connection state</td>
+</tr>
+</tbody></table>
+
+</div>
+
+
+
+<h2 id="Parameters-Declaration-Example"><a href="#Parameters-Declaration-Example" class="headerlink" title="Parameters Declaration Example"></a>Parameters Declaration Example</h2><h3 id="General-Example"><a href="#General-Example" class="headerlink" title="General Example"></a>General Example</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> MyMCU = <span class="keyword">new</span> wiot.client(&#123;</span><br><span class="line">    MAC: <span class="string">"xx:xx:xx:xx:xx:xx"</span>,</span><br><span class="line">    pin: &#123;</span><br><span class="line">        D1: <span class="number">0</span>,</span><br><span class="line">        D2: <span class="number">0</span>,</span><br><span class="line">        D3: <span class="number">1</span>,</span><br><span class="line">        D4: <span class="number">1</span>,</span><br><span class="line">        D5: <span class="number">0</span>,</span><br><span class="line">        D6: <span class="number">1</span>,</span><br><span class="line">        D7: <span class="number">0</span>,</span><br><span class="line">        D8: <span class="number">0</span></span><br><span class="line">    &#125;,</span><br><span class="line">    hint: <span class="literal">true</span>,</span><br><span class="line">    debug: <span class="literal">false</span>,</span><br><span class="line">    ip: <span class="string">"192.168.0.55"</span>,</span><br><span class="line">    port: <span class="number">6666</span>,</span><br><span class="line">    ip_range: <span class="string">"192.168.0"</span>,</span><br><span class="line">    localIP: <span class="string">"127.0.0.1"</span>,</span><br><span class="line">    errDelayTime: <span class="number">2000</span>,</span><br><span class="line">    okDelayTime: <span class="number">30</span>,</span><br><span class="line">    resetDelayTime: <span class="number">4500</span>,</span><br><span class="line">    noTryMaxTime: <span class="number">15000</span>,</span><br><span class="line">    IntervalTime: <span class="number">2000</span>,</span><br><span class="line">    MaxToReScanTime: <span class="number">180000</span>,</span><br><span class="line">    MinResearchTime: <span class="number">5000</span>,</span><br><span class="line">    IpScanTimeOut: <span class="number">1</span>,</span><br><span class="line">    pingTimeout: <span class="number">2</span>,</span><br><span class="line">    MaxTraceBackTimes: <span class="number">8</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Event-Binding"><a href="#Event-Binding" class="headerlink" title="Event Binding"></a>Event Binding</h2><h3 id="Client"><a href="#Client" class="headerlink" title="Client"></a>Client</h3><p><code>.on(event, handler)</code></p>
+<h4 id="Event-List-of-client"><a href="#Event-List-of-client" class="headerlink" title="Event List of client"></a>Event List of client</h4><ul>
+<li><code>begin</code>  It begins when MCU starts to interact normally</li>
+<li><code>disConnected</code>  Disconnect from MCU</li>
+<li><code>reConnected</code>   Connection with MCU restored</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> MCU = <span class="keyword">new</span> wiot.client(&#123;<span class="string">"MAC"</span>: <span class="string">"xx:xx:xx:xx:xx:xx"</span>&#125;);</span><br><span class="line"></span><br><span class="line">MCU.on(<span class="string">'disConnected'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Execute the command below when lost connection with MCU</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Disconnected with MCU!!'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="Pin"><a href="#Pin" class="headerlink" title="Pin"></a>Pin</h3><p><code>.pinOn(pin, event, handler)</code></p>
+<h4 id="Event-List-of-pin"><a href="#Event-List-of-pin" class="headerlink" title="Event List of pin"></a>Event List of pin</h4><ul>
+<li><code>on</code> Change output of pin from LOW to HIGH</li>
+<li><code>off</code> Change output of pin from HIGH to LOW</li>
+<li><code>change</code> Change the output of pin</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> MCU = <span class="keyword">new</span> wiot.client(&#123;<span class="string">"MAC"</span>: <span class="string">"xx:xx:xx:xx:xx:xx"</span>&#125;);</span><br><span class="line"></span><br><span class="line">MCU.pinOn(wiot.D2, <span class="string">'on'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// Execute when the output of D2 changes from LOW to HIGH</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'D2 from LOW to HIGH!!'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="API-1"><a href="#API-1" class="headerlink" title="API"></a>API</h3><ul>
+<li><code>wiot.begin()</code>: Execute when MCU is ready</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">MCU0 = <span class="keyword">new</span> wiot.client(&#123;<span class="attr">MAC</span>: <span class="string">"xx:xx:xx:xx:xx:xx"</span>, <span class="attr">pin</span>: &#123;<span class="attr">D4</span>: wiot.OUTPUT&#125;&#125;);</span><br><span class="line">MCU1 = <span class="keyword">new</span> wiot.client(&#123;<span class="attr">MAC</span>: <span class="string">"xx:xx:xx:xx:xx:ww"</span>&#125;);</span><br><span class="line"></span><br><span class="line">wiot.begin([MCU0, MCU1], ()=&gt;&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Write the command you want to execute here</span></span><br><span class="line">    <span class="comment">//These command would execute once MCU0 and MCU1 are ready</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>+<br> <code>wiot.loop()</code>: A loop command，Suitable for conditional control statements</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">MCU0 = <span class="keyword">new</span> wiot.client(&#123;<span class="attr">MAC</span>: <span class="string">"xx:xx:xx:xx:xx:xx"</span>, <span class="attr">pin</span>: &#123;<span class="attr">D4</span>: wiot.OUTPUT&#125;&#125;);</span><br><span class="line">MCU1 = <span class="keyword">new</span> wiot.client(&#123;<span class="attr">MAC</span>: <span class="string">"xx:xx:xx:xx:xx:ww"</span>&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// Following code would realize: When pin D5 of MCU0 receive HIGH，D4 of MCU1 would output HIGH</span></span><br><span class="line"><span class="comment">// When pin D5 of MCU0 receive LOW，D4 of MCU1 would output LOW</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// This function receives two parameters: first is an array of objects for MCU, second is a function which use MCU array of objects as its parameter</span></span><br><span class="line"></span><br><span class="line">wiot.loop([MCU0, MCU1], () =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span>(MCU1.read(wiot.D5) == wiot.HIGH)&#123;</span><br><span class="line">        MCU0.write(wiot.D4, wiot.HIGH);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        MCU0.write(wiot.D4, wiot.LOW);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Register"><a href="#Register" class="headerlink" title="Register"></a>Register</h3><ul>
+<li><p><code>wiot.register.set(status1, status2, function)</code>: Add a rule to register that status can be either value or function,<br>function would trigger if status1 == status2<br>The registry is designed to facilitate the use of various extension modules, See [extension module] below (# Sensor Extension Module).</p>
+</li>
+<li><p><code>wiot.register.set(status, function)</code>: You can also pass in two functions, where the return value of status is of type bool, it would trigger the function if it changes to true</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> myLED = wiot.led(MyMCU, wiot.D4);</span><br><span class="line"><span class="keyword">var</span> pir = wiot.pir(MyMCU, wiot.D2);</span><br><span class="line"></span><br><span class="line"><span class="comment">//Sign up for a rule that says myLED lights up when pir detects a person</span></span><br><span class="line">wiot.register.set(pir.getStatus, wiot.HIGH, ()=&gt;&#123;</span><br><span class="line">    myLED.set(wiot.HIGH);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//Sign up for a rule that when people leave, myLED goes off</span></span><br><span class="line">wiot.register.set(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (wiot.LOW == pir.getStatus);</span><br><span class="line">&#125;, ()=&gt;&#123;</span><br><span class="line">    myLED.clear();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="Sensor-extension-module"><a href="#Sensor-extension-module" class="headerlink" title="Sensor extension module"></a>Sensor extension module</h2><h3 id="LED-1"><a href="#LED-1" class="headerlink" title="LED"></a>LED</h3><ul>
+<li><p><code>wiot.led(MCU, pin)</code>: Declare a LED module</p>
+</li>
+<li><p><code>wiot.led.getStatus()</code>: Get status of LED</p>
+</li>
+<li><p><code>wiot.led.set(status, time = 0, isSmooth = false)</code>: Set led state, initial state, intermediate state, final state, period</p>
+</li>
+<li><p><code>wiot.led.breath(period)</code>: Set a breathing LED</p>
+</li>
+<li><p><code>wiot.led.clear()</code>: Reset LED</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> wiot = <span class="built_in">require</span>(<span class="string">'wiot'</span>); <span class="comment">//Import wiot package from npm</span></span><br><span class="line">MCU0 = <span class="keyword">new</span> wiot.client(&#123;<span class="attr">MAC</span>: <span class="string">"3C:71:BF:3A:F6:CF"</span>, <span class="attr">pin</span>: &#123;<span class="attr">D4</span>: wiot.OUTPUT&#125;&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myLED = wiot.led(MCU0, wiot.D4); <span class="comment">//Create a new led object using the D4 port on MCU0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* If myLED is not shining, light it up*/</span></span><br><span class="line"><span class="keyword">if</span>(!myLED.getStatus())&#123;</span><br><span class="line">    myLED.set(wiot.HIGH);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Set a breathing light with cycle of 2s */</span></span><br><span class="line">myLED.breath(<span class="number">2000</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Set a LED which light 3 seconds and off 4 seconds */</span></span><br><span class="line">myLED.set([wiot.HIGH, wiot.LOW], [<span class="number">3000</span>, <span class="number">4000</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Set a breathing light which use 1 second to light and 3 second to extinguish */</span></span><br><span class="line">myLED.set([wiot.LOW, wiot.HIGH], [<span class="number">1000</span>, <span class="number">3000</span>], <span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Set a LED which shine with half brightness for 2 seconds, shine with full brightness for 3 seconds and then dextinguish for 2 seconds  */</span></span><br><span class="line">myLED.set([<span class="number">100</span>, wiot.HIGH, wiot.LOW], [<span class="number">2000</span>, <span class="number">3000</span>, <span class="number">2000</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Turn off LED */</span></span><br><span class="line">myLED.clear();</span><br></pre></td></tr></table></figure>
+
+<h3 id="PIR-Passive-Infrared-Sensor"><a href="#PIR-Passive-Infrared-Sensor" class="headerlink" title="PIR (Passive Infrared Sensor)"></a>PIR (Passive Infrared Sensor)</h3><ul>
+<li><code>wiot.pir(MCU, pin)</code>: Declare a PIR module</li>
+<li><code>wiot.pir.getStatus()</code>: Gets the PIR state, returns the value wiot.high (have people), wiot.low (no people)</li>
+</ul>
+<h4 id="Event-Trigger"><a href="#Event-Trigger" class="headerlink" title="Event Trigger"></a>Event Trigger</h4><ul>
+<li><code>wiot.pir.on(event, handler)</code></li>
+</ul>
+<p><strong>Events List</strong></p>
+<ul>
+<li><code>detected</code>  Person detected</li>
+<li><code>undetected</code>  People out of the detective field</li>
+<li><code>change</code>   State change, includes from detected to undetected and from undetected to detected</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> wiot = <span class="built_in">require</span>(<span class="string">'wiot'</span>); <span class="comment">//Import wiot package from npm</span></span><br><span class="line"></span><br><span class="line">MCU0 = <span class="keyword">new</span> wiot.client(&#123;<span class="attr">MAC</span>: <span class="string">"3C:71:BF:3A:F6:CF"</span>&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myPIR = wiot.pir(MCU0, wiot.D2); <span class="comment">//Create an object of pir, use the D2 port on MCU0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* Output the status of pir to console */</span></span><br><span class="line"><span class="built_in">console</span>.log(myPIR.getStatus());</span><br><span class="line"></span><br><span class="line"><span class="comment">/* When human is detected，print "Detected People!" to console */</span></span><br><span class="line">myPIR.on(<span class="string">"detected"</span>, ()=&gt;&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Detected People!"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* When human is out of the detection zone，print "No People!!" to console */</span></span><br><span class="line">myPIR.on(<span class="string">"undetected"</span>, ()=&gt;&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"No People!!"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* When there is a change to status, execute your command */</span></span><br><span class="line">myPIR.on(<span class="string">"change"</span>, ()=&gt;&#123;</span><br><span class="line">    <span class="comment">/* Write command in here */</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="IR-Infrared-Sensor"><a href="#IR-Infrared-Sensor" class="headerlink" title="IR Infrared Sensor"></a>IR Infrared Sensor</h3><ul>
+<li><code>wiot.ir(MCU, pin)</code>: Declare an IR module, pin can be analog or digital port</li>
+<li><code>wiot.ir.getStatus()</code>: Get IR state, return value wiot.high (with a barrier), wiot.low (with no barrier), or a value of 0-1024 (only for analog port)</li>
+</ul>
+<h4 id="Event-Trigger-1"><a href="#Event-Trigger-1" class="headerlink" title="Event Trigger"></a>Event Trigger</h4><ul>
+<li><code>wiot.ir.on(event, handler)</code></li>
+</ul>
+<p><strong>Event List</strong></p>
+<ul>
+<li><code>detected</code>  Barrier detected</li>
+<li><code>undetected</code>  Barrier vanished</li>
+<li><code>change</code>   Change state</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">MCU0 = <span class="keyword">new</span> wiot.client(&#123;<span class="attr">MAC</span>: <span class="string">"xx:xx:xx:xx:xx:xx"</span>&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myIR = wiot.ir(MCU0, wiot.D2); <span class="comment">//Create a new ir object using the D2 port on MCU0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* Output ir status to console */</span></span><br><span class="line"><span class="built_in">console</span>.log(myIR.getStatus());</span><br><span class="line"></span><br><span class="line"><span class="comment">/* When an object is detected, print "Detected Object!" to the console */</span></span><br><span class="line">myIR.on(<span class="string">"detected"</span>, ()=&gt;&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Detected Object!"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* When the object move out of the detective area, print "No Object!!" to the console */</span></span><br><span class="line">myIR.on(<span class="string">"undetected"</span>, ()=&gt;&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"No Object!!"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Execute the command when state changes */</span></span><br><span class="line">myIR.on(<span class="string">"change"</span>, ()=&gt;&#123;</span><br><span class="line">    <span class="comment">/* Your command */</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="lightSensor"><a href="#lightSensor" class="headerlink" title="lightSensor"></a>lightSensor</h3><ul>
+<li><code>wiot.lightSensor(MCU, pin)</code>: Declare a lightSensor module, pin can be analog or digital port</li>
+<li><code>wiot.lightSensor.getStatus()</code>: Get lightSensor state, return value wiot.HIGH(light), wiot.LOW(dark), or a value of 0-1024 (limited to analog port)</li>
+</ul>
+<h4 id="Event-Trigger-2"><a href="#Event-Trigger-2" class="headerlink" title="Event Trigger"></a>Event Trigger</h4><ul>
+<li><code>wiot.light.on(event, handler)</code></li>
+</ul>
+<p><strong>Event List</strong></p>
+<ul>
+<li><code>light</code>  From dark to light</li>
+<li><code>dark</code>  From light to dark</li>
+<li><code>change</code>   Change state</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">MCU0 = <span class="keyword">new</span> wiot.client(&#123;<span class="attr">MAC</span>: <span class="string">"xx:xx:xx:xx:xx:xx"</span>&#125;);</span><br><span class="line"><span class="keyword">var</span> myLightSensor = wiot.lightSensor(MCU0, wiot.D1); <span class="comment">//Create a new pir object using the D2 port on MCU0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* Output the LightSensor state to the console */</span></span><br><span class="line"><span class="built_in">console</span>.log(mylightSensor.getStatus());</span><br><span class="line"></span><br><span class="line"><span class="comment">/* When going from dark to Light, print "Light!!!" to the console */</span></span><br><span class="line">myLightSensor.on(<span class="string">"light"</span>, ()=&gt;&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Light!"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* When going from light to Dark, print "Dark!!" to the console */</span></span><br><span class="line">myLightSensor.on(<span class="string">"dark"</span>, ()=&gt;&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Dark!!"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* When the state changes, execute the command */</span></span><br><span class="line">myLightSensor.on(<span class="string">"change"</span>, ()=&gt;&#123;</span><br><span class="line">    <span class="comment">/* Your command */</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="Internet-Extension-Module"><a href="#Internet-Extension-Module" class="headerlink" title="Internet Extension Module"></a>Internet Extension Module</h2><h3 id="Mail-module"><a href="#Mail-module" class="headerlink" title="Mail module"></a>Mail module</h3><p>Use this module to send messages to the specified mailbox. Proudly built with reference to <a href="https://api.yimian.xyz/" target="_blank" rel="noopener">Yimian API</a>!</p>
+<ul>
+<li><code>wiot.mail(to, from = &quot;wIoT&quot;)</code>: Declare an mail module with sender’s name and reveiver’s address</li>
+<li><code>wiot.mail.send(subject, body)</code>: Send email with a subject and content</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mail = wiot.mail(<span class="string">"i@iotcat.me"</span>, <span class="string">"wIoT Test"</span>);</span><br><span class="line"></span><br><span class="line">mail.send(<span class="string">"Test"</span>, <span class="string">"Test from wiot!!"</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="guguji"><a href="#guguji" class="headerlink" title="guguji"></a>guguji</h3><p>Use this module to send messages to the specified cooing machine.Goo goo is a portable private printer, see <a href="https://www.memobird.shop/" target="_blank" rel="noopener">official website</a>.<br>To use this module, you need to apply for your own developer ak in advance on the official website. See <a href="https://api.yimian.xyz/gugu/intro.php" target="_blank" rel="noopener">here</a>. Proudly reference <a href="https://api.yimian.xyz/" target="_blank" rel="noopener">Yimian API</a>!</p>
+<ul>
+<li><code>wiot.guguji(ak, userID, memobirdID)</code>: Declare a goo goo chicken module, parameter: developer’s ak, user id, cooing machine id</li>
+<li><code>wiot.guguji.send(msg)</code>: Send message, need to pass in the message to be sent</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> gugu = wiot.guguji(<span class="string">"9e55121803474371bfa25d20e554b31f"</span>, <span class="string">"832598"</span>, <span class="string">"b3ee06a8bd9b49e1"</span>);</span><br><span class="line"></span><br><span class="line">gugu.print(<span class="string">"This is from wIoT!!"</span>);</span><br></pre></td></tr></table></figure>
+
+
+</span>
+
+      </div>
+      <div class="post-copyright">
+    <p class="copyright-item">
+      <span>Author: </span>
+      <a href="https://iotcat.me/" target="_blank" rel="noopener">IoTcat</a>
+    </p>
+    <p class="copyright-item">
+      <span>Link: </span>
+      <a href="https://www.eee.dog/tech/wiot.html">https://www.eee.dog/tech/wiot.html</a>
+    </p>
+    <p class="copyright-item">
+      <span>License: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/iot/">iot</a>
+            <a href="/tags/WiFi/">WiFi</a>
+            <a href="/tags/nodeJS/">nodeJS</a>
+            </div>
+        
+        <nav class="post-nav"><a class="prev" href="/tech/rand-pic-api.html">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default"><span class=".zh">随机图片API</span><span class=".en">Random Picture API</span></span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    <a class="next" href="/tech/mail-api.html">
+        <span class="next-text nav-default"><span class=".zh">自动发邮件API</span><span class=".en">Auto email API</span></span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article><script>$(()=>{var p = window.location.pathname;setTimeout(()=>{if(window.location.pathname == p)tips.show({
+        title: 'tips',
+        position: 'topRight',
+        message: ((page.tran.getLang() == 'zh')?"此文章预计阅读 20 分钟哦~": "Read this page will spend around  39  minutes~")
+  })}, 6000)})</script>
+  </div><div class="comments" id="comments"><div id="vcomments"></div>
+    </div></div>
+      </main>
+
+      <footer id="footer" class="footer">
+      <script>
+        page_obj = {
+          layout: "post",
+          comments: "true"
+        };
+      </script><div class="social-links"><a href="mailto:i@iotcat.me" class="iconfont icon-email" title="email"></a>
+        <a href="https://github.com/iotcat" target="_blank" rel="noopener" class="iconfont icon-github" title="github"></a>
+        <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    </div><div class="copyright"><span id="/tech/wiot.html" class="statistic leancloud_visitors">
+    <em>Visitors </em> <i class="leancloud-visitors-count">??</i> 
+    <span class="division"> |</span>
+    <em>Reading </em> 39 min
+  </span>
+  <br>
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://ushio.cool/" target="_blank" rel="noopener">Ushio</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/iotcat/kayo" target="_blank" rel="noopener">Kayo</a>
+  </span>
+
+  <span class="copyright-year">&copy;2018 - 2023<span class="heart shaky">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"><a href="https://iotcat.me/" target="_blank" rel="noopener">IoTcat</a></span>
+  </span>
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+<script src="https://cdn.yimian.xyz/kayo/lib/valine/valine.min.js" data-pjax></script>
+<style>
+/* 背景图片 */
+#veditor {
+  background-image: url(https://cdn.yimian.xyz/img/blog/comments_bg.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-color: rgba(255, 255, 255, 0);
+  resize: vertical
+}
+
+/* 头像旋转 */
+img.vimg {
+  transition: all 1s   /* 旋转时间为 1s */
+}
+img.vimg:hover {
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+}
+
+
+/* 盒子模式 */
+#vcomments .vcards .vcard {
+  padding: 15px 20px 0 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
+  transition: all .3s
+}
+
+#vcomments .vcards .vcard:hover {
+  box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
+}
+
+#vcomments .vcards .vcard .vh .vcard {
+  border: none;
+  box-shadow: none;
+}
+
+
+</style>
+<script>
+pjax_valine = () => {
+    $.get('https://auth.yimian.xyz/getEmailHash.php', function(res){
+        if(page.tran.getLang() == 'zh'){
+            var lan = 'zh-CN';
+            var metaPlaceholder = {"nick":"昵称/QQ号","mail":"邮箱（完全保密）"};
+            var tagMeta =  ["博主","小伙伴","访客"];
+            var placeholder = "填写邮箱可以及时收到回复哦(●'◡'●)";
+        }else{
+            var lan = 'en';
+            var metaPlaceholder = {"nick":"Nickname/QQ","mail":"EMail"};
+            var tagMeta =  ["Master","Friend","Visitor"];
+            var placeholder = "Leave some comments here (●'◡'●)";
+        }
+        new Valine({
+            el: '#vcomments',
+            appId: 'eVzpK7EyT6OafJvXWIRminWT-gzGzoHsz',
+            appKey: '2qjuEBgVE0BscTQnTmoS9roU',
+            master: '9b616ff4cd6c305e5970bee7b1bd9b1f',   //博主邮箱md5
+            tagMeta: tagMeta,     //标识字段名
+            friends: res, //["b6ddef7c7e1c647e7767afeacdfb7b64","46dd4e6fef4f9591736c4723a965ca2e","6132d77f9f0ae060bc733090991acecb","3e00e104b79d7c6e866c6b23c6ba6dfc"],  //小伙伴邮箱Md5
+
+            metaPlaceholder: metaPlaceholder,
+            placeholder: placeholder,
+            lang: lan,
+            path: window.location.pathname,
+            enableQQ: true,
+            visitor: true,
+            emojiCDN: '//i0.hdslb.com/bfs/emote/',
+            emojiMaps: {
+                "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+                "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+                "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png",
+                "tv_再见": "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+                "tv_冷漠": "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+                "tv_发怒": "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+                "tv_发财": "34db290afd2963723c6eb3c4560667db7253a21a.png",
+                "tv_可爱": "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+                "tv_吐血": "09dd16a7aa59b77baa1155d47484409624470c77.png",
+                "tv_呆": "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+                "tv_呕吐": "9f996894a39e282ccf5e66856af49483f81870f3.png",
+                "tv_困": "241ee304e44c0af029adceb294399391e4737ef2.png",
+                "tv_坏笑": "1f0b87f731a671079842116e0991c91c2c88645a.png",
+                "tv_大佬": "093c1e2c490161aca397afc45573c877cdead616.png",
+                "tv_大哭": "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+                "tv_委屈": "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+                "tv_害羞": "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+                "tv_尴尬": "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+                "tv_微笑": "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+                "tv_思考": "90cf159733e558137ed20aa04d09964436f618a1.png",
+                "tv_惊吓": "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+                "tv_打脸": "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+                "tv_抓狂": "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+                "tv_抠鼻": "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+                "tv_斜眼笑": "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+                "tv_无奈": "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+                "tv_晕": "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+                "tv_流汗": "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+                "tv_流泪": "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+                "tv_流鼻血": "c32d39db2737f89b904ca32700d140a9241b0767.png",
+                "tv_点赞": "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+                "tv_生气": "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+                "tv_生病": "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+                "tv_疑问": "0793d949b18d7be716078349c202c15ff166f314.png",
+                "tv_白眼": "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+                "tv_皱眉": "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+                "tv_目瞪口呆": "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+                "tv_睡着": "8b196675b53af58264f383c50ad0945048290b33.png",
+                "tv_笑哭": "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+                "tv_腼腆": "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+                "tv_色": "61822c7e9aae5da76475e7892534545336b23a6f.png",
+                "tv_调侃": "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+                "tv_调皮": "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+                "tv_鄙视": "6e72339f346a692a495b123174b49e4e8e781303.png",
+                "tv_闭嘴": "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+                "tv_难过": "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+                "tv_馋": "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+                "tv_鬼脸": "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+                "tv_黑人问号": "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+                "tv_鼓掌": "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"
+                // ... 更多表情
+            } 
+        });
+    });
+};
+</script><script type="text/javascript" src="https://cdn.yimian.xyz/ushio-js/ushio-footer.min.js"></script>
+<script>
+session.onload(function(){
+    if(session.get('group') != 'anonymous'){
+        function insertNick(){
+            if($('.vnick').length){
+                $('.vnick').val(session.get('nickname'));
+            }else{
+                setTimeout(insertNick, 500);
+            }
+        }
+        function insertMail(){
+            if($('.vmail').length){
+                $('.vmail').val(session.get('email'));
+            }else{
+                setTimeout(insertMail, 500);
+            }
+        }
+
+        if(session.get('nickname')){
+            insertNick();
+        }
+
+        if(session.get('email')){
+            insertMail();
+        }
+    }
+});
+</script>
+<script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/iziToast/iziToast.min.js"></script>
+  <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/iziModal/iziModal.min.js"></script>
+  <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/mermaid/mermaid.min.js"></script>
+  <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/js/src/kayo.js?v=1.0.0" data-pjax></script>
+<script type="text/javascript" src="https://cdn.yimian.xyz/kayo/js/src/kayo-no-pjax.js?v=1.0.0"></script>
+<script src="https://cdn.yimian.xyz/kayo/lib/pjax/pjax.min.js"></script>
+<script>window.pjax = new Pjax({
+    elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"])',
+    selectors: ["head title, #main", "#footer"],
+  });/* lazyload */
+    window.imageLazyLoadSetting = {
+        isSPA: false,
+        processImages: null,
+    };
+    
+     window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});
+
+  /* 第一次载入页面加载的函数 */
+  pjax_ini = () => {
+    
+     /* 关闭侧边栏 */
+     window.slideout.close();
+
+     if(page_obj.comments == "true"){pjax_valine();}pjax_google_analytics();mermaid.init(undefined, $(".mermaid"));/* lazy load */
+     !function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);
+     !function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})}();
+  };
+
+  /* 第一次 执行 */
+  pjax_ini();var loadingBar = document.querySelector(".loading-bar");
+var progress = document.querySelector(".loading-bar .progress");
+var timer = null;
+
+
+// Pjax 开始时执行的函数
+var loadingbarStart = function () {
+  // 进度条默认已经加载 20%
+  var loadingBarWidth = 20;
+  // 进度条的最大增加宽度
+  var MAX_LOADING_WIDTH = 95;
+
+  // 显示进度条
+  loadingBar.classList.add("loading");
+  // 初始化进度条的宽度
+  progress.style.width = loadingBarWidth + "%";
+
+  clearInterval(timer);
+  timer = setInterval(function () {
+    // 进度条的增加速度（可以改为一个随机值，显得更加真实）
+    loadingBarWidth += 3;
+
+    // 当进度条到达 95% 后停止增加
+    if (loadingBarWidth > MAX_LOADING_WIDTH) {
+      loadingBarWidth = MAX_LOADING_WIDTH;
+    }
+
+    progress.style.width = loadingBarWidth + "%";
+  }, 500);
+};
+
+
+// Pjax 完成之后执行的函数
+var loadingbarStop = function () {
+  clearInterval(timer);
+  progress.style.width = "100%";
+  loadingBar.classList.remove("loading");
+
+  setTimeout(function () {
+    progress.style.width = 0;
+  }, 400);
+};/* Pjax 开始时，重新加载的函数 */
+  document.addEventListener("pjax:send", function () {loadingbarStart(); 
+    });
+
+
+  /* Pjax 完成后，重新加载的函数 */
+  document.addEventListener("pjax:complete", function () {
+    /* 重载带data-pjax的script，或者.pjax-reload属性内容的script */
+    $("script[data-pjax], .pjax-reload script").each(function () {
+        $(this).parent().append($(this).remove());
+    });
+    pjax_ini();loadingbarStop();
+    page.tran.setLang();
+  });
+
+
+  /* Pjax 出错，执行的函数 */
+  document.addEventListener("pjax:error", function () {
+    
+  });</script>
+</body>
+</html>

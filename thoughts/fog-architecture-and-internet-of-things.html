@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <title>边缘计算与物联网 - EEE.DOG</title><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="边缘计算与物联网"/><meta name="keywords" content="iotcat,yimian,blog" /><link rel="alternate" href="/atom.xml" title="EEE.DOG"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.0.0" /><script>lang = ['zh', 'en'];</script>
+<script type="text/javascript" src="https://cdn.yimian.xyz/ushio-js/ushio-head.min.js"></script>
+<script>page.proj = 'iotcat/eee.dog-public';</script>
+
+<!--<link rel="stylesheet" type="text/css" href="https://cdn.yimian.xyz/kayo/lib/iziModal/iziModal.min.css" />-->
+
+
+<!--<link rel="stylesheet" type="text/css" href="https://cdn.yimian.xyz/kayo/lib/iziToast/iziToast.min.css" />-->
+
+<link rel="stylesheet" media="none" onload="this.media='all'" type="text/css" href="https://cdn.yimian.xyz/shaky/shaky.css">
+<link rel="canonical" href="https://www.eee.dog/thoughts/fog-architecture-and-internet-of-things.html"/>
+
+<link rel="stylesheet" media="none" onload="this.media='all'" type="text/css" href="https://cdn.yimian.xyz/kayo/lib/fancybox/jquery.fancybox.css" /><script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+  </script>
+  <script type="text/javascript" async src="https://cdn.yimian.xyz/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.yimian.xyz/kayo/css/style.css?v=1.0.0" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-169276192-1" data-pjax></script>
+<script>
+pjax_google_analytics = () => {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-169276192-1');
+}
+</script><script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+  window.config = {"leancloud":"","toc":true,"fancybox":true,"pjax":{"enable":true,"loadingbar":true},"latex":true};
+</script>
+
+  <meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="EEE.DOG" type="application/atom+xml">
+</head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">EEE.DOG</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="loading-bar">
+    <div class="progress"></div>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><div id="mobile-menu-Home">
+      <a href="/">
+        <li class="mobile-menu-item"><span class=".en">Home</span><span class=".zh">主页</span>
+          </li>
+      </a></div><div id="mobile-menu-Archives">
+      <a href="/archives/">
+        <li class="mobile-menu-item"><span class=".en">Archives</span><span class=".zh">归档</span>
+          </li>
+      </a></div><div id="mobile-menu-Categories">
+      <a href="/categories/">
+        <li class="mobile-menu-item"><span class=".en">Categories</span><span class=".zh">分类</span>
+          </li>
+      </a></div><div id="mobile-menu-Projects">
+      <a href="#">
+        <li class="mobile-menu-item"><span class=".en">Projects</span><span class=".zh">项目</span>
+          </li>
+      </a><ul class="sub-menu" style="display: none;"> 
+          <li>
+              <a href="https://fp.js.org/" target="_blank" rel="noopener">
+                <span class=".en">fp</span><span class=".zh">fp</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://wiot.js.org/" target="_blank" rel="noopener">
+                <span class=".en">wIoT</span><span class=".zh">wIoT</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://github.com/iotcat/kms" target="_blank" rel="noopener">
+                <span class=".en">kms</span><span class=".zh">kms</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://ushio.cool/" target="_blank" rel="noopener">
+                <span class=".en">ushio</span><span class=".zh">Ushio</span>
+              </a>
+            </li>
+          </ul>
+      <script>$('#mobile-menu-Projects').click(function(){
+          $("#mobile-menu-Projects ul").toggle();
+      })</script>
+      </div><div id="mobile-menu-Map">
+      <a href="#">
+        <li class="mobile-menu-item"><span class=".en">Map</span><span class=".zh">导航</span>
+          </li>
+      </a><ul class="sub-menu" style="display: none;"> 
+          <li>
+              <a href="https://api.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">APIs</span><span class=".zh">接口</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://img.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Imgs</span><span class=".zh">图库</span>
+              </a>
+            </li>
+          <li>
+              <a href="/">
+                <span class=".en">Imgbed</span><span class=".zh">图床</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://share.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Fileshare</span><span class=".zh">文件分享</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://monitor.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Server Monitor</span><span class=".zh">服务器监控</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://status.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Service Status</span><span class=".zh">服务状态</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://acg.watch/" target="_blank" rel="noopener">
+                <span class=".en">ACG.WATCH</span><span class=".zh">视频</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://onedrive.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Oneindex</span><span class=".zh">网盘</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://chat.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Chat</span><span class=".zh">聊天室</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://proxy.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Proxy</span><span class=".zh">下载代理</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://shorturl.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">ShortenURL</span><span class=".zh">短链</span>
+              </a>
+            </li>
+          </ul>
+      <script>$('#mobile-menu-Map').click(function(){
+          $("#mobile-menu-Map ul").toggle();
+      })</script>
+      </div><div id="mobile-menu-About">
+      <a href="#">
+        <li class="mobile-menu-item"><span class=".en">About</span><span class=".zh">关于</span>
+          </li>
+      </a><ul class="sub-menu" style="display: none;"> 
+          <li>
+              <a href="/links/">
+                <span class=".en">links</span><span class=".zh">友链</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://iotcat.me/" target="_blank" rel="noopener">
+                <span class=".en">Me</span><span class=".zh">关于我</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://cv.yimian.xyz/contact.html" target="_blank" rel="noopener">
+                <span class=".en">Contact</span><span class=".zh">留言板</span>
+              </a>
+            </li>
+          </ul>
+      <script>$('#mobile-menu-About').click(function(){
+          $("#mobile-menu-About ul").toggle();
+      })</script>
+      </div></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">EEE.DOG</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+        <a id="menu-Home" class="menu-item-link" href="/">
+          <span class=".en">Home</span><span class=".zh">主页</span>
+          </a>
+
+      </li>
+    <li class="menu-item">
+        <a id="menu-Archives" class="menu-item-link" href="/archives/">
+          <span class=".en">Archives</span><span class=".zh">归档</span>
+          </a>
+
+      </li>
+    <li class="menu-item">
+        <a id="menu-Categories" class="menu-item-link" href="/categories/">
+          <span class=".en">Categories</span><span class=".zh">分类</span>
+          </a>
+
+      </li>
+    <li class="menu-item">
+        <a id="menu-Projects" class="menu-item-link" href="#">
+          <span class=".en">Projects</span><span class=".zh">项目</span>
+          </a>
+
+      <script>
+          $("#menu-Projects").click(function(){
+            tips.question({
+			    timeout: 20000,
+			    close: false,
+			    overlay: true,
+			    displayMode: 'once',
+			    //id: 'question',
+			    zindex: 999,
+			    title: 'Projects',
+			    message: '',
+			    position: 'center',
+			    buttons: [
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'fp':'fp')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://fp.js.org/");
+                        else
+                            window.location.href="https://fp.js.org/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'wIoT':'wIoT')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://wiot.js.org/");
+                        else
+                            window.location.href="https://wiot.js.org/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'kms':'kms')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://github.com/iotcat/kms");
+                        else
+                            window.location.href="https://github.com/iotcat/kms";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'ushio':'Ushio')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://ushio.cool/");
+                        else
+                            window.location.href="https://ushio.cool/";
+			        }, true],
+			    ['<button><b>close</b></button>', function (instance, toast) {
+			
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+			        }, true],
+			    ]
+			});
+          });
+        </script>
+      </li>
+    <li class="menu-item">
+        <a id="menu-Map" class="menu-item-link" href="#">
+          <span class=".en">Map</span><span class=".zh">导航</span>
+          </a>
+
+      <script>
+          $("#menu-Map").click(function(){
+            tips.question({
+			    timeout: 20000,
+			    close: false,
+			    overlay: true,
+			    displayMode: 'once',
+			    //id: 'question',
+			    zindex: 999,
+			    title: 'Map',
+			    message: '',
+			    position: 'center',
+			    buttons: [
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'APIs':'接口')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://api.yimian.xyz/");
+                        else
+                            window.location.href="https://api.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Imgs':'图库')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://img.yimian.xyz/");
+                        else
+                            window.location.href="https://img.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Imgbed':'图床')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("/");
+                        else
+                            window.location.href="undefined";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Fileshare':'文件分享')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://share.yimian.xyz/");
+                        else
+                            window.location.href="https://share.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Server Monitor':'服务器监控')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://monitor.yimian.xyz/");
+                        else
+                            window.location.href="https://monitor.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Service Status':'服务状态')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://status.yimian.xyz/");
+                        else
+                            window.location.href="https://status.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'ACG.WATCH':'视频')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://acg.watch/");
+                        else
+                            window.location.href="https://acg.watch/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Oneindex':'网盘')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://onedrive.yimian.xyz/");
+                        else
+                            window.location.href="https://onedrive.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Chat':'聊天室')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://chat.yimian.xyz/");
+                        else
+                            window.location.href="https://chat.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Proxy':'下载代理')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://proxy.yimian.xyz/");
+                        else
+                            window.location.href="https://proxy.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'ShortenURL':'短链')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://shorturl.yimian.xyz/");
+                        else
+                            window.location.href="https://shorturl.yimian.xyz/";
+			        }, true],
+			    ['<button><b>close</b></button>', function (instance, toast) {
+			
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+			        }, true],
+			    ]
+			});
+          });
+        </script>
+      </li>
+    <li class="menu-item">
+        <a id="menu-About" class="menu-item-link" href="#">
+          <span class=".en">About</span><span class=".zh">关于</span>
+          </a>
+
+      <script>
+          $("#menu-About").click(function(){
+            tips.question({
+			    timeout: 20000,
+			    close: false,
+			    overlay: true,
+			    displayMode: 'once',
+			    //id: 'question',
+			    zindex: 999,
+			    title: 'About',
+			    message: '',
+			    position: 'center',
+			    buttons: [
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'links':'友链')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("true" == "true")
+			 			  pjax.loadUrl("/links/");
+                        else
+                            window.location.href="/links/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Me':'关于我')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://iotcat.me/");
+                        else
+                            window.location.href="https://iotcat.me/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Contact':'留言板')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://cv.yimian.xyz/contact.html");
+                        else
+                            window.location.href="https://cv.yimian.xyz/contact.html";
+			        }, true],
+			    ['<button><b>close</b></button>', function (instance, toast) {
+			
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+			        }, true],
+			    ]
+			});
+          });
+        </script>
+      </li>
+    </ul></nav>
+</header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title"><span class=".zh">边缘计算与物联网</span><span class=".en" hidden>Fog Architecture and Internet of Things</span>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-12-17
+        </span><span class="post-category">
+            <a href="/categories/thoughts/">thoughts</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><span class=".zh">
+<p>在过去的几十年中，互联网迅速发展，在人们的生活中起着越来越重要的作用。 在地球上几乎所有人类的参与之后[1]，开发人员不可避免地期望为互联网提供更多可用的东西，然后产生了物联网（IoT）的想法。 遗憾的是，在大量事物连接到Internet的情况下，其当前体系结构似乎并不是IoT的高效解决方案。 Bonomi等。 思科的文献[2]首先注意到了这个问题，然后他们提出了革命性的Fog概念，以适应即将到来的物联网时代对越来越多的各种设备的访问。 本文将论证雾概念可以对促进物联网建设产生重大影响。</p>
+</span>
+
+
+<span class=".en">
+<p>In the past few decades, Internet has been rapidly expanding and it plays an increasingly important role in people’s life. After the involvement of nearly all humans on the earth [1], developers, inevitably, expected to make more things available for the internet, which then generated the idea of the Internet of Things (IoT). Regrettably, in the case that a considerable number of things connect to the internet, its current architecture seems not to be a so efficient solution for IoT. Bonomi et al. [2] from Cisco firstly noticed this issue and they then put forward a revolutionary concept of Fog to satisfy the access of a surging number and variety of devices in the coming IoT era. This essay will argue that the Fog concept can have considerable impact on promoting IoT construction.</p>
+</span>
+
+
+<a id="more"></a>
+
+
+<script>
+    session.onload(function(){
+        if(page.tran.getLang() == 'zh'){
+            tips.warning({
+                title: '注意',
+                position: 'topRight',
+                message: '此页面由机器翻译为中文!!',
+                buttons: [['<button>查看原文</button>', function (instance, toast) {
+                    page.tran.setLang('en');
+                    instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                }, true]]
+            });
+        }
+    });
+</script>
+
+
+
+<span class=".zh">
+
+<p>关于Internet的体系结构是集中式还是分布式的，引起了广泛的争议。在过去的几年中，集中化（也被称为云）已逐渐应用于现代互联网的实用结构。在此概念下，将计算，存储和控制等功能从最终用户设备迁移到云服务器已成为一种流行趋势[3]。与云不同，Fog提议将这些功能从服务器分发给用户，让用户彼此共享。</p>
+<p>雾可以分为三个维度：雾计算，雾存储和雾控制。根据Bonomi等人的说法。 [2]，雾计算意味着不仅要充分利用来自用户设备的计算资源，而且要充分利用用户与传统云服务器之间任意位置的计算资源。一个理想的例子是，视频游戏玩家的智能手机可以访问空闲计算。资源，例如玩家笔记本电脑的中央处理器（CPU），以改善他们的游戏体验。与Fog计算类似，Fog存储是第二个维度，它建议通过某种算法将用户数据从单个存储分发到多个存储设备[3]。 Google Spanner [4]是一种勇敢的做法，它是一种公共数据库，其功能是将用户的数据分发到世界各地的数据中心，以保护这些数据免遭攻击。 Shi等。 [5]指出，雾的第三个维度，雾控制，倾向于将传统的控制系统分为许多小型的独立和交互式雾系统，这些雾系统仅专注于提供单一功能。在这种情况下，如果雾灯控制系统发生故障，主机系统仍可以通过另一个类似的雾灯控制系统获得光的命令，以将服务持续保持在智能家居中。</p>
+<p>Fog之所以为物联网的建设做出贡献的原因之一是，Fog概念下的互联网可以满足极具挑战性的物联网最小延迟要求。 Chiang＆Zhang教授[3]指出，物联网应用程序（例如虚拟现实（VR）游戏，车对车通信和无人机（UAV）控制应用程序）似乎需要等待时间，即一台设备发送信号之间的时间。消息，并且目标设备接收不到10毫秒的消息，这是Cloud服务无法实现的。但是，在Yousefpour，Ishigaki和Jue [6]提出的Fog计算模型中，Fog体系结构的低级服务延迟特性已被证明是持久且稳定的。这可能意味着对延迟敏感的物联网应用可以从其延迟最小化策略中受益。</p>
+<p>Fog促进物联网建设的另一个原因是，Fog结构化的互联网可以提供不间断的服务，而这正是物联网应用所希望的。在Fog结构中，控制行为是通过几个并行控制系统协同工作而实现的，而每个系统都有独立支持整个控制行为的潜力。这使得当设备与服务器断开连接或雾网的一部分正在更新甚至损坏时，雾服务仍然可以运行[3]。此特性对于互联车辆[2]在脱机或遇到事故时确保其运行至关重要。</p>
+<p>除了这些原因之外，与当前的Cloud Internet相比，Fog Internet的架构似乎更加环保，尤其是在即将到来的物联网时代。在21世纪，环境保护已成为政策制定和商业活动中一个相对重要的议程。消费者期望产品中或由其制造产生的对环境有害的元素更少。但是，根据Aazam等人的说法。 [1]将来，诸如可乐瓶或树的叶子之类的所有事物都可能成为Internet的一部分，这可能需要大量的新电气设备，而其中每个电气设备都可能在一定程度上损害环境。但是，这可能意味着如果可以减少必要电气产品的数量，则将保护生态环境。研究人员评估了Fog计算的适用性，他们指出，在IoT的背景下，Fog Internet可以减少功耗并降低CO2排放[7]。显然，这些可以使互联网更接近绿色网络。</p>
+<p>一种说法是，Fog架构的物联网在隐私和安全性方面受到质疑[3]。由于重要的Internet功能和资源都在用户附近，因此有可能遭受Fog设备的攻击。但是，这可以通过与其他技术合作来解决。例如，Zyskind和Nathan [8]设计了一种基于区块链的分散式个人数据管理算法，这是一种强大的编码方法。该算法可能是解决雾网数据安全性不足并保持系统安全的一种可行解决方案。</p>
+<p>总而言之，尽管基于Fog概念的物联网目前可能在隐私和系统安全性方面受到质疑，但它在延迟，系统可靠性和生态友好性方面具有令人满意的性能，这是促进物联网建设的关键因素。但是，雾仍然是一个新概念，并且几乎所有相关研究都是在过去两年中进行的。要使Fog概念真正应用于物联网框架还有很长的路要走。</p>
+<hr>
+<p><strong>参考（IEEE）</strong><br>[1] M. Aazam，I。Khan，AA Alsaffar和E. Huh，“物联网：整合物联网和云计算及其所涉及的问题”，2014年第11届国际巴本应用科学与技术会议论文集（IBCAST ）巴基斯坦伊斯兰堡。 [线上]。 2014年1月14日至18日，伊斯兰堡，第414-419页。</p>
+<pre><code>这是一篇经过同行评审的早期文章，介绍了云和物联网的概念。它为我提供了研究人员如何看待Cloud以及他们如何理解2014年（当Cloud Computing开始流行时）IoT的范围。我使用它来提供有关Cloud简介的一些背景。</code></pre><p>[2] F. Bonomi，R。Milito，J。Zhu和S. Addepalli，“雾计算及其在物联网中的作用”，在第一版MCC移动云计算研讨会论文集中。 [线上]。 2012年8月，第13-16页。</p>
+<pre><code>本文首先指出了雾的概念。它的作者全部来自思科，思科被认为是提供Internetworking解决方案的最强大的公司。我已使用此资源介绍了Fog和Fog计算以及其虚构的Fog-IoT应用程序之一的互联汽车的一些背景。</code></pre><p>[3] M. Chiang和T. Zhang，IEEE物联网杂志中的“雾与物联网：研究机会概述”。 [线上]。卷3号6，pp.854-864，2016年12月。</p>
+<pre><code>这是最有影响力的工程师组织IEEE发布的邀请论文。 Chiang来自普林斯顿，Zhang来自思科。在本文之后，更多的研究者开始注意到Fog。我使用此资源介绍，评估和查询Fog，因为这是一种罕见的高质量论文。</code></pre><p>[4] J.C. Corbett，J.Dean，M.Epstein，A.Fikes，C.Frost，J.J。 Furman，S。Ghemawat，A。Gubarev，C。Heiser，P。Hochschild和W. Hsieh，“ Spanner：Google的全球分布式数据库”，ACM Transactions on Computer Systems（TOCS）。 [在线] .vol。 31号3页2013年8月8日。</p>
+<pre><code>本文详细介绍了Google Spanner。 Google Spanner是根据本文设计的。之所以包含此来源，是因为我认为Google Spanner是Fog存储的革命性尝试。当我尝试描述雾存储的概念时，我以它为例。</code></pre><p>[5] W. Shi，J。Cao，Q。Zhang，Y。Li和L. Xu，“边缘计算：愿景与挑战”，在IEEE物联网杂志上。 [线上]。卷3号5，第637-646页，2016年10月。</p>
+<pre><code>这是IEEE的期刊，已被引用8422次。它提供了有关如何将Fog应用于计算领域的一些新颖思想。我从此来源总结了Fog控制概念，并引用了他们对Fog IoT的隐私和安全性问题的质疑。</code></pre><p>[6] A. Yousefpour，G。Ishigaki和J. P. Jue，“雾计算：努力使物联网中的延迟最小化”，2017 IEEE国际边缘计算会议（EDGE），美国檀香山，檀香山。 [线上]。 2017年，第17-24页。</p>
+<pre><code>作者来自德克萨斯大学，他们在雾领域并不出名。由于它是唯一一篇评估延迟（Fog IoT的最重要特征）的数学方法，并且得出了看似可靠的结果，因此我使用它来支持我的低延迟论点。</code></pre><p>[7] S. Sarkar，S。Chatterjee和S. Misra，“在物联网环境下进行雾计算的适用性评估”，在IEEE交易云计算中。[在线]。卷6号1，第46-59页，2018年1月至3月。</p>
+<pre><code>该论文是在几个月前发表的。它由两名学生和一名医生撰写，因此并不那么权威。但是，由于对Fog的研究很少，我最终决定使用其建模结果来支持Fog IoT比Cloud更环境友好。</code></pre><p>[8] G. Zyskind，O。Nathan和A.’。 Pentland，“去中心化隐私：使用区块链保护个人数据”，2015 IEEE安全和隐私研讨会，加利福尼亚州圣何塞。 [线上]。 2015年，第180-184页。</p>
+<pre><code>该论文由IEEE发表。 Zyskind来自麻省理工学院，这使得消息来源似乎可信。我对区块链算法感兴趣，该算法在理论上绝对是安全的，我认为这是解决Fog IoT安全问题的一种理想方法。</code></pre><hr>
+<p>附件<br>雾和物联网PPT</p>
+</span>
+
+<span class=".en">
+
+<p>Internet’s architecture had been widely controverted concerning whether it should be centralized or distributed. In the past few years, centralization, which is also regarded as the Cloud, has been gradually applied to the practical structure for modern internet. Under this concept, it has become a popular trend to move functions such as computing, storage and control from end-user devices to Cloud servers [3].Different from the Cloud, the Fog proposes to distribute these functions from servers to the users and let users share them with each other.</p>
+<p>Fog can be classified into three dimensions: Fog computing, Fog storage, and Fog control. According to Bonomi et al. [2], Fog computing means to make full use of the computing resources not only from the user devices, but from the location anywhere between users and traditional Cloud servers.An ideal example is that, video game players’ smartphone can access the idle computing resource such as the Central Processing Unit (CPU) of players’ laptop to improve their game experience. Similar to the Fog computing, Fog storage,the second dimension, proposes to distribute user’s data from single storage to many storage devices through certain algorithm [3]. One brave practice for this is Google Spanner [4], which is a public database functioning by distributing user’s data to data centers all around the world to protect these data from being attacked. Shi et al. [5] indicated that the third dimension of Fog, Fog control, tends to split a traditional control system into many small independent and interactive fog systems which only concentrate on providing single function. In this case, if a fog light control system breaks down, the host system can still get the command of the light through another similar fog control system to keep the service incessantly in a Smart Home.</p>
+<p>One reason why the Fog contributes to the construction of IoT is that the internet under the concept of Fog can meet the challenging minimized delay requirement of IoT. Prof. Chiang &amp; Zhang [3] indicated that, IoT applications such as Virtual Reality(VR) games, vehicle-to-vehicle communications and unmanned aerial vehicle (UAV)control applications appear to require latencies, the time spent between one device sending a message and the target device receiving the message, lower than tens of milliseconds, which the Cloud services cannot achieve. However, in a Fog computing model proposed by Yousefpour, Ishigaki &amp; Jue [6], the low-level service delay character of Fog architecture had been proved to be persistent and stable. This may mean that latency-sensitive IoT applications can benefit from their delay-minimizing policy.</p>
+<p>Another factor of why the Fog facilitates IoT construction is that a Fog structured internet can provide uninterrupted services, which IoT applications are desirous of. In a Fog structure a control behavior is achieved by several parallel control systems working together while each system has the potentiality to support the whole control behavior independently. This makes it possible that a Fog service can still function when devices disconnect with the server or part of the Fog net is updating or even broken [3]. This trait becomes crucial for Connected Vehicle [2] to ensure its operation when it is offline or meet with an accident.</p>
+<p>Apart from these reasons,comparing to the current Cloud internet, the architecture of a Fog internet seems to be more eco-friendly, especially for the coming IoT era. In the 21stcentury, environmental protection has been becoming a comparatively important agenda for policy making and business activity. Consumers expect fewer environment-harmful elements in the product or generated from its manufacture. However, accordingto Aazam et al. [1], in the future, everything such as a bottle of cola or a leaf of a tree can be part of Internet, which may require a considerable number of new electrical equipment while each one of them might hurt the environment to some extent. However, this may mean that the ecological environment would be protected if the amount of necessary electrical products could be decreased. Researchers had assessed the suitability of Fog computing and they pointed that a Fog internet can result in less power consumption and lower CO2 emission in the context of IoT [7]. Apparently, these may transform the internet closer to a green net.</p>
+<p>One argument is that the Fog architected IoT was questioned in privacy and security [3]. Since the important internet functions and resources are near the users, it becomes risky for a Fog device of being attacked. However, this might be solved by collaborating with other technics. For example, Zyskind and Nathan [8] designed a decentralized personal data management algorithm basing on blockchain, a powerful encoding method. This algorithm might be one possible solution to cover the data security shortage of Fog net and keep the system safe.</p>
+<p>To conclude, although the IoT based on Fog concept may be currently doubted in privacy and system security, it has satisfactory performance in respect of latency, system reliability and eco-friendliness, which are crucial factors on facilitating IoT construction. However, Fog is still a new concept and nearly all of the relevant research was conducted in the past two years. It is still a long way to go before the Fog concept can be actually applied into the framework of IoT.</p>
+<hr>
+<p><strong>Reference (IEEE)</strong><br>[1] M. Aazam, I. Khan, A. A. Alsaffar and E. Huh, “Cloud of Things: Integrating Internet of Things and cloud computing and the issues involved,” Proceedings of 2014 11th International Bhurban Conference on Applied Sciences &amp; Technology (IBCAST) Islamabad,Pakistan. [Online]. 14th – 18th January, 2014, Islamabad, 2014, pp. 414-419.</p>
+<pre><code>This is an early peer-reviewed article introducingthe concept of Cloud and IoT. It provides me the scope of how researcherslooked at Cloud and how they understood IoT in 2014 (when Cloud Computing beganto be popular). I have used this to provide some background about Cloud inintroduction.</code></pre><p>[2] F. Bonomi, R. Milito, J. Zhu and S. Addepalli, “Fog computing and its role in the internet of things” In Proceedings of the first edition of the MCC workshop on Mobile cloud computing. [Online]. August, 2012, pp.13-16. </p>
+<pre><code>Thispaper firstly pointed out the Fog concept. Its writers were all from Cisco, which is considered the most powerfulcompany on providing Internetworking solution. I have used this sourceto introduce some background of Fog and Fog computing and the Connected Vehicle,one of their imaginary Fog-IoT application.</code></pre><p>[3] M. Chiang and T. Zhang, “Fog and IoT:An Overview of Research Opportunities” in IEEE Internet of Things Journal. [Online]. vol. 3, no. 6, pp.854-864, Dec. 2016.</p>
+<pre><code>This is an invited paper published by IEEE, the most influential organization for Engineer. Chiang is from Princeton and Zhang is from Cisco. After this paper, more researchers began to notice Fog. I have used this source to introduce, evaluate and query Fog because this is a rare high-quality paper.</code></pre><p>[4] J.C. Corbett, J. Dean, M. Epstein, A. Fikes, C. Frost,J.J. Furman, S. Ghemawat, A. Gubarev, C. Heiser, P. Hochschild and W. Hsieh, “Spanner:Google’s globally distributed database”, ACM Transactions on Computer Systems (TOCS). [Online].vol. 31, no. 3,pp. 8, Aug. 2013.</p>
+<pre><code>This paper detailly introduced Google Spanner. Google Spanner was designed based on this paper. I include this source because I think Google Spanner is are volutionary attempt of Fog storage. And I have used this as an example when I try to describe the concept of Fog storage.</code></pre><p>[5] W. Shi, J. Cao, Q. Zhang, Y. Li and L. Xu, “Edge Computing: Vision and Challenges” in IEEE Internet of Things Journal. [Online]. vol. 3, no. 5, pp. 637-646, Oct. 2016.</p>
+<pre><code>This is a journal from IEEE and have been cited 8422 times. It provides several novel ideas concerning how would the Fog be applied in computing field. I have summarized the Fog control concept from this source and cited their questioning concerning the privacy and security issue of Fog IoT.</code></pre><p>[6] A. Yousefpour, G. Ishigaki and J. P. Jue, “Fog Computing: Towards Minimizing Delay in the Internet of Things” 2017 IEEE International Conference on Edge Computing (EDGE), Honolulu, HI. [Online]. 2017, pp. 17-24. </p>
+<pre><code>The authors were from Texas University and they are not famous in Fog field. As it is the only paper which evaluated latency, the most significant trait of Fog IoT, mathematically and got a seemly reliable result, I have used this to support my low latency argument. </code></pre><p>[7] S. Sarkar, S. Chatterjee and S. Misra, “Assessment of the Suitability of Fog Computing in the Context of Internet of Things”in IEEE Transactions on Cloud Computing.[Online]. vol. 6, no. 1, pp. 46-59, Jan.-March 2018.</p>
+<pre><code>This paper was just published a few month ago. It was written by two students and one doctor, which makes it not so authoritative. However, since there are few Fog research, I finally decide to use its modeling result to support that Fog IoT is more environment friendly than Cloud.</code></pre><p>[8] G. Zyskind, O. Nathan and A. ‘. Pentland,”Decentralizing Privacy: Using Blockchain to Protect Personal Data” 2015 IEEE Security and Privacy Workshops,San Jose, CA. [Online]. 2015, pp. 180-184. </p>
+<pre><code>This paper was published by IEEE. Zyskind was from MIT, which makes the source seems to be credible. I am interested in the blockchain algorithm which is theoretically absolutely safe as it mentioned and I think it is one ideal method to deal with the security problem of Fog IoT.</code></pre><hr>
+<p>Attachment<br>Fog and IoT PPT:</p>
+</span>
+
+      </div>
+      <div class="post-copyright">
+    <p class="copyright-item">
+      <span>Author: </span>
+      <a href="https://iotcat.me/" target="_blank" rel="noopener">IoTcat</a>
+    </p>
+    <p class="copyright-item">
+      <span>Link: </span>
+      <a href="https://www.eee.dog/thoughts/fog-architecture-and-internet-of-things.html">https://www.eee.dog/thoughts/fog-architecture-and-internet-of-things.html</a>
+    </p>
+    <p class="copyright-item">
+      <span>License: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/iot/">iot</a>
+            <a href="/tags/internet/">internet</a>
+            <a href="/tags/fog/">fog</a>
+            </div>
+        
+        <nav class="post-nav"><a class="prev" href="/tech/hello-typecho.html">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default"><span class=".zh">Hello Typecho</span><span class=".en">Hello Typecho</span></span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    <a class="next" href="/tech/build-236-iot-platform-on-wifiduino.html">
+        <span class="next-text nav-default"><span class=".zh">wifiduino搭建236宿舍物联网平台</span><span class=".en">Use wifiduino to build 236 dormitory IoT platform</span></span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article><script>$(()=>{var p = window.location.pathname;setTimeout(()=>{if(window.location.pathname == p)tips.show({
+        title: 'tips',
+        position: 'topRight',
+        message: ((page.tran.getLang() == 'zh')?"此文章预计阅读 14 分钟哦~": "Read this page will spend around  29  minutes~")
+  })}, 6000)})</script>
+  </div><div class="comments" id="comments"><div id="vcomments"></div>
+    </div></div>
+      </main>
+
+      <footer id="footer" class="footer">
+      <script>
+        page_obj = {
+          layout: "post",
+          comments: "true"
+        };
+      </script><div class="social-links"><a href="mailto:i@iotcat.me" class="iconfont icon-email" title="email"></a>
+        <a href="https://github.com/iotcat" target="_blank" rel="noopener" class="iconfont icon-github" title="github"></a>
+        <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    </div><div class="copyright"><span id="/thoughts/fog-architecture-and-internet-of-things.html" class="statistic leancloud_visitors">
+    <em>Visitors </em> <i class="leancloud-visitors-count">??</i> 
+    <span class="division"> |</span>
+    <em>Reading </em> 29 min
+  </span>
+  <br>
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://ushio.cool/" target="_blank" rel="noopener">Ushio</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/iotcat/kayo" target="_blank" rel="noopener">Kayo</a>
+  </span>
+
+  <span class="copyright-year">&copy;2018 - 2023<span class="heart shaky">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"><a href="https://iotcat.me/" target="_blank" rel="noopener">IoTcat</a></span>
+  </span>
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+<script src="https://cdn.yimian.xyz/kayo/lib/valine/valine.min.js" data-pjax></script>
+<style>
+/* 背景图片 */
+#veditor {
+  background-image: url(https://cdn.yimian.xyz/img/blog/comments_bg.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-color: rgba(255, 255, 255, 0);
+  resize: vertical
+}
+
+/* 头像旋转 */
+img.vimg {
+  transition: all 1s   /* 旋转时间为 1s */
+}
+img.vimg:hover {
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+}
+
+
+/* 盒子模式 */
+#vcomments .vcards .vcard {
+  padding: 15px 20px 0 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
+  transition: all .3s
+}
+
+#vcomments .vcards .vcard:hover {
+  box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
+}
+
+#vcomments .vcards .vcard .vh .vcard {
+  border: none;
+  box-shadow: none;
+}
+
+
+</style>
+<script>
+pjax_valine = () => {
+    $.get('https://auth.yimian.xyz/getEmailHash.php', function(res){
+        if(page.tran.getLang() == 'zh'){
+            var lan = 'zh-CN';
+            var metaPlaceholder = {"nick":"昵称/QQ号","mail":"邮箱（完全保密）"};
+            var tagMeta =  ["博主","小伙伴","访客"];
+            var placeholder = "填写邮箱可以及时收到回复哦(●'◡'●)";
+        }else{
+            var lan = 'en';
+            var metaPlaceholder = {"nick":"Nickname/QQ","mail":"EMail"};
+            var tagMeta =  ["Master","Friend","Visitor"];
+            var placeholder = "Leave some comments here (●'◡'●)";
+        }
+        new Valine({
+            el: '#vcomments',
+            appId: 'eVzpK7EyT6OafJvXWIRminWT-gzGzoHsz',
+            appKey: '2qjuEBgVE0BscTQnTmoS9roU',
+            master: '9b616ff4cd6c305e5970bee7b1bd9b1f',   //博主邮箱md5
+            tagMeta: tagMeta,     //标识字段名
+            friends: res, //["b6ddef7c7e1c647e7767afeacdfb7b64","46dd4e6fef4f9591736c4723a965ca2e","6132d77f9f0ae060bc733090991acecb","3e00e104b79d7c6e866c6b23c6ba6dfc"],  //小伙伴邮箱Md5
+
+            metaPlaceholder: metaPlaceholder,
+            placeholder: placeholder,
+            lang: lan,
+            path: window.location.pathname,
+            enableQQ: true,
+            visitor: true,
+            emojiCDN: '//i0.hdslb.com/bfs/emote/',
+            emojiMaps: {
+                "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+                "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+                "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png",
+                "tv_再见": "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+                "tv_冷漠": "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+                "tv_发怒": "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+                "tv_发财": "34db290afd2963723c6eb3c4560667db7253a21a.png",
+                "tv_可爱": "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+                "tv_吐血": "09dd16a7aa59b77baa1155d47484409624470c77.png",
+                "tv_呆": "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+                "tv_呕吐": "9f996894a39e282ccf5e66856af49483f81870f3.png",
+                "tv_困": "241ee304e44c0af029adceb294399391e4737ef2.png",
+                "tv_坏笑": "1f0b87f731a671079842116e0991c91c2c88645a.png",
+                "tv_大佬": "093c1e2c490161aca397afc45573c877cdead616.png",
+                "tv_大哭": "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+                "tv_委屈": "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+                "tv_害羞": "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+                "tv_尴尬": "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+                "tv_微笑": "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+                "tv_思考": "90cf159733e558137ed20aa04d09964436f618a1.png",
+                "tv_惊吓": "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+                "tv_打脸": "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+                "tv_抓狂": "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+                "tv_抠鼻": "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+                "tv_斜眼笑": "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+                "tv_无奈": "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+                "tv_晕": "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+                "tv_流汗": "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+                "tv_流泪": "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+                "tv_流鼻血": "c32d39db2737f89b904ca32700d140a9241b0767.png",
+                "tv_点赞": "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+                "tv_生气": "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+                "tv_生病": "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+                "tv_疑问": "0793d949b18d7be716078349c202c15ff166f314.png",
+                "tv_白眼": "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+                "tv_皱眉": "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+                "tv_目瞪口呆": "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+                "tv_睡着": "8b196675b53af58264f383c50ad0945048290b33.png",
+                "tv_笑哭": "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+                "tv_腼腆": "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+                "tv_色": "61822c7e9aae5da76475e7892534545336b23a6f.png",
+                "tv_调侃": "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+                "tv_调皮": "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+                "tv_鄙视": "6e72339f346a692a495b123174b49e4e8e781303.png",
+                "tv_闭嘴": "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+                "tv_难过": "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+                "tv_馋": "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+                "tv_鬼脸": "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+                "tv_黑人问号": "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+                "tv_鼓掌": "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"
+                // ... 更多表情
+            } 
+        });
+    });
+};
+</script><script type="text/javascript" src="https://cdn.yimian.xyz/ushio-js/ushio-footer.min.js"></script>
+<script>
+session.onload(function(){
+    if(session.get('group') != 'anonymous'){
+        function insertNick(){
+            if($('.vnick').length){
+                $('.vnick').val(session.get('nickname'));
+            }else{
+                setTimeout(insertNick, 500);
+            }
+        }
+        function insertMail(){
+            if($('.vmail').length){
+                $('.vmail').val(session.get('email'));
+            }else{
+                setTimeout(insertMail, 500);
+            }
+        }
+
+        if(session.get('nickname')){
+            insertNick();
+        }
+
+        if(session.get('email')){
+            insertMail();
+        }
+    }
+});
+</script>
+<script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/iziToast/iziToast.min.js"></script>
+  <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/iziModal/iziModal.min.js"></script>
+  <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/mermaid/mermaid.min.js"></script>
+  <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/js/src/kayo.js?v=1.0.0" data-pjax></script>
+<script type="text/javascript" src="https://cdn.yimian.xyz/kayo/js/src/kayo-no-pjax.js?v=1.0.0"></script>
+<script src="https://cdn.yimian.xyz/kayo/lib/pjax/pjax.min.js"></script>
+<script>window.pjax = new Pjax({
+    elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"])',
+    selectors: ["head title, #main", "#footer"],
+  });/* lazyload */
+    window.imageLazyLoadSetting = {
+        isSPA: false,
+        processImages: null,
+    };
+    
+     window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});
+
+  /* 第一次载入页面加载的函数 */
+  pjax_ini = () => {
+    
+     /* 关闭侧边栏 */
+     window.slideout.close();
+
+     if(page_obj.comments == "true"){pjax_valine();}pjax_google_analytics();mermaid.init(undefined, $(".mermaid"));/* lazy load */
+     !function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);
+     !function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})}();
+  };
+
+  /* 第一次 执行 */
+  pjax_ini();var loadingBar = document.querySelector(".loading-bar");
+var progress = document.querySelector(".loading-bar .progress");
+var timer = null;
+
+
+// Pjax 开始时执行的函数
+var loadingbarStart = function () {
+  // 进度条默认已经加载 20%
+  var loadingBarWidth = 20;
+  // 进度条的最大增加宽度
+  var MAX_LOADING_WIDTH = 95;
+
+  // 显示进度条
+  loadingBar.classList.add("loading");
+  // 初始化进度条的宽度
+  progress.style.width = loadingBarWidth + "%";
+
+  clearInterval(timer);
+  timer = setInterval(function () {
+    // 进度条的增加速度（可以改为一个随机值，显得更加真实）
+    loadingBarWidth += 3;
+
+    // 当进度条到达 95% 后停止增加
+    if (loadingBarWidth > MAX_LOADING_WIDTH) {
+      loadingBarWidth = MAX_LOADING_WIDTH;
+    }
+
+    progress.style.width = loadingBarWidth + "%";
+  }, 500);
+};
+
+
+// Pjax 完成之后执行的函数
+var loadingbarStop = function () {
+  clearInterval(timer);
+  progress.style.width = "100%";
+  loadingBar.classList.remove("loading");
+
+  setTimeout(function () {
+    progress.style.width = 0;
+  }, 400);
+};/* Pjax 开始时，重新加载的函数 */
+  document.addEventListener("pjax:send", function () {loadingbarStart(); 
+    });
+
+
+  /* Pjax 完成后，重新加载的函数 */
+  document.addEventListener("pjax:complete", function () {
+    /* 重载带data-pjax的script，或者.pjax-reload属性内容的script */
+    $("script[data-pjax], .pjax-reload script").each(function () {
+        $(this).parent().append($(this).remove());
+    });
+    pjax_ini();loadingbarStop();
+    page.tran.setLang();
+  });
+
+
+  /* Pjax 出错，执行的函数 */
+  document.addEventListener("pjax:error", function () {
+    
+  });</script>
+</body>
+</html>

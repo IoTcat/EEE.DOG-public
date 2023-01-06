@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <title>随机图片API - EEE.DOG</title><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="随机图片API"/><meta name="keywords" content="iotcat,yimian,blog" /><link rel="alternate" href="/atom.xml" title="EEE.DOG"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.0.0" /><script>lang = ['zh', 'en'];</script>
+<script type="text/javascript" src="https://cdn.yimian.xyz/ushio-js/ushio-head.min.js"></script>
+<script>page.proj = 'iotcat/eee.dog-public';</script>
+
+<!--<link rel="stylesheet" type="text/css" href="https://cdn.yimian.xyz/kayo/lib/iziModal/iziModal.min.css" />-->
+
+
+<!--<link rel="stylesheet" type="text/css" href="https://cdn.yimian.xyz/kayo/lib/iziToast/iziToast.min.css" />-->
+
+<link rel="stylesheet" media="none" onload="this.media='all'" type="text/css" href="https://cdn.yimian.xyz/shaky/shaky.css">
+<link rel="canonical" href="https://www.eee.dog/tech/rand-pic-api.html"/>
+
+<link rel="stylesheet" media="none" onload="this.media='all'" type="text/css" href="https://cdn.yimian.xyz/kayo/lib/fancybox/jquery.fancybox.css" /><script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+  </script>
+  <script type="text/javascript" async src="https://cdn.yimian.xyz/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.yimian.xyz/kayo/css/style.css?v=1.0.0" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-169276192-1" data-pjax></script>
+<script>
+pjax_google_analytics = () => {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-169276192-1');
+}
+</script><script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+  window.config = {"leancloud":"","toc":true,"fancybox":true,"pjax":{"enable":true,"loadingbar":true},"latex":true};
+</script>
+
+  <meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="EEE.DOG" type="application/atom+xml">
+</head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">EEE.DOG</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="loading-bar">
+    <div class="progress"></div>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><div id="mobile-menu-Home">
+      <a href="/">
+        <li class="mobile-menu-item"><span class=".en">Home</span><span class=".zh">主页</span>
+          </li>
+      </a></div><div id="mobile-menu-Archives">
+      <a href="/archives/">
+        <li class="mobile-menu-item"><span class=".en">Archives</span><span class=".zh">归档</span>
+          </li>
+      </a></div><div id="mobile-menu-Categories">
+      <a href="/categories/">
+        <li class="mobile-menu-item"><span class=".en">Categories</span><span class=".zh">分类</span>
+          </li>
+      </a></div><div id="mobile-menu-Projects">
+      <a href="#">
+        <li class="mobile-menu-item"><span class=".en">Projects</span><span class=".zh">项目</span>
+          </li>
+      </a><ul class="sub-menu" style="display: none;"> 
+          <li>
+              <a href="https://fp.js.org/" target="_blank" rel="noopener">
+                <span class=".en">fp</span><span class=".zh">fp</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://wiot.js.org/" target="_blank" rel="noopener">
+                <span class=".en">wIoT</span><span class=".zh">wIoT</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://github.com/iotcat/kms" target="_blank" rel="noopener">
+                <span class=".en">kms</span><span class=".zh">kms</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://ushio.cool/" target="_blank" rel="noopener">
+                <span class=".en">ushio</span><span class=".zh">Ushio</span>
+              </a>
+            </li>
+          </ul>
+      <script>$('#mobile-menu-Projects').click(function(){
+          $("#mobile-menu-Projects ul").toggle();
+      })</script>
+      </div><div id="mobile-menu-Map">
+      <a href="#">
+        <li class="mobile-menu-item"><span class=".en">Map</span><span class=".zh">导航</span>
+          </li>
+      </a><ul class="sub-menu" style="display: none;"> 
+          <li>
+              <a href="https://api.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">APIs</span><span class=".zh">接口</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://img.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Imgs</span><span class=".zh">图库</span>
+              </a>
+            </li>
+          <li>
+              <a href="/">
+                <span class=".en">Imgbed</span><span class=".zh">图床</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://share.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Fileshare</span><span class=".zh">文件分享</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://monitor.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Server Monitor</span><span class=".zh">服务器监控</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://status.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Service Status</span><span class=".zh">服务状态</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://acg.watch/" target="_blank" rel="noopener">
+                <span class=".en">ACG.WATCH</span><span class=".zh">视频</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://onedrive.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Oneindex</span><span class=".zh">网盘</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://chat.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Chat</span><span class=".zh">聊天室</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://proxy.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Proxy</span><span class=".zh">下载代理</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://shorturl.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">ShortenURL</span><span class=".zh">短链</span>
+              </a>
+            </li>
+          </ul>
+      <script>$('#mobile-menu-Map').click(function(){
+          $("#mobile-menu-Map ul").toggle();
+      })</script>
+      </div><div id="mobile-menu-About">
+      <a href="#">
+        <li class="mobile-menu-item"><span class=".en">About</span><span class=".zh">关于</span>
+          </li>
+      </a><ul class="sub-menu" style="display: none;"> 
+          <li>
+              <a href="/links/">
+                <span class=".en">links</span><span class=".zh">友链</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://iotcat.me/" target="_blank" rel="noopener">
+                <span class=".en">Me</span><span class=".zh">关于我</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://cv.yimian.xyz/contact.html" target="_blank" rel="noopener">
+                <span class=".en">Contact</span><span class=".zh">留言板</span>
+              </a>
+            </li>
+          </ul>
+      <script>$('#mobile-menu-About').click(function(){
+          $("#mobile-menu-About ul").toggle();
+      })</script>
+      </div></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">EEE.DOG</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+        <a id="menu-Home" class="menu-item-link" href="/">
+          <span class=".en">Home</span><span class=".zh">主页</span>
+          </a>
+
+      </li>
+    <li class="menu-item">
+        <a id="menu-Archives" class="menu-item-link" href="/archives/">
+          <span class=".en">Archives</span><span class=".zh">归档</span>
+          </a>
+
+      </li>
+    <li class="menu-item">
+        <a id="menu-Categories" class="menu-item-link" href="/categories/">
+          <span class=".en">Categories</span><span class=".zh">分类</span>
+          </a>
+
+      </li>
+    <li class="menu-item">
+        <a id="menu-Projects" class="menu-item-link" href="#">
+          <span class=".en">Projects</span><span class=".zh">项目</span>
+          </a>
+
+      <script>
+          $("#menu-Projects").click(function(){
+            tips.question({
+			    timeout: 20000,
+			    close: false,
+			    overlay: true,
+			    displayMode: 'once',
+			    //id: 'question',
+			    zindex: 999,
+			    title: 'Projects',
+			    message: '',
+			    position: 'center',
+			    buttons: [
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'fp':'fp')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://fp.js.org/");
+                        else
+                            window.location.href="https://fp.js.org/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'wIoT':'wIoT')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://wiot.js.org/");
+                        else
+                            window.location.href="https://wiot.js.org/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'kms':'kms')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://github.com/iotcat/kms");
+                        else
+                            window.location.href="https://github.com/iotcat/kms";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'ushio':'Ushio')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://ushio.cool/");
+                        else
+                            window.location.href="https://ushio.cool/";
+			        }, true],
+			    ['<button><b>close</b></button>', function (instance, toast) {
+			
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+			        }, true],
+			    ]
+			});
+          });
+        </script>
+      </li>
+    <li class="menu-item">
+        <a id="menu-Map" class="menu-item-link" href="#">
+          <span class=".en">Map</span><span class=".zh">导航</span>
+          </a>
+
+      <script>
+          $("#menu-Map").click(function(){
+            tips.question({
+			    timeout: 20000,
+			    close: false,
+			    overlay: true,
+			    displayMode: 'once',
+			    //id: 'question',
+			    zindex: 999,
+			    title: 'Map',
+			    message: '',
+			    position: 'center',
+			    buttons: [
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'APIs':'接口')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://api.yimian.xyz/");
+                        else
+                            window.location.href="https://api.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Imgs':'图库')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://img.yimian.xyz/");
+                        else
+                            window.location.href="https://img.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Imgbed':'图床')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("/");
+                        else
+                            window.location.href="undefined";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Fileshare':'文件分享')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://share.yimian.xyz/");
+                        else
+                            window.location.href="https://share.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Server Monitor':'服务器监控')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://monitor.yimian.xyz/");
+                        else
+                            window.location.href="https://monitor.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Service Status':'服务状态')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://status.yimian.xyz/");
+                        else
+                            window.location.href="https://status.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'ACG.WATCH':'视频')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://acg.watch/");
+                        else
+                            window.location.href="https://acg.watch/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Oneindex':'网盘')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://onedrive.yimian.xyz/");
+                        else
+                            window.location.href="https://onedrive.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Chat':'聊天室')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://chat.yimian.xyz/");
+                        else
+                            window.location.href="https://chat.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Proxy':'下载代理')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://proxy.yimian.xyz/");
+                        else
+                            window.location.href="https://proxy.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'ShortenURL':'短链')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://shorturl.yimian.xyz/");
+                        else
+                            window.location.href="https://shorturl.yimian.xyz/";
+			        }, true],
+			    ['<button><b>close</b></button>', function (instance, toast) {
+			
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+			        }, true],
+			    ]
+			});
+          });
+        </script>
+      </li>
+    <li class="menu-item">
+        <a id="menu-About" class="menu-item-link" href="#">
+          <span class=".en">About</span><span class=".zh">关于</span>
+          </a>
+
+      <script>
+          $("#menu-About").click(function(){
+            tips.question({
+			    timeout: 20000,
+			    close: false,
+			    overlay: true,
+			    displayMode: 'once',
+			    //id: 'question',
+			    zindex: 999,
+			    title: 'About',
+			    message: '',
+			    position: 'center',
+			    buttons: [
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'links':'友链')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("true" == "true")
+			 			  pjax.loadUrl("/links/");
+                        else
+                            window.location.href="/links/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Me':'关于我')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://iotcat.me/");
+                        else
+                            window.location.href="https://iotcat.me/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Contact':'留言板')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://cv.yimian.xyz/contact.html");
+                        else
+                            window.location.href="https://cv.yimian.xyz/contact.html";
+			        }, true],
+			    ['<button><b>close</b></button>', function (instance, toast) {
+			
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+			        }, true],
+			    ]
+			});
+          });
+        </script>
+      </li>
+    </ul></nav>
+</header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title"><span class=".zh">随机图片API</span><span class=".en" hidden>Random Picture API</span>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-07-10
+        </span><span class="post-category">
+            <a href="/categories/tech/">tech</a>
+            </span>
+        </div>
+    </header>
+
+    <style>.toc-level-2 > .toc-child {display: none !important; }</style>
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-API地址"><span class="toc-text">1 API地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-快速入门"><span class="toc-text">2 快速入门</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-参数列表"><span class="toc-text">3 参数列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-参数详解"><span class="toc-text">4 参数详解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-type"><span class="toc-text">4.1 type</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-display"><span class="toc-text">4.2 display</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-size"><span class="toc-text">4.3 size</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-range"><span class="toc-text">4.4 range</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-id"><span class="toc-text">4.5 id</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-6-path"><span class="toc-text">4.6 path</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-7-R18"><span class="toc-text">4.7 R18</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-报错格式"><span class="toc-text">5 报错格式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-找不到指定type类型"><span class="toc-text">5.1 找不到指定type类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-找不到符合条件的图片"><span class="toc-text">5.2 找不到符合条件的图片</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-API-address"><span class="toc-text">1 API address</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Quick-start"><span class="toc-text">2 Quick start</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Parameter-list"><span class="toc-text">3 Parameter list</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Detailed-parameters"><span class="toc-text">4 Detailed parameters</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-type-1"><span class="toc-text">4.1 type</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-display-1"><span class="toc-text">4.2 display</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-size-1"><span class="toc-text">4.3 size</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-range-1"><span class="toc-text">4.4 range</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-id-1"><span class="toc-text">4.5 id</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-6-path-1"><span class="toc-text">4.6 path</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-7-R18-1"><span class="toc-text">4.7 R18</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Error-format"><span class="toc-text">5 Error format</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-Cannot-find-the-specified-type"><span class="toc-text">5.1 Cannot find the specified type</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-Can’t-find-matching-images"><span class="toc-text">5.2 Can’t find matching images</span></a></li></ol></li></ol>
+    </div>
+  </div>
+  <script>var arr = [];var ts = '';if($('.post-toc-content').children().length>1){var el = '.post-toc-content';ts = ($(el).children('ol')[0].outerHTML);}else{var el = '.toc';};for(var i = 0; i < $(el).children('li').length; i++){arr.push($(el).children('li')[i].outerHTML);}; arr.splice(arr.length / 2, 0, '</span><span class=".en">');arr.unshift(ts);arr.unshift('<span class=".zh">');arr.push('</span>');$(el).html(arr.join(''));</script><div class="post-content"><span class=".zh">
+<p>本API基于华为云对象存储，使用华为CDN云加速，全球平均下载速度达10MB/s。API中已收录1100+张二次元图片，20+张Bing壁纸(每日自动抓取)，150+张二次元头像，10+张图床上传图片。</p>
+</span>
+
+
+<span class=".en">
+<p>This API is based on Huawei Cloud Object Storage and uses Huawei CDN Cloud acceleration. The global average download speed is 10MB/s. The API has included 1100+ two-dimensional pictures, 20+ Bing wallpapers (automatically captured daily), 150+ two-dimensional avatars, and 10+ pictures uploaded on the bed.</p>
+</span>
+
+
+<a id="more"></a>
+
+
+<script>
+	session.onload(function(){
+		if(page.tran.getLang() == 'en'){
+			tips.warning({
+				title: 'Caution',
+				position: 'topRight',
+				message: 'This page was translated by Machine!!',
+				buttons: [['<button>Show Original Page</button>', function (instance, toast) {
+					page.tran.setLang('zh');
+             		instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+        		}, true]]
+			});
+		}
+	});
+</script>
+
+
+<span class=".zh">
+
+<blockquote>
+<p>本API不承诺<strong>永久</strong>维护，使用前请务必斟酌<strong>使用风险</strong>！！</p>
+</blockquote>
+<h2 id="1-API地址"><a href="#1-API地址" class="headerlink" title="1 API地址"></a>1 API地址</h2><ul>
+<li><code>https://api.yimian.xyz/img</code></li>
+</ul>
+<h2 id="2-快速入门"><a href="#2-快速入门" class="headerlink" title="2 快速入门"></a>2 快速入门</h2><p><strong><em>随机二次元图片</em></strong></p>
+<ul>
+<li><code>GET/POST /img?type=moe</code></li>
+<li>示例：<a href="https://api.yimian.xyz/img?type=moe" target="_blank" rel="noopener">https://api.yimian.xyz/img?type=moe</a></li>
+</ul>
+<p><strong><em>随机Bing壁纸</em></strong></p>
+<ul>
+<li><code>GET/POST /img?type=wallpaper</code></li>
+<li>示例：<a href="https://api.yimian.xyz/img?type=wallpaper" target="_blank" rel="noopener">https://api.yimian.xyz/img?type=wallpaper</a></li>
+</ul>
+<p><strong><em>随机二次元头像</em></strong></p>
+<ul>
+<li><code>GET/POST /img?type=head</code></li>
+<li>示例：<a href="https://api.yimian.xyz/img?type=head" target="_blank" rel="noopener">https://api.yimian.xyz/img?type=head</a></li>
+</ul>
+<p><strong><em>随机图床图片</em></strong></p>
+<ul>
+<li><code>GET/POST /img?type=imgbed</code></li>
+<li>示例：<a href="https://api.yimian.xyz/img?type=imgbed" target="_blank" rel="noopener">https://api.yimian.xyz/img?type=imgbed</a></li>
+</ul>
+<p><strong><em>随机1920x1080尺寸二次元图片</em></strong></p>
+<ul>
+<li><code>GET/POST /img?type=moe&amp;size=1920x1080</code></li>
+<li>示例：<a href="https://api.yimian.xyz/img?type=moe&size=1920x1080" target="_blank" rel="noopener">https://api.yimian.xyz/img?type=moe&amp;size=1920x1080</a></li>
+</ul>
+<h2 id="3-参数列表"><a href="#3-参数列表" class="headerlink" title="3 参数列表"></a>3 参数列表</h2>
+<div style="overflow:scroll;">
+
+
+<table>
+<thead>
+<tr>
+<th align="center">名称</th>
+<th align="center">描述</th>
+<th align="center">格式</th>
+<th align="center">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><strong>type</strong></td>
+<td align="center">图片种类</td>
+<td align="center"><code>moe</code>/<code>wallpaper</code>/<code>head</code>/<code>imgbed</code></td>
+<td align="center"><code>type=moe</code></td>
+</tr>
+<tr>
+<td align="center"><strong>size</strong></td>
+<td align="center">根据图片大小筛选</td>
+<td align="center"><code>??x??</code>;<br><code>*x??</code>;<br><code>*x*</code>;<br><code>??-??x??</code>;<br><code>??-??x??-??</code>;<br><code>??-??x*</code></td>
+<td align="center"><code>display=1920x1080</code>;<br><code>display=1920x*</code>;<br><code>display=1920-1950x230-500</code>;<br><code>display=1920-1950x*</code>;</td>
+</tr>
+<tr>
+<td align="center"><strong>range</strong></td>
+<td align="center">尺寸误差范围</td>
+<td align="center">number</td>
+<td align="center"><code>range=100</code></td>
+</tr>
+<tr>
+<td align="center"><strong>id</strong></td>
+<td align="center">根据图片id筛选</td>
+<td align="center">number</td>
+<td align="center"><code>id=15</code></td>
+</tr>
+<tr>
+<td align="center"><strong>path</strong></td>
+<td align="center">根据路径提取图片</td>
+<td align="center">abs path</td>
+<td align="center"><code>path=wallpaper/img_··mal.jpg</code></td>
+</tr>
+<tr>
+<td align="center"><strong>display</strong></td>
+<td align="center">是否以网页格式展示</td>
+<td align="center"><code>true</code>/<code>false</code>(default)</td>
+<td align="center"><code>display=true</code></td>
+</tr>
+<tr>
+<td align="center"><strong>R18</strong></td>
+<td align="center">是否显示18禁图片</td>
+<td align="center"><code>true</code>/<code>false</code>(default)</td>
+<td align="center"><code>R18=true</code></td>
+</tr>
+</tbody></table>
+
+</div>
+
+
+<h2 id="4-参数详解"><a href="#4-参数详解" class="headerlink" title="4 参数详解"></a>4 参数详解</h2><h3 id="4-1-type"><a href="#4-1-type" class="headerlink" title="4.1 type"></a>4.1 type</h3><p><strong><em>二次元(默认)</em></strong></p>
+<ul>
+<li><code>GET/POST /img?type=moe</code></li>
+<li>图片来源: 呓喵酱的日常收藏(Pivix, Twitter)</li>
+<li>示例：<a href="https://api.yimian.xyz/img?type=moe" target="_blank" rel="noopener">https://api.yimian.xyz/img?type=moe</a></li>
+</ul>
+<p><strong><em>bing每日壁纸</em></strong></p>
+<ul>
+<li><code>GET/POST /img?type=wallpaper</code></li>
+<li>图片来源: Bing每日壁纸</li>
+<li>示例：<a href="https://api.yimian.xyz/img?type=wallpaper" target="_blank" rel="noopener">https://api.yimian.xyz/img?type=wallpaper</a><blockquote>
+<p>每日自动更新中</p>
+</blockquote>
+</li>
+</ul>
+<p><strong><em>二次元头像</em></strong></p>
+<ul>
+<li><code>GET/POST /img?type=head</code></li>
+<li>图片来源: 从二次元图片中选择性截取</li>
+<li>示例：<a href="https://api.yimian.xyz/img?type=head" target="_blank" rel="noopener">https://api.yimian.xyz/img?type=head</a></li>
+</ul>
+<p><strong><em>呓喵酱图床</em></strong></p>
+<ul>
+<li><code>GET/POST /img?type=imgbed</code></li>
+<li>图片来源: <a href="https://imgbed.yimian.xyz" target="_blank" rel="noopener">呓喵酱图床</a></li>
+<li>示例：<a href="https://api.yimian.xyz/img?type=imgbed" target="_blank" rel="noopener">https://api.yimian.xyz/img?type=imgbed</a></li>
+</ul>
+<p><strong><em>こいぬちゃん</em></strong></p>
+<ul>
+<li><code>GET/POST /img?type=koino</code></li>
+<li>图片来源: @九条だんぼ(Twitter, Pivix, Google)</li>
+<li>示例：<a href="https://api.yimian.xyz/img?type=koino" target="_blank" rel="noopener">https://api.yimian.xyz/img?type=koino</a></li>
+</ul>
+<p><strong><em>EasyVer人机验证</em></strong></p>
+<ul>
+<li><code>GET/POST /img?type=easyver</code></li>
+<li>图片来源: 呓喵酱优化整理</li>
+<li>示例：<a href="https://api.yimian.xyz/img?type=easyver" target="_blank" rel="noopener">https://api.yimian.xyz/img?type=easyver</a></li>
+</ul>
+<h3 id="4-2-display"><a href="#4-2-display" class="headerlink" title="4.2 display"></a>4.2 display</h3><p>如果本参数置为true，则会禁用302跳转，直接返回完整图片编码。本方法<strong>效率极低</strong>，速度很慢，请慎用。</p>
+<p><strong>false(默认)</strong></p>
+<ul>
+<li><code>GET/POST /img?display=false</code></li>
+<li>描述: 302跳转返回图片，建议使用</li>
+<li>示例：<a href="https://api.yimian.xyz/img?display=false" target="_blank" rel="noopener">https://api.yimian.xyz/img?display=false</a></li>
+</ul>
+<p><strong>true</strong></p>
+<ul>
+<li><code>GET/POST /img?display=true</code></li>
+<li>描述: 直接返回图片，速度慢</li>
+<li>示例：<a href="https://api.yimian.xyz/img?display=true" target="_blank" rel="noopener">https://api.yimian.xyz/img?display=true</a></li>
+</ul>
+<h3 id="4-3-size"><a href="#4-3-size" class="headerlink" title="4.3 size"></a>4.3 size</h3><p>使用本参数限制图片尺寸。本参数支持以下格式：</p>
+<p><strong><em>??x??</em></strong></p>
+<ul>
+<li><code>GET/POST /img?size=??x??</code></li>
+<li>描述: 宽度x高度</li>
+<li>示例：<a href="https://api.yimian.xyz/img?size=1920x1080" target="_blank" rel="noopener">https://api.yimian.xyz/img?size=1920x1080</a></li>
+</ul>
+<p><strong><em>??x*</em></strong></p>
+<ul>
+<li><code>GET/POST /img?size=??x*</code></li>
+<li>描述: 宽度x任意高度
+<li>示例：<a href="https://api.yimian.xyz/img?size=1920x*" target="_blank">https://api.yimian.xyz/img?size=1920x*</a></li>
+
+
+</li>
+</ul>
+<p><strong><em>\</em>x??*</strong></p>
+<ul>
+<li><code>GET/POST /img?size=*x??</code></li>
+<li>描述: 任意宽度x高度
+<li>示例：<a href="https://api.yimian.xyz/img?size=*x1080" target="_blank">https://api.yimian.xyz/img?size=*x1080</a></li>
+
+
+</li>
+</ul>
+<p><strong><em>\</em>x**</strong></p>
+<ul>
+<li><code>GET/POST /img?size=*x*</code></li>
+<li>描述: 任意宽度x任意高度(默认)
+<li>示例：<a href="https://api.yimian.xyz/img?size=*x*" target="_blank">https://api.yimian.xyz/img?size=*x*</a></li>
+
+
+</li>
+</ul>
+<p><strong><em>??-??x??</em></strong></p>
+<ul>
+<li><code>GET/POST /img?size=??-??x??</code></li>
+<li>描述: 宽度范围x高度</li>
+<li>示例：<a href="https://api.yimian.xyz/img?size=1910-1930x1080" target="_blank" rel="noopener">https://api.yimian.xyz/img?size=1910-1930x1080</a></li>
+</ul>
+<p><strong><em>??x??-??</em></strong></p>
+<ul>
+<li><code>GET/POST /img?size=??x??-??</code></li>
+<li>描述: 宽度x高度范围</li>
+<li>示例：<a href="https://api.yimian.xyz/img?size=1920x1070-1090" target="_blank" rel="noopener">https://api.yimian.xyz/img?size=1920x1070-1090</a></li>
+</ul>
+<p><strong><em>??-??x??-??</em></strong></p>
+<ul>
+<li><code>GET/POST /img?size=??-??x??-??</code></li>
+<li>描述: 宽度范围x高度范围</li>
+<li>示例：<a href="https://api.yimian.xyz/img?size=1910-1930x1070-1090" target="_blank" rel="noopener">https://api.yimian.xyz/img?size=1910-1930x1070-1090</a></li>
+</ul>
+<p><strong><em>??-??x*</em></strong></p>
+<ul>
+<li><code>GET/POST /img?size=??-??x*</code></li>
+<li>描述: 宽度范围x任意高度
+<li>示例：<a href="https://api.yimian.xyz/img?size=1910-1930x*" target="_blank">https://api.yimian.xyz/img?size=1910-1930x*</a></li>
+
+
+</li>
+</ul>
+<p><strong><em>\</em>x??-??*</strong></p>
+<ul>
+<li><code>GET/POST /img?size=*x??-??</code></li>
+<li>描述: 任意宽度x高度范围
+<li>示例：<a href="https://api.yimian.xyz/img?size=*x1070-1090" target="_blank">https://api.yimian.xyz/img?size=*x1070-1090</a></li>
+
+
+</li>
+</ul>
+<h3 id="4-4-range"><a href="#4-4-range" class="headerlink" title="4.4 range"></a>4.4 range</h3><p>本参数规定允许的size的误差，需搭配size使用，默认为0。</p>
+<p><strong><em>对于??型size参数</em></strong></p>
+<ul>
+<li><code>GET/POST /img?size=??x??&amp;range=100</code></li>
+<li>描述: 宽度±100 x 高度±100</li>
+<li>示例：<a href="https://api.yimian.xyz/img?size=1920x1080&range=100" target="_blank" rel="noopener">https://api.yimian.xyz/img?size=1920x1080&amp;range=100</a></li>
+</ul>
+<p><strong><em>对于??-??型size参数</em></strong></p>
+<ul>
+<li><code>GET/POST /img?size=??-??x??-??&amp;range=100</code></li>
+<li>描述: 最小宽度-100|最大宽度+100 x 最小高度-100|最大高度+100</li>
+<li>示例：<a href="https://api.yimian.xyz/img?size=1910-1930x1070-1090&range=100" target="_blank" rel="noopener">https://api.yimian.xyz/img?size=1910-1930x1070-1090&amp;range=100</a></li>
+</ul>
+<p><strong><em>对于*型size参数</em></strong></p>
+<ul>
+<li><code>GET/POST /img?size=*x*&amp;range=100</code></li>
+<li>描述: range无效</li>
+</ul>
+<h3 id="4-5-id"><a href="#4-5-id" class="headerlink" title="4.5 id"></a>4.5 id</h3><p>每一个种类都有自己的id系统，同一种类下不同图片id唯一。</p>
+<p><strong><em>二次元</em></strong></p>
+<ul>
+<li><code>GET/POST /img?type=moe&amp;id=15</code></li>
+<li>描述：提取id为15的二次元图片</li>
+<li>示例：<a href="https://api.yimian.xyz/img?type=moe&id=15" target="_blank" rel="noopener">https://api.yimian.xyz/img?type=moe&amp;id=15</a></li>
+</ul>
+<p><strong><em>bing每日壁纸</em></strong></p>
+<ul>
+<li><code>GET/POST /img?type=wallpaper&amp;id=2019-07-28</code></li>
+<li>描述：提取2019-07-28的壁纸图片</li>
+<li>示例：<a href="https://api.yimian.xyz/img?type=wallpaper&id=2019-07-28" target="_blank" rel="noopener">https://api.yimian.xyz/img?type=wallpaper&amp;id=2019-07-28</a></li>
+</ul>
+<p><strong><em>二次元头像</em></strong></p>
+<ul>
+<li><code>GET/POST /img?type=head&amp;id=15</code></li>
+<li>描述：提取id为15的头像</li>
+<li>示例：<a href="https://api.yimian.xyz/img?type=head&id=15" target="_blank" rel="noopener">https://api.yimian.xyz/img?type=head&amp;id=15</a></li>
+</ul>
+<p><strong><em>呓喵酱图床</em></strong></p>
+<ul>
+<li><code>GET/POST /img?type=imgbed&amp;id=529745e0</code></li>
+<li>描述：提取id为529745e0的图床图片</li>
+<li>示例：<a href="https://api.yimian.xyz/img?type=imgbed&id=529745e0" target="_blank" rel="noopener">https://api.yimian.xyz/img?type=imgbed&amp;id=529745e0</a></li>
+</ul>
+<h3 id="4-6-path"><a href="#4-6-path" class="headerlink" title="4.6 path"></a>4.6 path</h3><p>使用绝对路径直接提取图片，优先级高于type，<strong>效率最高</strong>。</p>
+<blockquote>
+<p>请前往<a href="https://img.yimian.xyz/" target="_blank" rel="noopener">呓喵酱の图库</a>获取图片的path!</p>
+</blockquote>
+<ul>
+<li><code>GET/POST /img?path=xx/xx.xx</code></li>
+<li>路径格式：<code>种类/图片文件名</code></li>
+<li>路径格式示例：<code>imgbed/img_529745e0_900x900_8_null_normal.jpeg</code></li>
+<li>描述：提取在xx/xx.xx的图片</li>
+<li>示例：<a href="https://api.yimian.xyz/img/?path=imgbed/img_529745e0_900x900_8_null_normal.jpeg" target="_blank" rel="noopener">https://api.yimian.xyz/img/?path=imgbed/img_529745e0_900x900_8_null_normal.jpeg</a></li>
+</ul>
+<h3 id="4-7-R18"><a href="#4-7-R18" class="headerlink" title="4.7 R18"></a>4.7 R18</h3><p>是否显示18禁图片，默认为false。</p>
+<ul>
+<li><code>GET/POST /img?type=xx&amp;R18=true</code><ul>
+<li>描述：是否解除对R18的限制，随机提取xx类别中包含R18图片在内的所有图片</li>
+<li>示例：<a href="https://api.yimian.xyz/img/?type=koino&R18=true" target="_blank" rel="noopener">https://api.yimian.xyz/img/?type=koino&amp;R18=true</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="5-报错格式"><a href="#5-报错格式" class="headerlink" title="5 报错格式"></a>5 报错格式</h2><h3 id="5-1-找不到指定type类型"><a href="#5-1-找不到指定type类型" class="headerlink" title="5.1 找不到指定type类型"></a>5.1 找不到指定type类型</h3><p>若找不到指定的type类型，将会自动返回一个moe类型的图片。</p>
+<h3 id="5-2-找不到符合条件的图片"><a href="#5-2-找不到符合条件的图片" class="headerlink" title="5.2 找不到符合条件的图片"></a>5.2 找不到符合条件的图片</h3><p>返回JSON</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"err"</span>: <span class="string">"错误信息"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<blockquote>
+<p>每台设备每天<strong>全局</strong>调用上限500次!！</p>
+</blockquote>
+<hr>
+<p><strong>CHANGELOG:</strong></p>
+<ul>
+<li><code>2021-1-23</code>: 修改R18参数说明，在path方法中添加图库链接 </li>
+</ul>
+</span>
+
+<span class=".en">
+
+<blockquote>
+<p>This API does not promise <strong>permanent</strong> maintenance, please be sure to consider <strong>use risks</strong> before use! ! </p>
+</blockquote>
+<h2 id="1-API-address"><a href="#1-API-address" class="headerlink" title="1 API address"></a>1 API address</h2><ul>
+<li><code>https://api.yimian.xyz/img</code></li>
+</ul>
+<h2 id="2-Quick-start"><a href="#2-Quick-start" class="headerlink" title="2 Quick start"></a>2 Quick start</h2><p><strong><em>Random two-dimensional picture</em></strong></p>
+<ul>
+<li><code>GET/POST /img?type=moe</code></li>
+<li>Example: <a href="https://api.yimian.xyz/img?type=moe" target="_blank" rel="noopener">https://api.yimian.xyz/img?type=moe</a></li>
+</ul>
+<p><strong><em>Random Bing Wallpaper</em></strong></p>
+<ul>
+<li><code>GET/POST /img?type=wallpaper</code></li>
+<li>Example: <a href="https://api.yimian.xyz/img?type=wallpaper" target="_blank" rel="noopener">https://api.yimian.xyz/img?type=wallpaper</a></li>
+</ul>
+<p><strong><em>Random two-dimensional avatar</em></strong></p>
+<ul>
+<li><code>GET/POST /img?type=head</code></li>
+<li>Example: <a href="https://api.yimian.xyz/img?type=head" target="_blank" rel="noopener">https://api.yimian.xyz/img?type=head</a></li>
+</ul>
+<p><strong><em>Random bed pictures</em></strong></p>
+<ul>
+<li><code>GET/POST /img?type=imgbed</code></li>
+<li>Example: <a href="https://api.yimian.xyz/img?type=imgbed" target="_blank" rel="noopener">https://api.yimian.xyz/img?type=imgbed</a></li>
+</ul>
+<p><strong><em>Random 1920x1080 size two-dimensional picture</em></strong></p>
+<ul>
+<li><code>GET/POST /img?type=moe&amp;size=1920x1080</code></li>
+<li>Example: <a href="https://api.yimian.xyz/img?type=moe&size=1920x1080" target="_blank" rel="noopener">https://api.yimian.xyz/img?type=moe&amp;size=1920x1080</a></li>
+</ul>
+<h2 id="3-Parameter-list"><a href="#3-Parameter-list" class="headerlink" title="3 Parameter list"></a>3 Parameter list</h2>
+<div style="overflow:scroll;">
+
+
+<table>
+<thead>
+<tr>
+<th align="center">Name</th>
+<th align="center">Description</th>
+<th align="center">Format</th>
+<th align="center">Example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><strong>type</strong></td>
+<td align="center">Image type</td>
+<td align="center"><code>moe</code>/<code>wallpaper</code>/<code>head</code>/<code>imgbed</code></td>
+<td align="center"><code>type=moe</code></td>
+</tr>
+<tr>
+<td align="center"><strong>size</strong></td>
+<td align="center">Filter by image size</td>
+<td align="center"><code>??x??</code>;<br><code>*x??</code>;<br><code>*x*</code>;<br><code>??-??x??</code>;<br><code>??-??x??-??</code>;<br> <code>??-??x*</code></td>
+<td align="center"><code>display=1920x1080</code>;<br><code>display=1920x*</code>;<br ><code>display=1920-1950x230-500</code>;<br><code>display=1920-1950x*</code>;</td>
+</tr>
+<tr>
+<td align="center"><strong>range</strong></td>
+<td align="center">Size error range</td>
+<td align="center">number</td>
+<td align="center"><code>range=100</code></td>
+</tr>
+<tr>
+<td align="center"><strong>id</strong></td>
+<td align="center">Filter by image id</td>
+<td align="center">number</td>
+<td align="center"><code>id=15</code></td>
+</tr>
+<tr>
+<td align="center"><strong>path</strong></td>
+<td align="center">Extract pictures based on path</td>
+<td align="center">abs path</td>
+<td align="center"><code>path=wallpaper/img_··mal.jpg</code></td>
+</tr>
+<tr>
+<td align="center"><strong>display</strong></td>
+<td align="center">Whether to display in web page format</td>
+<td align="center"><code>true</code>/<code>false</code>(default)</td>
+<td align="center"><code>display=true</code></td>
+</tr>
+<tr>
+<td align="center"><strong>R18</strong></td>
+<td align="center">Whether to display 18 prohibited pictures</td>
+<td align="center"><code>true</code>/<code>false</code>(default)</td>
+<td align="center"><code>R18=true</code></td>
+</tr>
+</tbody></table>
+
+</div>
+
+
+<h2 id="4-Detailed-parameters"><a href="#4-Detailed-parameters" class="headerlink" title="4 Detailed parameters"></a>4 Detailed parameters</h2><h3 id="4-1-type-1"><a href="#4-1-type-1" class="headerlink" title="4.1 type"></a>4.1 type</h3><p><strong><em>Two-dimensional (default)</em></strong></p>
+<ul>
+<li><code>GET/POST /img?type=moe</code></li>
+<li>Image source: Daily Collection of Miao Miao Jiang (Pivix, Twitter)</li>
+<li>Example: <a href="https://api.yimian.xyz/img?type=moe" target="_blank" rel="noopener">https://api.yimian.xyz/img?type=moe</a></li>
+</ul>
+<p><strong><em>bing daily wallpaper</em></strong></p>
+<ul>
+<li><code>GET/POST /img?type=wallpaper</code></li>
+<li>Image source: Bing Daily Wallpaper</li>
+<li>Example: <a href="https://api.yimian.xyz/img?type=wallpaper" target="_blank" rel="noopener">https://api.yimian.xyz/img?type=moe</a><blockquote>
+<p>Automatically updated daily</p>
+</blockquote>
+</li>
+</ul>
+<p><strong><em>Two-dimensional avatar</em></strong></p>
+<ul>
+<li><code>GET/POST /img?type=head</code></li>
+<li>Image source: Selectively intercepted from two-dimensional images</li>
+<li>Example: <a href="https://api.yimian.xyz/img?type=head" target="_blank" rel="noopener">https://api.yimian.xyz/img?type=head</a></li>
+</ul>
+<p><strong><em>Miao meow sauce picture bed</em></strong></p>
+<ul>
+<li><code>GET/POST /img?type=imgbed</code></li>
+<li>Image source: <a href="https://imgbed.yimian.xyz" target="_blank" rel="noopener">呓喵酱图床</a></li>
+<li>Example: <a href="https://api.yimian.xyz/img?type=imgbed" target="_blank" rel="noopener">https://api.yimian.xyz/img?type=imgbed</a></li>
+</ul>
+<p><strong><em>こいぬちゃん</em></strong></p>
+<ul>
+<li><code>GET/POST /img?type=koino</code></li>
+<li>Image source: @九条だんぼ (Twitter, Pivix, Google)</li>
+<li>Example: <a href="https://api.yimian.xyz/img?type=koino" target="_blank" rel="noopener">https://api.yimian.xyz/img?type=koino</a></li>
+</ul>
+<p><strong><em>EasyVer man-machine verification</em></strong></p>
+<ul>
+<li><code>GET/POST /img?type=easyver</code></li>
+<li>Image source: Optimized finishing</li>
+<li>Example: <a href="https://api.yimian.xyz/img?type=easyver" target="_blank" rel="noopener">https://api.yimian.xyz/img?type=easyver</a></li>
+</ul>
+<h3 id="4-2-display-1"><a href="#4-2-display-1" class="headerlink" title="4.2 display"></a>4.2 display</h3><p>If this parameter is set to true, 302 jump will be disabled and the complete picture encoding will be returned directly. This method is <strong>very low</strong> and slow. Please use it carefully.</p>
+<p><strong>false (default)</strong></p>
+<ul>
+<li><code>GET/POST /img?display=false</code></li>
+<li>Description: 302 Jump to return to the picture, recommended</li>
+<li>Example: <a href="https://api.yimian.xyz/img?display=false" target="_blank" rel="noopener">https://api.yimian.xyz/img?display=false</a></li>
+</ul>
+<p><strong>true</strong></p>
+<ul>
+<li><code>GET/POST /img?display=true</code></li>
+<li>Description: Return to the picture directly, slow</li>
+<li>Example: <a href="https://api.yimian.xyz/img?display=true" target="_blank" rel="noopener">https://api.yimian.xyz/img?display=true</a></li>
+</ul>
+<h3 id="4-3-size-1"><a href="#4-3-size-1" class="headerlink" title="4.3 size"></a>4.3 size</h3><p>Use this parameter to limit the image size. This parameter supports the following formats:</p>
+<p><strong><em>??x??</em></strong></p>
+<ul>
+<li><code>GET/POST /img?size=??x??</code></li>
+<li>Description: width x height</li>
+<li>Example: <a href="https://api.yimian.xyz/img?size=1920x1080" target="_blank" rel="noopener">https://api.yimian.xyz/img?size=1920x1080</a></li>
+</ul>
+<p><strong><em>??x*</em></strong></p>
+<ul>
+<li><code>GET/POST /img?size=??x*</code></li>
+<li>Description: width x any height
+<li>Example: <a href="https://api.yimian.xyz/img?size=1920x*" target="_blank">https://api.yimian.xyz/img?size=1920x*</a></li>
+
+
+</li>
+</ul>
+<p><strong><em>\</em>x??*</strong></p>
+<ul>
+<li><code>GET/POST /img?size=*x??</code></li>
+<li>Description: Any width x height
+<li>Example: <a href="https://api.yimian.xyz/img?size=*x1080" target="_blank">https://api.yimian.xyz/img?size=*x1080</a></li>
+
+
+</li>
+</ul>
+<p><strong><em>\</em>x**</strong></p>
+<ul>
+<li><code>GET/POST /img?size=*x*</code></li>
+<li>Description: any width x any height (default)
+<li>Example: <a href="https://api.yimian.xyz/img?size=*x*" target="_blank">https://api.yimian.xyz/img?size=*x *</a></li>
+
+
+</li>
+</ul>
+<p><strong><em>??-??x??</em></strong></p>
+<ul>
+<li><code>GET/POST /img?size=??-??x??</code></li>
+<li>Description: width range x height</li>
+<li>Example: <a href="https://api.yimian.xyz/img?size=1910-1930x1080" target="_blank" rel="noopener">https://api.yimian.xyz/img?size=1910-1930x1080</a></li>
+</ul>
+<p><strong><em>??x??-??</em></strong></p>
+<ul>
+<li><code>GET/POST /img?size=??x??-??</code></li>
+<li>Description: width x height range</li>
+<li>Example: <a href="https://api.yimian.xyz/img?size=1920x1070-1090" target="_blank" rel="noopener">https://api.yimian.xyz/img?size=1920x1070-1090</a></li>
+</ul>
+<p><strong><em>??-??x??-??</em></strong></p>
+<ul>
+<li><code>GET/POST /img?size=??-??x??-??</code></li>
+<li>Description: width range x height range</li>
+<li>Example: <a href="https://api.yimian.xyz/img?size=1910-1930x1070-1090" target="_blank" rel="noopener">https://api.yimian.xyz/img?size=1910-1930x1070-1090</a></li>
+</ul>
+<p><strong><em>??-??x*</em></strong></p>
+<ul>
+<li><code>GET/POST /img?size=??-??x*</code></li>
+<li>Description: width range x any height
+<li>Example: <a href="https://api.yimian.xyz/img?size=1910-1930x*" target="_blank">https://api.yimian.xyz/img?size=1910 -1930x*</a></li>
+
+
+</li>
+</ul>
+<p><strong><em>\</em>x??-??*</strong></p>
+<ul>
+<li><code>GET/POST /img?size=*x??-??</code></li>
+<li>Description: Any width x height range
+<li>Example: <a href="https://api.yimian.xyz/img?size=*x1070-1090" target="_blank">https://api.yimian.xyz/img?size=* x1070-1090</a></li>
+
+
+</li>
+</ul>
+<h3 id="4-4-range-1"><a href="#4-4-range-1" class="headerlink" title="4.4 range"></a>4.4 range</h3><p>This parameter specifies the allowable size error, which needs to be used with size, and the default is 0.</p>
+<p><strong><em>For the?? type size parameter</em></strong></p>
+<ul>
+<li><code>GET/POST /img?size=??x??&amp;range=100</code></li>
+<li>Description: width ±100 x height ±100</li>
+<li>Example: <a href="https://api.yimian.xyz/img?size=1920x1080&range=100" target="_blank" rel="noopener">https://api.yimian.xyz/img?size=1920x1080&amp;range=100</a></li>
+</ul>
+<p><strong><em>For??-?? type size parameter</em></strong></p>
+<ul>
+<li><code>GET/POST /img?size=??-??x??-??&amp;range=100</code></li>
+<li>Description: Min width-100|Max width+100 x Min height-100|Max height+100</li>
+<li>Example: <a href="https://api.yimian.xyz/img?size=1910-1930x1070-1090&range=100" target="_blank" rel="noopener">https://api.yimian.xyz/img?size=1910-1930x1070-1090&amp;range=100</a></li>
+</ul>
+<p><strong><em>For *type size parameter</em></strong></p>
+<ul>
+<li><code>GET/POST /img?size=*x*&amp;range=100</code></li>
+<li>Description: Invalid range</li>
+</ul>
+<h3 id="4-5-id-1"><a href="#4-5-id-1" class="headerlink" title="4.5 id"></a>4.5 id</h3><p>Each category has its own id system, and different image ids under the same category are unique.</p>
+<p><strong>*Two-dimensional *</strong></p>
+<ul>
+<li><code>GET/POST /img?type=moe&amp;id=15</code></li>
+<li>Description: Extract the two-dimensional image with id 15</li>
+<li>Example: <a href="https://api.yimian.xyz/img?type=moe&id=15" target="_blank" rel="noopener">https://api.yimian.xyz/img?type=moe&amp;id=15</a></li>
+</ul>
+<p><strong><em>bing daily wallpaper</em></strong></p>
+<ul>
+<li><code>GET/POST /img?type=wallpaper&amp;id=2019-07-28</code></li>
+<li>Description: Extract wallpaper pictures from 2019-07-28</li>
+<li>Example: <a href="https://api.yimian.xyz/img?type=wallpaper&id=2019-07-28" target="_blank" rel="noopener">https://api.yimian.xyz/img?type=wallpaper&amp;id=2019-07-28</a></li>
+</ul>
+<p><strong><em>Two-dimensional avatar</em></strong></p>
+<ul>
+<li><code>GET/POST /img?type=head&amp;id=15</code></li>
+<li>Description: Extract the avatar with id 15</li>
+<li>Example: <a href="https://api.yimian.xyz/img?type=head&id=15" target="_blank" rel="noopener">https://api.yimian.xyz/img?type=head&amp;id=15</a></li>
+</ul>
+<p><strong><em>Miao meow sauce picture bed</em></strong></p>
+<ul>
+<li><code>GET/POST /img?type=imgbed&amp;id=529745e0</code></li>
+<li>Description: Extract the picture bed with id 529745e0</li>
+<li>Example: <a href="https://api.yimian.xyz/img?type=imgbed&id=529745e0" target="_blank" rel="noopener">https://api.yimian.xyz/img?type=imgbed&amp;id=529745e0</a></li>
+</ul>
+<h3 id="4-6-path-1"><a href="#4-6-path-1" class="headerlink" title="4.6 path"></a>4.6 path</h3><p>Use absolute path to directly extract pictures, priority is higher than type, <strong>highest efficiency</strong>.</p>
+<blockquote>
+<p>Please go to <a href="https://img.yimian.xyz/" target="_blank" rel="noopener">呓喵酱の Gallery</a> to get the path of the picture!</p>
+</blockquote>
+<ul>
+<li><code>GET/POST /img?path=xx/xx.xx</code></li>
+<li>Path format: <code>Type/Picture File Name</code></li>
+<li>Example of path format: <code>imgbed/img_529745e0_900x900_8_null_normal.jpeg</code></li>
+<li>Description: Extract pictures in xx/xx.xx</li>
+<li>Example: <a href="https://api.yimian.xyz/img/?path=imgbed/img_529745e0_900x900_8_null_normal.jpeg" target="_blank" rel="noopener">https://api.yimian.xyz/img/?path=imgbed/img_529745e0_900x900_8_null_normal.jpeg</a></li>
+</ul>
+<h3 id="4-7-R18-1"><a href="#4-7-R18-1" class="headerlink" title="4.7 R18"></a>4.7 R18</h3><p>Whether to display 18 prohibited pictures, the default is false.</p>
+<ul>
+<li><code>GET/POST /img?type=xx&amp;R18=true</code><ul>
+<li>Description: Whether to lift the restriction on R18, randomly extract all pictures including R18 pictures in xx category</li>
+<li>Example: <a href="https://api.yimian.xyz/img/?type=koino&R18=true" target="_blank" rel="noopener">https://api.yimian.xyz/img/?type=koino&amp;R18=true</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="5-Error-format"><a href="#5-Error-format" class="headerlink" title="5 Error format"></a>5 Error format</h2><h3 id="5-1-Cannot-find-the-specified-type"><a href="#5-1-Cannot-find-the-specified-type" class="headerlink" title="5.1 Cannot find the specified type"></a>5.1 Cannot find the specified type</h3><p>If the specified type cannot be found, a moe type picture will be automatically returned.</p>
+<h3 id="5-2-Can’t-find-matching-images"><a href="#5-2-Can’t-find-matching-images" class="headerlink" title="5.2 Can’t find matching images"></a>5.2 Can’t find matching images</h3><p>Return JSON</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"err"</span>: <span class="string">"error message"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>The maximum number of <strong>global calls</strong> for each device is 500 per day!!</p>
+</blockquote>
+</span>
+
+      </div>
+      <div class="post-copyright">
+    <p class="copyright-item">
+      <span>Author: </span>
+      <a href="https://iotcat.me/" target="_blank" rel="noopener">IoTcat</a>
+    </p>
+    <p class="copyright-item">
+      <span>Link: </span>
+      <a href="https://www.eee.dog/tech/rand-pic-api.html">https://www.eee.dog/tech/rand-pic-api.html</a>
+    </p>
+    <p class="copyright-item">
+      <span>License: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/api/">api</a>
+            <a href="/tags/img/">img</a>
+            <a href="/tags/random/">random</a>
+            <a href="/tags/moe/">moe</a>
+            </div>
+        
+        <nav class="post-nav"><a class="prev" href="/tech/smartfarming-surf.html">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default"><span class=".zh">2019 SURF SmartFarming Proj 架构说明</span><span class=".en">2019 SURF SmartFarming Proj Architecture Description</span></span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    <a class="next" href="/tech/wiot.html">
+        <span class="next-text nav-default"><span class=".zh">wIoT - 轻松物联</span><span class=".en">wIoT - Easy IoT</span></span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article><script>$(()=>{var p = window.location.pathname;setTimeout(()=>{if(window.location.pathname == p)tips.show({
+        title: 'tips',
+        position: 'topRight',
+        message: ((page.tran.getLang() == 'zh')?"此文章预计阅读 8 分钟哦~": "Read this page will spend around  16  minutes~")
+  })}, 6000)})</script>
+  </div><div class="comments" id="comments"><div id="vcomments"></div>
+    </div></div>
+      </main>
+
+      <footer id="footer" class="footer">
+      <script>
+        page_obj = {
+          layout: "post",
+          comments: "true"
+        };
+      </script><div class="social-links"><a href="mailto:i@iotcat.me" class="iconfont icon-email" title="email"></a>
+        <a href="https://github.com/iotcat" target="_blank" rel="noopener" class="iconfont icon-github" title="github"></a>
+        <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    </div><div class="copyright"><span id="/tech/rand-pic-api.html" class="statistic leancloud_visitors">
+    <em>Visitors </em> <i class="leancloud-visitors-count">??</i> 
+    <span class="division"> |</span>
+    <em>Reading </em> 16 min
+  </span>
+  <br>
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://ushio.cool/" target="_blank" rel="noopener">Ushio</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/iotcat/kayo" target="_blank" rel="noopener">Kayo</a>
+  </span>
+
+  <span class="copyright-year">&copy;2018 - 2023<span class="heart shaky">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"><a href="https://iotcat.me/" target="_blank" rel="noopener">IoTcat</a></span>
+  </span>
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+<script src="https://cdn.yimian.xyz/kayo/lib/valine/valine.min.js" data-pjax></script>
+<style>
+/* 背景图片 */
+#veditor {
+  background-image: url(https://cdn.yimian.xyz/img/blog/comments_bg.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-color: rgba(255, 255, 255, 0);
+  resize: vertical
+}
+
+/* 头像旋转 */
+img.vimg {
+  transition: all 1s   /* 旋转时间为 1s */
+}
+img.vimg:hover {
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+}
+
+
+/* 盒子模式 */
+#vcomments .vcards .vcard {
+  padding: 15px 20px 0 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
+  transition: all .3s
+}
+
+#vcomments .vcards .vcard:hover {
+  box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
+}
+
+#vcomments .vcards .vcard .vh .vcard {
+  border: none;
+  box-shadow: none;
+}
+
+
+</style>
+<script>
+pjax_valine = () => {
+    $.get('https://auth.yimian.xyz/getEmailHash.php', function(res){
+        if(page.tran.getLang() == 'zh'){
+            var lan = 'zh-CN';
+            var metaPlaceholder = {"nick":"昵称/QQ号","mail":"邮箱（完全保密）"};
+            var tagMeta =  ["博主","小伙伴","访客"];
+            var placeholder = "填写邮箱可以及时收到回复哦(●'◡'●)";
+        }else{
+            var lan = 'en';
+            var metaPlaceholder = {"nick":"Nickname/QQ","mail":"EMail"};
+            var tagMeta =  ["Master","Friend","Visitor"];
+            var placeholder = "Leave some comments here (●'◡'●)";
+        }
+        new Valine({
+            el: '#vcomments',
+            appId: 'eVzpK7EyT6OafJvXWIRminWT-gzGzoHsz',
+            appKey: '2qjuEBgVE0BscTQnTmoS9roU',
+            master: '9b616ff4cd6c305e5970bee7b1bd9b1f',   //博主邮箱md5
+            tagMeta: tagMeta,     //标识字段名
+            friends: res, //["b6ddef7c7e1c647e7767afeacdfb7b64","46dd4e6fef4f9591736c4723a965ca2e","6132d77f9f0ae060bc733090991acecb","3e00e104b79d7c6e866c6b23c6ba6dfc"],  //小伙伴邮箱Md5
+
+            metaPlaceholder: metaPlaceholder,
+            placeholder: placeholder,
+            lang: lan,
+            path: window.location.pathname,
+            enableQQ: true,
+            visitor: true,
+            emojiCDN: '//i0.hdslb.com/bfs/emote/',
+            emojiMaps: {
+                "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+                "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+                "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png",
+                "tv_再见": "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+                "tv_冷漠": "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+                "tv_发怒": "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+                "tv_发财": "34db290afd2963723c6eb3c4560667db7253a21a.png",
+                "tv_可爱": "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+                "tv_吐血": "09dd16a7aa59b77baa1155d47484409624470c77.png",
+                "tv_呆": "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+                "tv_呕吐": "9f996894a39e282ccf5e66856af49483f81870f3.png",
+                "tv_困": "241ee304e44c0af029adceb294399391e4737ef2.png",
+                "tv_坏笑": "1f0b87f731a671079842116e0991c91c2c88645a.png",
+                "tv_大佬": "093c1e2c490161aca397afc45573c877cdead616.png",
+                "tv_大哭": "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+                "tv_委屈": "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+                "tv_害羞": "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+                "tv_尴尬": "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+                "tv_微笑": "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+                "tv_思考": "90cf159733e558137ed20aa04d09964436f618a1.png",
+                "tv_惊吓": "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+                "tv_打脸": "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+                "tv_抓狂": "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+                "tv_抠鼻": "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+                "tv_斜眼笑": "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+                "tv_无奈": "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+                "tv_晕": "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+                "tv_流汗": "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+                "tv_流泪": "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+                "tv_流鼻血": "c32d39db2737f89b904ca32700d140a9241b0767.png",
+                "tv_点赞": "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+                "tv_生气": "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+                "tv_生病": "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+                "tv_疑问": "0793d949b18d7be716078349c202c15ff166f314.png",
+                "tv_白眼": "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+                "tv_皱眉": "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+                "tv_目瞪口呆": "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+                "tv_睡着": "8b196675b53af58264f383c50ad0945048290b33.png",
+                "tv_笑哭": "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+                "tv_腼腆": "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+                "tv_色": "61822c7e9aae5da76475e7892534545336b23a6f.png",
+                "tv_调侃": "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+                "tv_调皮": "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+                "tv_鄙视": "6e72339f346a692a495b123174b49e4e8e781303.png",
+                "tv_闭嘴": "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+                "tv_难过": "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+                "tv_馋": "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+                "tv_鬼脸": "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+                "tv_黑人问号": "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+                "tv_鼓掌": "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"
+                // ... 更多表情
+            } 
+        });
+    });
+};
+</script><script type="text/javascript" src="https://cdn.yimian.xyz/ushio-js/ushio-footer.min.js"></script>
+<script>
+session.onload(function(){
+    if(session.get('group') != 'anonymous'){
+        function insertNick(){
+            if($('.vnick').length){
+                $('.vnick').val(session.get('nickname'));
+            }else{
+                setTimeout(insertNick, 500);
+            }
+        }
+        function insertMail(){
+            if($('.vmail').length){
+                $('.vmail').val(session.get('email'));
+            }else{
+                setTimeout(insertMail, 500);
+            }
+        }
+
+        if(session.get('nickname')){
+            insertNick();
+        }
+
+        if(session.get('email')){
+            insertMail();
+        }
+    }
+});
+</script>
+<script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/iziToast/iziToast.min.js"></script>
+  <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/iziModal/iziModal.min.js"></script>
+  <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/mermaid/mermaid.min.js"></script>
+  <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/js/src/kayo.js?v=1.0.0" data-pjax></script>
+<script type="text/javascript" src="https://cdn.yimian.xyz/kayo/js/src/kayo-no-pjax.js?v=1.0.0"></script>
+<script src="https://cdn.yimian.xyz/kayo/lib/pjax/pjax.min.js"></script>
+<script>window.pjax = new Pjax({
+    elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"])',
+    selectors: ["head title, #main", "#footer"],
+  });/* lazyload */
+    window.imageLazyLoadSetting = {
+        isSPA: false,
+        processImages: null,
+    };
+    
+     window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});
+
+  /* 第一次载入页面加载的函数 */
+  pjax_ini = () => {
+    
+     /* 关闭侧边栏 */
+     window.slideout.close();
+
+     if(page_obj.comments == "true"){pjax_valine();}pjax_google_analytics();mermaid.init(undefined, $(".mermaid"));/* lazy load */
+     !function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);
+     !function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})}();
+  };
+
+  /* 第一次 执行 */
+  pjax_ini();var loadingBar = document.querySelector(".loading-bar");
+var progress = document.querySelector(".loading-bar .progress");
+var timer = null;
+
+
+// Pjax 开始时执行的函数
+var loadingbarStart = function () {
+  // 进度条默认已经加载 20%
+  var loadingBarWidth = 20;
+  // 进度条的最大增加宽度
+  var MAX_LOADING_WIDTH = 95;
+
+  // 显示进度条
+  loadingBar.classList.add("loading");
+  // 初始化进度条的宽度
+  progress.style.width = loadingBarWidth + "%";
+
+  clearInterval(timer);
+  timer = setInterval(function () {
+    // 进度条的增加速度（可以改为一个随机值，显得更加真实）
+    loadingBarWidth += 3;
+
+    // 当进度条到达 95% 后停止增加
+    if (loadingBarWidth > MAX_LOADING_WIDTH) {
+      loadingBarWidth = MAX_LOADING_WIDTH;
+    }
+
+    progress.style.width = loadingBarWidth + "%";
+  }, 500);
+};
+
+
+// Pjax 完成之后执行的函数
+var loadingbarStop = function () {
+  clearInterval(timer);
+  progress.style.width = "100%";
+  loadingBar.classList.remove("loading");
+
+  setTimeout(function () {
+    progress.style.width = 0;
+  }, 400);
+};/* Pjax 开始时，重新加载的函数 */
+  document.addEventListener("pjax:send", function () {loadingbarStart(); 
+    });
+
+
+  /* Pjax 完成后，重新加载的函数 */
+  document.addEventListener("pjax:complete", function () {
+    /* 重载带data-pjax的script，或者.pjax-reload属性内容的script */
+    $("script[data-pjax], .pjax-reload script").each(function () {
+        $(this).parent().append($(this).remove());
+    });
+    pjax_ini();loadingbarStop();
+    page.tran.setLang();
+  });
+
+
+  /* Pjax 出错，执行的函数 */
+  document.addEventListener("pjax:error", function () {
+    
+  });</script>
+</body>
+</html>

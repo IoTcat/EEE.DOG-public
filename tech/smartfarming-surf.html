@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <title>2019 SURF SmartFarming Proj 架构说明 - EEE.DOG</title><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="2019 SURF SmartFarming Proj 架构说明"/><meta name="keywords" content="iotcat,yimian,blog" /><link rel="alternate" href="/atom.xml" title="EEE.DOG"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.0.0" /><script>lang = ['zh', 'en'];</script>
+<script type="text/javascript" src="https://cdn.yimian.xyz/ushio-js/ushio-head.min.js"></script>
+<script>page.proj = 'iotcat/eee.dog-public';</script>
+
+<!--<link rel="stylesheet" type="text/css" href="https://cdn.yimian.xyz/kayo/lib/iziModal/iziModal.min.css" />-->
+
+
+<!--<link rel="stylesheet" type="text/css" href="https://cdn.yimian.xyz/kayo/lib/iziToast/iziToast.min.css" />-->
+
+<link rel="stylesheet" media="none" onload="this.media='all'" type="text/css" href="https://cdn.yimian.xyz/shaky/shaky.css">
+<link rel="canonical" href="https://www.eee.dog/tech/smartfarming-surf.html"/>
+
+<link rel="stylesheet" media="none" onload="this.media='all'" type="text/css" href="https://cdn.yimian.xyz/kayo/lib/fancybox/jquery.fancybox.css" /><script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+  </script>
+  <script type="text/javascript" async src="https://cdn.yimian.xyz/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.yimian.xyz/kayo/css/style.css?v=1.0.0" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-169276192-1" data-pjax></script>
+<script>
+pjax_google_analytics = () => {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-169276192-1');
+}
+</script><script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+  window.config = {"leancloud":"","toc":true,"fancybox":true,"pjax":{"enable":true,"loadingbar":true},"latex":true};
+</script>
+
+  <meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="EEE.DOG" type="application/atom+xml">
+</head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">EEE.DOG</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="loading-bar">
+    <div class="progress"></div>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><div id="mobile-menu-Home">
+      <a href="/">
+        <li class="mobile-menu-item"><span class=".en">Home</span><span class=".zh">主页</span>
+          </li>
+      </a></div><div id="mobile-menu-Archives">
+      <a href="/archives/">
+        <li class="mobile-menu-item"><span class=".en">Archives</span><span class=".zh">归档</span>
+          </li>
+      </a></div><div id="mobile-menu-Categories">
+      <a href="/categories/">
+        <li class="mobile-menu-item"><span class=".en">Categories</span><span class=".zh">分类</span>
+          </li>
+      </a></div><div id="mobile-menu-Projects">
+      <a href="#">
+        <li class="mobile-menu-item"><span class=".en">Projects</span><span class=".zh">项目</span>
+          </li>
+      </a><ul class="sub-menu" style="display: none;"> 
+          <li>
+              <a href="https://fp.js.org/" target="_blank" rel="noopener">
+                <span class=".en">fp</span><span class=".zh">fp</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://wiot.js.org/" target="_blank" rel="noopener">
+                <span class=".en">wIoT</span><span class=".zh">wIoT</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://github.com/iotcat/kms" target="_blank" rel="noopener">
+                <span class=".en">kms</span><span class=".zh">kms</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://ushio.cool/" target="_blank" rel="noopener">
+                <span class=".en">ushio</span><span class=".zh">Ushio</span>
+              </a>
+            </li>
+          </ul>
+      <script>$('#mobile-menu-Projects').click(function(){
+          $("#mobile-menu-Projects ul").toggle();
+      })</script>
+      </div><div id="mobile-menu-Map">
+      <a href="#">
+        <li class="mobile-menu-item"><span class=".en">Map</span><span class=".zh">导航</span>
+          </li>
+      </a><ul class="sub-menu" style="display: none;"> 
+          <li>
+              <a href="https://api.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">APIs</span><span class=".zh">接口</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://img.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Imgs</span><span class=".zh">图库</span>
+              </a>
+            </li>
+          <li>
+              <a href="/">
+                <span class=".en">Imgbed</span><span class=".zh">图床</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://share.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Fileshare</span><span class=".zh">文件分享</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://monitor.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Server Monitor</span><span class=".zh">服务器监控</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://status.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Service Status</span><span class=".zh">服务状态</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://acg.watch/" target="_blank" rel="noopener">
+                <span class=".en">ACG.WATCH</span><span class=".zh">视频</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://onedrive.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Oneindex</span><span class=".zh">网盘</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://chat.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Chat</span><span class=".zh">聊天室</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://proxy.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Proxy</span><span class=".zh">下载代理</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://shorturl.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">ShortenURL</span><span class=".zh">短链</span>
+              </a>
+            </li>
+          </ul>
+      <script>$('#mobile-menu-Map').click(function(){
+          $("#mobile-menu-Map ul").toggle();
+      })</script>
+      </div><div id="mobile-menu-About">
+      <a href="#">
+        <li class="mobile-menu-item"><span class=".en">About</span><span class=".zh">关于</span>
+          </li>
+      </a><ul class="sub-menu" style="display: none;"> 
+          <li>
+              <a href="/links/">
+                <span class=".en">links</span><span class=".zh">友链</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://iotcat.me/" target="_blank" rel="noopener">
+                <span class=".en">Me</span><span class=".zh">关于我</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://cv.yimian.xyz/contact.html" target="_blank" rel="noopener">
+                <span class=".en">Contact</span><span class=".zh">留言板</span>
+              </a>
+            </li>
+          </ul>
+      <script>$('#mobile-menu-About').click(function(){
+          $("#mobile-menu-About ul").toggle();
+      })</script>
+      </div></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">EEE.DOG</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+        <a id="menu-Home" class="menu-item-link" href="/">
+          <span class=".en">Home</span><span class=".zh">主页</span>
+          </a>
+
+      </li>
+    <li class="menu-item">
+        <a id="menu-Archives" class="menu-item-link" href="/archives/">
+          <span class=".en">Archives</span><span class=".zh">归档</span>
+          </a>
+
+      </li>
+    <li class="menu-item">
+        <a id="menu-Categories" class="menu-item-link" href="/categories/">
+          <span class=".en">Categories</span><span class=".zh">分类</span>
+          </a>
+
+      </li>
+    <li class="menu-item">
+        <a id="menu-Projects" class="menu-item-link" href="#">
+          <span class=".en">Projects</span><span class=".zh">项目</span>
+          </a>
+
+      <script>
+          $("#menu-Projects").click(function(){
+            tips.question({
+			    timeout: 20000,
+			    close: false,
+			    overlay: true,
+			    displayMode: 'once',
+			    //id: 'question',
+			    zindex: 999,
+			    title: 'Projects',
+			    message: '',
+			    position: 'center',
+			    buttons: [
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'fp':'fp')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://fp.js.org/");
+                        else
+                            window.location.href="https://fp.js.org/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'wIoT':'wIoT')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://wiot.js.org/");
+                        else
+                            window.location.href="https://wiot.js.org/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'kms':'kms')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://github.com/iotcat/kms");
+                        else
+                            window.location.href="https://github.com/iotcat/kms";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'ushio':'Ushio')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://ushio.cool/");
+                        else
+                            window.location.href="https://ushio.cool/";
+			        }, true],
+			    ['<button><b>close</b></button>', function (instance, toast) {
+			
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+			        }, true],
+			    ]
+			});
+          });
+        </script>
+      </li>
+    <li class="menu-item">
+        <a id="menu-Map" class="menu-item-link" href="#">
+          <span class=".en">Map</span><span class=".zh">导航</span>
+          </a>
+
+      <script>
+          $("#menu-Map").click(function(){
+            tips.question({
+			    timeout: 20000,
+			    close: false,
+			    overlay: true,
+			    displayMode: 'once',
+			    //id: 'question',
+			    zindex: 999,
+			    title: 'Map',
+			    message: '',
+			    position: 'center',
+			    buttons: [
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'APIs':'接口')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://api.yimian.xyz/");
+                        else
+                            window.location.href="https://api.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Imgs':'图库')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://img.yimian.xyz/");
+                        else
+                            window.location.href="https://img.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Imgbed':'图床')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("/");
+                        else
+                            window.location.href="undefined";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Fileshare':'文件分享')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://share.yimian.xyz/");
+                        else
+                            window.location.href="https://share.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Server Monitor':'服务器监控')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://monitor.yimian.xyz/");
+                        else
+                            window.location.href="https://monitor.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Service Status':'服务状态')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://status.yimian.xyz/");
+                        else
+                            window.location.href="https://status.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'ACG.WATCH':'视频')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://acg.watch/");
+                        else
+                            window.location.href="https://acg.watch/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Oneindex':'网盘')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://onedrive.yimian.xyz/");
+                        else
+                            window.location.href="https://onedrive.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Chat':'聊天室')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://chat.yimian.xyz/");
+                        else
+                            window.location.href="https://chat.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Proxy':'下载代理')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://proxy.yimian.xyz/");
+                        else
+                            window.location.href="https://proxy.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'ShortenURL':'短链')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://shorturl.yimian.xyz/");
+                        else
+                            window.location.href="https://shorturl.yimian.xyz/";
+			        }, true],
+			    ['<button><b>close</b></button>', function (instance, toast) {
+			
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+			        }, true],
+			    ]
+			});
+          });
+        </script>
+      </li>
+    <li class="menu-item">
+        <a id="menu-About" class="menu-item-link" href="#">
+          <span class=".en">About</span><span class=".zh">关于</span>
+          </a>
+
+      <script>
+          $("#menu-About").click(function(){
+            tips.question({
+			    timeout: 20000,
+			    close: false,
+			    overlay: true,
+			    displayMode: 'once',
+			    //id: 'question',
+			    zindex: 999,
+			    title: 'About',
+			    message: '',
+			    position: 'center',
+			    buttons: [
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'links':'友链')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("true" == "true")
+			 			  pjax.loadUrl("/links/");
+                        else
+                            window.location.href="/links/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Me':'关于我')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://iotcat.me/");
+                        else
+                            window.location.href="https://iotcat.me/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Contact':'留言板')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://cv.yimian.xyz/contact.html");
+                        else
+                            window.location.href="https://cv.yimian.xyz/contact.html";
+			        }, true],
+			    ['<button><b>close</b></button>', function (instance, toast) {
+			
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+			        }, true],
+			    ]
+			});
+          });
+        </script>
+      </li>
+    </ul></nav>
+</header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title"><span class=".zh">2019 SURF SmartFarming Proj 架构说明</span><span class=".en" hidden>2019 SURF SmartFarming Proj Architecture Description</span>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-07-26
+        </span><span class="post-category">
+            <a href="/categories/tech/">tech</a>
+            </span>
+        </div>
+    </header>
+
+    <style>.toc-level-2 > .toc-child {display: none !important; }</style>
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-背景"><span class="toc-text">1 背景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-需求"><span class="toc-text">1.1 需求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-定位"><span class="toc-text">1.2 定位</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-名词解释"><span class="toc-text">2 名词解释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-设计目标"><span class="toc-text">3 设计目标</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-实现功能"><span class="toc-text">3.1 实现功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-性能指标"><span class="toc-text">3.2 性能指标</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-系统环境"><span class="toc-text">4 系统环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-相关软件及硬件"><span class="toc-text">4.1 相关软件及硬件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-数据规模预估"><span class="toc-text">4.2 数据规模预估</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-设计思路"><span class="toc-text">5 设计思路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-理念"><span class="toc-text">5.1 理念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-关键问题"><span class="toc-text">5.2 关键问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-方案选择"><span class="toc-text">5.3 方案选择</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-架构设计"><span class="toc-text">6 架构设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-基础介绍"><span class="toc-text">6.1 基础介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-系统层级图"><span class="toc-text">6.2 系统层级图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-系统拓扑图"><span class="toc-text">6.3 系统拓扑图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-模块说明"><span class="toc-text">7 模块说明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-LoRa通信模块"><span class="toc-text">7.1 LoRa通信模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-MQTT-Proxy代理模块"><span class="toc-text">7.2 MQTT-Proxy代理模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-水泵控制模块"><span class="toc-text">7.3 水泵控制模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-4-mqtt-数据处理模块"><span class="toc-text">7.4 mqtt+数据处理模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-5-web接口模块"><span class="toc-text">7.5 web接口模块</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-开发文档"><span class="toc-text">8 开发文档</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-mqtt主题"><span class="toc-text">8.1 mqtt主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-2-http接口"><span class="toc-text">8.2 http接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-websocket接口"><span class="toc-text">8.3 websocket接口</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-运行状态"><span class="toc-text">9 运行状态</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#9-1-系统延时"><span class="toc-text">9.1 系统延时</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-2-传感器数据"><span class="toc-text">9.2 传感器数据</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Background"><span class="toc-text">1 Background</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-Requirements"><span class="toc-text">1.1 Requirements</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-Positioning"><span class="toc-text">1.2 Positioning</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Glossary"><span class="toc-text">2 Glossary</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Design-goals"><span class="toc-text">3 Design goals</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-Implementing-functions"><span class="toc-text">3.1 Implementing functions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-Performance-indicators"><span class="toc-text">3.2 Performance indicators</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-System-Environment"><span class="toc-text">4 System Environment</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-Related-software-and-hardware"><span class="toc-text">4.1 Related software and hardware</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-Data-size-estimation"><span class="toc-text">4.2 Data size estimation</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Design-Ideas"><span class="toc-text">5 Design Ideas</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-Idea"><span class="toc-text">5.1 Idea</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-Key-Issues"><span class="toc-text">5.2 Key Issues</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-Scheme-selection"><span class="toc-text">5.3 Scheme selection</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Architecture-Design"><span class="toc-text">6 Architecture Design</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-Basic-introduction"><span class="toc-text">6.1 Basic introduction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-System-hierarchy-diagram"><span class="toc-text">6.2 System hierarchy diagram</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-System-Topology-Diagram"><span class="toc-text">6.3 System Topology Diagram</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-Module-description"><span class="toc-text">7 Module description</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-LoRa-communication-module"><span class="toc-text">7.1 LoRa communication module</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-MQTT-Proxy-proxy-module"><span class="toc-text">7.2 MQTT-Proxy proxy module</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-Water-pump-control-module"><span class="toc-text">7.3 Water pump control module</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-4-mqtt-data-processing-module"><span class="toc-text">7.4 mqtt+data processing module</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-5-web-interface-module"><span class="toc-text">7.5 web interface module</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-Development-Document"><span class="toc-text">8 Development Document</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-mqtt-theme"><span class="toc-text">8.1 mqtt theme</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-2-http-interface"><span class="toc-text">8.2 http interface</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-websocket-interface"><span class="toc-text">8.3 websocket interface</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-Running-status"><span class="toc-text">9 Running status</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#9-1-System-delay"><span class="toc-text">9.1 System delay</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-2-Sensor-data"><span class="toc-text">9.2 Sensor data</span></a></li></ol></li></ol>
+    </div>
+  </div>
+  <script>var arr = [];var ts = '';if($('.post-toc-content').children().length>1){var el = '.post-toc-content';ts = ($(el).children('ol')[0].outerHTML);}else{var el = '.toc';};for(var i = 0; i < $(el).children('li').length; i++){arr.push($(el).children('li')[i].outerHTML);}; arr.splice(arr.length / 2, 0, '</span><span class=".en">');arr.unshift(ts);arr.unshift('<span class=".zh">');arr.push('</span>');$(el).html(arr.join(''));</script><div class="post-content"><span class=".zh">
+<p>本文详细介绍了XJTLU大学2019暑期科研SmartFarming Proj物联网架构的设计思路，实施情况以及缺陷反思。</p>
+</span>
+
+
+<span class=".en">
+<p>This article introduces in detail the design ideas, implementation status and defect reflections of the SmartFarming Proj IoT architecture of XJTLU University’s 2019 summer scientific research.</p>
+</span>
+
+
+<a id="more"></a>
+
+
+<script>
+    session.onload(function(){
+        if(page.tran.getLang() == 'en'){
+            tips.warning({
+                title: 'Caution',
+                position: 'topRight',
+                message: 'This page was translated by Machine!!',
+                buttons: [['<button>Show Original Page</button>', function (instance, toast) {
+                    page.tran.setLang('zh');
+                    instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                }, true]]
+            });
+        }
+    });
+</script>
+
+
+<span class=".zh">
+
+<h2 id="1-背景"><a href="#1-背景" class="headerlink" title="1 背景"></a>1 背景</h2><h3 id="1-1-需求"><a href="#1-1-需求" class="headerlink" title="1.1 需求"></a>1.1 需求</h3><p>为了探究农业物联网技术的可行性，Alam Mohammed导师希望我们能够提供一个<strong>稳定(Available)</strong>并<strong>可靠(Reliable)</strong>的物联网系统，以实现对农田的智能监控和管理。这个系统将能够适时地探测土壤以及空气中与植物健康相关的参数，处理并存储这些数据(由Alam提出)。同时，自动化控制的灌溉功能(由Caleb提出)以及一些数据展示方法(由Alam提出的可选需求)也被期待由本系统提供。</p>
+<h3 id="1-2-定位"><a href="#1-2-定位" class="headerlink" title="1.2 定位"></a>1.2 定位</h3><p>由于是针对农业物联网设计的小型科研项目，项目的目标是对农业物联网的可行性进行探究，愿景是模拟最普遍的小型农业物联网应用场景。因此本架构的定位是<strong>适用于大部分具备感知，控制和展示功能的小型农业物联网工程</strong>。</p>
+<h2 id="2-名词解释"><a href="#2-名词解释" class="headerlink" title="2 名词解释"></a>2 名词解释</h2><blockquote>
+<ul>
+<li><code>MQTT</code>: MQTT消息队列遥测传输(Message Queuing Telemetry Transport)是ISO 标准(ISO/IEC PRF 20922)下基于发布/订阅范式的消息协议。它工作在 TCP/IP协议族上，是为硬件性能低下的远程设备以及网络状况糟糕的情况下而设计的发布/订阅型消息协议[1]。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li><code>LoRa</code>: LoRa是当前市场上的一种新兴技术，其在1 GHz以下的公共频段中运行，用于远距离低功耗通信[2]。</li>
+</ul>
+</blockquote>
+<h2 id="3-设计目标"><a href="#3-设计目标" class="headerlink" title="3 设计目标"></a>3 设计目标</h2><h3 id="3-1-实现功能"><a href="#3-1-实现功能" class="headerlink" title="3.1 实现功能"></a>3.1 实现功能</h3><p>本架构功能性需求主要包括土地数据采集，气象数据采集，灌溉系统控制，与无人机小组系统进行交互，网页控制台(可查看实时和历史传感数据，指标数据；能够控制系统)。</p>
+<h3 id="3-2-性能指标"><a href="#3-2-性能指标" class="headerlink" title="3.2 性能指标"></a>3.2 性能指标</h3><ul>
+<li><code>通信范围(测试)</code>：半径不低于1km</li>
+<li><code>通信范围(生产)</code>：半径不低于3km</li>
+<li><code>延时</code>：平均小于1s</li>
+<li><code>超时率</code>：不超过5%</li>
+<li><code>资源占用</code>：节点RAM不超过2k</li>
+<li><code>运行周期</code>：1分 (测试) | 15分 (生产)</li>
+</ul>
+<h2 id="4-系统环境"><a href="#4-系统环境" class="headerlink" title="4 系统环境"></a>4 系统环境</h2><h3 id="4-1-相关软件及硬件"><a href="#4-1-相关软件及硬件" class="headerlink" title="4.1 相关软件及硬件"></a>4.1 相关软件及硬件</h3>
+
+<div style="overflow:scroll;">
+<table >
+<tr>
+    <td style="vertical-align: middle;text-align: center;"><strong>节点名称</strong></td>
+    <td style="vertical-align: middle;text-align: center;"><strong>硬件设施</strong></td>
+    <td style="vertical-align: middle;text-align: center;"><strong>软件集群</strong></td>
+</tr>
+
+
+<tr>
+    <td rowspan="6" style="vertical-align: middle;text-align: center;">土地节点<br/>Ground Nodes</td>
+    <td>Arduino Nano</td>
+    <td>Arduino.h</td>
+</tr>
+<tr>
+    <td><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.11.58a54915TdUHKS&id=556174103413&ns=1&abbucket=14#detail" target="_blank" rel="noopener">SX1278 LORA模块</a></td>
+    <td>SPI.h</td>
+</tr>
+<tr>
+    <td><a href="https://detail.tmall.com/item.htm?spm=a230r.1.14.20.161f53ed47xg5U&id=41414863412&ns=1&abbucket=10" target="_blank" rel="noopener">LM35DZ 温度传感</a></td>
+    <td><a href="https://github.com/sandeepmistry/arduino-LoRa" target="_blank" rel="noopener">LoRa.h</a></td>
+</tr>
+<tr>
+    <td><a href="https://detail.tmall.com/item.htm?spm=a1z10.3-b-s.w4011-21581912015.41.6c425535FUUqU7&id=37365775741&rn=b1c1a8a7f17260619669f001aa3241bf&abbucket=14&skuId=4138700612305" target="_blank" rel="noopener">土壤湿度传感</a></td>
+    <td><a href="https://github.com/IoTcat/LoRa-socket" target="_blank" rel="noopener">LoRa-Socket.h</a></td>
+</tr>
+<tr>
+    <td><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.16.21461532U3rUws&id=541730394024&ns=1&abbucket=14#detail" target="_blank" rel="noopener">四分电磁阀</a></td>
+    <td><a href="https://github.com/IoTcat/LoRa-mqtt" target="_blank" rel="noopener">LoRa-mqtt.h</a></td>
+</tr>
+<tr>
+    <td></td>
+    <td><a href="https://github.com/tomstewart89/Vector" target="_blank" rel="noopener">vector.h</a></td>
+</tr>
+
+
+<tr>
+    <td rowspan="7" style="vertical-align: middle;text-align: center;">气象站节点<br/>Air Station</td>
+    <td>Arduino Nano</td>
+    <td>Arduino.h</td>
+</tr>
+<tr>
+    <td><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.11.58a54915TdUHKS&id=556174103413&ns=1&abbucket=14#detail" target="_blank" rel="noopener">SX1278 LORA模块</a></td>
+    <td>SPI.h</td>
+</tr>
+<tr>
+    <td><a href="https://detail.tmall.com/item.htm?spm=a220m.1000858.1000725.1.1b456f1dTRXYJd&id=576191025158&areaId=320500&user_id=738263294&cat_id=2&is_b=1&rn=14dcb16f28668aa5ca15c5be0f88d092" target="_blank" rel="noopener">BME280 温度，湿度，大气压强传感</a></td>
+    <td><a href="https://github.com/sandeepmistry/arduino-LoRa" target="_blank" rel="noopener">LoRa.h</a></td>
+</tr>
+<tr>
+    <td><a href="https://detail.tmall.com/item.htm?spm=a1z10.3-b-s.w4011-21581912015.32.2fe555358wswJr&id=521238059334&rn=233756c78897999fd97ca2dd4f649071&abbucket=14" target="_blank" rel="noopener">GY-30 光强传感</a></td>
+    <td><a href="https://github.com/IoTcat/LoRa-socket" target="_blank" rel="noopener">LoRa-Socket.h</a></td>
+</tr>
+<tr>
+    <td><a href="https://detail.tmall.com/item.htm?spm=a1z10.3-b-s.w4011-21581912015.52.23e05535hDDYEB&id=13302081252&rn=ced14f01f4a9179e7b090c544cf5836a&abbucket=14" target="_blank" rel="noopener">MQ-135 空气质量传感</a></td>
+    <td><a href="https://github.com/IoTcat/LoRa-mqtt" target="_blank" rel="noopener">LoRa-mqtt.h</a></td>
+</tr>
+<tr>
+    <td><a href="https://detail.tmall.com/item.htm?spm=a1z10.3-b-s.w4011-21581912015.52.270b5535itNYUg&id=13673403530&rn=418dfd01fe7ae4ce8b775fc271d9886a&abbucket=14" target="_blank" rel="noopener">MQ-7 一氧化碳传感</a></td>
+    <td><a href="https://github.com/tomstewart89/Vector" target="_blank" rel="noopener">vector.h</a></td>
+</tr>
+<tr>
+    <td><a href="https://detail.tmall.com/item.htm?spm=a1z10.5-b-s.w4011-21581825912.37.16ca535042HtRT&id=41536690942&rn=a0912ce05addd045044d65bc796797e8&abbucket=14" target="_blank" rel="noopener">雨量传感</a></td>
+    <td></td>
+</tr>
+
+
+<tr>
+    <td rowspan="8" style="vertical-align: middle;text-align: center;">LoRa 网关<br/>LoRa Gateway</td>
+    <td><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.58.6c20435c9AhMz2&id=555750159003&ns=1&abbucket=14#detail" target="_blank" rel="noopener">SX1278</a></td>
+    <td>Arduino.h</td>
+</tr>
+<tr>
+    <td></td>
+    <td>SPI.h</td>
+</tr>
+<tr>
+    <td></td>
+    <td>WiFi.h</td>
+</tr>
+<tr>
+    <td></td>
+    <td><a href="https://github.com/sandeepmistry/arduino-LoRa" target="_blank" rel="noopener">LoRa.h</a></td>
+</tr>
+<tr>
+    <td></td>
+    <td><a href="https://github.com/IoTcat/LoRa-socket" target="_blank" rel="noopener">LoRa-Socket.h</a></td>
+</tr>
+<tr>
+    <td></td>
+    <td><a href="https://github.com/IoTcat/LoRa-mqtt" target="_blank" rel="noopener">LoRa-mqtt.h</a></td>
+</tr>
+<tr>
+    <td></td>
+    <td><a href="https://github.com/tomstewart89/Vector" target="_blank" rel="noopener">vector.h</a></td>
+</tr>
+<tr>
+    <td></td>
+    <td><a href="https://github.com/knolleary/pubsubclient" target="_blank" rel="noopener">PubSubClient.h</a></td>
+</tr>
+
+
+<tr>
+    <td rowspan="5" style="vertical-align: middle;text-align: center;">内网控制器/MQTT代理<br/>Controler/MQTT Proxy</td>
+    <td>树莓派3B - RASPBIAN</td>
+    <td>Python3.7</td>
+</tr>
+<tr>
+    <td><a href="https://detail.tmall.com/item.htm?spm=a230r.1.14.9.791b1000Beu0tp&id=555610012670&cm_id=140105335569ed55e27b&abbucket=14" target="_blank" rel="noopener">直流变频水泵</a></td>
+    <td>NodeJS</td>
+</tr>
+<tr>
+    <td></td>
+    <td><a href="https://www.npmjs.com/package/sf-mqtt-proxy" target="_blank" rel="noopener">sf-mqtt-proxy@npm</a></td>
+</tr>
+<tr>
+    <td></td>
+    <td><a href="https://www.npmjs.com/package/sf-pump" target="_blank" rel="noopener">sf-pump@npm</a></td>
+</tr>
+<tr>
+    <td></td>
+    <td><a href="https://www.npmjs.com/package/forever" target="_blank" rel="noopener">forever@npm</a></td>
+</tr>
+
+
+
+<tr>
+    <td rowspan="6" style="vertical-align: middle;text-align: center;">云服务器<br/>Cloud Server</td>
+    <td>华为云主机 - Centos7.4</td>
+    <td>Nginx/1.12.2</td>
+</tr>
+<tr>
+    <td></td>
+    <td>NodeJS/12.4.0</td>
+</tr>
+<tr>
+    <td></td>
+    <td>Redis/3.2.12</td>
+</tr>
+<tr>
+    <td></td>
+    <td><a href="https://www.npmjs.com/package/sf-mqtt-broker" target="_blank" rel="noopener">sf-mqtt-broker@npm</a></td>
+</tr>
+<tr>
+    <td></td>
+    <td><a href="https://www.npmjs.com/package/sf-web-api" target="_blank" rel="noopener">sf-web-api@npm</a></td>
+</tr>
+<tr>
+    <td></td>
+    <td><a href="https://www.npmjs.com/package/forever" target="_blank" rel="noopener">forever@npm</a></td>
+</tr>
+
+<tr>
+    <td rowspan="1" style="vertical-align: middle;text-align: center;">数据库<br/>Database</td>
+    <td>华为云数据库</td>
+    <td>MySQL 5.7.23</td>
+</tr>
+
+</table>
+</div>
+
+
+<h3 id="4-2-数据规模预估"><a href="#4-2-数据规模预估" class="headerlink" title="4.2 数据规模预估"></a>4.2 数据规模预估</h3><p>按照生产场景预估，每15分钟产生一组数据集合，一组数据集合约占用253-291字节。按照291计算，每天将新增27.93KB数据。</p>
+<h2 id="5-设计思路"><a href="#5-设计思路" class="headerlink" title="5 设计思路"></a>5 设计思路</h2><h3 id="5-1-理念"><a href="#5-1-理念" class="headerlink" title="5.1 理念"></a>5.1 理念</h3><ul>
+<li>面向文档</li>
+<li>面向接口</li>
+<li>面向测试</li>
+</ul>
+<h3 id="5-2-关键问题"><a href="#5-2-关键问题" class="headerlink" title="5.2 关键问题"></a>5.2 关键问题</h3><ul>
+<li>土地节点RAM资源稀缺，只有2K</li>
+<li>LoRa通信采用433MHz，单信道收发，干扰多</li>
+<li>服务器需要采集聚合来自多节点的散列数据</li>
+<li>预留与无人机AI小组的交互方法</li>
+<li>实时消息向前端浏览器推送</li>
+</ul>
+<h3 id="5-3-方案选择"><a href="#5-3-方案选择" class="headerlink" title="5.3 方案选择"></a>5.3 方案选择</h3><p>为了<strong>优先</strong>确保通信以及服务的<strong>稳定性</strong>和<strong>可拓展性</strong>，我们选取<strong>分层模型</strong>作为架构的设计模式。整个系统分成多个层级，层级之间具备必要的交互行为。每个层级都独立运行，崩溃时会迅速重启，具备高度的可靠性。</p>
+<p>安全上，采取<strong>内外网隔离</strong>的方法。内网中考虑到部分设备计算资源稀缺，与内网服务器的交互采用不加密的通信模式。内网服务器通过SSL加密的方式与云服务器进行交互。为了确保客户端的资料安全，云服务器API只接受具备SSL加密的HTTP和WebSocket请求。</p>
+<h2 id="6-架构设计"><a href="#6-架构设计" class="headerlink" title="6 架构设计"></a>6 架构设计</h2><h3 id="6-1-基础介绍"><a href="#6-1-基础介绍" class="headerlink" title="6.1 基础介绍"></a>6.1 基础介绍</h3><p>本架构的主要目的是提供一个<strong>稳定(Available)</strong>并<strong>可靠(Reliable)</strong>的物联网系统，通过采集农田中的实时数据，结合通过无人机采集的图片以及CNN判断的植物健康情况，实现对灌溉系统以及植物健康状况的智能管理。本架构理论上适用于大部分农场环境。测试环境半径2~5km(取决于天线)以内，风力3级以下。本系统通过传感器获取农田数据，通过晶体管电路，继电器等控制灌溉系统，通过网页与API与管理者进行交互。</p>
+<h3 id="6-2-系统层级图"><a href="#6-2-系统层级图" class="headerlink" title="6.2 系统层级图"></a>6.2 系统层级图</h3><p><img src="https://api.yimian.xyz/img/?path=imgbed/img_c46f5639_577x906_8_null_normal.jpeg" alt="Smart Farm 系统分层结构图"></p>
+<p>此图展示了此架构的抽象层级结构。正如其所指出的，此分层架构可明确为<strong>感知层</strong>，<strong>网络层</strong>，<strong>应用层</strong>三个横向操作层以及一个纵向<strong>错误处理层</strong>。</p>
+<p>其中，<strong>感知层</strong>又可细化为<strong>环境层</strong>以及<strong>硬件层</strong>。环境层中包含植物，土壤，空气，水流等我们要检测和控制的自然物体，硬件层通过传感器、控制器等人造电气设备为系统对自然要素的交互行为（检测，控制）提供了底层技术可行性。当感知层实现对自然信息的交互后，相应的数字信息被传往网络层进行通信。相应的，感知层也会从网络层接受相应的控制信息，并根据这些指令做出相应的控制行为。</p>
+<p><strong>网络层</strong>分为三层。其中最低一层为<strong>预处理层</strong>，它的主要任务是对感知层采集的数据进行打包处理，转变成网络流通所适合的形式，如套接字。因此，预处理层需要少量的计算存储资源，比如单片机，EEPROM等。经过预处理层的封装后，数据被传往<strong>物理层</strong>。基于物理层中的网关、路由器等设备，这些数据包得以被有秩序的分发和传递。<strong>通信层</strong>中的MQTT协议的应用，使得这些数据包分发的管理更加高效与便利。此外，通信层中QoS服务质量检测体系的实施也使得网络层的性能更加的容错和可靠。</p>
+<p><strong>应用层</strong>主要负责一些应用层面的服务于业务逻辑，比如数据分析，事件处理等。在应用层的最底端，<strong>服务层</strong>在长期的运转着。服务层是应用层中最近接网络层的部分，它的主要目的是实时处理从网络层传入的数据，并对相应的请求及错误事件进行快速响应。同时，服务层也负责将传感器采集的数据进行整理分析并传递到<strong>数据库</strong>层进行存储。为了保证服务的可靠性，服务层的实现程序被注册为系统服务并由专门的守护进程进行守护。与服务层的长期运行不同，<strong>业务层</strong>则是按需唤起。当界面层有新的请求传入或服务层发生特定的事件时，业务层将会被调用并处理它们。除了一些基础的数据分析外，业务层也有权限向AI层进行分析请求。<strong>AI层</strong>通过分析从无人机传回的图像数据后，会传回一个判断结果给业务层。根据请求的具体内容，业务层会将图像识别结果，历史传感器数据等进行整理，并传递到界面层。<strong>界面层</strong>则主要用来提供不同形式的接口，比如HTTP接口和WebSocket接口，以方便客户端调用。</p>
+<h3 id="6-3-系统拓扑图"><a href="#6-3-系统拓扑图" class="headerlink" title="6.3 系统拓扑图"></a>6.3 系统拓扑图</h3><p><img src="https://api.yimian.xyz/img/?path=imgbed/img_27df1756_1426x710_8_null_normal.png" alt="Smart Farm 系统拓扑图"></p>
+<p>从拓扑结构来看，如上图所示，整个系统物理上可划分为土地节点，气象节点，LoRa网关，内网服务器，云服务器，数据库和用户终端。</p>
+<p>从功能机制上看，整个系统包含：传感器模块，LoRa通信模块，LoRa网关模块，MQTT-Proxy代理模块，水泵控制模块，MQTT+数据处理模块，web接口模块，守护进程模块和数据库模块。</p>
+<p><strong><em>土地节点</em></strong><br>土地节点部署于不同区域的农田中，用于探测土壤温度，湿度参数，并能够提供对相应位置水流电磁阀的控制。土地节点使用Arduino Nano作为计算单元，使用LoRa作为通信方式连接LoRa网关(和其它节点)，使用电池供电。其数量较多，工作环境恶劣，无线通信不稳定，是系统中最大的不确定性来源。</p>
+<p><strong><em>气象节点</em></strong><br>气象节点部署于农田特定位置，用于探测空气温度，湿度，大气压，降雨量，光照，NH3浓度，CO浓度等气象参数。气象节点使用Arduino Nano作为计算单元，使用LoRa作为通信方式连接LoRa网关(和土地节点)，使用电池或有线供电。其工作环境较为恶劣，无线通信质量一般。</p>
+<p><strong><em>LoRa网关</em></strong><br>LoRa网关部署于室内，为扩大有效通信半径，其天线可延伸至室外。LoRa网关通过LoRa连接各土地节点和气象节点，通过WiFi连接内网服务器。LoRa网关能够将通过LoRa传入的socket包转换为mqtt消息并传递给内网服务器，以及将内网服务器传来的mqtt消息转换为socket包通过LoRa发送至指定节点。</p>
+<p><strong><em>内网服务器</em></strong><br>内网服务器是一个树莓派3B，它包含三个功能模块：MQTT-Proxy代理模块，水泵控制模块以及守护进程模块。</p>
+<p><em>MQTT-Proxy代理模块</em>能够接收由LoRa网关通过WiFi发送的mqtt消息，对其进行SSL加密并转发至云服务器。同时，MQTT-Proxy代理模块也将接受指定的来自云服务器的mqtt消息，将其解密并转发至LoRa网关。</p>
+<p><em>水泵控制模块</em>通过树莓派的GPIO通过继电器控制水泵的状态。与水泵控制模块直接与云服务器进行mqtt通信，不经过MQTT-Proxy代理。</p>
+<p><em>守护进程模块</em>运行在Linux上，用于监视MQTT-Proxy代理模块和水泵控制模块。当探测到模块停止运行时，守护进程模块会及时重启这些模块，以确保服务的稳定性和连续性。</p>
+<p><strong><em>云服务器</em></strong><br>云服务器运行在位于北京的华为云上，包含MQTT+数据处理模块，web接口模块和守护进程模块。</p>
+<p><em>MQTT+数据处理模块</em>包含了层级结构中的Service层和Business层。这个模块通过mqtt与内网进行通信，通过mqtt, redis与web接口模块(和AI模块)进行交互。当收到来自内网的各种散列的数据后，本模块会自动对它们进行聚合，整理成一条一条的数据，存入数据库，并通过redis推送给web接口模块。此外，本模块会定时向各节点发送请求以获取它们的数据，这些请求将被追踪以计算延时。</p>
+<p><em>web接口模块</em>提供一系列的HTTP和WebSocket接口。这些接口可用于获取数据，发送指令，刷新数据以及获取推送消息。</p>
+<p><em>守护进程模块</em>运行在Linux上，用于监视MQTT+数据处理模块和web接口模块。当探测到模块停止运行时，守护进程模块会及时重启这些模块，以确保服务的稳定性和连续性。</p>
+<h2 id="7-模块说明"><a href="#7-模块说明" class="headerlink" title="7 模块说明"></a>7 模块说明</h2><h3 id="7-1-LoRa通信模块"><a href="#7-1-LoRa通信模块" class="headerlink" title="7.1 LoRa通信模块"></a>7.1 LoRa通信模块</h3><p>LoRa通信模块用于在单信道情况下实现稳定可靠的socket通信。本模块包含LoRa-socket和LoRa-mqtt。</p>
+<p>LoRa-socket是在LoRa-Arduino的基础上进行了数据包的封装，实现了简单的udp和tcp通信，让传统的LoRa通信更加可靠。通过在数据包的head添加收发ip地址，以及在数据包的最后添加hash校验值，LoRa-socket支持点对点通信和广播通信，并且具有强大的噪音处理能力和数据防篡改能力。<br><strong><em>项目地址</em></strong>：<a href="https://github.com/IoTcat/LoRa-socket" target="_blank" rel="noopener">iotcat/LoRa-socket</a></p>
+<p>LoRa-mqtt是在LoRa-socket基础上对mqtt协议进行的一个简单再现。基于udp和tcp，LoRa-mqtt支持qos为0和1的mqtt通信。<br><strong><em>项目地址</em></strong>：<a href="https://github.com/IoTcat/LoRa-mqtt" target="_blank" rel="noopener">iotcat/LoRa-mqtt</a></p>
+<h3 id="7-2-MQTT-Proxy代理模块"><a href="#7-2-MQTT-Proxy代理模块" class="headerlink" title="7.2 MQTT-Proxy代理模块"></a>7.2 MQTT-Proxy代理模块</h3><p>本模块运行在内网服务器，实现了对内网mqtt的加密转发。<br><strong><em>项目地址</em></strong>：<a href="https://www.npmjs.com/package/sf-mqtt-broker" target="_blank" rel="noopener">iotcat/sf-mqtt-proxy</a></p>
+<h3 id="7-3-水泵控制模块"><a href="#7-3-水泵控制模块" class="headerlink" title="7.3 水泵控制模块"></a>7.3 水泵控制模块</h3><p>本模块运行在内网服务器，实现了通过GPIO对继电器水泵的控制。<br><strong><em>项目地址</em></strong>：<a href="https://www.npmjs.com/package/sf-pump" target="_blank" rel="noopener">iotcat/sf-pump</a></p>
+<h3 id="7-4-mqtt-数据处理模块"><a href="#7-4-mqtt-数据处理模块" class="headerlink" title="7.4 mqtt+数据处理模块"></a>7.4 mqtt+数据处理模块</h3><p>本模块运行在云服务器，实现了对来自底层mqtt消息的数据聚合，处理和存储。<br><strong><em>项目地址</em></strong>：<a href="https://www.npmjs.com/package/sf-mqtt-broker" target="_blank" rel="noopener">iotcat/sf-mqtt-broker</a></p>
+<h3 id="7-5-web接口模块"><a href="#7-5-web接口模块" class="headerlink" title="7.5 web接口模块"></a>7.5 web接口模块</h3><p>本模块运行在云服务器，实现了功能性接口的提供。<br><strong><em>项目地址</em></strong>：<a href="https://www.npmjs.com/package/sf-web-api" target="_blank" rel="noopener">iotcat/sf-web-api</a></p>
+<h2 id="8-开发文档"><a href="#8-开发文档" class="headerlink" title="8 开发文档"></a>8 开发文档</h2><h3 id="8-1-mqtt主题"><a href="#8-1-mqtt主题" class="headerlink" title="8.1 mqtt主题"></a>8.1 mqtt主题</h3><ul>
+<li><a href="https://doc.smartfarm.yimian.xyz/#/home?id=mqtt" target="_blank" rel="noopener">mqtt主题列表</a></li>
+</ul>
+<h3 id="8-2-http接口"><a href="#8-2-http接口" class="headerlink" title="8.2 http接口"></a>8.2 http接口</h3><ul>
+<li><a href="https://doc.smartfarm.yimian.xyz/#/home?id=api-http" target="_blank" rel="noopener">http接口文档</a></li>
+</ul>
+<h3 id="8-3-websocket接口"><a href="#8-3-websocket接口" class="headerlink" title="8.3 websocket接口"></a>8.3 websocket接口</h3><ul>
+<li><a href="https://doc.smartfarm.yimian.xyz/#/home?id=api-websocket" target="_blank" rel="noopener">websocket接口文档</a></li>
+</ul>
+<h2 id="9-运行状态"><a href="#9-运行状态" class="headerlink" title="9 运行状态"></a>9 运行状态</h2><h3 id="9-1-系统延时"><a href="#9-1-系统延时" class="headerlink" title="9.1 系统延时"></a>9.1 系统延时</h3><p><img src="https://api.yimian.xyz/img/?path=imgbed/img_b36d5030_1806x546_8_null_normal.png" alt="qos"></p>
+<p>上图展示了土地节点(左)，气象节点(右)，水泵(下)的延时统计折线图。由图可以看出，土地节点的平均延时在730ms左右，气象节点延时在900ms左右，水泵的延时较低，在45ms左右。</p>
+<h3 id="9-2-传感器数据"><a href="#9-2-传感器数据" class="headerlink" title="9.2 传感器数据"></a>9.2 传感器数据</h3><p><a href="https://smartfarm.yimian.xyz/chart-station.html?f=1564484461&t=1564570861" target="_blank" rel="noopener">点击这里查看2019-7-31的气象传感器数据</a></p>
+<hr>
+<p><strong>Reference List:</strong></p>
+<p>[1] OASIS, (2015,12.10). MQTT Version 3.1.1 Plus Errata 01 [Online]. Available: <a href="https://docs.oasis-open.org/mqtt/mqtt/v3.1.1/errata01/os/mqtt-v3.1.1-errata01-os-complete.html" target="_blank" rel="noopener">https://docs.oasis-open.org/mqtt/mqtt/v3.1.1/errata01/os/mqtt-v3.1.1-errata01-os-complete.html</a></p>
+<p>[2] Sinha, R.S., Wei, Y. and Hwang, S.H., “A survey on LPWA technology: LoRa and NB-IoT”, in Ict Express, 3(1), pp.14-21, 2017.</p>
+</span>
+
+<span class=".en">
+<h2 id="1-Background"><a href="#1-Background" class="headerlink" title="1 Background"></a>1 Background</h2><h3 id="1-1-Requirements"><a href="#1-1-Requirements" class="headerlink" title="1.1 Requirements"></a>1.1 Requirements</h3><p>In order to explore the feasibility of agricultural Internet of Things technology, instructor Alam Mohammed hopes that we can provide a <strong>Available</strong> and <strong>Reliable</strong> Internet of Things system to realize intelligent monitoring and management of farmland. This system will be able to timely detect the parameters related to plant health in the soil and the air, process and store these data (proposed by Alam). At the same time, the automatic control irrigation function (proposed by Caleb) and some data display methods (optional requirements proposed by Alam) are also expected to be provided by this system.</p>
+<h3 id="1-2-Positioning"><a href="#1-2-Positioning" class="headerlink" title="1.2 Positioning"></a>1.2 Positioning</h3><p>As it is a small scientific research project designed for the agricultural Internet of Things, the goal of the project is to explore the feasibility of the agricultural Internet of Things, and the vision is to simulate the most common small-scale agricultural Internet of Things application scenarios. Therefore, the positioning of this architecture is <strong>applicable to most small agricultural IoT projects with sensing, control and display functions</strong>.</p>
+<h2 id="2-Glossary"><a href="#2-Glossary" class="headerlink" title="2 Glossary"></a>2 Glossary</h2><blockquote>
+<ul>
+<li><code>MQTT</code>: MQTT Message Queuing Telemetry Transport is a message protocol based on the publish/subscribe paradigm under the ISO standard (ISO/IEC PRF 20922). It works on the TCP/IP protocol suite and is a publish/subscribe message protocol designed for remote devices with low hardware performance and poor network conditions [1].</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li><code>LoRa</code>: LoRa is an emerging technology in the current market, which operates in the public frequency band below 1 GHz for long-distance low-power communication [2].</li>
+</ul>
+</blockquote>
+<h2 id="3-Design-goals"><a href="#3-Design-goals" class="headerlink" title="3 Design goals"></a>3 Design goals</h2><h3 id="3-1-Implementing-functions"><a href="#3-1-Implementing-functions" class="headerlink" title="3.1 Implementing functions"></a>3.1 Implementing functions</h3><p>The functional requirements of this architecture mainly include land data collection, weather data collection, irrigation system control, interaction with the drone group system, web console (can view real-time and historical sensor data, index data; be able to control the system).</p>
+<h3 id="3-2-Performance-indicators"><a href="#3-2-Performance-indicators" class="headerlink" title="3.2 Performance indicators"></a>3.2 Performance indicators</h3><ul>
+<li><code>Communication range (test)</code>: the radius is not less than 1km</li>
+<li><code>Communication range (production)</code>: the radius is not less than 3km</li>
+<li><code>Delay</code>: average less than 1s</li>
+<li><code>Timeout rate</code>: no more than 5%</li>
+<li><code>Resource occupation</code>: Node RAM does not exceed 2k</li>
+<li><code>Run cycle</code>: 1 minute (test) | 15 minutes (production)</li>
+</ul>
+<h2 id="4-System-Environment"><a href="#4-System-Environment" class="headerlink" title="4 System Environment"></a>4 System Environment</h2><h3 id="4-1-Related-software-and-hardware"><a href="#4-1-Related-software-and-hardware" class="headerlink" title="4.1 Related software and hardware"></a>4.1 Related software and hardware</h3>
+<div style="overflow:scroll;">
+<table>
+<tr>
+    <td style="vertical-align: middle;text-align: center;"><strong>Node name</strong></td>
+    <td style="vertical-align: middle;text-align: center;"><strong>Hardware facilities</strong></td>
+    <td style="vertical-align: middle;text-align: center;"><strong>Software cluster</strong></td>
+</tr>
+
+
+<tr>
+    <td rowspan="6" style="vertical-align: middle;text-align: center;">Ground Nodes<br/>Ground Nodes</td>
+    <td>Arduino Nano</td>
+    <td>Arduino.h</td>
+</tr>
+<tr>
+    <td><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.11.58a54915TdUHKS&id=556174103413&ns=1&abbucket=14#detail" target="_blank" rel="noopener">SX1278 LORA module</a></td >
+    <td>SPI.h</td>
+</tr>
+<tr>
+    <td><a href="https://detail.tmall.com/item.htm?spm=a230r.1.14.20.161f53ed47xg5U&id=41414863412&ns=1&abbucket=10" target="_blank" rel="noopener">LM35DZ temperature sensor</a></td>
+    <td><a href="https://github.com/sandeepmistry/arduino-LoRa" target="_blank" rel="noopener">LoRa.h</a></td>
+</tr>
+<tr>
+    <td><a href="https://detail.tmall.com/item.htm?spm=a1z10.3-b-s.w4011-21581912015.41.6c425535FUUqU7&id=37365775741&rn=b1c1a8a7f17260619669f001aa3241bf&abbucket=14&skuId=4138700612305" target="_blank" rel="noopener">土壤湿度传感</a></td>
+    <td><a href="https://github.com/IoTcat/LoRa-socket" target="_blank" rel="noopener">LoRa-Socket.h</a></td>
+</tr>
+<tr>
+    <td><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.16.21461532U3rUws&id=541730394024&ns=1&abbucket=14#detail" target="_blank" rel="noopener">Four-point solenoid valve</a></a></a> td>
+    <td><a href="https://github.com/IoTcat/LoRa-mqtt" target="_blank" rel="noopener">LoRa-mqtt.h</a></td>
+</tr>
+<tr>
+    <td></td>
+    <td><a href="https://github.com/tomstewart89/Vector" target="_blank" rel="noopener">vector.h</a></td>
+</tr>
+
+
+<tr>
+    <td rowspan="7" style="vertical-align: middle;text-align: center;">weather station node<br/>Air Station</td>
+    <td>Arduino Nano</td>
+    <td>Arduino.h</td>
+</tr>
+<tr>
+    <td><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.11.58a54915TdUHKS&id=556174103413&ns=1&abbucket=14#detail" target="_blank" rel="noopener">SX1278 LORA module</a></td >
+    <td>SPI.h</td>
+</tr>
+<tr>
+    <td><a href="https://detail.tmall.com/item.htm?spm=a220m.1000858.1000725.1.1b456f1dTRXYJd&id=576191025158&areaId=320500&user_id=738263294&cat_id=2&is_b=1&rn=14dcb16f28668aa5ca15c5be0f88d092" target="_blank" rel="noopener">BME280 温度，湿度，大气压强传感</a></td>
+    <td><a href="https://github.com/sandeepmistry/arduino-LoRa" target="_blank" rel="noopener">LoRa.h</a></td>
+</tr>
+<tr>
+    <td><a href="https://detail.tmall.com/item.htm?spm=a1z10.3-bs.w4011-21581912015.32.2fe555358wswJr&id=521238059334&rn=233756c78897999fd97ca2dd4f649071&abbucket=14" target="_blank" rel="noopener">GY-30 light intensity sensor </a></td>
+    <td><a href="https://github.com/IoTcat/LoRa-socket" target="_blank" rel="noopener">LoRa-Socket.h</a></td>
+</tr>
+<tr>
+    <td><a href="https://detail.tmall.com/item.htm?spm=a1z10.3-bs.w4011-21581912015.52.23e05535hDDYEB&id=13302081252&rn=ced14f01f4a9179e7b090c544cf5836a&abbucket=14" target="_blank" rel="noopener">MQ-135 air quality sensor </a></td>
+    <td><a href="https://github.com/IoTcat/LoRa-mqtt" target="_blank" rel="noopener">LoRa-mqtt.h</a></td>
+</tr>
+<tr>
+    <td><a href="https://detail.tmall.com/item.htm?spm=a1z10.3-bs.w4011-21581912015.52.270b5535itNYUg&id=13673403530&rn=418dfd01fe7ae4ce8b775fc271d9886a&abbucket=14" target="_blank" rel="noopener">MQ-7 carbon monoxide sensor< /a></td>
+    <td><a href="https://github.com/tomstewart89/Vector" target="_blank" rel="noopener">vector.h</a></td>
+</tr>
+<tr>
+    <td><a href="https://detail.tmall.com/item.htm?spm=a1z10.5-bs.w4011-21581825912.37.16ca535042HtRT&id=41536690942&rn=a0912ce05addd045044d65bc796797e8&abbucket=14" target="_blank" rel="noopener">rainfall sensor</a> </td>
+    <td></td>
+</tr>
+
+
+<tr>
+    <td rowspan="8" style="vertical-align: middle;text-align: center;">LoRa Gateway<br/>LoRa Gateway</td>
+    <td><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.58.6c20435c9AhMz2&id=555750159003&ns=1&abbucket=14#detail" target="_blank" rel="noopener">SX1278</a></td>
+    <td>Arduino.h</td>
+</tr>
+<tr>
+    <td></td>
+    <td>SPI.h</td>
+</tr>
+<tr>
+    <td></td>
+    <td>WiFi.h</td>
+</tr>
+<tr>
+    <td></td>
+    <td><a href="https://github.com/sandeepmistry/arduino-LoRa" target="_blank" rel="noopener">LoRa.h</a></td>
+</tr>
+<tr>
+    <td></td>
+    <td><a href="https://github.com/IoTcat/LoRa-socket" target="_blank" rel="noopener">LoRa-Socket.h</a></td>
+</tr>
+<tr>
+    <td></td>
+    <td><a href="https://github.com/IoTcat/LoRa-mqtt" target="_blank" rel="noopener">LoRa-mqtt.h</a></td>
+</tr>
+<tr>
+    <td></td>
+    <td><a href="https://github.com/tomstewart89/Vector" target="_blank" rel="noopener">vector.h</a></td>
+</tr>
+<tr>
+    <td></td>
+    <td><a href="https://github.com/knolleary/pubsubclient" target="_blank" rel="noopener">PubSubClient.h</a></td>
+</tr>
+
+
+<tr>
+    <td rowspan="5" style="vertical-align: middle;text-align: center;">Intranet Controller/MQTT Proxy<br/>Controler/MQTT Proxy</td>
+    <td>Raspberry Pi 3B-RASPBIAN</td>
+    <td>Python3.7</td>
+</tr>
+<tr>
+    <td><a href="https://detail.tmall.com/item.htm?spm=a230r.1.14.9.791b1000Beu0tp&id=555610012670&cm_id=140105335569ed55e27b&abbucket=14" target="_blank" rel="noopener">DC frequency conversion water pump</a></td>
+    <td>NodeJS</td>
+</tr>
+<tr>
+    <td></td>
+    <td><a href="https://www.npmjs.com/package/sf-mqtt-proxy" target="_blank" rel="noopener">sf-mqtt-proxy@npm</a></td>
+</tr>
+<tr>
+    <td></td>
+    <td><a href="https://www.npmjs.com/package/sf-pump" target="_blank" rel="noopener">sf-pump@npm</a></td>
+</tr>
+<tr>
+    <td></td>
+    <td><a href="https://www.npmjs.com/package/forever" target="_blank" rel="noopener">forever@npm</a></td>
+</tr>
+
+
+
+<tr>
+    <td rowspan="6" style="vertical-align: middle;text-align: center;">Cloud Server<br/>Cloud Server</td>
+    <td>Huawei Cloud Host-Centos7.4</td>
+    <td>Nginx/1.12.2</td>
+</tr>
+<tr>
+    <td></td>
+    <td>NodeJS/12.4.0</td>
+</tr>
+<tr>
+    <td></td>
+    <td>Redis/3.2.12</td>
+</tr>
+<tr>
+    <td></td>
+    <td><a href="https://www.npmjs.com/package/sf-mqtt-broker" target="_blank" rel="noopener">sf-mqtt-broker@npm</a></td>
+</tr>
+<tr>
+    <td></td>
+    <td><a href="https://www.npmjs.com/package/sf-web-api" target="_blank" rel="noopener">sf-web-api@npm</a></td>
+</tr>
+<tr>
+    <td></td>
+    <td><a href="https://www.npmjs.com/package/forever" target="_blank" rel="noopener">forever@npm</a></td>
+</tr>
+
+<tr>
+    <td rowspan="1" style="vertical-align: middle;text-align: center;">Database<br/>Database</td>
+    <td>Huawei Cloud Database</td>
+    <td>MySQL 5.7.23</td>
+</tr>
+
+</table>
+</div>
+
+
+
+<h3 id="4-2-Data-size-estimation"><a href="#4-2-Data-size-estimation" class="headerlink" title="4.2 Data size estimation"></a>4.2 Data size estimation</h3><p>According to the production scenario, a data set is generated every 15 minutes, and a data set occupies about 253-291 bytes. According to 291 calculation, 27.93KB of data will be added every day.</p>
+<h2 id="5-Design-Ideas"><a href="#5-Design-Ideas" class="headerlink" title="5 Design Ideas"></a>5 Design Ideas</h2><h3 id="5-1-Idea"><a href="#5-1-Idea" class="headerlink" title="5.1 Idea"></a>5.1 Idea</h3><ul>
+<li>Document-oriented</li>
+<li>Interface-oriented</li>
+<li>Test-oriented</li>
+</ul>
+<h3 id="5-2-Key-Issues"><a href="#5-2-Key-Issues" class="headerlink" title="5.2 Key Issues"></a>5.2 Key Issues</h3><ul>
+<li>Land node RAM resources are scarce, only 2K</li>
+<li>LoRa communication adopts 433MHz, single-channel transceiving, much interference</li>
+<li>The server needs to collect and aggregate hash data from multiple nodes</li>
+<li>Reserve a method of interaction with the drone AI team</li>
+<li>Push real-time messages to the front-end browser</li>
+</ul>
+<h3 id="5-3-Scheme-selection"><a href="#5-3-Scheme-selection" class="headerlink" title="5.3 Scheme selection"></a>5.3 Scheme selection</h3><p>In order to <strong>prioritize</strong> to ensure the <strong>stability</strong> and <strong>scalability</strong> of communication and services, we select <strong>layered model</strong> as the design mode of the architecture. The entire system is divided into multiple levels, with necessary interactions between levels. Each level runs independently, restarts quickly when it crashes, and has a high degree of reliability.</p>
+<p>In terms of safety, the method of <strong>internal and external network isolation</strong> is adopted. Taking into account the scarcity of computing resources of some devices in the intranet, the interaction with the intranet server adopts an unencrypted communication mode. The intranet server interacts with the cloud server through SSL encryption. To ensure the security of the client’s data, the cloud server API only accepts HTTP and WebSocket requests with SSL encryption.</p>
+<h2 id="6-Architecture-Design"><a href="#6-Architecture-Design" class="headerlink" title="6 Architecture Design"></a>6 Architecture Design</h2><h3 id="6-1-Basic-introduction"><a href="#6-1-Basic-introduction" class="headerlink" title="6.1 Basic introduction"></a>6.1 Basic introduction</h3><p>The main purpose of this architecture is to provide a <strong>stable (Available)</strong> and <strong>reliable</strong> Internet of Things system, which collects real-time data in farmland, combines pictures collected by drones and judged by CNN Plant health, realize intelligent management of irrigation system and plant health. This framework is theoretically suitable for most farm environments. The test environment is within a radius of 2~5km (depending on the antenna), and the wind is below level 3. This system acquires farmland data through sensors, controls the irrigation system through transistor circuits, relays, etc., and interacts with managers through web pages and APIs.</p>
+<h3 id="6-2-System-hierarchy-diagram"><a href="#6-2-System-hierarchy-diagram" class="headerlink" title="6.2 System hierarchy diagram"></a>6.2 System hierarchy diagram</h3><p><img src="https://api.yimian.xyz/img/?path=imgbed/img_c46f5639_577x906_8_null_normal.jpeg" alt="Smart Farm system hierarchical structure diagram"></p>
+<p>This figure shows the abstract hierarchy of this architecture. As pointed out, this layered architecture can be clearly defined as the <strong>perception layer</strong>, <strong>network layer</strong>, <strong>application layer</strong>, three horizontal operation layers, and a vertical <strong>error handling layer</strong>.</p>
+<p>Among them, the <strong>perception layer</strong> can be further refined into <strong>environment layer</strong> and <strong>hardware layer</strong>. The environment layer contains plants, soil, air, water and other natural objects that we want to detect and control. The hardware layer provides the underlying technology for the system’s interactive behavior (detection, control) of natural elements through artificial electrical devices such as sensors and controllers. Sex. When the perception layer realizes the interaction of natural information, the corresponding digital information is transmitted to the network layer for communication. Correspondingly, the perception layer will also receive corresponding control information from the network layer, and make corresponding control actions according to these instructions.</p>
+<p><strong>Network layer</strong> is divided into three layers. The lowest layer is the <strong>preprocessing layer</strong>. Its main task is to package the data collected by the perception layer and transform it into a form suitable for network circulation, such as sockets. Therefore, the pre-processing layer requires a small amount of computing storage resources, such as a single-chip microcomputer, EEPROM, etc. After encapsulation by the preprocessing layer, the data is transmitted to the <strong>physical layer</strong>. Based on devices such as gateways and routers in the physical layer, these data packets can be distributed and transmitted in an orderly manner. The application of the MQTT protocol in the <strong>communication layer</strong> makes the management of these data packet distribution more efficient and convenient. In addition, the implementation of the QoS service quality detection system in the communication layer also makes the performance of the network layer more fault-tolerant and reliable.</p>
+<p><strong>Application layer</strong> is mainly responsible for some application-level services for business logic, such as data analysis, event processing, etc. At the bottom of the application layer, the <strong>service layer</strong> is running for a long time. The service layer is the closest part of the application layer to the network layer. Its main purpose is to process the incoming data from the network layer in real time and respond quickly to corresponding requests and error events. At the same time, the service layer is also responsible for sorting and analyzing the data collected by the sensors and passing it to the <strong>database</strong> layer for storage. In order to ensure the reliability of the service, the implementation program of the service layer is registered as a system service and guarded by a special daemon. Unlike the long-term operation of the service layer, the <strong>business layer</strong> is invoked on demand. When a new request comes in from the interface layer or a specific event occurs in the service layer, the business layer will be called and processed. In addition to some basic data analysis, the business layer also has the authority to make analysis requests to the AI ​​layer. <strong>AI layer</strong> After analyzing the image data returned from the drone, it will send back a judgment result to the business layer. According to the specific content of the request, the business layer will organize the image recognition results, historical sensor data, etc., and pass them to the interface layer. <strong>Interface layer</strong> is mainly used to provide different forms of interfaces, such as HTTP interface and WebSocket interface, to facilitate client calls.</p>
+<h3 id="6-3-System-Topology-Diagram"><a href="#6-3-System-Topology-Diagram" class="headerlink" title="6.3 System Topology Diagram"></a>6.3 System Topology Diagram</h3><p><img src="https://api.yimian.xyz/img/?path=imgbed/img_27df1756_1426x710_8_null_normal.png" alt="Smart Farm system topology diagram"></p>
+<p>From the topological structure, as shown in the figure above, the entire system can be physically divided into land nodes, weather nodes, LoRa gateways, intranet servers, cloud servers, databases and user terminals.</p>
+<p>From the perspective of functional mechanism, the entire system includes: sensor module, LoRa communication module, LoRa gateway module, MQTT-Proxy proxy module, water pump control module, MQTT+ data processing module, web interface module, daemon module and database module.</p>
+<p><strong><em>Land Node</em></strong><br>Land nodes are deployed in farmland in different regions to detect soil temperature and humidity parameters, and can provide control of water flow solenoid valves at corresponding locations. The land node uses Arduino Nano as the computing unit, uses LoRa as the communication method to connect to the LoRa gateway (and other nodes), and uses battery power. Its large number, harsh working environment and unstable wireless communication are the biggest source of uncertainty in the system.</p>
+<p><strong><em>Weather Node</em></strong><br>Meteorological nodes are deployed at specific locations in farmland to detect meteorological parameters such as air temperature, humidity, atmospheric pressure, rainfall, light, NH3 concentration, and CO concentration. The weather node uses Arduino Nano as the computing unit, uses LoRa as the communication method to connect to the LoRa gateway (and the land node), and uses battery or wired power. The working environment is harsh and the wireless communication quality is average.</p>
+<p><strong><em>LoRa Gateway</em></strong><br>The LoRa gateway is deployed indoors. In order to expand the effective communication radius, its antenna can be extended outdoors. The LoRa gateway connects to various land nodes and weather nodes through LoRa, and connects to the intranet server through WiFi. The LoRa gateway can convert the socket packet incoming through LoRa into an mqtt message and pass it to the intranet server, and convert the mqtt message from the intranet server into a socket packet and send it to the designated node through LoRa.</p>
+<p><strong><em>Intranet server</em></strong><br>The intranet server is a Raspberry Pi 3B, which contains three functional modules: MQTT-Proxy proxy module, water pump control module and daemon process module.</p>
+<p><em>MQTT-Proxy proxy module</em> can receive the mqtt message sent by the LoRa gateway via WiFi, encrypt it with SSL and forward it to the cloud server. At the same time, the MQTT-Proxy proxy module will also accept the specified mqtt message from the cloud server, decrypt it and forward it to the LoRa gateway.</p>
+<p><em>Water pump control module</em> The state of the water pump is controlled through a relay through the GPIO of the Raspberry Pi. The mqtt communication with the water pump control module directly communicates with the cloud server without passing through the MQTT-Proxy proxy.</p>
+<p><em>Daemon module</em> runs on Linux and is used to monitor the MQTT-Proxy proxy module and the water pump control module. When modules are detected to stop running, the daemon module will restart these modules in time to ensure the stability and continuity of services.</p>
+<p><strong><em>Cloud Server</em></strong><br>The cloud server runs on Huawei Cloud located in Beijing and includes MQTT+ data processing module, web interface module and daemon module.</p>
+<p><em>MQTT+data processing module</em> includes the Service layer and the Business layer in the hierarchical structure. This module communicates with the intranet through mqtt, and interacts with the web interface module (and AI module) through mqtt and redis. After receiving various hashed data from the intranet, this module will automatically aggregate them, organize them into one piece of data, store it in the database, and push it to the web interface module through redis. In addition, this module will periodically send requests to each node to obtain their data, and these requests will be tracked to calculate the delay.</p>
+<p><em>web interface module</em> provides a series of HTTP and WebSocket interfaces. These interfaces can be used to get data, send instructions, refresh data, and get push messages.</p>
+<p><em>Daemon module</em> runs on Linux and is used to monitor MQTT+ data processing module and web interface module. When modules are detected to stop running, the daemon module will restart these modules in time to ensure the stability and continuity of services.</p>
+<h2 id="7-Module-description"><a href="#7-Module-description" class="headerlink" title="7 Module description"></a>7 Module description</h2><h3 id="7-1-LoRa-communication-module"><a href="#7-1-LoRa-communication-module" class="headerlink" title="7.1 LoRa communication module"></a>7.1 LoRa communication module</h3><p>The LoRa communication module is used to realize stable and reliable socket communication in a single channel. This module includes LoRa-socket and LoRa-mqtt.</p>
+<p>LoRa-socket encapsulates data packets on the basis of LoRa-Arduino, realizes simple udp and tcp communication, and makes traditional LoRa communication more reliable. By adding the sending and receiving ip address to the head of the data packet, and adding the hash check value at the end of the data packet, LoRa-socket supports point-to-point communication and broadcast communication, and has powerful noise processing capabilities and data tamper resistance.<br><strong><em>Project address</em></strong>: <a href="https://github.com/IoTcat/LoRa-socket" target="_blank" rel="noopener">iotcat/LoRa-socket</a></p>
+<p>LoRa-mqtt is a simple reproduction of the mqtt protocol based on LoRa-socket. Based on udp and tcp, LoRa-mqtt supports mqtt communication with qos 0 and 1.<br><strong><em>Project address</em></strong>: <a href="https://github.com/IoTcat/LoRa-mqtt" target="_blank" rel="noopener">iotcat/LoRa-mqtt</a></p>
+<h3 id="7-2-MQTT-Proxy-proxy-module"><a href="#7-2-MQTT-Proxy-proxy-module" class="headerlink" title="7.2 MQTT-Proxy proxy module"></a>7.2 MQTT-Proxy proxy module</h3><p>This module runs on the intranet server and realizes the encrypted forwarding of the intranet mqtt.<br><strong><em>Project address</em></strong>: <a href="https://www.npmjs.com/package/sf-mqtt-broker" target="_blank" rel="noopener">iotcat/sf-mqtt-proxy</a></p>
+<h3 id="7-3-Water-pump-control-module"><a href="#7-3-Water-pump-control-module" class="headerlink" title="7.3 Water pump control module"></a>7.3 Water pump control module</h3><p>This module runs on the intranet server and realizes the control of the relay water pump through GPIO.<br><strong><em>Project address</em></strong>: <a href="https://www.npmjs.com/package/sf-pump" target="_blank" rel="noopener">iotcat/sf-pump</a></p>
+<h3 id="7-4-mqtt-data-processing-module"><a href="#7-4-mqtt-data-processing-module" class="headerlink" title="7.4 mqtt+data processing module"></a>7.4 mqtt+data processing module</h3><p>This module runs on the cloud server and realizes the data aggregation, processing and storage of the underlying mqtt messages.<br><strong><em>Project address</em></strong>: <a href="https://www.npmjs.com/package/sf-mqtt-broker" target="_blank" rel="noopener">iotcat/sf-mqtt-broker</a></p>
+<h3 id="7-5-web-interface-module"><a href="#7-5-web-interface-module" class="headerlink" title="7.5 web interface module"></a>7.5 web interface module</h3><p>This module runs on the cloud server and realizes the provision of functional interfaces.<br><strong><em>Project address</em></strong>: <a href="https://www.npmjs.com/package/sf-web-api" target="_blank" rel="noopener">iotcat/sf-web-api</a></p>
+<h2 id="8-Development-Document"><a href="#8-Development-Document" class="headerlink" title="8 Development Document"></a>8 Development Document</h2><h3 id="8-1-mqtt-theme"><a href="#8-1-mqtt-theme" class="headerlink" title="8.1 mqtt theme"></a>8.1 mqtt theme</h3><ul>
+<li><a href="https://doc.smartfarm.yimian.xyz/#/home?id=mqtt" target="_blank" rel="noopener">mqtt topic list</a></li>
+</ul>
+<h3 id="8-2-http-interface"><a href="#8-2-http-interface" class="headerlink" title="8.2 http interface"></a>8.2 http interface</h3><ul>
+<li><a href="https://doc.smartfarm.yimian.xyz/#/home?id=api-http" target="_blank" rel="noopener">httpinterface document</a></li>
+</ul>
+<h3 id="8-3-websocket-interface"><a href="#8-3-websocket-interface" class="headerlink" title="8.3 websocket interface"></a>8.3 websocket interface</h3><ul>
+<li><a href="https://doc.smartfarm.yimian.xyz/#/home?id=api-websocket" target="_blank" rel="noopener">websocket interface document</a></li>
+</ul>
+<h2 id="9-Running-status"><a href="#9-Running-status" class="headerlink" title="9 Running status"></a>9 Running status</h2><h3 id="9-1-System-delay"><a href="#9-1-System-delay" class="headerlink" title="9.1 System delay"></a>9.1 System delay</h3><p><img src="https://api.yimian.xyz/img/?path=imgbed/img_b36d5030_1806x546_8_null_normal.png" alt="qos"></p>
+<p>The figure above shows the line graphs of the delay statistics of the land node (left), the weather node (right), and the water pump (bottom). It can be seen from the figure that the average delay of the land node is about 730ms, the delay of the weather node is about 900ms, and the delay of the water pump is relatively low, about 45ms.</p>
+<h3 id="9-2-Sensor-data"><a href="#9-2-Sensor-data" class="headerlink" title="9.2 Sensor data"></a>9.2 Sensor data</h3><p><a href="https://smartfarm.yimian.xyz/chart-station.html?f=1564484461&t=1564570861" target="_blank" rel="noopener">Click here to view the weather sensor data of 2019-7-31</a></p>
+<hr>
+<p><strong>Reference List:</strong></p>
+<p>[1] OASIS, (2015,12.10). MQTT Version 3.1.1 Plus Errata 01 [Online]. Available: <a href="https://docs.oasis-open.org/mqtt/mqtt/v3.1.1/errata01/os/mqtt" target="_blank" rel="noopener">https://docs.oasis-open.org/mqtt/mqtt/v3.1.1/errata01/os/mqtt</a> -v3.1.1-errata01-os-complete.html</p>
+<p>[2] Sinha, R.S., Wei, Y. and Hwang, S.H., “A survey on LPWA technology: LoRa and NB-IoT”, in Ict Express, 3(1), pp.14-21, 2017.</p>
+</span>
+
+      </div>
+      <div class="post-copyright">
+    <p class="copyright-item">
+      <span>Author: </span>
+      <a href="https://iotcat.me/" target="_blank" rel="noopener">IoTcat</a>
+    </p>
+    <p class="copyright-item">
+      <span>Link: </span>
+      <a href="https://www.eee.dog/tech/smartfarming-surf.html">https://www.eee.dog/tech/smartfarming-surf.html</a>
+    </p>
+    <p class="copyright-item">
+      <span>License: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/iot/">iot</a>
+            <a href="/tags/Arduino/">Arduino</a>
+            <a href="/tags/LoRa/">LoRa</a>
+            <a href="/tags/MQTT/">MQTT</a>
+            <a href="/tags/smart-farming/">smart-farming</a>
+            </div>
+        
+        <nav class="post-nav"><a class="prev" href="/tech/smart-home.html">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default"><span class=".zh">在家中部署智慧家庭系统</span><span class=".en">Deploy a smart home system at home</span></span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    <a class="next" href="/tech/rand-pic-api.html">
+        <span class="next-text nav-default"><span class=".zh">随机图片API</span><span class=".en">Random Picture API</span></span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article><script>$(()=>{var p = window.location.pathname;setTimeout(()=>{if(window.location.pathname == p)tips.show({
+        title: 'tips',
+        position: 'topRight',
+        message: ((page.tran.getLang() == 'zh')?"此文章预计阅读 21 分钟哦~": "Read this page will spend around  42  minutes~")
+  })}, 6000)})</script>
+  </div><div class="comments" id="comments"><div id="vcomments"></div>
+    </div></div>
+      </main>
+
+      <footer id="footer" class="footer">
+      <script>
+        page_obj = {
+          layout: "post",
+          comments: "true"
+        };
+      </script><div class="social-links"><a href="mailto:i@iotcat.me" class="iconfont icon-email" title="email"></a>
+        <a href="https://github.com/iotcat" target="_blank" rel="noopener" class="iconfont icon-github" title="github"></a>
+        <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    </div><div class="copyright"><span id="/tech/smartfarming-surf.html" class="statistic leancloud_visitors">
+    <em>Visitors </em> <i class="leancloud-visitors-count">??</i> 
+    <span class="division"> |</span>
+    <em>Reading </em> 42 min
+  </span>
+  <br>
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://ushio.cool/" target="_blank" rel="noopener">Ushio</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/iotcat/kayo" target="_blank" rel="noopener">Kayo</a>
+  </span>
+
+  <span class="copyright-year">&copy;2018 - 2023<span class="heart shaky">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"><a href="https://iotcat.me/" target="_blank" rel="noopener">IoTcat</a></span>
+  </span>
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+<script src="https://cdn.yimian.xyz/kayo/lib/valine/valine.min.js" data-pjax></script>
+<style>
+/* 背景图片 */
+#veditor {
+  background-image: url(https://cdn.yimian.xyz/img/blog/comments_bg.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-color: rgba(255, 255, 255, 0);
+  resize: vertical
+}
+
+/* 头像旋转 */
+img.vimg {
+  transition: all 1s   /* 旋转时间为 1s */
+}
+img.vimg:hover {
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+}
+
+
+/* 盒子模式 */
+#vcomments .vcards .vcard {
+  padding: 15px 20px 0 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
+  transition: all .3s
+}
+
+#vcomments .vcards .vcard:hover {
+  box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
+}
+
+#vcomments .vcards .vcard .vh .vcard {
+  border: none;
+  box-shadow: none;
+}
+
+
+</style>
+<script>
+pjax_valine = () => {
+    $.get('https://auth.yimian.xyz/getEmailHash.php', function(res){
+        if(page.tran.getLang() == 'zh'){
+            var lan = 'zh-CN';
+            var metaPlaceholder = {"nick":"昵称/QQ号","mail":"邮箱（完全保密）"};
+            var tagMeta =  ["博主","小伙伴","访客"];
+            var placeholder = "填写邮箱可以及时收到回复哦(●'◡'●)";
+        }else{
+            var lan = 'en';
+            var metaPlaceholder = {"nick":"Nickname/QQ","mail":"EMail"};
+            var tagMeta =  ["Master","Friend","Visitor"];
+            var placeholder = "Leave some comments here (●'◡'●)";
+        }
+        new Valine({
+            el: '#vcomments',
+            appId: 'eVzpK7EyT6OafJvXWIRminWT-gzGzoHsz',
+            appKey: '2qjuEBgVE0BscTQnTmoS9roU',
+            master: '9b616ff4cd6c305e5970bee7b1bd9b1f',   //博主邮箱md5
+            tagMeta: tagMeta,     //标识字段名
+            friends: res, //["b6ddef7c7e1c647e7767afeacdfb7b64","46dd4e6fef4f9591736c4723a965ca2e","6132d77f9f0ae060bc733090991acecb","3e00e104b79d7c6e866c6b23c6ba6dfc"],  //小伙伴邮箱Md5
+
+            metaPlaceholder: metaPlaceholder,
+            placeholder: placeholder,
+            lang: lan,
+            path: window.location.pathname,
+            enableQQ: true,
+            visitor: true,
+            emojiCDN: '//i0.hdslb.com/bfs/emote/',
+            emojiMaps: {
+                "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+                "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+                "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png",
+                "tv_再见": "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+                "tv_冷漠": "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+                "tv_发怒": "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+                "tv_发财": "34db290afd2963723c6eb3c4560667db7253a21a.png",
+                "tv_可爱": "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+                "tv_吐血": "09dd16a7aa59b77baa1155d47484409624470c77.png",
+                "tv_呆": "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+                "tv_呕吐": "9f996894a39e282ccf5e66856af49483f81870f3.png",
+                "tv_困": "241ee304e44c0af029adceb294399391e4737ef2.png",
+                "tv_坏笑": "1f0b87f731a671079842116e0991c91c2c88645a.png",
+                "tv_大佬": "093c1e2c490161aca397afc45573c877cdead616.png",
+                "tv_大哭": "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+                "tv_委屈": "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+                "tv_害羞": "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+                "tv_尴尬": "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+                "tv_微笑": "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+                "tv_思考": "90cf159733e558137ed20aa04d09964436f618a1.png",
+                "tv_惊吓": "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+                "tv_打脸": "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+                "tv_抓狂": "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+                "tv_抠鼻": "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+                "tv_斜眼笑": "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+                "tv_无奈": "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+                "tv_晕": "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+                "tv_流汗": "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+                "tv_流泪": "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+                "tv_流鼻血": "c32d39db2737f89b904ca32700d140a9241b0767.png",
+                "tv_点赞": "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+                "tv_生气": "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+                "tv_生病": "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+                "tv_疑问": "0793d949b18d7be716078349c202c15ff166f314.png",
+                "tv_白眼": "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+                "tv_皱眉": "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+                "tv_目瞪口呆": "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+                "tv_睡着": "8b196675b53af58264f383c50ad0945048290b33.png",
+                "tv_笑哭": "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+                "tv_腼腆": "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+                "tv_色": "61822c7e9aae5da76475e7892534545336b23a6f.png",
+                "tv_调侃": "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+                "tv_调皮": "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+                "tv_鄙视": "6e72339f346a692a495b123174b49e4e8e781303.png",
+                "tv_闭嘴": "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+                "tv_难过": "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+                "tv_馋": "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+                "tv_鬼脸": "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+                "tv_黑人问号": "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+                "tv_鼓掌": "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"
+                // ... 更多表情
+            } 
+        });
+    });
+};
+</script><script type="text/javascript" src="https://cdn.yimian.xyz/ushio-js/ushio-footer.min.js"></script>
+<script>
+session.onload(function(){
+    if(session.get('group') != 'anonymous'){
+        function insertNick(){
+            if($('.vnick').length){
+                $('.vnick').val(session.get('nickname'));
+            }else{
+                setTimeout(insertNick, 500);
+            }
+        }
+        function insertMail(){
+            if($('.vmail').length){
+                $('.vmail').val(session.get('email'));
+            }else{
+                setTimeout(insertMail, 500);
+            }
+        }
+
+        if(session.get('nickname')){
+            insertNick();
+        }
+
+        if(session.get('email')){
+            insertMail();
+        }
+    }
+});
+</script>
+<script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/iziToast/iziToast.min.js"></script>
+  <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/iziModal/iziModal.min.js"></script>
+  <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/mermaid/mermaid.min.js"></script>
+  <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/js/src/kayo.js?v=1.0.0" data-pjax></script>
+<script type="text/javascript" src="https://cdn.yimian.xyz/kayo/js/src/kayo-no-pjax.js?v=1.0.0"></script>
+<script src="https://cdn.yimian.xyz/kayo/lib/pjax/pjax.min.js"></script>
+<script>window.pjax = new Pjax({
+    elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"])',
+    selectors: ["head title, #main", "#footer"],
+  });/* lazyload */
+    window.imageLazyLoadSetting = {
+        isSPA: false,
+        processImages: null,
+    };
+    
+     window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});
+
+  /* 第一次载入页面加载的函数 */
+  pjax_ini = () => {
+    
+     /* 关闭侧边栏 */
+     window.slideout.close();
+
+     if(page_obj.comments == "true"){pjax_valine();}pjax_google_analytics();mermaid.init(undefined, $(".mermaid"));/* lazy load */
+     !function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);
+     !function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})}();
+  };
+
+  /* 第一次 执行 */
+  pjax_ini();var loadingBar = document.querySelector(".loading-bar");
+var progress = document.querySelector(".loading-bar .progress");
+var timer = null;
+
+
+// Pjax 开始时执行的函数
+var loadingbarStart = function () {
+  // 进度条默认已经加载 20%
+  var loadingBarWidth = 20;
+  // 进度条的最大增加宽度
+  var MAX_LOADING_WIDTH = 95;
+
+  // 显示进度条
+  loadingBar.classList.add("loading");
+  // 初始化进度条的宽度
+  progress.style.width = loadingBarWidth + "%";
+
+  clearInterval(timer);
+  timer = setInterval(function () {
+    // 进度条的增加速度（可以改为一个随机值，显得更加真实）
+    loadingBarWidth += 3;
+
+    // 当进度条到达 95% 后停止增加
+    if (loadingBarWidth > MAX_LOADING_WIDTH) {
+      loadingBarWidth = MAX_LOADING_WIDTH;
+    }
+
+    progress.style.width = loadingBarWidth + "%";
+  }, 500);
+};
+
+
+// Pjax 完成之后执行的函数
+var loadingbarStop = function () {
+  clearInterval(timer);
+  progress.style.width = "100%";
+  loadingBar.classList.remove("loading");
+
+  setTimeout(function () {
+    progress.style.width = 0;
+  }, 400);
+};/* Pjax 开始时，重新加载的函数 */
+  document.addEventListener("pjax:send", function () {loadingbarStart(); 
+    });
+
+
+  /* Pjax 完成后，重新加载的函数 */
+  document.addEventListener("pjax:complete", function () {
+    /* 重载带data-pjax的script，或者.pjax-reload属性内容的script */
+    $("script[data-pjax], .pjax-reload script").each(function () {
+        $(this).parent().append($(this).remove());
+    });
+    pjax_ini();loadingbarStop();
+    page.tran.setLang();
+  });
+
+
+  /* Pjax 出错，执行的函数 */
+  document.addEventListener("pjax:error", function () {
+    
+  });</script>
+</body>
+</html>

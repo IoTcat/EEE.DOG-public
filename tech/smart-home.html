@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <title>在家中部署智慧家庭系统 - EEE.DOG</title><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="在家中部署智慧家庭系统"/><meta name="keywords" content="iotcat,yimian,blog" /><link rel="alternate" href="/atom.xml" title="EEE.DOG"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.0.0" /><script>lang = ['zh', 'en'];</script>
+<script type="text/javascript" src="https://cdn.yimian.xyz/ushio-js/ushio-head.min.js"></script>
+<script>page.proj = 'iotcat/eee.dog-public';</script>
+
+<!--<link rel="stylesheet" type="text/css" href="https://cdn.yimian.xyz/kayo/lib/iziModal/iziModal.min.css" />-->
+
+
+<!--<link rel="stylesheet" type="text/css" href="https://cdn.yimian.xyz/kayo/lib/iziToast/iziToast.min.css" />-->
+
+<link rel="stylesheet" media="none" onload="this.media='all'" type="text/css" href="https://cdn.yimian.xyz/shaky/shaky.css">
+<link rel="canonical" href="https://www.eee.dog/tech/smart-home.html"/>
+
+<link rel="stylesheet" media="none" onload="this.media='all'" type="text/css" href="https://cdn.yimian.xyz/kayo/lib/fancybox/jquery.fancybox.css" /><script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+  </script>
+  <script type="text/javascript" async src="https://cdn.yimian.xyz/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.yimian.xyz/kayo/css/style.css?v=1.0.0" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-169276192-1" data-pjax></script>
+<script>
+pjax_google_analytics = () => {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-169276192-1');
+}
+</script><script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+  window.config = {"leancloud":"","toc":true,"fancybox":true,"pjax":{"enable":true,"loadingbar":true},"latex":true};
+</script>
+
+  <meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="EEE.DOG" type="application/atom+xml">
+</head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">EEE.DOG</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="loading-bar">
+    <div class="progress"></div>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><div id="mobile-menu-Home">
+      <a href="/">
+        <li class="mobile-menu-item"><span class=".en">Home</span><span class=".zh">主页</span>
+          </li>
+      </a></div><div id="mobile-menu-Archives">
+      <a href="/archives/">
+        <li class="mobile-menu-item"><span class=".en">Archives</span><span class=".zh">归档</span>
+          </li>
+      </a></div><div id="mobile-menu-Categories">
+      <a href="/categories/">
+        <li class="mobile-menu-item"><span class=".en">Categories</span><span class=".zh">分类</span>
+          </li>
+      </a></div><div id="mobile-menu-Projects">
+      <a href="#">
+        <li class="mobile-menu-item"><span class=".en">Projects</span><span class=".zh">项目</span>
+          </li>
+      </a><ul class="sub-menu" style="display: none;"> 
+          <li>
+              <a href="https://fp.js.org/" target="_blank" rel="noopener">
+                <span class=".en">fp</span><span class=".zh">fp</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://wiot.js.org/" target="_blank" rel="noopener">
+                <span class=".en">wIoT</span><span class=".zh">wIoT</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://github.com/iotcat/kms" target="_blank" rel="noopener">
+                <span class=".en">kms</span><span class=".zh">kms</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://ushio.cool/" target="_blank" rel="noopener">
+                <span class=".en">ushio</span><span class=".zh">Ushio</span>
+              </a>
+            </li>
+          </ul>
+      <script>$('#mobile-menu-Projects').click(function(){
+          $("#mobile-menu-Projects ul").toggle();
+      })</script>
+      </div><div id="mobile-menu-Map">
+      <a href="#">
+        <li class="mobile-menu-item"><span class=".en">Map</span><span class=".zh">导航</span>
+          </li>
+      </a><ul class="sub-menu" style="display: none;"> 
+          <li>
+              <a href="https://api.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">APIs</span><span class=".zh">接口</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://img.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Imgs</span><span class=".zh">图库</span>
+              </a>
+            </li>
+          <li>
+              <a href="/">
+                <span class=".en">Imgbed</span><span class=".zh">图床</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://share.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Fileshare</span><span class=".zh">文件分享</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://monitor.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Server Monitor</span><span class=".zh">服务器监控</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://status.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Service Status</span><span class=".zh">服务状态</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://acg.watch/" target="_blank" rel="noopener">
+                <span class=".en">ACG.WATCH</span><span class=".zh">视频</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://onedrive.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Oneindex</span><span class=".zh">网盘</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://chat.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Chat</span><span class=".zh">聊天室</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://proxy.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">Proxy</span><span class=".zh">下载代理</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://shorturl.yimian.xyz/" target="_blank" rel="noopener">
+                <span class=".en">ShortenURL</span><span class=".zh">短链</span>
+              </a>
+            </li>
+          </ul>
+      <script>$('#mobile-menu-Map').click(function(){
+          $("#mobile-menu-Map ul").toggle();
+      })</script>
+      </div><div id="mobile-menu-About">
+      <a href="#">
+        <li class="mobile-menu-item"><span class=".en">About</span><span class=".zh">关于</span>
+          </li>
+      </a><ul class="sub-menu" style="display: none;"> 
+          <li>
+              <a href="/links/">
+                <span class=".en">links</span><span class=".zh">友链</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://iotcat.me/" target="_blank" rel="noopener">
+                <span class=".en">Me</span><span class=".zh">关于我</span>
+              </a>
+            </li>
+          <li>
+              <a href="https://cv.yimian.xyz/contact.html" target="_blank" rel="noopener">
+                <span class=".en">Contact</span><span class=".zh">留言板</span>
+              </a>
+            </li>
+          </ul>
+      <script>$('#mobile-menu-About').click(function(){
+          $("#mobile-menu-About ul").toggle();
+      })</script>
+      </div></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">EEE.DOG</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+        <a id="menu-Home" class="menu-item-link" href="/">
+          <span class=".en">Home</span><span class=".zh">主页</span>
+          </a>
+
+      </li>
+    <li class="menu-item">
+        <a id="menu-Archives" class="menu-item-link" href="/archives/">
+          <span class=".en">Archives</span><span class=".zh">归档</span>
+          </a>
+
+      </li>
+    <li class="menu-item">
+        <a id="menu-Categories" class="menu-item-link" href="/categories/">
+          <span class=".en">Categories</span><span class=".zh">分类</span>
+          </a>
+
+      </li>
+    <li class="menu-item">
+        <a id="menu-Projects" class="menu-item-link" href="#">
+          <span class=".en">Projects</span><span class=".zh">项目</span>
+          </a>
+
+      <script>
+          $("#menu-Projects").click(function(){
+            tips.question({
+			    timeout: 20000,
+			    close: false,
+			    overlay: true,
+			    displayMode: 'once',
+			    //id: 'question',
+			    zindex: 999,
+			    title: 'Projects',
+			    message: '',
+			    position: 'center',
+			    buttons: [
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'fp':'fp')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://fp.js.org/");
+                        else
+                            window.location.href="https://fp.js.org/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'wIoT':'wIoT')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://wiot.js.org/");
+                        else
+                            window.location.href="https://wiot.js.org/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'kms':'kms')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://github.com/iotcat/kms");
+                        else
+                            window.location.href="https://github.com/iotcat/kms";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'ushio':'Ushio')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://ushio.cool/");
+                        else
+                            window.location.href="https://ushio.cool/";
+			        }, true],
+			    ['<button><b>close</b></button>', function (instance, toast) {
+			
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+			        }, true],
+			    ]
+			});
+          });
+        </script>
+      </li>
+    <li class="menu-item">
+        <a id="menu-Map" class="menu-item-link" href="#">
+          <span class=".en">Map</span><span class=".zh">导航</span>
+          </a>
+
+      <script>
+          $("#menu-Map").click(function(){
+            tips.question({
+			    timeout: 20000,
+			    close: false,
+			    overlay: true,
+			    displayMode: 'once',
+			    //id: 'question',
+			    zindex: 999,
+			    title: 'Map',
+			    message: '',
+			    position: 'center',
+			    buttons: [
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'APIs':'接口')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://api.yimian.xyz/");
+                        else
+                            window.location.href="https://api.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Imgs':'图库')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://img.yimian.xyz/");
+                        else
+                            window.location.href="https://img.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Imgbed':'图床')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("/");
+                        else
+                            window.location.href="undefined";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Fileshare':'文件分享')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://share.yimian.xyz/");
+                        else
+                            window.location.href="https://share.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Server Monitor':'服务器监控')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://monitor.yimian.xyz/");
+                        else
+                            window.location.href="https://monitor.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Service Status':'服务状态')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://status.yimian.xyz/");
+                        else
+                            window.location.href="https://status.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'ACG.WATCH':'视频')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://acg.watch/");
+                        else
+                            window.location.href="https://acg.watch/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Oneindex':'网盘')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://onedrive.yimian.xyz/");
+                        else
+                            window.location.href="https://onedrive.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Chat':'聊天室')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://chat.yimian.xyz/");
+                        else
+                            window.location.href="https://chat.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Proxy':'下载代理')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://proxy.yimian.xyz/");
+                        else
+                            window.location.href="https://proxy.yimian.xyz/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'ShortenURL':'短链')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://shorturl.yimian.xyz/");
+                        else
+                            window.location.href="https://shorturl.yimian.xyz/";
+			        }, true],
+			    ['<button><b>close</b></button>', function (instance, toast) {
+			
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+			        }, true],
+			    ]
+			});
+          });
+        </script>
+      </li>
+    <li class="menu-item">
+        <a id="menu-About" class="menu-item-link" href="#">
+          <span class=".en">About</span><span class=".zh">关于</span>
+          </a>
+
+      <script>
+          $("#menu-About").click(function(){
+            tips.question({
+			    timeout: 20000,
+			    close: false,
+			    overlay: true,
+			    displayMode: 'once',
+			    //id: 'question',
+			    zindex: 999,
+			    title: 'About',
+			    message: '',
+			    position: 'center',
+			    buttons: [
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'links':'友链')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("true" == "true")
+			 			  pjax.loadUrl("/links/");
+                        else
+                            window.location.href="/links/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Me':'关于我')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://iotcat.me/");
+                        else
+                            window.location.href="https://iotcat.me/";
+			        }, true],
+			    ['<button><b>'+((page.tran.getLang() != 'zh')?'Contact':'留言板')+'</b></button>', function (instance, toast) {
+			 
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        if("undefined" == "true")
+			 			  pjax.loadUrl("https://cv.yimian.xyz/contact.html");
+                        else
+                            window.location.href="https://cv.yimian.xyz/contact.html";
+			        }, true],
+			    ['<button><b>close</b></button>', function (instance, toast) {
+			
+			            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+			        }, true],
+			    ]
+			});
+          });
+        </script>
+      </li>
+    </ul></nav>
+</header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title"><span class=".zh">在家中部署智慧家庭系统</span><span class=".en" hidden>Deploy a smart home system at home</span>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-07-28
+        </span><span class="post-category">
+            <a href="/categories/tech/">tech</a>
+            </span>
+        </div>
+    </header>
+
+    <style>.toc-level-2 > .toc-child {display: none !important; }</style>
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#背景："><span class="toc-text">背景：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法："><span class="toc-text">方法：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#过程综述："><span class="toc-text">过程综述：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一轮开发"><span class="toc-text">一轮开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二轮开发"><span class="toc-text">二轮开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三轮开发"><span class="toc-text">三轮开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四轮开发"><span class="toc-text">四轮开发</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#硬件设计"><span class="toc-text">硬件设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#单片机选材"><span class="toc-text">单片机选材</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WiFi通信模块选材"><span class="toc-text">WiFi通信模块选材</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LoRa通信模块选材"><span class="toc-text">LoRa通信模块选材</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#智能音箱选材"><span class="toc-text">智能音箱选材</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#灯拨动开关"><span class="toc-text">灯拨动开关</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通信设计"><span class="toc-text">通信设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#主控系统设计"><span class="toc-text">主控系统设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多媒体系统设计"><span class="toc-text">多媒体系统设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#云端支持系统设计"><span class="toc-text">云端支持系统设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NAS存储系统设计"><span class="toc-text">NAS存储系统设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#主要收获"><span class="toc-text">主要收获</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#遇到的挑战"><span class="toc-text">遇到的挑战</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决方法"><span class="toc-text">解决方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RNN实现对灯控制"><span class="toc-text">RNN实现对灯控制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#天猫精灵接入"><span class="toc-text">天猫精灵接入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Background"><span class="toc-text">Background:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Method"><span class="toc-text">Method:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Process-overview"><span class="toc-text">Process overview:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#First-round-of-development"><span class="toc-text">First round of development</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Second-round-of-development"><span class="toc-text">Second round of development</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Third-round-of-development"><span class="toc-text">Third round of development</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Fourth-round-of-development"><span class="toc-text">Fourth round of development</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hardware-design"><span class="toc-text">Hardware design</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Single-Chip-Microcomputer-Material-Selection"><span class="toc-text">Single Chip Microcomputer Material Selection</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WiFi-communication-module-selection"><span class="toc-text">WiFi communication module selection</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LoRa-communication-module-selection"><span class="toc-text">LoRa communication module selection</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Smart-speaker-selection"><span class="toc-text">Smart speaker selection</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Light-toggle-switch"><span class="toc-text">Light toggle switch</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Communication-Design"><span class="toc-text">Communication Design</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Main-control-system-design"><span class="toc-text">Main control system design</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Multimedia-system-design"><span class="toc-text">Multimedia system design</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cloud-support-system-design"><span class="toc-text">Cloud support system design</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NAS-storage-system-design"><span class="toc-text">NAS storage system design</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Conclusion"><span class="toc-text">Conclusion</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Main-gains"><span class="toc-text">Main gains</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Challenges-encountered"><span class="toc-text">Challenges encountered</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Solution"><span class="toc-text">Solution</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RNN-realizes-light-control"><span class="toc-text">RNN realizes light control</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tmall-Elf-Access"><span class="toc-text">Tmall Elf Access</span></a></li></ol>
+    </div>
+  </div>
+  <script>var arr = [];var ts = '';if($('.post-toc-content').children().length>1){var el = '.post-toc-content';ts = ($(el).children('ol')[0].outerHTML);}else{var el = '.toc';};for(var i = 0; i < $(el).children('li').length; i++){arr.push($(el).children('li')[i].outerHTML);}; arr.splice(arr.length / 2, 0, '</span><span class=".en">');arr.unshift(ts);arr.unshift('<span class=".zh">');arr.push('</span>');$(el).html(arr.join(''));</script><div class="post-content"><span class=".zh">
+<p>基于Home Assisstant搭建综合家庭照明系统，多媒体系统，水流系统的智慧家庭。技术点：天猫精灵交互，LoRa通信，MQTT协议，frp内网穿透，NAS存储，拨动开关电路改造。</p>
+</span>
+
+
+<span class=".en">
+<p>Based on Home Assisstant, build a smart home with integrated home lighting system, multimedia system and water flow system. Technical points: Tmall Genie interaction, LoRa communication, MQTT protocol, FRP intranet penetration, NAS storage, and toggle switch circuit transformation.</p>
+</span>
+
+
+<a id="more"></a>
+
+
+<script>
+	session.onload(function(){
+		if(page.tran.getLang() == 'en'){
+			tips.warning({
+				title: 'Caution',
+				position: 'topRight',
+				message: 'This page was translated by Machine!!',
+				buttons: [['<button>Show Original Page</button>', function (instance, toast) {
+					page.tran.setLang('zh');
+             		instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+        		}, true]]
+			});
+		}
+	});
+</script>
+
+
+<span class=".zh">
+
+<p>结合所学知识，运用前沿技术，造福生活，是我长期以来的不懈追求。为了让家人体验到更加稳定、舒适智能的生活方式，同时也为了巩固憨实先前在学校smartfarm项目和我自己的ushio系统中所积累的技术基础以及架构经验，我决定在出国前，使用20到23整天时间，重构家中老旧的物联网系统。采用分层架构和面向接口、面向测试、<strong>面向文档</strong>开发原则，以<strong>稳定性(Available)</strong>，<strong>可靠性(Reliable)</strong>为最优先指标，搭建一个运行目标3年以上的高度模块化的，易于远程操控的，开源的家庭软件硬件智能传感控制系统。</p>
+<h2 id="背景："><a href="#背景：" class="headerlink" title="背景："></a>背景：</h2><p>大一上学期，初接触单片机，使用Arduino Uno搭建了一个宿舍中的智慧窗帘系统（细节可以参考<a href="https://www.eee.dog/tech/build-236-iot-platform-on-wifiduino.html">这篇blog</a>），积累了一定的经验。</p>
+<h2 id="方法："><a href="#方法：" class="headerlink" title="方法："></a>方法：</h2><ol>
+<li>向专家请教（水管问题向五金店老板请教，LoRa向欧朗研发部请教）</li>
+<li>做轮子，不断迭代，在重构中优化系统，获取经验</li>
+<li>认真调研客户（家人）的需求，在设计时重视客户需求，多于客户沟通</li>
+<li>在设计某一系统时，一定要假设与其交互的其它系统不稳定。让系统之间的交互就像君子相交一样，像水一样。从而提高整个系统的裕度。</li>
+<li>持续运维。比如三轮开发前曾经发生过，我妈在打扫卫生时碰掉了一个人体传感器，导致整个灯控系统紊乱。当时在苏州的我通过远程ssh连接到家里的服务器，将坏掉的传感器踢出控制系统进而解决了问题。因此，一定要让自己在任何时候都可以接入到系统进行运维。一定要在设计时充分考虑之后的运维。</li>
+</ol>
+<h2 id="过程综述："><a href="#过程综述：" class="headerlink" title="过程综述："></a>过程综述：</h2><h3 id="一轮开发"><a href="#一轮开发" class="headerlink" title="一轮开发"></a>一轮开发</h3><p>大一暑假，开始尝试使用WiFiduino在家中控制一些物体，实现了对（坏了的）太阳能加水（通过电磁阀）的控制（修改了原先家里的管道，加入了电磁阀。跑了好多趟五金店，收获了不少关于水管的知识和实践经验。之后做surf的水泵也有用到。）以及对走廊灯（通过光电耦合器）的控制。找到一台废弃的10年前的我爸的IBM笔记本，装上了win server 2008, 并配置好了mysql数据库，并定期使用http从单片机采集数据。我用php写了一个简单的web界面，来展示相关信息，并实现网页控制。由于家里被分配的是中国移动分配的大NAT内网IP，因此使用frp来实现内网穿透，使外界可以访问家里服务器上的web网页。</p>
+<h3 id="二轮开发"><a href="#二轮开发" class="headerlink" title="二轮开发"></a>二轮开发</h3><p>大二寒假，改进先前的固件，使用wifiduino陆续实现了对厨房，客厅，餐厅的灯体的控制，并部署了一系列传感器，并接入网络。由于先前太阳能管道的单片机WiFi信号弱，于是在附近使用路由器做了桥接。值得一提的是，年三十晚上春晚开始前2分钟我还在家里停电施工，，不知道爸妈是什么感受⊙０⊙。。</p>
+<h3 id="三轮开发"><a href="#三轮开发" class="headerlink" title="三轮开发"></a>三轮开发</h3><p>大二暑假，基于本学期经验，重构系统。在服务器上，重装系统为Centos7使用home assistant 开源项目提供UI等服务，使用mqtt作为通信协议。使用nodeJS编写了灯控自动化和太阳能加水的控制逻辑。在单片机，更新了固件，支持ota远程更新固件（参考了部分wiot经验，但更加因地制宜）。此外，新增了两个流量计，以实现太阳能加水完全自动化（之前是通过网页设置加水时长）。由于流量计WiFi信号弱，我们使用了Arduino uno + LoRa作为通信手段。本次设计，结合爸妈的意见，充分考虑了整体系统的稳定性。比如，如何handle各种类型的错误和失联，如何在断电后丝滑得重启，如何在服务器无响应情况下保证单片机不紊乱，如何在系统失控后物理切回到手动（比如灯，和太阳能加水）。</p>
+<h3 id="四轮开发"><a href="#四轮开发" class="headerlink" title="四轮开发"></a>四轮开发</h3><p>大三暑假，基于过去积累的传感器数据，使用LSTM模型，通过keras+tensorflow训练神经网络，实现对灯控状态的预测。目前仍在持续优化中，预计9月前完成。此外，有计划接入天猫精灵的打算（仍在队列中，需等待ushio oauth系统的研发，ushio oauth系统需要等待ushio user系统研发，ushio user系统需要稳定的js-session作为支撑，js-session需要使用fp来精确识别用户设备。。目前fp仍处于第三测试阶段。所以，一步一步来吧，，）。</p>
+<h2 id="硬件设计"><a href="#硬件设计" class="headerlink" title="硬件设计"></a>硬件设计</h2><h3 id="单片机选材"><a href="#单片机选材" class="headerlink" title="单片机选材"></a>单片机选材</h3><p>使用Arduino UNO作为计算单元。一方面，Arduino Uno拥有高可靠性，我之前的智慧窗帘系统使用Arduino Uno作为主控板，平稳运行1年半未出现硬件问题。另一方面，Arduino Uno拥有较大的RAM，无需为了争夺RAM而在单片机编程上煞费苦心。</p>
+<p>Arduino UNO的缺陷主要是价格高，但是为保障长期稳定运行，这个成本是必要的。</p>
+<h3 id="WiFi通信模块选材"><a href="#WiFi通信模块选材" class="headerlink" title="WiFi通信模块选材"></a>WiFi通信模块选材</h3><p>使用ESP-01作为WiFi的通信模块。主要原因是之前学校课程使用过ESP-01搭建遥控小车，对其工作方式和性能比较了解，降低开发成本。</p>
+<h3 id="LoRa通信模块选材"><a href="#LoRa通信模块选材" class="headerlink" title="LoRa通信模块选材"></a>LoRa通信模块选材</h3><p>使用<strong>安信可 LORA RA-02 LORA</strong>作为LoRa节点和LoRa网关通信模块。原因是surf项目使用的就是这个模块，比较了解它。</p>
+<h3 id="智能音箱选材"><a href="#智能音箱选材" class="headerlink" title="智能音箱选材"></a>智能音箱选材</h3><p>智能音箱作为此物联网系统人机交互的最主要界面，发挥着举足轻重的作用。经研究，我使用天猫精灵方糖R作为家用智能音箱。一方面，天猫精灵的性价比摆在那里，非常便宜。第二，与小米开发小爱同学不同，阿里开发天猫精灵的目的是提供平台，它允许开发者以各种形式接入其网络，这一点对我至关重要。</p>
+<h3 id="灯拨动开关"><a href="#灯拨动开关" class="headerlink" title="灯拨动开关"></a>灯拨动开关</h3><p>初期设想: 单向控制+复位器。<br>实际实现：将原有单开改造为双开，一路与继电器串联，另一路与两个pin口相连。</p>
+<h2 id="通信设计"><a href="#通信设计" class="headerlink" title="通信设计"></a>通信设计</h2><p><img src="https://api.yimian.xyz/img/?path=imgbed/img_43b85bd4_1096x660_8_null_normal.png" alt="网络拓扑图"></p>
+<p>采用WiFi+LoRa两种通信模式。在需要高速高质量通信的场景，如天猫精灵，手机，笔记本，使用WiFi作为通信手段。在WiFi信号不稳定的地方，使用LoRa进行通信。使用MQTT为应用层协议。</p>
+<h2 id="主控系统设计"><a href="#主控系统设计" class="headerlink" title="主控系统设计"></a>主控系统设计</h2><p>使用python3开源项目Home Assistant 为基础搭建本项目的主控系统。效果如下图：</p>
+<p><img src="https://api.yimian.xyz/img/?path=imgbed/img_c1a1b81_1895x859_8_null_normal.jpeg" alt="Sola Website"></p>
+<h2 id="多媒体系统设计"><a href="#多媒体系统设计" class="headerlink" title="多媒体系统设计"></a>多媒体系统设计</h2><p>多媒体主要由天猫精灵提供。此外，通过小米盒子，家庭网盘中的视频，图片，音乐实现了电视与音响上的播放。</p>
+<h2 id="云端支持系统设计"><a href="#云端支持系统设计" class="headerlink" title="云端支持系统设计"></a>云端支持系统设计</h2><p>dns.yimian.xyz提供dns解析服务。</p>
+<h2 id="NAS存储系统设计"><a href="#NAS存储系统设计" class="headerlink" title="NAS存储系统设计"></a>NAS存储系统设计</h2><p>通过挂载从老电脑上拆卸的闲置500G机械硬盘到老IBM服务器，实现存储系统的搭建。<br>对局域网内，由于家里都是win系统，使用smb作为共享协议实现文件传输，支持局域网内挂载。速度稳定，全网读写10MB/s左右。对外网访问，通过http，frp反代实现，但速度较慢。</p>
+<p>以下是对网页界面的一个截屏：</p>
+<p><img src="https://api.yimian.xyz/img/?path=imgbed/img_352da66_1866x814_8_null_normal.jpeg" alt="NAS Web Page"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="主要收获"><a href="#主要收获" class="headerlink" title="主要收获"></a>主要收获</h3><ol>
+<li>全栈物联网（云+管+端）系统搭建运维经验</li>
+<li>LoRa，WiFi通信系统搭建经验</li>
+<li>机器学习开发运维经验</li>
+<li>客户需求分析经验</li>
+<li>家用电路线路改装经验</li>
+<li>家用水管管道改造经验</li>
+</ol>
+<h3 id="遇到的挑战"><a href="#遇到的挑战" class="headerlink" title="遇到的挑战"></a>遇到的挑战</h3><ol>
+<li>如何保证所有的单片机处拥有优质的网络连接</li>
+<li>家人希望预留方法，在系统崩溃时一键回到最古老的手动开关状态。</li>
+<li>准确的控制灯的开关</li>
+<li>如何降低各模块间的耦合</li>
+</ol>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><ol>
+<li>使用WiFi，LoRa双协议。WiFi用于连接距离路由器较近的单片机，LoRa 连接距离较远WiFi信号弱的原处的单片机。</li>
+<li>我在每一个开关都配置了双保险，让每一个开关都可以经过轻易的操作即可回到手动状态。如果要回到手动状态，只需要扫描开关上的二维码，根据指示操作。详见<a href="https://sola.yimian.xyz/#/home?id=%E5%BA%94%E6%80%A5%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97" target="_blank" rel="noopener">应急操作指南</a></li>
+<li>在第一轮开发，灯控是由单片机决定的。与楼道里的声控灯并无本质差别，都是传感器-&gt;单片机-&gt;灯。第二轮开发时，将这个判断逻辑转移到了服务器。第三轮开发，我们引入了夜间模式，白天模式，午夜模式等，并在决策时使用了数学模型，通过各传感器的数据测算有人的概率，来决定对灯的控制。但是，这一方法并不总是及时，家里人在天刚黑时总是需要去按一下拨动开关。因此，第四轮开发中，我希望能够借助机器学习，让其自己学习家人的开关习惯。目前，正在持续采集数据并训练中，夜间准确度在0.75左右。</li>
+<li>各个模块和单片机都是用mqtt进行交互。每个单片机都有在线模式和离线模式。灯控决策模块和太阳能控制模块是单独的两个nodeJS模块，由pm2守护。为了保证其服务不间断性，他们是用redis（已配置持久化）作为实时数据存储。</li>
+</ol>
+<hr>
+<p><strong>2020.6 更新</strong></p>
+<h2 id="RNN实现对灯控制"><a href="#RNN实现对灯控制" class="headerlink" title="RNN实现对灯控制"></a>RNN实现对灯控制</h2><p>基于先前积累的人体传感器数据，通过LSTM模型，使用keras训练神经网络，实现对开灯状态的预测。</p>
+<hr>
+<p><strong>2020.8 更新</strong></p>
+<h2 id="天猫精灵接入"><a href="#天猫精灵接入" class="headerlink" title="天猫精灵接入"></a>天猫精灵接入</h2><p>自建了OAuth服务器，实现了天猫精灵的接入。</p>
+</span>
+
+<span class=".en">
+
+<p>Combining the knowledge I have learned and using cutting-edge technology to benefit life has been my unremitting pursuit for a long time. In order to let my family experience a more stable, comfortable and intelligent lifestyle, and to consolidate the technical foundation and architecture experience accumulated in the school smartfarm project and my own ushio system, I decided to use 20 to 23 before going abroad. All day long, reconstruct the old IoT system at home. Adopt a layered architecture and interface-oriented, test-oriented, and <strong>document-oriented</strong> development principles, with <strong>Available</strong> and <strong>Reliable</strong> as the highest priority indicators to build an operational target 3. A highly modular, easy-to-remote control, open source home software and hardware intelligent sensor control system for more than years.</p>
+<h2 id="Background"><a href="#Background" class="headerlink" title="Background:"></a>Background:</h2><p>In the first semester of the freshman year, I was new to MCU and used Arduino Uno to build a smart curtain system in the dormitory (for details, please refer to <a href="https://www.eee.dog/tech/build-236-iot-platform">this blog</a> -on-wifiduino.html)), has accumulated a certain amount of experience.</p>
+<h2 id="Method"><a href="#Method" class="headerlink" title="Method:"></a>Method:</h2><ol>
+<li>Ask experts (for water pipe problems, ask the owner of the hardware store, and LoRa for advice from Oulang R&amp;D department)</li>
+<li>Be a wheel, keep iterating, optimize the system in refactoring, and gain experience</li>
+<li>Investigate the needs of customers (family) carefully, pay more attention to customer needs in design, rather than communicate with customers</li>
+<li>When designing a system, it must be assumed that other systems that interact with it are unstable. Let the interaction between systems be like gentlemen intersect, like water. Thereby improving the margin of the whole system.</li>
+<li>Continuous operation and maintenance. For example, it happened before the three rounds of development. My mother touched a human sensor while cleaning, causing the entire light control system to be disordered. At that time, I was in Suzhou connected to the server at home via remote ssh, kicked the broken sensor out of the control system and solved the problem. Therefore, you must allow yourself to be connected to the system for operation and maintenance at any time. The future operation and maintenance must be fully considered in the design.</li>
+</ol>
+<h2 id="Process-overview"><a href="#Process-overview" class="headerlink" title="Process overview:"></a>Process overview:</h2><h3 id="First-round-of-development"><a href="#First-round-of-development" class="headerlink" title="First round of development"></a>First round of development</h3><p>Freshman summer vacation, I began to try to use WiFiduino to control some objects at home, and realized the control of (broken) solar water (through solenoid valve) (modified the original home pipes and added solenoid valves. I went to the hardware store many times. , I have gained a lot of knowledge and practical experience on water pipes. Later, I will also be useful to do surf pumps.) and control the corridor lights (through photocouplers). I found an abandoned IBM laptop of my dad 10 years ago, installed it with win server 2008, and configured the mysql database, and regularly used http to collect data from the microcontroller. I wrote a simple web interface in php to display relevant information and implement web control. Since the home is assigned a large NAT intranet IP allocated by China Mobile, frp is used to achieve intranet penetration, so that the outside world can access the web pages on the home server.</p>
+<h3 id="Second-round-of-development"><a href="#Second-round-of-development" class="headerlink" title="Second round of development"></a>Second round of development</h3><p>During the sophomore winter vacation, the previous firmware was improved, wifiduino was used to control the lights in the kitchen, living room, and dining room one after another, and a series of sensors were deployed and connected to the network. Because the WiFi signal of the single-chip microcomputer of the solar energy pipeline was weak, a router was used nearby to bridge. It is worth mentioning that on the night of New Year’s Eve, I was still at home with a power outage 2 minutes before the start of the Spring Festival Gala. I don’t know how my parents feel. .</p>
+<h3 id="Third-round-of-development"><a href="#Third-round-of-development" class="headerlink" title="Third round of development"></a>Third round of development</h3><p>Sophomore summer vacation, based on the experience of this semester, reconstruct the system. On the server, the reinstallation system provides UI and other services for Centos7 to use the home assistant open source project, using mqtt as the communication protocol. Use nodeJS to write the control logic of light control automation and solar water adding. In the single chip microcomputer, the firmware is updated, and the ota remote firmware update is supported (referring to some Wiot experience, but more tailored to local conditions). In addition, two new flow meters have been added to fully automate the solar water addition (previously, the water addition time was set through the web page). Due to the weak WiFi signal of the flowmeter, we used Arduino uno + LoRa as the communication means. This design, combined with the opinions of parents, fully considered the stability of the overall system. For example, how to handle various types of errors and loss of connection, how to restart after a power failure, how to ensure that the MCU is not disordered when the server is unresponsive, and how to physically switch back to manual after the system is out of control (such as lights, and Solar energy plus water).</p>
+<h3 id="Fourth-round-of-development"><a href="#Fourth-round-of-development" class="headerlink" title="Fourth round of development"></a>Fourth round of development</h3><p>In the summer vacation of the junior year, based on the sensor data accumulated in the past, the LSTM model is used to train the neural network through keras+tensorflow to realize the prediction of the light control state. The optimization is still ongoing and is expected to be completed before September. In addition, there are plans to connect to the Tmall Wizard (still in the queue, waiting for the development of the ushio oauth system, the ushio oauth system needs to wait for the development of the ushio user system, and the ushio user system needs stable js-session as support, js-session Need to use fp to accurately identify user equipment.. Currently fp is still in the third test stage. So, let’s do it step by step,,).</p>
+<h2 id="Hardware-design"><a href="#Hardware-design" class="headerlink" title="Hardware design"></a>Hardware design</h2><h3 id="Single-Chip-Microcomputer-Material-Selection"><a href="#Single-Chip-Microcomputer-Material-Selection" class="headerlink" title="Single Chip Microcomputer Material Selection"></a>Single Chip Microcomputer Material Selection</h3><p>Use Arduino UNO as the calculation unit. On the one hand, Arduino Uno has high reliability. My previous smart curtain system used Arduino Uno as the main control board, and it ran smoothly for one and a half years without hardware problems. On the other hand, Arduino Uno has a larger RAM, so there is no need to bother to program the microcontroller in order to compete for RAM.</p>
+<p>The main disadvantage of Arduino UNO is its high price, but this cost is necessary to ensure long-term stable operation.</p>
+<h3 id="WiFi-communication-module-selection"><a href="#WiFi-communication-module-selection" class="headerlink" title="WiFi communication module selection"></a>WiFi communication module selection</h3><p>Use ESP-01 as the WiFi communication module. The main reason is that the ESP-01 has been used to build a remote control car in the previous school courses, and I have a better understanding of its working methods and performance to reduce development costs.</p>
+<h3 id="LoRa-communication-module-selection"><a href="#LoRa-communication-module-selection" class="headerlink" title="LoRa communication module selection"></a>LoRa communication module selection</h3><p>Use <strong>Anxinke LORA RA-02 LORA</strong> as the communication module between LoRa node and LoRa gateway. The reason is that this module is used in the surf project, so I understand it better.</p>
+<h3 id="Smart-speaker-selection"><a href="#Smart-speaker-selection" class="headerlink" title="Smart speaker selection"></a>Smart speaker selection</h3><p>As the most important interface for human-computer interaction in this IoT system, smart speakers play a pivotal role. After research, I use Tmall Elf Sugar R as a home smart speaker. On the one hand, the price/performance ratio of Tmall Genie is very cheap. Second, unlike Xiaomi’s development of Xiao Ai, the purpose of Ali’s development of Tmall Genie is to provide a platform that allows developers to access its network in various forms, which is very important to me.</p>
+<h3 id="Light-toggle-switch"><a href="#Light-toggle-switch" class="headerlink" title="Light toggle switch"></a>Light toggle switch</h3><p>Initial idea: one-way control + reset device.<br>Actual realization: The original single-opening is transformed into double-opening, one is connected in series with the relay, and the other is connected with two pin ports.</p>
+<h2 id="Communication-Design"><a href="#Communication-Design" class="headerlink" title="Communication Design"></a>Communication Design</h2><p><img src="https://api.yimian.xyz/img/?path=imgbed/img_43b85bd4_1096x660_8_null_normal.png" alt="Network Topology Diagram"></p>
+<p>Two communication modes of WiFi+LoRa are adopted. In scenarios that require high-speed and high-quality communication, such as Tmall Genie, mobile phones, and notebooks, use WiFi as a means of communication. In places where the WiFi signal is unstable, use LoRa for communication. Use MQTT as the application layer protocol.</p>
+<h2 id="Main-control-system-design"><a href="#Main-control-system-design" class="headerlink" title="Main control system design"></a>Main control system design</h2><p>Use the python3 open source project Home Assistant as the basis to build the main control system of this project. The effect is as follows:</p>
+<p><img src="https://api.yimian.xyz/img/?path=imgbed/img_c1a1b81_1895x859_8_null_normal.jpeg" alt="Sola Website"></p>
+<h2 id="Multimedia-system-design"><a href="#Multimedia-system-design" class="headerlink" title="Multimedia system design"></a>Multimedia system design</h2><p>Multimedia is mainly provided by Tmall Genie. In addition, through the Xiaomi box, the video, pictures, and music in the home network disk can be played on the TV and stereo.</p>
+<h2 id="Cloud-support-system-design"><a href="#Cloud-support-system-design" class="headerlink" title="Cloud support system design"></a>Cloud support system design</h2><p>dns.yimian.xyz provides dns resolution service.</p>
+<h2 id="NAS-storage-system-design"><a href="#NAS-storage-system-design" class="headerlink" title="NAS storage system design"></a>NAS storage system design</h2><p>By mounting the idle 500G mechanical hard disk removed from the old computer to the old IBM server, the storage system is built.<br>In the local area network, since the home is a win system, smb is used as a sharing protocol to realize file transfer and supports mounting in the local area network. The speed is stable, and the whole network reads and writes about 10MB/s. Access to the external network is realized through http and frp reverse generation, but the speed is slow.</p>
+<p>The following is a screenshot of the web interface:</p>
+<p><img src="https://api.yimian.xyz/img/?path=imgbed/img_352da66_1866x814_8_null_normal.jpeg" alt="NAS Web Page"></p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><h3 id="Main-gains"><a href="#Main-gains" class="headerlink" title="Main gains"></a>Main gains</h3><ol>
+<li>Full-stack IoT (cloud + pipe + terminal) system construction operation and maintenance experience</li>
+<li>LoRa, WiFi communication system construction experience</li>
+<li>Machine learning development operation and maintenance experience</li>
+<li>Customer needs analysis experience</li>
+<li>Experience in home circuit modification</li>
+<li>Experience in renovation of household water pipes</li>
+</ol>
+<h3 id="Challenges-encountered"><a href="#Challenges-encountered" class="headerlink" title="Challenges encountered"></a>Challenges encountered</h3><ol>
+<li>How to ensure that all MCUs have high-quality network connections</li>
+<li>The family hopes to reserve a way to return to the oldest manual switch state with one click when the system crashes.</li>
+<li>Control the light switch accurately</li>
+<li>How to reduce the coupling between modules</li>
+</ol>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><ol>
+<li>Use WiFi, LoRa dual protocol. WiFi is used to connect the single-chip microcomputer closer to the router, and LoRa connects to the single-chip microcomputer in the original place where the WiFi signal is weaker.</li>
+<li>I have equipped each switch with double insurance, so that each switch can be returned to manual state after easy operation. If you want to return to manual mode, just scan the QR code on the switch and follow the instructions. For details, see <a href="https://sola.yimian.xyz/#/home?id=%E5%BA%94%E6%80%A5%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97" target="_blank" rel="noopener">Emergency Operation Guide</a></li>
+<li>In the first round of development, the light control is determined by the microcontroller. There is no essential difference with the sound-controlled lights in the corridor, they are all sensors -&gt; single chip microcomputer -&gt; lights. In the second round of development, this judgment logic was transferred to the server. In the third round of development, we introduced night mode, day mode, midnight mode, etc., and used mathematical models in the decision-making process to determine the probability of people using the data of each sensor to determine the control of the lights. However, this method is not always timely. Family members always need to press the toggle switch when it is just dark. Therefore, in the fourth round of development, I hope to use machine learning to let myself learn the switching habits of my family. Currently, data is being continuously collected and trained, and the night accuracy is around 0.75.</li>
+<li>Each module and the single-chip microcomputer use mqtt to interact. Each microcontroller has an online mode and an offline mode. The light control decision module and the solar control module are two separate nodeJS modules, guarded by pm2. In order to ensure uninterrupted services, they use redis (configured persistence) as real-time data storage.</li>
+</ol>
+<hr>
+<p><strong>2020.6 update</strong></p>
+<h2 id="RNN-realizes-light-control"><a href="#RNN-realizes-light-control" class="headerlink" title="RNN realizes light control"></a>RNN realizes light control</h2><p>Based on the previously accumulated human sensor data, the LSTM model is used to train the neural network using keras to realize the prediction of the light state.</p>
+<hr>
+<p><strong>2020.8 update</strong></p>
+<h2 id="Tmall-Elf-Access"><a href="#Tmall-Elf-Access" class="headerlink" title="Tmall Elf Access"></a>Tmall Elf Access</h2><p>Self-built OAuth server has realized the access of Tmall Wizard.</p>
+</span>
+
+      </div>
+      <div class="post-copyright">
+    <p class="copyright-item">
+      <span>Author: </span>
+      <a href="https://iotcat.me/" target="_blank" rel="noopener">IoTcat</a>
+    </p>
+    <p class="copyright-item">
+      <span>Link: </span>
+      <a href="https://www.eee.dog/tech/smart-home.html">https://www.eee.dog/tech/smart-home.html</a>
+    </p>
+    <p class="copyright-item">
+      <span>License: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/iot/">iot</a>
+            <a href="/tags/Arduino/">Arduino</a>
+            <a href="/tags/smart-home/">smart-home</a>
+            <a href="/tags/LoRa/">LoRa</a>
+            <a href="/tags/WiFi/">WiFi</a>
+            <a href="/tags/ESP8266/">ESP8266</a>
+            <a href="/tags/MQTT/">MQTT</a>
+            </div>
+        
+        <nav class="post-nav"><a class="prev" href="/tech/music-api.html">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default"><span class=".zh">网易云音乐获取API</span><span class=".en">Netease Music API</span></span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    <a class="next" href="/tech/smartfarming-surf.html">
+        <span class="next-text nav-default"><span class=".zh">2019 SURF SmartFarming Proj 架构说明</span><span class=".en">2019 SURF SmartFarming Proj Architecture Description</span></span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article><script>$(()=>{var p = window.location.pathname;setTimeout(()=>{if(window.location.pathname == p)tips.show({
+        title: 'tips',
+        position: 'topRight',
+        message: ((page.tran.getLang() == 'zh')?"此文章预计阅读 16 分钟哦~": "Read this page will spend around  32  minutes~")
+  })}, 6000)})</script>
+  </div><div class="comments" id="comments"><div id="vcomments"></div>
+    </div></div>
+      </main>
+
+      <footer id="footer" class="footer">
+      <script>
+        page_obj = {
+          layout: "post",
+          comments: "true"
+        };
+      </script><div class="social-links"><a href="mailto:i@iotcat.me" class="iconfont icon-email" title="email"></a>
+        <a href="https://github.com/iotcat" target="_blank" rel="noopener" class="iconfont icon-github" title="github"></a>
+        <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    </div><div class="copyright"><span id="/tech/smart-home.html" class="statistic leancloud_visitors">
+    <em>Visitors </em> <i class="leancloud-visitors-count">??</i> 
+    <span class="division"> |</span>
+    <em>Reading </em> 32 min
+  </span>
+  <br>
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://ushio.cool/" target="_blank" rel="noopener">Ushio</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/iotcat/kayo" target="_blank" rel="noopener">Kayo</a>
+  </span>
+
+  <span class="copyright-year">&copy;2018 - 2023<span class="heart shaky">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"><a href="https://iotcat.me/" target="_blank" rel="noopener">IoTcat</a></span>
+  </span>
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+<script src="https://cdn.yimian.xyz/kayo/lib/valine/valine.min.js" data-pjax></script>
+<style>
+/* 背景图片 */
+#veditor {
+  background-image: url(https://cdn.yimian.xyz/img/blog/comments_bg.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-color: rgba(255, 255, 255, 0);
+  resize: vertical
+}
+
+/* 头像旋转 */
+img.vimg {
+  transition: all 1s   /* 旋转时间为 1s */
+}
+img.vimg:hover {
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+}
+
+
+/* 盒子模式 */
+#vcomments .vcards .vcard {
+  padding: 15px 20px 0 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
+  transition: all .3s
+}
+
+#vcomments .vcards .vcard:hover {
+  box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
+}
+
+#vcomments .vcards .vcard .vh .vcard {
+  border: none;
+  box-shadow: none;
+}
+
+
+</style>
+<script>
+pjax_valine = () => {
+    $.get('https://auth.yimian.xyz/getEmailHash.php', function(res){
+        if(page.tran.getLang() == 'zh'){
+            var lan = 'zh-CN';
+            var metaPlaceholder = {"nick":"昵称/QQ号","mail":"邮箱（完全保密）"};
+            var tagMeta =  ["博主","小伙伴","访客"];
+            var placeholder = "填写邮箱可以及时收到回复哦(●'◡'●)";
+        }else{
+            var lan = 'en';
+            var metaPlaceholder = {"nick":"Nickname/QQ","mail":"EMail"};
+            var tagMeta =  ["Master","Friend","Visitor"];
+            var placeholder = "Leave some comments here (●'◡'●)";
+        }
+        new Valine({
+            el: '#vcomments',
+            appId: 'eVzpK7EyT6OafJvXWIRminWT-gzGzoHsz',
+            appKey: '2qjuEBgVE0BscTQnTmoS9roU',
+            master: '9b616ff4cd6c305e5970bee7b1bd9b1f',   //博主邮箱md5
+            tagMeta: tagMeta,     //标识字段名
+            friends: res, //["b6ddef7c7e1c647e7767afeacdfb7b64","46dd4e6fef4f9591736c4723a965ca2e","6132d77f9f0ae060bc733090991acecb","3e00e104b79d7c6e866c6b23c6ba6dfc"],  //小伙伴邮箱Md5
+
+            metaPlaceholder: metaPlaceholder,
+            placeholder: placeholder,
+            lang: lan,
+            path: window.location.pathname,
+            enableQQ: true,
+            visitor: true,
+            emojiCDN: '//i0.hdslb.com/bfs/emote/',
+            emojiMaps: {
+                "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+                "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+                "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png",
+                "tv_再见": "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+                "tv_冷漠": "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+                "tv_发怒": "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+                "tv_发财": "34db290afd2963723c6eb3c4560667db7253a21a.png",
+                "tv_可爱": "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+                "tv_吐血": "09dd16a7aa59b77baa1155d47484409624470c77.png",
+                "tv_呆": "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+                "tv_呕吐": "9f996894a39e282ccf5e66856af49483f81870f3.png",
+                "tv_困": "241ee304e44c0af029adceb294399391e4737ef2.png",
+                "tv_坏笑": "1f0b87f731a671079842116e0991c91c2c88645a.png",
+                "tv_大佬": "093c1e2c490161aca397afc45573c877cdead616.png",
+                "tv_大哭": "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+                "tv_委屈": "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+                "tv_害羞": "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+                "tv_尴尬": "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+                "tv_微笑": "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+                "tv_思考": "90cf159733e558137ed20aa04d09964436f618a1.png",
+                "tv_惊吓": "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+                "tv_打脸": "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+                "tv_抓狂": "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+                "tv_抠鼻": "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+                "tv_斜眼笑": "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+                "tv_无奈": "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+                "tv_晕": "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+                "tv_流汗": "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+                "tv_流泪": "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+                "tv_流鼻血": "c32d39db2737f89b904ca32700d140a9241b0767.png",
+                "tv_点赞": "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+                "tv_生气": "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+                "tv_生病": "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+                "tv_疑问": "0793d949b18d7be716078349c202c15ff166f314.png",
+                "tv_白眼": "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+                "tv_皱眉": "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+                "tv_目瞪口呆": "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+                "tv_睡着": "8b196675b53af58264f383c50ad0945048290b33.png",
+                "tv_笑哭": "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+                "tv_腼腆": "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+                "tv_色": "61822c7e9aae5da76475e7892534545336b23a6f.png",
+                "tv_调侃": "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+                "tv_调皮": "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+                "tv_鄙视": "6e72339f346a692a495b123174b49e4e8e781303.png",
+                "tv_闭嘴": "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+                "tv_难过": "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+                "tv_馋": "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+                "tv_鬼脸": "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+                "tv_黑人问号": "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+                "tv_鼓掌": "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"
+                // ... 更多表情
+            } 
+        });
+    });
+};
+</script><script type="text/javascript" src="https://cdn.yimian.xyz/ushio-js/ushio-footer.min.js"></script>
+<script>
+session.onload(function(){
+    if(session.get('group') != 'anonymous'){
+        function insertNick(){
+            if($('.vnick').length){
+                $('.vnick').val(session.get('nickname'));
+            }else{
+                setTimeout(insertNick, 500);
+            }
+        }
+        function insertMail(){
+            if($('.vmail').length){
+                $('.vmail').val(session.get('email'));
+            }else{
+                setTimeout(insertMail, 500);
+            }
+        }
+
+        if(session.get('nickname')){
+            insertNick();
+        }
+
+        if(session.get('email')){
+            insertMail();
+        }
+    }
+});
+</script>
+<script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/iziToast/iziToast.min.js"></script>
+  <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/iziModal/iziModal.min.js"></script>
+  <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/lib/mermaid/mermaid.min.js"></script>
+  <script type="text/javascript" src="https://cdn.yimian.xyz/kayo/js/src/kayo.js?v=1.0.0" data-pjax></script>
+<script type="text/javascript" src="https://cdn.yimian.xyz/kayo/js/src/kayo-no-pjax.js?v=1.0.0"></script>
+<script src="https://cdn.yimian.xyz/kayo/lib/pjax/pjax.min.js"></script>
+<script>window.pjax = new Pjax({
+    elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"])',
+    selectors: ["head title, #main", "#footer"],
+  });/* lazyload */
+    window.imageLazyLoadSetting = {
+        isSPA: false,
+        processImages: null,
+    };
+    
+     window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});
+
+  /* 第一次载入页面加载的函数 */
+  pjax_ini = () => {
+    
+     /* 关闭侧边栏 */
+     window.slideout.close();
+
+     if(page_obj.comments == "true"){pjax_valine();}pjax_google_analytics();mermaid.init(undefined, $(".mermaid"));/* lazy load */
+     !function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);
+     !function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})}();
+  };
+
+  /* 第一次 执行 */
+  pjax_ini();var loadingBar = document.querySelector(".loading-bar");
+var progress = document.querySelector(".loading-bar .progress");
+var timer = null;
+
+
+// Pjax 开始时执行的函数
+var loadingbarStart = function () {
+  // 进度条默认已经加载 20%
+  var loadingBarWidth = 20;
+  // 进度条的最大增加宽度
+  var MAX_LOADING_WIDTH = 95;
+
+  // 显示进度条
+  loadingBar.classList.add("loading");
+  // 初始化进度条的宽度
+  progress.style.width = loadingBarWidth + "%";
+
+  clearInterval(timer);
+  timer = setInterval(function () {
+    // 进度条的增加速度（可以改为一个随机值，显得更加真实）
+    loadingBarWidth += 3;
+
+    // 当进度条到达 95% 后停止增加
+    if (loadingBarWidth > MAX_LOADING_WIDTH) {
+      loadingBarWidth = MAX_LOADING_WIDTH;
+    }
+
+    progress.style.width = loadingBarWidth + "%";
+  }, 500);
+};
+
+
+// Pjax 完成之后执行的函数
+var loadingbarStop = function () {
+  clearInterval(timer);
+  progress.style.width = "100%";
+  loadingBar.classList.remove("loading");
+
+  setTimeout(function () {
+    progress.style.width = 0;
+  }, 400);
+};/* Pjax 开始时，重新加载的函数 */
+  document.addEventListener("pjax:send", function () {loadingbarStart(); 
+    });
+
+
+  /* Pjax 完成后，重新加载的函数 */
+  document.addEventListener("pjax:complete", function () {
+    /* 重载带data-pjax的script，或者.pjax-reload属性内容的script */
+    $("script[data-pjax], .pjax-reload script").each(function () {
+        $(this).parent().append($(this).remove());
+    });
+    pjax_ini();loadingbarStop();
+    page.tran.setLang();
+  });
+
+
+  /* Pjax 出错，执行的函数 */
+  document.addEventListener("pjax:error", function () {
+    
+  });</script>
+</body>
+</html>
